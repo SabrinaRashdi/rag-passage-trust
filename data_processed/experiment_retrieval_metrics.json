@@ -1,0 +1,29 @@
+{
+  "evaluation_scope": "restricted_candidate_pool",
+  "candidate_passages": 9872,
+  "total_queries": 400,
+  "group_counts": {
+    "original": 100,
+    "paraphrase": 300
+  },
+  "metrics": {
+    "original": {
+      "hit@1": 0.02,
+      "hit@5": 0.15,
+      "hit@10": 0.25,
+      "hit@100": 0.87,
+      "recall@10": 0.22833333333333336,
+      "recall@100": 0.84,
+      "mrr@10": 0.08156349206349206
+    },
+    "paraphrase": {
+      "hit@1": 0.03666666666666667,
+      "hit@5": 0.18,
+      "hit@10": 0.27,
+      "hit@100": 0.9166666666666666,
+      "recall@10": 0.255,
+      "recall@100": 0.8888888888888887,
+      "mrr@10": 0.096255291005291
+    }
+  }
+}

@@ -1,0 +1,301 @@
+query_id,original_question,reworded_question,similarity,status
+test1,how many episodes are in chicago fire season 4,What is the number of episodes in Chicago Fire season 4?,0.7964,PASS
+test1,how many episodes are in chicago fire season 4,What is the total number of episodes in Chicago Fire season 4?,0.7688,PASS
+test1,how many episodes are in chicago fire season 4,What is the count of episodes in Chicago Fire season 4?,0.7467,REVIEW
+test11,who recorded i can't help falling in love with you,Who recorded the song 'I Can't Help Falling in Love with You'?,0.8723,PASS
+test11,who recorded i can't help falling in love with you,Which artist recorded 'Can't Help Falling in Love'?,0.8657,PASS
+test11,who recorded i can't help falling in love with you,Who was the singer who recorded 'Can't Help Falling in Love'?,0.8356,PASS
+test16,what was the name of atom bomb dropped by usa on hiroshima,What was the name of the atomic bomb that the USA dropped on Hiroshima?,0.8459,PASS
+test16,what was the name of atom bomb dropped by usa on hiroshima,What was the name of the atomic bomb that the USA chose to drop on Hiroshima?,0.8452,PASS
+test16,what was the name of atom bomb dropped by usa on hiroshima,What was the name of the atomic bomb that the United States dropped on Hiroshima?,0.8398,PASS
+test19,where are the mitochondria located in the sperm,What is the location of the mitochondria in the sperm?,0.9497,PASS
+test19,where are the mitochondria located in the sperm,In what part of the sperm are the mitochondria located?,0.9575,PASS
+test19,where are the mitochondria located in the sperm,In which part of the sperm are the mitochondria?,0.9223,PASS
+test20,how many lines of symmetry are there in a equilateral triangle,How many symmetry lines can be drawn in an equilateral triangle?,0.957,PASS
+test20,how many lines of symmetry are there in a equilateral triangle,How many lines of symmetry does an equilateral triangle have?,0.9738,PASS
+test20,how many lines of symmetry are there in a equilateral triangle,How many lines of symmetry can be found in an equilateral triangle?,0.9745,PASS
+test21,how many seasons of the oc are there,What is the number of seasons in the OC?,0.7803,PASS
+test21,how many seasons of the oc are there,What is the count of seasons in the OC?,0.7243,REVIEW
+test21,how many seasons of the oc are there,How many seasons does the oc have?,0.9019,PASS
+test31,who do you meet at the gates of heaven,Who is the person you come across at the gates of heaven?,0.831,PASS
+test31,who do you meet at the gates of heaven,Who is the person you will meet at the gates of heaven?,0.8757,PASS
+test31,who do you meet at the gates of heaven,Who is the person you will encounter at the gates of heaven?,0.8511,PASS
+test47,how long prime minister stay in office canada,What is the duration of the prime minister's term in Canada?,0.8283,PASS
+test47,how long prime minister stay in office canada,What is the length of the prime minister's tenure in Canada?,0.8031,PASS
+test47,how long prime minister stay in office canada,How many years did the prime minister of Canada remain in power?,0.7997,PASS
+test50,do all private schools have uniforms in america,Are uniforms mandatory in all private schools in America?,0.885,PASS
+test50,do all private schools have uniforms in america,Are uniforms mandatory in all private schools in the United States?,0.8727,PASS
+test50,do all private schools have uniforms in america,Are uniforms compulsory in all private schools in the United States?,0.8791,PASS
+test53,where did aeneas go when he left carthage,"When Aeneas left Carthage, where did he eventually go?",0.9439,PASS
+test53,where did aeneas go when he left carthage,Where did Achilles leave Carthage?,0.5867,REVIEW
+test53,where did aeneas go when he left carthage,"When Aeneas left Carthage, where did he seek refuge?",0.9247,PASS
+test57,where was the capital of the habsburg empire located,Which city served as the capital of the Habsburg empire?,0.9519,PASS
+test57,where was the capital of the habsburg empire located,What was the capital of the habsburg empire?,0.9169,PASS
+test57,where was the capital of the habsburg empire located,The Habsburg empire's capital was located where?,0.9597,PASS
+test58,who plays general hux in the last jedi,Who is the actor that plays the role of general hux in the final jedio?,0.8803,PASS
+test58,who plays general hux in the last jedi,Who portrays the role of general hux in the previous version of jedi?,0.9017,PASS
+test58,who plays general hux in the last jedi,Who portrays the role of general hux in the final jedio?,0.891,PASS
+test60,when were the winnie the pooh books written,When did the Winnie the Poh books come out?,0.7998,PASS
+test60,when were the winnie the pooh books written,At what point in time were the Winnie the Poh books produced?,0.8183,PASS
+test60,when were the winnie the pooh books written,At what point in time were the Winnie the Poh books created?,0.8149,PASS
+test62,who wrote the theme song for mission impossible,The theme song for Mission Impossible was composed by whom?,0.9426,PASS
+test62,who wrote the theme song for mission impossible,The theme song for the game Mission Impossible was written by whom?,0.8984,PASS
+test62,who wrote the theme song for mission impossible,The theme song for Mission Impossible was written by whom?,0.934,PASS
+test64,where is the slide placed on the microscope,What is the position of the slide on the microscope?,0.9172,PASS
+test64,where is the slide placed on the microscope,At what point on the microscope is the slide positioned?,0.9113,PASS
+test64,where is the slide placed on the microscope,Where can the slide be seen on the microscope?,0.9412,PASS
+test70,when does isle of dogs come out in us,When was the movie 'Isle of Dogs' released in the United States?,0.8241,PASS
+test70,when does isle of dogs come out in us,What was the US release date of the film 'Isle of Dogs'?,0.7903,PASS
+test70,when does isle of dogs come out in us,On what date did 'Isle of Dogs' come out in US cinemas?,0.7858,PASS
+test75,how long do nhl players stay on waivers,How long can nhl players expect to be on waivers?,0.935,PASS
+test75,how long do nhl players stay on waivers,What is the duration of waivers that NHL players have to endure?,0.9078,PASS
+test75,how long do nhl players stay on waivers,How long do nhl players have to sign waivers?,0.8983,PASS
+test77,who stepped out of the dithyrambic chorus to become the first actor,Who emerged from the dithyrambic chorus as the first actor?,0.9469,PASS
+test77,who stepped out of the dithyrambic chorus to become the first actor,The person who emerged from the dithyrambic chorus and became the first actor to act.,0.8847,PASS
+test77,who stepped out of the dithyrambic chorus to become the first actor,The first actor to step forward from the dithyrambic chorus was none other than her.,0.7845,PASS
+test79,who sings jungle book i wanna be like you,The person who sings the jungle book I want to be like you is the one.,0.8068,PASS
+test79,who sings jungle book i wanna be like you,The person who sings the jungle book I want to emulate you.,0.6636,REVIEW
+test79,who sings jungle book i wanna be like you,"The person who performs the song ""jungle book"" is the one I want to emulate.",0.5742,REVIEW
+test82,when did the apple iphone se come out,When did the apple iphone se debut?,0.907,PASS
+test82,when did the apple iphone se come out,When was the apple iphone se introduced?,0.9065,PASS
+test82,when did the apple iphone se come out,When did Apple introduce the apple iphone se?,0.914,PASS
+test87,when was the first underwater cable laid beneath the english channel,When was the first underwater cable ever installed beneath the English Channel?,0.9239,PASS
+test87,when was the first underwater cable laid beneath the english channel,At what point was the first underwater cable connected to the English Channel?,0.9269,PASS
+test87,when was the first underwater cable laid beneath the english channel,When did the first underwater cable for the English Channel was installed?,0.91,PASS
+test88,where is the setting for beauty and the beast,Where can one find both the beauty and the beast?,0.7744,PASS
+test88,where is the setting for beauty and the beast,What is the location of beauty and the beast?,0.8306,PASS
+test88,where is the setting for beauty and the beast,Where can one find the perfect balance of beauty and beast?,0.7529,PASS
+test90,where does the donkey talk in the bible,Where in the bible is the donkey mentioned?,0.8639,PASS
+test90,where does the donkey talk in the bible,In which part of the bible is the donkey mentioned?,0.8609,PASS
+test90,where does the donkey talk in the bible,In what part of the bible is the donkey mentioned?,0.8512,PASS
+test94,who sings it's my party and i cry if i want to,Who sang the song 'It's My Party (And I'll Cry If I Want To)'?,0.8232,PASS
+test94,who sings it's my party and i cry if i want to,Which artist performed 'It's My Party (And I'll Cry If I Want To)'?,0.8165,PASS
+test94,who sings it's my party and i cry if i want to,Who is the singer of 'It's My Party (And I'll Cry If I Want To)'?,0.7867,PASS
+test106,who holds the world record for the most world records,Who holds the title for the most significant number of world records?,0.8318,PASS
+test106,who holds the world record for the most world records,Who holds the record for the highest number of world records?,0.8719,PASS
+test106,who holds the world record for the most world records,Who is the individual with the highest number of world records?,0.8349,PASS
+test107,who sang on great gig in the sky,Who sang the song 'Great Gig in the Sky'?,0.8997,PASS
+test107,who sang on great gig in the sky,Who was the vocalist on 'The Great Gig in the Sky'?,0.8865,PASS
+test107,who sang on great gig in the sky,Who performed the vocals for 'The Great Gig in the Sky'?,0.9085,PASS
+test110,how many seasons of from dusk till dawn are there,How many seasons does the TV series 'From Dusk Till Dawn' have?,0.8878,PASS
+test110,how many seasons of from dusk till dawn are there,What is the total number of seasons of 'From Dusk Till Dawn: The Series'?,0.8128,PASS
+test110,how many seasons of from dusk till dawn are there,How many seasons were produced for 'From Dusk Till Dawn: The Series'?,0.879,PASS
+test113,who is responsible for introducing the principle of uniformitarianism,Who is credited with introducing the uniformitarianism principle?,0.9063,PASS
+test113,who is responsible for introducing the principle of uniformitarianism,Who first introduced the concept of uniformitarianism?,0.8608,PASS
+test113,who is responsible for introducing the principle of uniformitarianism,Who first introduced the idea of uniformitarianism?,0.8529,PASS
+test120,when did the astros change from the national league to the american league,When did the American League replace the national league for the American Astros?,0.8923,PASS
+test120,when did the astros change from the national league to the american league,When did the American League replace the national league for the Astros?,0.8924,PASS
+test120,when did the astros change from the national league to the american league,At what time did the American League and the Astros switch to the national league?,0.8902,PASS
+test127,jharkhand which festival is associated with cattle worship,The cattle festival in Jharkhand is linked to the worship of cattle.,0.9463,PASS
+test127,jharkhand which festival is associated with cattle worship,The cattle festival in Jharkhand is associated with the worship of cattle.,0.9592,PASS
+test127,jharkhand which festival is associated with cattle worship,The cattle festival in Jharkhand is associated with the veneration of cattle.,0.899,PASS
+test130,what is the center of heredity in a cell,What is the center of heredity in a cell?,0.961,PASS
+test130,what is the center of heredity in a cell,What is the nucleus of heredity in a cell?,0.7669,PASS
+test130,what is the center of heredity in a cell,What is the location of heredity in a cell?,0.8636,PASS
+test138,what is the name of season 6 of american horror story,What is the name of the sixth season of American Horror Story?,0.8964,PASS
+test138,what is the name of season 6 of american horror story,What's the name of the sixth season of American Horror Story?,0.8888,PASS
+test138,what is the name of season 6 of american horror story,What is the title of the sixth season of American Horror Story?,0.8776,PASS
+test145,who played big enos in smokey and the bandit,Who portrayed Big Enos in 'Smokey and the Bandit'?,0.9496,PASS
+test145,who played big enos in smokey and the bandit,Which actor played the character Big Enos in 'Smokey and the Bandit'?,0.9643,PASS
+test145,who played big enos in smokey and the bandit,Who was the actor behind Big Enos in 'Smokey and the Bandit'?,0.9308,PASS
+test152,where does sex and the city take place,Where can one find sex and the city?,0.8034,PASS
+test152,where does sex and the city take place,What is the place where sex and the city occur?,0.8038,PASS
+test152,where does sex and the city take place,In what location does sex and the city occur?,0.8372,PASS
+test156,who is considered the father of modern behaviorism,Who is regarded as the progenitor of contemporary behaviorism?,0.7939,PASS
+test156,who is considered the father of modern behaviorism,Who is recognized as the progenitor of contemporary behaviorism?,0.7818,PASS
+test156,who is considered the father of modern behaviorism,Who is regarded as the progenitor of modern behaviorism?,0.8358,PASS
+test157,joined mexico and the united states to form nafta,The formation of nafta involved the amalgamation of Mexico and the United States.,0.8503,PASS
+test157,joined mexico and the united states to form nafta,The formation of nafta was the result of the merger between Mexico and the United States.,0.8787,PASS
+test157,joined mexico and the united states to form nafta,The formation of nafta was a result of the merger between Mexico and the United States.,0.879,PASS
+test159,where do the elves go on the boat in lord of the rings,What is the destination of the elves on the boat in lord of the rings?,0.9165,PASS
+test159,where do the elves go on the boat in lord of the rings,"In lord of the rings, where do the elves go on the boat?",0.947,PASS
+test159,where do the elves go on the boat in lord of the rings,Where do the elves land on the boat in lord of the rings?,0.9099,PASS
+test161,who is the guy that jumped from space,Who is the individual that leapt from space?,0.8623,PASS
+test161,who is the guy that jumped from space,Who is the individual that jumped from space?,0.912,PASS
+test161,who is the guy that jumped from space,Who was the individual that leapt from space?,0.8629,PASS
+test164,who won the american league pennant in 2017,Who was the winner of the American League pennant in 2017?,0.8757,PASS
+test164,who won the american league pennant in 2017,Who was declared the winner of the American League pennant in 2017?,0.9014,PASS
+test164,who won the american league pennant in 2017,Who was the recipient of the American League pennant in 2017?,0.8582,PASS
+test165,when did hollywood become the centre of the film industry,At what point did Hollywood emerge as the epicenter of the film industry?,0.8395,PASS
+test165,when did hollywood become the centre of the film industry,When did Hollywood emerge as the primary location for the film industry?,0.8433,PASS
+test165,when did hollywood become the centre of the film industry,When did Hollywood become the epicenter of the film industry?,0.8538,PASS
+test166,where are the cardiac and vasomotor centers found,In what location can the cardiac and vasomotor centers be found?,0.9437,PASS
+test166,where are the cardiac and vasomotor centers found,Where can the cardiac and vasomotor centers be found?,0.9511,PASS
+test166,where are the cardiac and vasomotor centers found,What is the location of the cardiac and vasomotor centers?,0.9058,PASS
+test177,who plays the little girl in jurassic park,Who is the person behind the character of the young girl in Jurassic Park?,0.7993,PASS
+test177,who plays the little girl in jurassic park,Who is the performer of the little girl character in Jurassic Park?,0.864,PASS
+test177,who plays the little girl in jurassic park,Who is the person behind the character of the little girl in Jurassic Park?,0.8325,PASS
+test185,when does star wars battlefront 2 com out,When will the release of Star Wars Battlefront 2 take place?,0.8814,PASS
+test185,when does star wars battlefront 2 com out,When will the release date of Star Wars Battlefront 2 be confirmed?,0.876,PASS
+test185,when does star wars battlefront 2 com out,What is the release date for Star Wars Battlefront 2?,0.8703,PASS
+test188,how many episodes of greys anatomy season 14,What is the total number of episodes in Grey's Anatomy season 14?,0.8565,PASS
+test188,how many episodes of greys anatomy season 14,What is the number of episodes in Grey's Anatomy season 14?,0.8698,PASS
+test188,how many episodes of greys anatomy season 14,What is the count of episodes in Grey's Anatomy season 14?,0.8394,PASS
+test191,who proposed evolution in 1859 as the basis of biological development,The basis for biological development was proposed to be evolution in 1859.,0.9608,PASS
+test191,who proposed evolution in 1859 as the basis of biological development,"In 1859, he introduced the concept of evolution as the foundation of biological development.",0.9274,PASS
+test191,who proposed evolution in 1859 as the basis of biological development,"In 1859, he put forward the idea of evolution as the foundation for biological development.",0.9222,PASS
+test192,does the jungle book take place in india,Is the jungle book set in India?,0.9074,PASS
+test192,does the jungle book take place in india,Does the jungle book take place in India?,0.9421,PASS
+test192,does the jungle book take place in india,Is the jungle book situated in India?,0.9204,PASS
+test208,who wrote the song what child is this,Who wrote the song 'What Child Is This?',0.9032,PASS
+test208,who wrote the song what child is this,Who is the writer of 'What Child Is This?',0.7498,REVIEW
+test208,who wrote the song what child is this,Who composed the song 'What Child Is This?',0.9005,PASS
+test213,who won the most mvp awards in the nba,Who was the NBA player with the highest number of mvp awards?,0.8701,PASS
+test213,who won the most mvp awards in the nba,Who was the NBA player with the highest number of multiple mvp awards?,0.8453,PASS
+test213,who won the most mvp awards in the nba,Who was the top-earning mvp in the NBA?,0.8614,PASS
+test216,patents to produce and sell inventions are conveyed by the federal government for a period​ of,Patents for the creation and sale of inventions are granted by the federal government for a limited time.,0.8478,PASS
+test216,patents to produce and sell inventions are conveyed by the federal government for a period​ of,Patents for the production and sale of inventions are granted by the federal government for a limited time.,0.8564,PASS
+test216,patents to produce and sell inventions are conveyed by the federal government for a period​ of,Patents to produce and sell inventions are granted by the federal government for a limited time.,0.8627,PASS
+test226,the most stable mineral at the earth's surface,The mineral that is the most enduring at the surface of the earth.,0.7891,PASS
+test226,the most stable mineral at the earth's surface,"At the surface of the earth, the mineral is the most stable.",0.9405,PASS
+test226,the most stable mineral at the earth's surface,The mineral that is the most dependable at the surface of the earth.,0.8099,PASS
+test228,how many games in a row have the uconn women's basketball team won,What is the number of consecutive wins won by the UConn women's basketball team?,0.7509,PASS
+test228,how many games in a row have the uconn women's basketball team won,What is the number of consecutive wins won by the University of Connecticut's women's basketball team?,0.6569,REVIEW
+test228,how many games in a row have the uconn women's basketball team won,What is the number of consecutive wins won by the UConn women's basketball team in games?,0.749,REVIEW
+test229,when did scotland last qualify for world cup,When was Scotland's last opportunity to qualify for the World Cup?,0.8083,PASS
+test229,when did scotland last qualify for world cup,When was Scotland's last chance to qualify for the World Cup?,0.8065,PASS
+test229,when did scotland last qualify for world cup,When was Scotland last represented in a world cup?,0.7667,PASS
+test231,who plays the main character in hacksaw ridge,Who is the lead in the hacksaw ridge movie?,0.8208,PASS
+test231,who plays the main character in hacksaw ridge,Who is the central figure in the hacksaw ridge plot?,0.7233,REVIEW
+test231,who plays the main character in hacksaw ridge,Who is the lead in the hacksaw ridge plot?,0.7775,PASS
+test243,where did the titanic sink at what ocean,Where did the Titanic sank?,0.8052,PASS
+test243,where did the titanic sink at what ocean,In which ocean did the Titanic submerge?,0.7978,PASS
+test243,where did the titanic sink at what ocean,Where did the titanic submerge in?,0.6768,REVIEW
+test254,the concept of micro financing was developed by who in 1976,"In 1976, who developed the concept of micro financing.",0.9781,PASS
+test254,the concept of micro financing was developed by who in 1976,The concept of micro financing was created by who in 1976.,0.9777,PASS
+test254,the concept of micro financing was developed by who in 1976,"In 1976, who came up with the idea of micro financing.",0.9378,PASS
+test256,when is the world consumer right day celebrated,At what point is the world consumer right day commemorated?,0.8864,PASS
+test256,when is the world consumer right day celebrated,At what point is the world consumer right day recognized?,0.8435,PASS
+test256,when is the world consumer right day celebrated,When is the day of the world consumer right?,0.8489,PASS
+test273,when is star wars the force awakens set,When is the movie 'Star Wars: The Force Awakens' set?,0.8862,PASS
+test273,when is star wars the force awakens set,In what time period does 'Star Wars: The Force Awakens' take place?,0.7763,PASS
+test273,when is star wars the force awakens set,What is the timeline setting of 'Star Wars: The Force Awakens'?,0.7747,PASS
+test282,who did the chiefs play in the playoffs,Which team did the chiefs play in the playoffs?,0.8726,PASS
+test282,who did the chiefs play in the playoffs,Who were the chiefs players in the playoffs?,0.7911,PASS
+test282,who did the chiefs play in the playoffs,Which team played against the chiefs in the playoffs?,0.8392,PASS
+test291,what does the adrenal gland produce that is necessary for the sympathetic nervous system to function,The adrenal gland's production is crucial for the functioning of the sympathetic nervous system.,0.9325,PASS
+test291,what does the adrenal gland produce that is necessary for the sympathetic nervous system to function,The adrenal gland's production is essential for the functioning of the sympathetic nervous system.,0.9482,PASS
+test291,what does the adrenal gland produce that is necessary for the sympathetic nervous system to function,The adrenal gland's production is crucial for the sympathetic nervous system's functioning.,0.9299,PASS
+test294,who was the oldest man elected president of usa,Who was the oldest man elected president of the United States?,0.922,PASS
+test294,who was the oldest man elected president of usa,Which man was the oldest at the time of his election as US president?,0.9081,PASS
+test294,who was the oldest man elected president of usa,Who holds the record for being the oldest man elected US president?,0.8601,PASS
+test308,a synonym for the content component of communication is,A different expression for the content aspect of communication is .,0.8341,PASS
+test308,a synonym for the content component of communication is,A term used to describe the content aspect of communication.,0.8648,PASS
+test308,a synonym for the content component of communication is,A synonym for the content component of communication is .,0.9918,PASS
+test311,where do the sharks play in san jose,In which areas of San Jose can the sharks be found to play?,0.8964,PASS
+test311,where do the sharks play in san jose,Where can one spot sharks in San Diego?,0.6913,REVIEW
+test311,where do the sharks play in san jose,In which areas of San Diego do sharks tend to gather?,0.6855,REVIEW
+test312,where are more than half your bones located,Where can more than half of your bones be found?,0.8668,PASS
+test312,where are more than half your bones located,In what part of your body can more than half of your bones be found?,0.8484,PASS
+test312,where are more than half your bones located,In what location can more than half of your bones be found?,0.8839,PASS
+test315,who dies in the beginning of deathly hallows part 1,Who perishes at the commencement of Deathly Hallows Part 1?,0.7132,REVIEW
+test315,who dies in the beginning of deathly hallows part 1,Who dies at the start of Deathly Hallows Part 1?,0.9042,PASS
+test315,who dies in the beginning of deathly hallows part 1,The individual who passes away at the start of Deathly Hallows Part 1?,0.7997,PASS
+test317,who wrote the music phantom of the opera,Who penned the music phantom of the opera?,0.9392,PASS
+test317,who wrote the music phantom of the opera,Who was the composer of the music phantom of the opera?,0.9146,PASS
+test317,who wrote the music phantom of the opera,Who authored the music phantom of the opera?,0.9139,PASS
+test318,who represented the state of tennessee in the scopes trial,Which individual represented the state of Tennessee in the scope of the lawsuit?,0.7143,REVIEW
+test318,who represented the state of tennessee in the scopes trial,The individual who represented the state of Tennessee in the trial.,0.7898,PASS
+test318,who represented the state of tennessee in the scopes trial,Which individual represented the state of Tennessee in the trial?,0.7966,PASS
+test327,what river is associated with the city of rome,Which river is connected to Rome as a city?,0.9232,PASS
+test327,what river is associated with the city of rome,Which river is linked to Rome as a city?,0.9378,PASS
+test327,what river is associated with the city of rome,The city of Rome is linked to which river?,0.9679,PASS
+test332,who played miss wheeler in carry on teacher,The individual who acted as Miss Wheeler in the carry on teacher program.,0.8874,PASS
+test332,who played miss wheeler in carry on teacher,The performer of Miss Wheeler in a carry on teacher role.,0.8847,PASS
+test332,who played miss wheeler in carry on teacher,The individual who acted as Miss Wheeler in the carry on teacher role?,0.8472,PASS
+test337,what are the colors of the netherlands flag,What are the flag colors of the Netherlands?,0.8986,PASS
+test337,what are the colors of the netherlands flag,The flag of the Netherlands consists of which colors?,0.9547,PASS
+test337,what are the colors of the netherlands flag,What are the official colors of the netherlands flag?,0.9092,PASS
+test347,when did the us dollar leave the gold standard,At what point did the US dollar deviate from the gold standard?,0.9243,PASS
+test347,when did the us dollar leave the gold standard,At what point did the US dollar transition from the gold standard to a new standard?,0.8959,PASS
+test347,when did the us dollar leave the gold standard,When did the US dollar transition from the gold standard to a new standard?,0.9084,PASS
+test348,where did the smashing pumpkins get their name,"What is the origin of the name ""smashed pumpkins""?",0.73,REVIEW
+test348,where did the smashing pumpkins get their name,"What is the etymology of the term ""smashed pumpkins""?",0.6762,REVIEW
+test348,where did the smashing pumpkins get their name,How did the name of the smashing pumpkins come about?,0.8581,PASS
+test363,what is the main industry in the canadian shield,Which industry dominates the Canadian Shield?,0.9044,PASS
+test363,what is the main industry in the canadian shield,What is the primary sector in the Canadian shield?,0.7729,PASS
+test363,what is the main industry in the canadian shield,Which industry is the most significant in the Canadian Shield?,0.9175,PASS
+test369,who wrote the song to make you feel my love,Who wrote the song 'To Make You Feel My Love'?,0.8622,PASS
+test369,who wrote the song to make you feel my love,Who is the songwriter of 'To Make You Feel My Love'?,0.7882,PASS
+test369,who wrote the song to make you feel my love,Who composed the song 'To Make You Feel My Love'?,0.8538,PASS
+test371,where did immigrants enter the us on the west coast,The west coast of the United States was the entry point for immigrants.,0.8815,PASS
+test371,where did immigrants enter the us on the west coast,What was the origin of immigrants arriving in the US on the west coast?,0.8501,PASS
+test371,where did immigrants enter the us on the west coast,The west coast marks the entry point for immigrants into the US.,0.8815,PASS
+test375,what is the lead singers name of staind,Who is the lead singer of Staind?,0.8792,PASS
+test375,what is the lead singers name of staind,What is the name of Staind's lead vocalist?,0.8809,PASS
+test375,what is the lead singers name of staind,Who serves as the lead vocalist for the band Staind?,0.8744,PASS
+test379,who is considered the pioneer of the roman typeface,Who is recognized as the originator of the Roman typeface?,0.8997,PASS
+test379,who is considered the pioneer of the roman typeface,Who is credited with inventing the Roman typeface?,0.8788,PASS
+test379,who is considered the pioneer of the roman typeface,Who is known as the originator of the Roman typeface?,0.9029,PASS
+test383,who spoke the words ich bin ein berliner,"Who uttered the words ""ich bin ein berliner""?",0.9061,PASS
+test383,who spoke the words ich bin ein berliner,Who uttered the words ich bin ein berliner?,0.9329,PASS
+test383,who spoke the words ich bin ein berliner,"Who was the one who said ""ich bin ein berliner""?",0.9028,PASS
+test387,where did the queen's crown come from,What is the source of the queen's crown?,0.8641,PASS
+test387,where did the queen's crown come from,From where did the queen's crown derive?,0.9186,PASS
+test387,where did the queen's crown come from,From where did the queen's crown originate?,0.914,PASS
+test395,who painted the world famous painting the last supper,Who painted the famous artwork 'The Last Supper'?,0.9198,PASS
+test395,who painted the world famous painting the last supper,Which artist created the painting 'The Last Supper'?,0.8821,PASS
+test395,who painted the world famous painting the last supper,Who is the painter of 'The Last Supper'?,0.8394,PASS
+test397,atlantic ocean's shape is similar to which english alphabet,The shape of the Atlantic ocean is reminiscent of the English alphabet.,0.9192,PASS
+test397,atlantic ocean's shape is similar to which english alphabet,The shape of the Atlantic ocean can be compared to the English alphabet.,0.9219,PASS
+test397,atlantic ocean's shape is similar to which english alphabet,The shape of the Atlantic ocean is comparable to that of the English alphabet.,0.9473,PASS
+test400,what is the name given to the common currency to the european union,What is the term used to refer to the currency that forms the basis of the European Union?,0.7874,PASS
+test400,what is the name given to the common currency to the european union,What is the term used to refer to the currency that is used in the European Union?,0.8317,PASS
+test400,what is the name given to the common currency to the european union,What is the term used to refer to the currency that forms part of the European Union?,0.8208,PASS
+test404,is there a 4th book in the kane chronicles,Is there a fourth book in the Kane Chronicles?,0.9813,PASS
+test404,is there a 4th book in the kane chronicles,Can we find the fourth book in the Kane Chronicles?,0.943,PASS
+test404,is there a 4th book in the kane chronicles,Can we find a fourth book in the Kane Chronicles?,0.9576,PASS
+test407,the actual name of the confederate force at gettysburg was,"The actual name of the confederate troops stationed in Pittsburgh was ""Confederatesburg.""",0.6859,REVIEW
+test407,the actual name of the confederate force at gettysburg was,The confederate army's official name at gettysburg was the true name.,0.8781,PASS
+test407,the actual name of the confederate force at gettysburg was,The confederate army's official name at gettysburg was the actual name.,0.9093,PASS
+test408,what is the name for the ch3coo- ion,What is the term used to describe the ch3coo- ion?,0.906,PASS
+test408,what is the name for the ch3coo- ion,What is the label given to the ch3coo- ion?,0.8719,PASS
+test408,what is the name for the ch3coo- ion,What is the designation for the ch3coo- ion?,0.9176,PASS
+test410,who is darrell brother in the walking dead,Who is Daryl Dixon's brother in The Walking Dead?,0.712,REVIEW
+test410,who is darrell brother in the walking dead,What is the name of Daryl's brother in The Walking Dead?,0.7038,REVIEW
+test410,who is darrell brother in the walking dead,Which character is the brother of Daryl Dixon in The Walking Dead?,0.7109,REVIEW
+test412,number 4 in roman numerals on clock faces,Clock faces show a number 4 in Roman numerals.,0.9447,PASS
+test412,number 4 in roman numerals on clock faces,The number 4 in Roman numerals is present on both sides of clocks.,0.8841,PASS
+test412,number 4 in roman numerals on clock faces,Clock faces have the number 4 in Roman numerals.,0.9404,PASS
+test413,the general term for software that is designed to damage disable or steal data is,The term used to describe software that is designed to disable or steal data.,0.9398,PASS
+test413,the general term for software that is designed to damage disable or steal data is,The term used to describe software that is designed to disable or encrypt data.,0.784,PASS
+test413,the general term for software that is designed to damage disable or steal data is,"Software that is designed to disable or steal data is commonly referred to as ""unauthorized software"".",0.8486,PASS
+test417,who played kelly taylor's mom on 90210,Who was the performer on 90210 who played the role of Kelly Taylor's mother?,0.9177,PASS
+test417,who played kelly taylor's mom on 90210,Who was the actress that played the role of Kelly Taylor's mother on 90210?,0.9204,PASS
+test417,who played kelly taylor's mom on 90210,Who was the actress that played Kelly Taylor's mother on the hit series 90210?,0.9229,PASS
+test418,who does the voice of alistair in dragon age,Who is the voice behind Alistair in Dragon Age?,0.9266,PASS
+test418,who does the voice of alistair in dragon age,Who is the voice behind Alistair's voice in Dragon Age?,0.8994,PASS
+test418,who does the voice of alistair in dragon age,Who voices Alistair in Dragon Age?,0.9262,PASS
+test419,what nfl coach has the most wins ever,Who holds the record for the most wins by an nfl coach in history?,0.9045,PASS
+test419,what nfl coach has the most wins ever,Who holds the record for the most wins scored by an nfl coach?,0.8755,PASS
+test419,what nfl coach has the most wins ever,Which nfl coach holds the record for the most wins ever recorded?,0.9137,PASS
+test423,who is the song diamonds and rust about,Who is the artist behind the song Diamonds and rust?,0.8214,PASS
+test423,who is the song diamonds and rust about,What is the name of the song with diamonds and rust?,0.8527,PASS
+test423,who is the song diamonds and rust about,Who is the writer of the diamonds and rust song?,0.8065,PASS
+test424,who played the oldest brother in 7th heaven,Which actor played the oldest brother in the TV series '7th Heaven'?,0.9567,PASS
+test424,who played the oldest brother in 7th heaven,Who portrayed the eldest brother in '7th Heaven'?,0.9235,PASS
+test424,who played the oldest brother in 7th heaven,What is the name of the actor who played the oldest brother in '7th Heaven'?,0.9342,PASS
+test426,where was the war of the planet of the apes filmed,Where on the planet of the apes was the filming of the ape war done?,0.8564,PASS
+test426,where was the war of the planet of the apes filmed,In what location was the planet of the apes combat filmed?,0.8553,PASS
+test426,where was the war of the planet of the apes filmed,Where on the planet of the apes was the filming of the war done?,0.8505,PASS
+test430,which term is used to identify having official power to act,What is the term used to describe the possession of official authority to act?,0.7558,PASS
+test430,which term is used to identify having official power to act,What is the term used to refer to the possession of official authority to act?,0.7526,PASS
+test430,which term is used to identify having official power to act,What is the term used to describe having official authority to act?,0.828,PASS
+test442,how many death stars are there in star wars,What is the count of dead stars in the universe of star wars?,0.7901,PASS
+test442,how many death stars are there in star wars,What is the number of dead stars in the universe of star wars?,0.8068,PASS
+test442,how many death stars are there in star wars,What is the count of death stars in the universe of star wars?,0.8609,PASS
+test452,when does season 8 of vampire diaries come out,What is the release date for season 8 of vampire diaries?,0.8638,PASS
+test452,when does season 8 of vampire diaries come out,What is the release date of vampire diaries season 8?,0.865,PASS
+test452,when does season 8 of vampire diaries come out,When will vampire diaries season 8 be available?,0.8909,PASS
+test454,when did harry potter and the sorcerers stone take place,When did the events of Harry Potter and the Sorcerer's Stone happen?,0.8195,PASS
+test454,when did harry potter and the sorcerers stone take place,When did the events of Harry Potter and the Sorcerer's Stone occur?,0.832,PASS
+test454,when did harry potter and the sorcerers stone take place,When did the events of Harry Potter and the Sorcerer's Stone take place?,0.8661,PASS
+test462,where is the suez canal located on a map,"On a map, the location of the suez canal is indicated.",0.9436,PASS
+test462,where is the suez canal located on a map,"On a map, the location of the suez canal is shown.",0.9481,PASS
+test462,where is the suez canal located on a map,"On the map, the location of the suez canal is indicated.",0.9455,PASS
+test464,how much square feet is a basketball court,What is the square footage of a basketball court?,0.8918,PASS
+test464,how much square feet is a basketball court,How many square feet does a basketball court contain?,0.8891,PASS
+test464,how much square feet is a basketball court,What is the size of a basketball court in square feet?,0.894,PASS
+test466,who sings i can't take my eyes off of you,Who sang the song 'Can't Take My Eyes Off You'?,0.8504,PASS
+test466,who sings i can't take my eyes off of you,Which singer performed 'Can't Take My Eyes Off You'?,0.8775,PASS
+test466,who sings i can't take my eyes off of you,Who is the artist behind the song 'Can't Take My Eyes Off You'?,0.8089,PASS

@@ -1,0 +1,1902 @@
+{
+  "test1_original": {
+    "source_id": "test1",
+    "type": "original"
+  },
+  "test1_para1": {
+    "source_id": "test1",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test1_para2": {
+    "source_id": "test1",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test1_para3": {
+    "source_id": "test1",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test11_original": {
+    "source_id": "test11",
+    "type": "original"
+  },
+  "test11_para1": {
+    "source_id": "test11",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test11_para2": {
+    "source_id": "test11",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test11_para3": {
+    "source_id": "test11",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test16_original": {
+    "source_id": "test16",
+    "type": "original"
+  },
+  "test16_para1": {
+    "source_id": "test16",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test16_para2": {
+    "source_id": "test16",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test16_para3": {
+    "source_id": "test16",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test19_original": {
+    "source_id": "test19",
+    "type": "original"
+  },
+  "test19_para1": {
+    "source_id": "test19",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test19_para2": {
+    "source_id": "test19",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test19_para3": {
+    "source_id": "test19",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test20_original": {
+    "source_id": "test20",
+    "type": "original"
+  },
+  "test20_para1": {
+    "source_id": "test20",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test20_para2": {
+    "source_id": "test20",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test20_para3": {
+    "source_id": "test20",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test21_original": {
+    "source_id": "test21",
+    "type": "original"
+  },
+  "test21_para1": {
+    "source_id": "test21",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test21_para2": {
+    "source_id": "test21",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test21_para3": {
+    "source_id": "test21",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test31_original": {
+    "source_id": "test31",
+    "type": "original"
+  },
+  "test31_para1": {
+    "source_id": "test31",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test31_para2": {
+    "source_id": "test31",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test31_para3": {
+    "source_id": "test31",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test47_original": {
+    "source_id": "test47",
+    "type": "original"
+  },
+  "test47_para1": {
+    "source_id": "test47",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test47_para2": {
+    "source_id": "test47",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test47_para3": {
+    "source_id": "test47",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test50_original": {
+    "source_id": "test50",
+    "type": "original"
+  },
+  "test50_para1": {
+    "source_id": "test50",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test50_para2": {
+    "source_id": "test50",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test50_para3": {
+    "source_id": "test50",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test53_original": {
+    "source_id": "test53",
+    "type": "original"
+  },
+  "test53_para1": {
+    "source_id": "test53",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test53_para2": {
+    "source_id": "test53",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test53_para3": {
+    "source_id": "test53",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test57_original": {
+    "source_id": "test57",
+    "type": "original"
+  },
+  "test57_para1": {
+    "source_id": "test57",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test57_para2": {
+    "source_id": "test57",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test57_para3": {
+    "source_id": "test57",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test58_original": {
+    "source_id": "test58",
+    "type": "original"
+  },
+  "test58_para1": {
+    "source_id": "test58",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test58_para2": {
+    "source_id": "test58",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test58_para3": {
+    "source_id": "test58",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test60_original": {
+    "source_id": "test60",
+    "type": "original"
+  },
+  "test60_para1": {
+    "source_id": "test60",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test60_para2": {
+    "source_id": "test60",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test60_para3": {
+    "source_id": "test60",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test62_original": {
+    "source_id": "test62",
+    "type": "original"
+  },
+  "test62_para1": {
+    "source_id": "test62",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test62_para2": {
+    "source_id": "test62",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test62_para3": {
+    "source_id": "test62",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test64_original": {
+    "source_id": "test64",
+    "type": "original"
+  },
+  "test64_para1": {
+    "source_id": "test64",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test64_para2": {
+    "source_id": "test64",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test64_para3": {
+    "source_id": "test64",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test70_original": {
+    "source_id": "test70",
+    "type": "original"
+  },
+  "test70_para1": {
+    "source_id": "test70",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test70_para2": {
+    "source_id": "test70",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test70_para3": {
+    "source_id": "test70",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test75_original": {
+    "source_id": "test75",
+    "type": "original"
+  },
+  "test75_para1": {
+    "source_id": "test75",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test75_para2": {
+    "source_id": "test75",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test75_para3": {
+    "source_id": "test75",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test77_original": {
+    "source_id": "test77",
+    "type": "original"
+  },
+  "test77_para1": {
+    "source_id": "test77",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test77_para2": {
+    "source_id": "test77",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test77_para3": {
+    "source_id": "test77",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test79_original": {
+    "source_id": "test79",
+    "type": "original"
+  },
+  "test79_para1": {
+    "source_id": "test79",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test79_para2": {
+    "source_id": "test79",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test79_para3": {
+    "source_id": "test79",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test82_original": {
+    "source_id": "test82",
+    "type": "original"
+  },
+  "test82_para1": {
+    "source_id": "test82",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test82_para2": {
+    "source_id": "test82",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test82_para3": {
+    "source_id": "test82",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test87_original": {
+    "source_id": "test87",
+    "type": "original"
+  },
+  "test87_para1": {
+    "source_id": "test87",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test87_para2": {
+    "source_id": "test87",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test87_para3": {
+    "source_id": "test87",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test88_original": {
+    "source_id": "test88",
+    "type": "original"
+  },
+  "test88_para1": {
+    "source_id": "test88",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test88_para2": {
+    "source_id": "test88",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test88_para3": {
+    "source_id": "test88",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test90_original": {
+    "source_id": "test90",
+    "type": "original"
+  },
+  "test90_para1": {
+    "source_id": "test90",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test90_para2": {
+    "source_id": "test90",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test90_para3": {
+    "source_id": "test90",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test94_original": {
+    "source_id": "test94",
+    "type": "original"
+  },
+  "test94_para1": {
+    "source_id": "test94",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test94_para2": {
+    "source_id": "test94",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test94_para3": {
+    "source_id": "test94",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test106_original": {
+    "source_id": "test106",
+    "type": "original"
+  },
+  "test106_para1": {
+    "source_id": "test106",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test106_para2": {
+    "source_id": "test106",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test106_para3": {
+    "source_id": "test106",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test107_original": {
+    "source_id": "test107",
+    "type": "original"
+  },
+  "test107_para1": {
+    "source_id": "test107",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test107_para2": {
+    "source_id": "test107",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test107_para3": {
+    "source_id": "test107",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test110_original": {
+    "source_id": "test110",
+    "type": "original"
+  },
+  "test110_para1": {
+    "source_id": "test110",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test110_para2": {
+    "source_id": "test110",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test110_para3": {
+    "source_id": "test110",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test113_original": {
+    "source_id": "test113",
+    "type": "original"
+  },
+  "test113_para1": {
+    "source_id": "test113",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test113_para2": {
+    "source_id": "test113",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test113_para3": {
+    "source_id": "test113",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test120_original": {
+    "source_id": "test120",
+    "type": "original"
+  },
+  "test120_para1": {
+    "source_id": "test120",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test120_para2": {
+    "source_id": "test120",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test120_para3": {
+    "source_id": "test120",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test127_original": {
+    "source_id": "test127",
+    "type": "original"
+  },
+  "test127_para1": {
+    "source_id": "test127",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test127_para2": {
+    "source_id": "test127",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test127_para3": {
+    "source_id": "test127",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test130_original": {
+    "source_id": "test130",
+    "type": "original"
+  },
+  "test130_para1": {
+    "source_id": "test130",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test130_para2": {
+    "source_id": "test130",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test130_para3": {
+    "source_id": "test130",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test138_original": {
+    "source_id": "test138",
+    "type": "original"
+  },
+  "test138_para1": {
+    "source_id": "test138",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test138_para2": {
+    "source_id": "test138",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test138_para3": {
+    "source_id": "test138",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test145_original": {
+    "source_id": "test145",
+    "type": "original"
+  },
+  "test145_para1": {
+    "source_id": "test145",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test145_para2": {
+    "source_id": "test145",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test145_para3": {
+    "source_id": "test145",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test152_original": {
+    "source_id": "test152",
+    "type": "original"
+  },
+  "test152_para1": {
+    "source_id": "test152",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test152_para2": {
+    "source_id": "test152",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test152_para3": {
+    "source_id": "test152",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test156_original": {
+    "source_id": "test156",
+    "type": "original"
+  },
+  "test156_para1": {
+    "source_id": "test156",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test156_para2": {
+    "source_id": "test156",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test156_para3": {
+    "source_id": "test156",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test157_original": {
+    "source_id": "test157",
+    "type": "original"
+  },
+  "test157_para1": {
+    "source_id": "test157",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test157_para2": {
+    "source_id": "test157",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test157_para3": {
+    "source_id": "test157",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test159_original": {
+    "source_id": "test159",
+    "type": "original"
+  },
+  "test159_para1": {
+    "source_id": "test159",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test159_para2": {
+    "source_id": "test159",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test159_para3": {
+    "source_id": "test159",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test161_original": {
+    "source_id": "test161",
+    "type": "original"
+  },
+  "test161_para1": {
+    "source_id": "test161",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test161_para2": {
+    "source_id": "test161",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test161_para3": {
+    "source_id": "test161",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test164_original": {
+    "source_id": "test164",
+    "type": "original"
+  },
+  "test164_para1": {
+    "source_id": "test164",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test164_para2": {
+    "source_id": "test164",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test164_para3": {
+    "source_id": "test164",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test165_original": {
+    "source_id": "test165",
+    "type": "original"
+  },
+  "test165_para1": {
+    "source_id": "test165",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test165_para2": {
+    "source_id": "test165",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test165_para3": {
+    "source_id": "test165",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test166_original": {
+    "source_id": "test166",
+    "type": "original"
+  },
+  "test166_para1": {
+    "source_id": "test166",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test166_para2": {
+    "source_id": "test166",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test166_para3": {
+    "source_id": "test166",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test177_original": {
+    "source_id": "test177",
+    "type": "original"
+  },
+  "test177_para1": {
+    "source_id": "test177",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test177_para2": {
+    "source_id": "test177",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test177_para3": {
+    "source_id": "test177",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test185_original": {
+    "source_id": "test185",
+    "type": "original"
+  },
+  "test185_para1": {
+    "source_id": "test185",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test185_para2": {
+    "source_id": "test185",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test185_para3": {
+    "source_id": "test185",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test188_original": {
+    "source_id": "test188",
+    "type": "original"
+  },
+  "test188_para1": {
+    "source_id": "test188",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test188_para2": {
+    "source_id": "test188",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test188_para3": {
+    "source_id": "test188",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test191_original": {
+    "source_id": "test191",
+    "type": "original"
+  },
+  "test191_para1": {
+    "source_id": "test191",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test191_para2": {
+    "source_id": "test191",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test191_para3": {
+    "source_id": "test191",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test192_original": {
+    "source_id": "test192",
+    "type": "original"
+  },
+  "test192_para1": {
+    "source_id": "test192",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test192_para2": {
+    "source_id": "test192",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test192_para3": {
+    "source_id": "test192",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test208_original": {
+    "source_id": "test208",
+    "type": "original"
+  },
+  "test208_para1": {
+    "source_id": "test208",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test208_para2": {
+    "source_id": "test208",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test208_para3": {
+    "source_id": "test208",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test213_original": {
+    "source_id": "test213",
+    "type": "original"
+  },
+  "test213_para1": {
+    "source_id": "test213",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test213_para2": {
+    "source_id": "test213",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test213_para3": {
+    "source_id": "test213",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test216_original": {
+    "source_id": "test216",
+    "type": "original"
+  },
+  "test216_para1": {
+    "source_id": "test216",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test216_para2": {
+    "source_id": "test216",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test216_para3": {
+    "source_id": "test216",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test226_original": {
+    "source_id": "test226",
+    "type": "original"
+  },
+  "test226_para1": {
+    "source_id": "test226",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test226_para2": {
+    "source_id": "test226",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test226_para3": {
+    "source_id": "test226",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test228_original": {
+    "source_id": "test228",
+    "type": "original"
+  },
+  "test228_para1": {
+    "source_id": "test228",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test228_para2": {
+    "source_id": "test228",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test228_para3": {
+    "source_id": "test228",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test229_original": {
+    "source_id": "test229",
+    "type": "original"
+  },
+  "test229_para1": {
+    "source_id": "test229",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test229_para2": {
+    "source_id": "test229",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test229_para3": {
+    "source_id": "test229",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test231_original": {
+    "source_id": "test231",
+    "type": "original"
+  },
+  "test231_para1": {
+    "source_id": "test231",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test231_para2": {
+    "source_id": "test231",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test231_para3": {
+    "source_id": "test231",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test243_original": {
+    "source_id": "test243",
+    "type": "original"
+  },
+  "test243_para1": {
+    "source_id": "test243",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test243_para2": {
+    "source_id": "test243",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test243_para3": {
+    "source_id": "test243",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test254_original": {
+    "source_id": "test254",
+    "type": "original"
+  },
+  "test254_para1": {
+    "source_id": "test254",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test254_para2": {
+    "source_id": "test254",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test254_para3": {
+    "source_id": "test254",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test256_original": {
+    "source_id": "test256",
+    "type": "original"
+  },
+  "test256_para1": {
+    "source_id": "test256",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test256_para2": {
+    "source_id": "test256",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test256_para3": {
+    "source_id": "test256",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test273_original": {
+    "source_id": "test273",
+    "type": "original"
+  },
+  "test273_para1": {
+    "source_id": "test273",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test273_para2": {
+    "source_id": "test273",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test273_para3": {
+    "source_id": "test273",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test282_original": {
+    "source_id": "test282",
+    "type": "original"
+  },
+  "test282_para1": {
+    "source_id": "test282",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test282_para2": {
+    "source_id": "test282",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test282_para3": {
+    "source_id": "test282",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test291_original": {
+    "source_id": "test291",
+    "type": "original"
+  },
+  "test291_para1": {
+    "source_id": "test291",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test291_para2": {
+    "source_id": "test291",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test291_para3": {
+    "source_id": "test291",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test294_original": {
+    "source_id": "test294",
+    "type": "original"
+  },
+  "test294_para1": {
+    "source_id": "test294",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test294_para2": {
+    "source_id": "test294",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test294_para3": {
+    "source_id": "test294",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test308_original": {
+    "source_id": "test308",
+    "type": "original"
+  },
+  "test308_para1": {
+    "source_id": "test308",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test308_para2": {
+    "source_id": "test308",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test308_para3": {
+    "source_id": "test308",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test311_original": {
+    "source_id": "test311",
+    "type": "original"
+  },
+  "test311_para1": {
+    "source_id": "test311",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test311_para2": {
+    "source_id": "test311",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test311_para3": {
+    "source_id": "test311",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test312_original": {
+    "source_id": "test312",
+    "type": "original"
+  },
+  "test312_para1": {
+    "source_id": "test312",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test312_para2": {
+    "source_id": "test312",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test312_para3": {
+    "source_id": "test312",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test315_original": {
+    "source_id": "test315",
+    "type": "original"
+  },
+  "test315_para1": {
+    "source_id": "test315",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test315_para2": {
+    "source_id": "test315",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test315_para3": {
+    "source_id": "test315",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test317_original": {
+    "source_id": "test317",
+    "type": "original"
+  },
+  "test317_para1": {
+    "source_id": "test317",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test317_para2": {
+    "source_id": "test317",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test317_para3": {
+    "source_id": "test317",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test318_original": {
+    "source_id": "test318",
+    "type": "original"
+  },
+  "test318_para1": {
+    "source_id": "test318",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test318_para2": {
+    "source_id": "test318",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test318_para3": {
+    "source_id": "test318",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test327_original": {
+    "source_id": "test327",
+    "type": "original"
+  },
+  "test327_para1": {
+    "source_id": "test327",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test327_para2": {
+    "source_id": "test327",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test327_para3": {
+    "source_id": "test327",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test332_original": {
+    "source_id": "test332",
+    "type": "original"
+  },
+  "test332_para1": {
+    "source_id": "test332",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test332_para2": {
+    "source_id": "test332",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test332_para3": {
+    "source_id": "test332",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test337_original": {
+    "source_id": "test337",
+    "type": "original"
+  },
+  "test337_para1": {
+    "source_id": "test337",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test337_para2": {
+    "source_id": "test337",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test337_para3": {
+    "source_id": "test337",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test347_original": {
+    "source_id": "test347",
+    "type": "original"
+  },
+  "test347_para1": {
+    "source_id": "test347",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test347_para2": {
+    "source_id": "test347",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test347_para3": {
+    "source_id": "test347",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test348_original": {
+    "source_id": "test348",
+    "type": "original"
+  },
+  "test348_para1": {
+    "source_id": "test348",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test348_para2": {
+    "source_id": "test348",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test348_para3": {
+    "source_id": "test348",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test363_original": {
+    "source_id": "test363",
+    "type": "original"
+  },
+  "test363_para1": {
+    "source_id": "test363",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test363_para2": {
+    "source_id": "test363",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test363_para3": {
+    "source_id": "test363",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test369_original": {
+    "source_id": "test369",
+    "type": "original"
+  },
+  "test369_para1": {
+    "source_id": "test369",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test369_para2": {
+    "source_id": "test369",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test369_para3": {
+    "source_id": "test369",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test371_original": {
+    "source_id": "test371",
+    "type": "original"
+  },
+  "test371_para1": {
+    "source_id": "test371",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test371_para2": {
+    "source_id": "test371",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test371_para3": {
+    "source_id": "test371",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test375_original": {
+    "source_id": "test375",
+    "type": "original"
+  },
+  "test375_para1": {
+    "source_id": "test375",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test375_para2": {
+    "source_id": "test375",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test375_para3": {
+    "source_id": "test375",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test379_original": {
+    "source_id": "test379",
+    "type": "original"
+  },
+  "test379_para1": {
+    "source_id": "test379",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test379_para2": {
+    "source_id": "test379",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test379_para3": {
+    "source_id": "test379",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test383_original": {
+    "source_id": "test383",
+    "type": "original"
+  },
+  "test383_para1": {
+    "source_id": "test383",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test383_para2": {
+    "source_id": "test383",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test383_para3": {
+    "source_id": "test383",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test387_original": {
+    "source_id": "test387",
+    "type": "original"
+  },
+  "test387_para1": {
+    "source_id": "test387",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test387_para2": {
+    "source_id": "test387",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test387_para3": {
+    "source_id": "test387",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test395_original": {
+    "source_id": "test395",
+    "type": "original"
+  },
+  "test395_para1": {
+    "source_id": "test395",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test395_para2": {
+    "source_id": "test395",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test395_para3": {
+    "source_id": "test395",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test397_original": {
+    "source_id": "test397",
+    "type": "original"
+  },
+  "test397_para1": {
+    "source_id": "test397",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test397_para2": {
+    "source_id": "test397",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test397_para3": {
+    "source_id": "test397",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test400_original": {
+    "source_id": "test400",
+    "type": "original"
+  },
+  "test400_para1": {
+    "source_id": "test400",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test400_para2": {
+    "source_id": "test400",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test400_para3": {
+    "source_id": "test400",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test404_original": {
+    "source_id": "test404",
+    "type": "original"
+  },
+  "test404_para1": {
+    "source_id": "test404",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test404_para2": {
+    "source_id": "test404",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test404_para3": {
+    "source_id": "test404",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test407_original": {
+    "source_id": "test407",
+    "type": "original"
+  },
+  "test407_para1": {
+    "source_id": "test407",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test407_para2": {
+    "source_id": "test407",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test407_para3": {
+    "source_id": "test407",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test408_original": {
+    "source_id": "test408",
+    "type": "original"
+  },
+  "test408_para1": {
+    "source_id": "test408",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test408_para2": {
+    "source_id": "test408",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test408_para3": {
+    "source_id": "test408",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test410_original": {
+    "source_id": "test410",
+    "type": "original"
+  },
+  "test410_para1": {
+    "source_id": "test410",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test410_para2": {
+    "source_id": "test410",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test410_para3": {
+    "source_id": "test410",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test412_original": {
+    "source_id": "test412",
+    "type": "original"
+  },
+  "test412_para1": {
+    "source_id": "test412",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test412_para2": {
+    "source_id": "test412",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test412_para3": {
+    "source_id": "test412",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test413_original": {
+    "source_id": "test413",
+    "type": "original"
+  },
+  "test413_para1": {
+    "source_id": "test413",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test413_para2": {
+    "source_id": "test413",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test413_para3": {
+    "source_id": "test413",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test417_original": {
+    "source_id": "test417",
+    "type": "original"
+  },
+  "test417_para1": {
+    "source_id": "test417",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test417_para2": {
+    "source_id": "test417",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test417_para3": {
+    "source_id": "test417",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test418_original": {
+    "source_id": "test418",
+    "type": "original"
+  },
+  "test418_para1": {
+    "source_id": "test418",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test418_para2": {
+    "source_id": "test418",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test418_para3": {
+    "source_id": "test418",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test419_original": {
+    "source_id": "test419",
+    "type": "original"
+  },
+  "test419_para1": {
+    "source_id": "test419",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test419_para2": {
+    "source_id": "test419",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test419_para3": {
+    "source_id": "test419",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test423_original": {
+    "source_id": "test423",
+    "type": "original"
+  },
+  "test423_para1": {
+    "source_id": "test423",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test423_para2": {
+    "source_id": "test423",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test423_para3": {
+    "source_id": "test423",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test424_original": {
+    "source_id": "test424",
+    "type": "original"
+  },
+  "test424_para1": {
+    "source_id": "test424",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test424_para2": {
+    "source_id": "test424",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test424_para3": {
+    "source_id": "test424",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test426_original": {
+    "source_id": "test426",
+    "type": "original"
+  },
+  "test426_para1": {
+    "source_id": "test426",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test426_para2": {
+    "source_id": "test426",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test426_para3": {
+    "source_id": "test426",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test430_original": {
+    "source_id": "test430",
+    "type": "original"
+  },
+  "test430_para1": {
+    "source_id": "test430",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test430_para2": {
+    "source_id": "test430",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test430_para3": {
+    "source_id": "test430",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test442_original": {
+    "source_id": "test442",
+    "type": "original"
+  },
+  "test442_para1": {
+    "source_id": "test442",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test442_para2": {
+    "source_id": "test442",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test442_para3": {
+    "source_id": "test442",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test452_original": {
+    "source_id": "test452",
+    "type": "original"
+  },
+  "test452_para1": {
+    "source_id": "test452",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test452_para2": {
+    "source_id": "test452",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test452_para3": {
+    "source_id": "test452",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test454_original": {
+    "source_id": "test454",
+    "type": "original"
+  },
+  "test454_para1": {
+    "source_id": "test454",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test454_para2": {
+    "source_id": "test454",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test454_para3": {
+    "source_id": "test454",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test462_original": {
+    "source_id": "test462",
+    "type": "original"
+  },
+  "test462_para1": {
+    "source_id": "test462",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test462_para2": {
+    "source_id": "test462",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test462_para3": {
+    "source_id": "test462",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test464_original": {
+    "source_id": "test464",
+    "type": "original"
+  },
+  "test464_para1": {
+    "source_id": "test464",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test464_para2": {
+    "source_id": "test464",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test464_para3": {
+    "source_id": "test464",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  },
+  "test466_original": {
+    "source_id": "test466",
+    "type": "original"
+  },
+  "test466_para1": {
+    "source_id": "test466",
+    "type": "paraphrase",
+    "paraphrase_number": 1
+  },
+  "test466_para2": {
+    "source_id": "test466",
+    "type": "paraphrase",
+    "paraphrase_number": 2
+  },
+  "test466_para3": {
+    "source_id": "test466",
+    "type": "paraphrase",
+    "paraphrase_number": 3
+  }
+}

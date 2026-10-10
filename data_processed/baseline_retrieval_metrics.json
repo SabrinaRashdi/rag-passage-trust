@@ -1,0 +1,15 @@
+{
+  "dataset": "NQ",
+  "model": "Contriever",
+  "evaluation_questions": 100,
+  "retrieval_depth": 100,
+  "metrics": {
+    "hit@1": 0.06,
+    "hit@5": 0.18,
+    "hit@10": 0.31,
+    "hit@100": 0.79,
+    "recall@10": 0.2783,
+    "recall@100": 0.7667,
+    "mrr@10": 0.1142
+  }
+}

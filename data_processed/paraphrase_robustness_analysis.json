@@ -1,0 +1,2124 @@
+{
+  "summary": {
+    "hit10": {
+      "improved": 15,
+      "worsened": 12,
+      "unchanged": 73,
+      "mean_difference": 0.01999999999999999
+    },
+    "hit100": {
+      "improved": 9,
+      "worsened": 2,
+      "unchanged": 89,
+      "mean_difference": 0.04666666666666666
+    },
+    "mrr10": {
+      "improved": 22,
+      "worsened": 15,
+      "unchanged": 63,
+      "mean_difference": 0.014691798941798942
+    }
+  },
+  "per_question": [
+    {
+      "source_id": "test1",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test1",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test1",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test11",
+      "metric": "hit10",
+      "original": 1,
+      "paraphrase_mean": 0.0,
+      "difference": -1.0
+    },
+    {
+      "source_id": "test11",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test11",
+      "metric": "mrr10",
+      "original": 0.1,
+      "paraphrase_mean": 0.0,
+      "difference": -0.1
+    },
+    {
+      "source_id": "test16",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test16",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test16",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test19",
+      "metric": "hit10",
+      "original": 1,
+      "paraphrase_mean": 0.0,
+      "difference": -1.0
+    },
+    {
+      "source_id": "test19",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test19",
+      "metric": "mrr10",
+      "original": 0.25,
+      "paraphrase_mean": 0.0,
+      "difference": -0.25
+    },
+    {
+      "source_id": "test20",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test20",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test20",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test21",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test21",
+      "metric": "hit100",
+      "original": 0,
+      "paraphrase_mean": 0.3333333333333333,
+      "difference": 0.3333333333333333
+    },
+    {
+      "source_id": "test21",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test31",
+      "metric": "hit10",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test31",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test31",
+      "metric": "mrr10",
+      "original": 1.0,
+      "paraphrase_mean": 0.5555555555555555,
+      "difference": -0.44444444444444453
+    },
+    {
+      "source_id": "test47",
+      "metric": "hit10",
+      "original": 1,
+      "paraphrase_mean": 0.6666666666666666,
+      "difference": -0.33333333333333337
+    },
+    {
+      "source_id": "test47",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test47",
+      "metric": "mrr10",
+      "original": 0.16666666666666666,
+      "paraphrase_mean": 0.6666666666666666,
+      "difference": 0.5
+    },
+    {
+      "source_id": "test50",
+      "metric": "hit10",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test50",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test50",
+      "metric": "mrr10",
+      "original": 0.14285714285714285,
+      "paraphrase_mean": 0.15925925925925927,
+      "difference": 0.016402116402116418
+    },
+    {
+      "source_id": "test53",
+      "metric": "hit10",
+      "original": 1,
+      "paraphrase_mean": 0.6666666666666666,
+      "difference": -0.33333333333333337
+    },
+    {
+      "source_id": "test53",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test53",
+      "metric": "mrr10",
+      "original": 0.14285714285714285,
+      "paraphrase_mean": 0.11428571428571428,
+      "difference": -0.028571428571428567
+    },
+    {
+      "source_id": "test57",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.6666666666666666,
+      "difference": 0.6666666666666666
+    },
+    {
+      "source_id": "test57",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test57",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.14814814814814814,
+      "difference": 0.14814814814814814
+    },
+    {
+      "source_id": "test58",
+      "metric": "hit10",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test58",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test58",
+      "metric": "mrr10",
+      "original": 0.3333333333333333,
+      "paraphrase_mean": 0.2888888888888889,
+      "difference": -0.0444444444444444
+    },
+    {
+      "source_id": "test60",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test60",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test60",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test62",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test62",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test62",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test64",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test64",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test64",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test70",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test70",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 0.0,
+      "difference": -1.0
+    },
+    {
+      "source_id": "test70",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test75",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test75",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test75",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test77",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test77",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test77",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test79",
+      "metric": "hit10",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test79",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test79",
+      "metric": "mrr10",
+      "original": 0.125,
+      "paraphrase_mean": 0.38888888888888884,
+      "difference": 0.26388888888888884
+    },
+    {
+      "source_id": "test82",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test82",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test82",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test87",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test87",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test87",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test88",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test88",
+      "metric": "hit100",
+      "original": 0,
+      "paraphrase_mean": 0.6666666666666666,
+      "difference": 0.6666666666666666
+    },
+    {
+      "source_id": "test88",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test90",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test90",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test90",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test94",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test94",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test94",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test106",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test106",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test106",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test107",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test107",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test107",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test110",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 1.0,
+      "difference": 1.0
+    },
+    {
+      "source_id": "test110",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test110",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 1.0,
+      "difference": 1.0
+    },
+    {
+      "source_id": "test113",
+      "metric": "hit10",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test113",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test113",
+      "metric": "mrr10",
+      "original": 0.3333333333333333,
+      "paraphrase_mean": 0.4444444444444444,
+      "difference": 0.1111111111111111
+    },
+    {
+      "source_id": "test120",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test120",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test120",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test127",
+      "metric": "hit10",
+      "original": 1,
+      "paraphrase_mean": 0.0,
+      "difference": -1.0
+    },
+    {
+      "source_id": "test127",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test127",
+      "metric": "mrr10",
+      "original": 0.25,
+      "paraphrase_mean": 0.0,
+      "difference": -0.25
+    },
+    {
+      "source_id": "test130",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.3333333333333333,
+      "difference": 0.3333333333333333
+    },
+    {
+      "source_id": "test130",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test130",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.08333333333333333,
+      "difference": 0.08333333333333333
+    },
+    {
+      "source_id": "test138",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test138",
+      "metric": "hit100",
+      "original": 0,
+      "paraphrase_mean": 0.3333333333333333,
+      "difference": 0.3333333333333333
+    },
+    {
+      "source_id": "test138",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test145",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test145",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test145",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test152",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test152",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test152",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test156",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test156",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test156",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test157",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test157",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test157",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test159",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test159",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test159",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test161",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test161",
+      "metric": "hit100",
+      "original": 0,
+      "paraphrase_mean": 1.0,
+      "difference": 1.0
+    },
+    {
+      "source_id": "test161",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test164",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test164",
+      "metric": "hit100",
+      "original": 0,
+      "paraphrase_mean": 0.6666666666666666,
+      "difference": 0.6666666666666666
+    },
+    {
+      "source_id": "test164",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test165",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.3333333333333333,
+      "difference": 0.3333333333333333
+    },
+    {
+      "source_id": "test165",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test165",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.041666666666666664,
+      "difference": 0.041666666666666664
+    },
+    {
+      "source_id": "test166",
+      "metric": "hit10",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test166",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test166",
+      "metric": "mrr10",
+      "original": 0.5,
+      "paraphrase_mean": 0.4444444444444444,
+      "difference": -0.05555555555555558
+    },
+    {
+      "source_id": "test177",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test177",
+      "metric": "hit100",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test177",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test185",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test185",
+      "metric": "hit100",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test185",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test188",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test188",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test188",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test191",
+      "metric": "hit10",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test191",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test191",
+      "metric": "mrr10",
+      "original": 0.5,
+      "paraphrase_mean": 0.611111111111111,
+      "difference": 0.11111111111111105
+    },
+    {
+      "source_id": "test192",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.6666666666666666,
+      "difference": 0.6666666666666666
+    },
+    {
+      "source_id": "test192",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test192",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.3703703703703704,
+      "difference": 0.3703703703703704
+    },
+    {
+      "source_id": "test208",
+      "metric": "hit10",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test208",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test208",
+      "metric": "mrr10",
+      "original": 0.5,
+      "paraphrase_mean": 0.5,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test213",
+      "metric": "hit10",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test213",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test213",
+      "metric": "mrr10",
+      "original": 0.25,
+      "paraphrase_mean": 0.31666666666666665,
+      "difference": 0.06666666666666665
+    },
+    {
+      "source_id": "test216",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test216",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test216",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test226",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test226",
+      "metric": "hit100",
+      "original": 0,
+      "paraphrase_mean": 0.6666666666666666,
+      "difference": 0.6666666666666666
+    },
+    {
+      "source_id": "test226",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test228",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.3333333333333333,
+      "difference": 0.3333333333333333
+    },
+    {
+      "source_id": "test228",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test228",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.03333333333333333,
+      "difference": 0.03333333333333333
+    },
+    {
+      "source_id": "test229",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.3333333333333333,
+      "difference": 0.3333333333333333
+    },
+    {
+      "source_id": "test229",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test229",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.03333333333333333,
+      "difference": 0.03333333333333333
+    },
+    {
+      "source_id": "test231",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test231",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test231",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test243",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test243",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test243",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test254",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.6666666666666666,
+      "difference": 0.6666666666666666
+    },
+    {
+      "source_id": "test254",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test254",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.08888888888888889,
+      "difference": 0.08888888888888889
+    },
+    {
+      "source_id": "test256",
+      "metric": "hit10",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test256",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test256",
+      "metric": "mrr10",
+      "original": 0.5,
+      "paraphrase_mean": 0.38888888888888884,
+      "difference": -0.11111111111111116
+    },
+    {
+      "source_id": "test273",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test273",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test273",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test282",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.3333333333333333,
+      "difference": 0.3333333333333333
+    },
+    {
+      "source_id": "test282",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test282",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.03333333333333333,
+      "difference": 0.03333333333333333
+    },
+    {
+      "source_id": "test291",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test291",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test291",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test294",
+      "metric": "hit10",
+      "original": 1,
+      "paraphrase_mean": 0.3333333333333333,
+      "difference": -0.6666666666666667
+    },
+    {
+      "source_id": "test294",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test294",
+      "metric": "mrr10",
+      "original": 0.3333333333333333,
+      "paraphrase_mean": 0.06666666666666667,
+      "difference": -0.26666666666666666
+    },
+    {
+      "source_id": "test308",
+      "metric": "hit10",
+      "original": 1,
+      "paraphrase_mean": 0.6666666666666666,
+      "difference": -0.33333333333333337
+    },
+    {
+      "source_id": "test308",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test308",
+      "metric": "mrr10",
+      "original": 0.5,
+      "paraphrase_mean": 0.13888888888888887,
+      "difference": -0.36111111111111116
+    },
+    {
+      "source_id": "test311",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test311",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test311",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test312",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test312",
+      "metric": "hit100",
+      "original": 0,
+      "paraphrase_mean": 1.0,
+      "difference": 1.0
+    },
+    {
+      "source_id": "test312",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test315",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.6666666666666666,
+      "difference": 0.6666666666666666
+    },
+    {
+      "source_id": "test315",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test315",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.07407407407407407,
+      "difference": 0.07407407407407407
+    },
+    {
+      "source_id": "test317",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test317",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test317",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test318",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test318",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test318",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test327",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test327",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test327",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test332",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test332",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test332",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test337",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test337",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test337",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test347",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test347",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test347",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test348",
+      "metric": "hit10",
+      "original": 1,
+      "paraphrase_mean": 0.6666666666666666,
+      "difference": -0.33333333333333337
+    },
+    {
+      "source_id": "test348",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test348",
+      "metric": "mrr10",
+      "original": 0.1111111111111111,
+      "paraphrase_mean": 0.08095238095238096,
+      "difference": -0.03015873015873015
+    },
+    {
+      "source_id": "test363",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test363",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test363",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test369",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test369",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test369",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test371",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test371",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test371",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test375",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.3333333333333333,
+      "difference": 0.3333333333333333
+    },
+    {
+      "source_id": "test375",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test375",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.037037037037037035,
+      "difference": 0.037037037037037035
+    },
+    {
+      "source_id": "test379",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 1.0,
+      "difference": 1.0
+    },
+    {
+      "source_id": "test379",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test379",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.21666666666666667,
+      "difference": 0.21666666666666667
+    },
+    {
+      "source_id": "test383",
+      "metric": "hit10",
+      "original": 1,
+      "paraphrase_mean": 0.6666666666666666,
+      "difference": -0.33333333333333337
+    },
+    {
+      "source_id": "test383",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test383",
+      "metric": "mrr10",
+      "original": 0.1,
+      "paraphrase_mean": 0.06666666666666667,
+      "difference": -0.03333333333333334
+    },
+    {
+      "source_id": "test387",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test387",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test387",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test395",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test395",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test395",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test397",
+      "metric": "hit10",
+      "original": 1,
+      "paraphrase_mean": 0.0,
+      "difference": -1.0
+    },
+    {
+      "source_id": "test397",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test397",
+      "metric": "mrr10",
+      "original": 0.25,
+      "paraphrase_mean": 0.0,
+      "difference": -0.25
+    },
+    {
+      "source_id": "test400",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test400",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test400",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test404",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test404",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test404",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test407",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test407",
+      "metric": "hit100",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test407",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test408",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test408",
+      "metric": "hit100",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test408",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test410",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test410",
+      "metric": "hit100",
+      "original": 0,
+      "paraphrase_mean": 1.0,
+      "difference": 1.0
+    },
+    {
+      "source_id": "test410",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test412",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test412",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test412",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test413",
+      "metric": "hit10",
+      "original": 1,
+      "paraphrase_mean": 0.0,
+      "difference": -1.0
+    },
+    {
+      "source_id": "test413",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test413",
+      "metric": "mrr10",
+      "original": 0.125,
+      "paraphrase_mean": 0.0,
+      "difference": -0.125
+    },
+    {
+      "source_id": "test417",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test417",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test417",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test418",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 1.0,
+      "difference": 1.0
+    },
+    {
+      "source_id": "test418",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test418",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.13227513227513227,
+      "difference": 0.13227513227513227
+    },
+    {
+      "source_id": "test419",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test419",
+      "metric": "hit100",
+      "original": 0,
+      "paraphrase_mean": 0.6666666666666666,
+      "difference": 0.6666666666666666
+    },
+    {
+      "source_id": "test419",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test423",
+      "metric": "hit10",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test423",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test423",
+      "metric": "mrr10",
+      "original": 0.16666666666666666,
+      "paraphrase_mean": 0.3,
+      "difference": 0.13333333333333333
+    },
+    {
+      "source_id": "test424",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test424",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test424",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test426",
+      "metric": "hit10",
+      "original": 1,
+      "paraphrase_mean": 0.6666666666666666,
+      "difference": -0.33333333333333337
+    },
+    {
+      "source_id": "test426",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test426",
+      "metric": "mrr10",
+      "original": 0.14285714285714285,
+      "paraphrase_mean": 0.125,
+      "difference": -0.01785714285714285
+    },
+    {
+      "source_id": "test430",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 1.0,
+      "difference": 1.0
+    },
+    {
+      "source_id": "test430",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test430",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.16984126984126982,
+      "difference": 0.16984126984126982
+    },
+    {
+      "source_id": "test442",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test442",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 0.3333333333333333,
+      "difference": -0.6666666666666667
+    },
+    {
+      "source_id": "test442",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test452",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 1.0,
+      "difference": 1.0
+    },
+    {
+      "source_id": "test452",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test452",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.1726190476190476,
+      "difference": 0.1726190476190476
+    },
+    {
+      "source_id": "test454",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test454",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test454",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test462",
+      "metric": "hit10",
+      "original": 0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test462",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test462",
+      "metric": "mrr10",
+      "original": 0.0,
+      "paraphrase_mean": 0.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test464",
+      "metric": "hit10",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test464",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test464",
+      "metric": "mrr10",
+      "original": 1.0,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test466",
+      "metric": "hit10",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test466",
+      "metric": "hit100",
+      "original": 1,
+      "paraphrase_mean": 1.0,
+      "difference": 0.0
+    },
+    {
+      "source_id": "test466",
+      "metric": "mrr10",
+      "original": 0.3333333333333333,
+      "paraphrase_mean": 0.3333333333333333,
+      "difference": 0.0
+    }
+  ]
+}
