@@ -5,7 +5,9 @@ from pathlib import Path
 
 import numpy as np
 
-from src.trust import answer_f1, consistency_drop, pool_rank, z_score
+from src.trust import (
+    answer_f1, consistency_drop, pool_rank, set_density, z_score,
+)
 
 DATA_DIR = Path("data_processed")
 TRUST_DIR = DATA_DIR / "trust"
@@ -116,22 +118,13 @@ def main():
         # how close a passage is to its nearest neighbours in the candidate
         # set. Poisoned passages for one question tend to form a dense group.
         group_embeddings = np.stack(group_embeddings)
-        group_embeddings = group_embeddings / np.linalg.norm(
-            group_embeddings, axis=1, keepdims=True
-        )
 
         for attack in ATTACKS:
             members = [
                 i for i, r in enumerate(group_rows)
                 if r["attack"] in ("none", attack)
             ]
-            similarity = (
-                group_embeddings[members] @ group_embeddings[members].T
-            )
-            np.fill_diagonal(similarity, -np.inf)
-            density = np.sort(similarity, axis=1)[:, -SET_NEIGHBOURS:].mean(
-                axis=1
-            )
+            density = set_density(group_embeddings[members], SET_NEIGHBOURS)
 
             for r in group_rows:
                 r[f"set_density_{attack}"] = float("nan")

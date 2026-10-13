@@ -40,6 +40,20 @@ def consistency_drop(original, paraphrases):
     return np.asarray(original, dtype=float) - paraphrases.mean(axis=1)
 
 
+def set_density(embeddings, neighbours):
+    """
+    Set-level signal: mean cosine similarity of each passage to its nearest
+    neighbours inside one candidate set. Poisoned passages written for the
+    same question tend to sit close together.
+
+    embeddings: array (n, d), returns array (n,)
+    """
+    unit = embeddings / np.linalg.norm(embeddings, axis=1, keepdims=True)
+    similarity = unit @ unit.T
+    np.fill_diagonal(similarity, -np.inf)
+    return np.sort(similarity, axis=1)[:, -neighbours:].mean(axis=1)
+
+
 def normalize_answer(text):
     """SQuAD-style answer normalisation: lower case, no punctuation/articles."""
     text = text.lower()
