@@ -1,0 +1,103 @@
+{
+  "device": "mps",
+  "machine": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "questions": 100,
+  "pool_size": 9872,
+  "candidates_per_question": 15.85,
+  "stages": {
+    "encode_original": {
+      "median_ms": 16.78724999874248,
+      "mean_ms": 35.88517212025181,
+      "p95_ms": 156.86820835289817
+    },
+    "encode_paraphrases": {
+      "median_ms": 18.72464549887809,
+      "mean_ms": 26.661850049640634,
+      "p95_ms": 54.54569405155779
+    },
+    "search_original": {
+      "median_ms": 0.7006039995758329,
+      "mean_ms": 0.712787500306149,
+      "p95_ms": 0.7927951963210944
+    },
+    "search_paraphrases": {
+      "median_ms": 1.9942710023315158,
+      "mean_ms": 2.026026230159914,
+      "p95_ms": 2.2543163522641407
+    },
+    "generate_paraphrases": {
+      "median_ms": 564.769978998811,
+      "mean_ms": 573.1440887100325,
+      "p95_ms": 817.8430982505232
+    },
+    "reader_original": {
+      "median_ms": 959.7877289997996,
+      "mean_ms": 986.5292050002608,
+      "p95_ms": 1586.5902568457386
+    },
+    "reader_paraphrases": {
+      "median_ms": 3576.124333001644,
+      "mean_ms": 3975.3229899904545,
+      "p95_ms": 6962.347128848341
+    },
+    "perplexity": {
+      "median_ms": 1061.9175620013266,
+      "mean_ms": 1212.4511441495997,
+      "p95_ms": 2010.4416868460246
+    },
+    "set_density": {
+      "median_ms": 2.111292000336107,
+      "mean_ms": 2.336097899824381,
+      "p95_ms": 5.479521148299682
+    }
+  },
+  "plain_retrieval": {
+    "median_ms": 17.488895999122178,
+    "mean_ms": 36.59795962055796,
+    "p95_ms": 157.5612827527946
+  },
+  "extra_cost": {
+    "retrieval_z": {
+      "median_ms": 0.0,
+      "mean_ms": 0.0,
+      "p95_ms": 0.0,
+      "times_plain_retrieval": 0.0
+    },
+    "shortness": {
+      "median_ms": 0.0,
+      "mean_ms": 0.0,
+      "p95_ms": 0.0,
+      "times_plain_retrieval": 0.0
+    },
+    "set_density": {
+      "median_ms": 2.111292000336107,
+      "mean_ms": 2.336097899824381,
+      "p95_ms": 5.479521148299682,
+      "times_plain_retrieval": 0.12072185691092675
+    },
+    "perplexity": {
+      "median_ms": 1061.9175620013266,
+      "mean_ms": 1212.4511441495997,
+      "p95_ms": 2010.4416868460246,
+      "times_plain_retrieval": 60.71953095579204
+    },
+    "reader_support": {
+      "median_ms": 959.7877289997996,
+      "mean_ms": 986.5292050002608,
+      "p95_ms": 1586.5902568457386,
+      "times_plain_retrieval": 54.879835127841936
+    },
+    "z_drop_k3": {
+      "median_ms": 583.9893750089686,
+      "mean_ms": 601.8319649898331,
+      "p95_ms": 894.6692729012284,
+      "times_plain_retrieval": 33.392009137585404
+    },
+    "combined_consistency": {
+      "median_ms": 5267.311624502327,
+      "mean_ms": 5563.684159980548,
+      "p95_ms": 9103.85577084453,
+      "times_plain_retrieval": 301.18033892858125
+    }
+  }
+}
