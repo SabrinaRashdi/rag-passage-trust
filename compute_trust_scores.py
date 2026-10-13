@@ -1,0 +1,149 @@
+
+import csv
+import json
+from pathlib import Path
+
+import numpy as np
+
+from src.trust import consistency_drop, pool_rank, z_score
+
+DATA_DIR = Path("data_processed")
+TRUST_DIR = DATA_DIR / "trust"
+
+EVAL_PATH = TRUST_DIR / "eval_passages.jsonl"
+DATASET_PATH = DATA_DIR / "nq_passage_dataset.json"
+OUTPUT_PATH = TRUST_DIR / "trust_scores.csv"
+
+VARIANTS = ("original", "para1", "para2", "para3")
+
+
+def load_embeddings(name):
+    embeddings = np.load(TRUST_DIR / f"{name}_embeddings.npy")
+
+    with (TRUST_DIR / f"{name}_embedding_ids.json").open(
+        encoding="utf-8"
+    ) as f:
+        ids = json.load(f)
+
+    assert len(ids) == len(embeddings)
+    return embeddings, {pid: i for i, pid in enumerate(ids)}
+
+
+def main():
+    pool_emb, pool_index = load_embeddings("pool")
+    adv_emb, adv_index = load_embeddings("poisoned")
+    query_emb, query_index = load_embeddings("query")
+
+    with EVAL_PATH.open(encoding="utf-8") as f:
+        passages = [json.loads(line) for line in f]
+
+    by_query = {}
+
+    for passage in passages:
+        by_query.setdefault(passage["query_id"], []).append(passage)
+
+    rows = []
+
+    for qid, group in by_query.items():
+        # Dot-product scores of every query variant against the clean pool.
+        variants = np.stack([
+            query_emb[query_index[f"{qid}_{v}"]] for v in VARIANTS
+        ])
+        clean_scores = variants @ pool_emb.T
+
+        for passage in group:
+            if passage["label"] == 1:
+                embedding = adv_emb[adv_index[passage["passage_id"]]]
+                own_index = None
+            else:
+                own_index = pool_index[passage["doc_id"]]
+                embedding = pool_emb[own_index]
+
+            scores = variants @ embedding
+
+            row = {
+                "passage_id": passage["passage_id"],
+                "query_id": qid,
+                "label": passage["label"],
+                "attack": passage["attack"],
+                "is_gold": int(passage["is_gold"]),
+                "retrieved_top10": int(passage["retrieved_top10"]),
+            }
+
+            for v, name in enumerate(VARIANTS):
+                row[f"score_{name}"] = float(scores[v])
+                row[f"z_{name}"] = z_score(scores[v], clean_scores[v])
+                row[f"rank_{name}"] = pool_rank(
+                    scores[v], clean_scores[v].copy(), own_index
+                )
+
+            rows.append(row)
+
+    # Relevance-consistency signals using all three paraphrases.
+    paraphrases = VARIANTS[1:]
+
+    def column(prefix, names):
+        return np.array([[r[f"{prefix}_{n}"] for n in names] for r in rows])
+
+    raw_drop = consistency_drop(
+        column("score", ["original"])[:, 0], column("score", paraphrases)
+    )
+    z_drop = consistency_drop(
+        column("z", ["original"])[:, 0], column("z", paraphrases)
+    )
+    # Ranks are compared on a log scale; a drop means a worse (higher) rank.
+    rank_drop = -consistency_drop(
+        np.log(column("rank", ["original"])[:, 0]),
+        np.log(column("rank", paraphrases)),
+    )
+
+    for i, row in enumerate(rows):
+        row["raw_drop"] = float(raw_drop[i])
+        row["z_drop"] = float(z_drop[i])
+        row["rank_drop"] = float(rank_drop[i])
+
+    with OUTPUT_PATH.open("w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=rows[0].keys())
+        writer.writeheader()
+        writer.writerows(rows)
+
+    # Check our embeddings against the scores saved by PoisonedRAG.
+    with DATASET_PATH.open(encoding="utf-8") as f:
+        dataset = json.load(f)
+
+    saved = {
+        f"{qid}::{p['doc_id']}": p["score"]
+        for qid, record in dataset.items()
+        for p in record["benign_passages"]
+    }
+    differences = np.array([
+        abs(r["score_original"] - saved[r["passage_id"]])
+        for r in rows if r["passage_id"] in saved
+    ])
+
+    print("\nTRUST SCORES")
+    print("=" * 45)
+    print("Questions:", len(by_query))
+    print("Scored passages:", len(rows))
+    print("Check against PoisonedRAG scores:")
+    print("  passages compared:", len(differences))
+    print("  max difference:", float(differences.max()))
+    print("  mean difference:", float(differences.mean()))
+
+    for name, values in (
+        ("raw_drop", raw_drop), ("z_drop", z_drop), ("rank_drop", rank_drop)
+    ):
+        print(f"\nMean {name}:")
+        for label, attack in (
+            ("benign", "none"),
+            ("poisoned (prefix)", "prefix"),
+            ("poisoned (noprefix)", "noprefix"),
+        ):
+            mask = np.array([r["attack"] == attack for r in rows])
+            print(f"  {label}: {values[mask].mean():.4f}")
+
+    print("\nOutput file:", OUTPUT_PATH)
+
+
+if __name__ == "__main__":
+    main()
