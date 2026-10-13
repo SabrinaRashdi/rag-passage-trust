@@ -1,3 +1,7 @@
+import re
+import string
+from collections import Counter
+
 import numpy as np
 
 # Number of top clean passages used to describe how a query "normally" scores.
@@ -34,3 +38,29 @@ def consistency_drop(original, paraphrases):
     """
     paraphrases = np.asarray(paraphrases, dtype=float)
     return np.asarray(original, dtype=float) - paraphrases.mean(axis=1)
+
+
+def normalize_answer(text):
+    """SQuAD-style answer normalisation: lower case, no punctuation/articles."""
+    text = text.lower()
+    text = "".join(ch for ch in text if ch not in set(string.punctuation))
+    text = re.sub(r"\b(a|an|the)\b", " ", text)
+    return " ".join(text.split())
+
+
+def answer_f1(answer_a, answer_b):
+    """Token-level F1 overlap between two extracted answers (0 to 1)."""
+    tokens_a = normalize_answer(answer_a).split()
+    tokens_b = normalize_answer(answer_b).split()
+
+    if not tokens_a or not tokens_b:
+        return float(tokens_a == tokens_b)
+
+    common = sum((Counter(tokens_a) & Counter(tokens_b)).values())
+
+    if common == 0:
+        return 0.0
+
+    precision = common / len(tokens_a)
+    recall = common / len(tokens_b)
+    return 2 * precision * recall / (precision + recall)

@@ -5,12 +5,13 @@ from pathlib import Path
 
 import numpy as np
 
-from src.trust import consistency_drop, pool_rank, z_score
+from src.trust import answer_f1, consistency_drop, pool_rank, z_score
 
 DATA_DIR = Path("data_processed")
 TRUST_DIR = DATA_DIR / "trust"
 
 EVAL_PATH = TRUST_DIR / "eval_passages.jsonl"
+ANSWER_SUPPORT_PATH = TRUST_DIR / "answer_support.csv"
 DATASET_PATH = DATA_DIR / "nq_passage_dataset.json"
 OUTPUT_PATH = TRUST_DIR / "trust_scores.csv"
 
@@ -36,6 +37,10 @@ def main():
 
     with EVAL_PATH.open(encoding="utf-8") as f:
         passages = [json.loads(line) for line in f]
+
+    # Reader outputs from generate_answer_support.py
+    with ANSWER_SUPPORT_PATH.open(encoding="utf-8") as f:
+        reader = {row["passage_id"]: row for row in csv.DictReader(f)}
 
     by_query = {}
 
@@ -77,6 +82,18 @@ def main():
                     scores[v], clean_scores[v].copy(), own_index
                 )
 
+            # Answer support: does the passage give an answer, and is it
+            # the same answer for every wording of the question?
+            answers = reader[passage["passage_id"]]
+
+            for name in VARIANTS:
+                row[f"support_{name}"] = float(answers[f"support_{name}"])
+
+            for name in VARIANTS[1:]:
+                row[f"answer_f1_{name}"] = answer_f1(
+                    answers["answer_original"], answers[f"answer_{name}"]
+                )
+
             rows.append(row)
 
     # Relevance-consistency signals using all three paraphrases.
@@ -97,10 +114,18 @@ def main():
         np.log(column("rank", paraphrases)),
     )
 
+    # Answer-support consistency signals.
+    support_drop = consistency_drop(
+        column("support", ["original"])[:, 0], column("support", paraphrases)
+    )
+    answer_disagreement = 1 - column("answer_f1", paraphrases).mean(axis=1)
+
     for i, row in enumerate(rows):
         row["raw_drop"] = float(raw_drop[i])
         row["z_drop"] = float(z_drop[i])
         row["rank_drop"] = float(rank_drop[i])
+        row["support_drop"] = float(support_drop[i])
+        row["answer_disagreement"] = float(answer_disagreement[i])
 
     with OUTPUT_PATH.open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=rows[0].keys())
@@ -131,7 +156,10 @@ def main():
     print("  mean difference:", float(differences.mean()))
 
     for name, values in (
-        ("raw_drop", raw_drop), ("z_drop", z_drop), ("rank_drop", rank_drop)
+        ("raw_drop", raw_drop), ("z_drop", z_drop), ("rank_drop", rank_drop),
+        ("support_original", column("support", ["original"])[:, 0]),
+        ("support_drop", support_drop),
+        ("answer_disagreement", answer_disagreement),
     ):
         print(f"\nMean {name}:")
         for label, attack in (
@@ -141,6 +169,9 @@ def main():
         ):
             mask = np.array([r["attack"] == attack for r in rows])
             print(f"  {label}: {values[mask].mean():.4f}")
+
+        gold = np.array([r["is_gold"] == 1 for r in rows])
+        print(f"  benign gold only: {values[gold].mean():.4f}")
 
     print("\nOutput file:", OUTPUT_PATH)
 

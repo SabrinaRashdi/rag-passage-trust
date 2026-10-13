@@ -5,7 +5,11 @@ from pathlib import Path
 
 import numpy as np
 from scipy.stats import rankdata
+from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import average_precision_score
+from sklearn.model_selection import GroupKFold
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
 
 from src.trust import consistency_drop
 
@@ -18,7 +22,19 @@ ATTACKS = ("prefix", "noprefix")
 # Which benign passages the poisoned passages are compared against.
 NEGATIVES = ("all_benign", "gold_only")
 
+# Combined scores: logistic regression over several signals, trained and
+# tested on different questions (cross-validation grouped by question).
+COMBINATIONS = {
+    "combined_consistency": [
+        "z_drop_k3", "support_drop_k3", "answer_disagree_k3",
+    ],
+    "combined_with_retrieval": [
+        "z_drop_k3", "support_drop_k3", "answer_disagree_k3", "retrieval_z",
+    ],
+}
+
 TARGET_FPR = 0.05
+N_FOLDS = 5
 N_BOOTSTRAPS = 1000
 SEED = 42
 
@@ -40,7 +56,7 @@ def tpr_at_fpr(labels, scores, fpr=TARGET_FPR):
 
 
 def suspicion_scores(data, k):
-    """All detection scores, using the first k paraphrases."""
+    """All consistency signals, using the first k paraphrases."""
     names = PARAPHRASES[:k]
 
     def paraphrase_columns(prefix):
@@ -57,7 +73,28 @@ def suspicion_scores(data, k):
             np.log(data["rank_original"]),
             np.log(paraphrase_columns("rank")),
         ),
+        f"support_drop_k{k}": consistency_drop(
+            data["support_original"], paraphrase_columns("support")
+        ),
+        f"answer_disagree_k{k}": (
+            1 - paraphrase_columns("answer_f1").mean(axis=1)
+        ),
     }
+
+
+def cross_validated_scores(features, labels, groups):
+    """Out-of-fold scores: each question is scored by a model that never
+    saw that question during training."""
+    scores = np.zeros(len(labels))
+
+    for train, test in GroupKFold(n_splits=N_FOLDS).split(
+        features, labels, groups
+    ):
+        model = make_pipeline(StandardScaler(), LogisticRegression())
+        model.fit(features[train], labels[train])
+        scores[test] = model.decision_function(features[test])
+
+    return scores
 
 
 def main():
@@ -73,10 +110,13 @@ def main():
         for key in rows[0]
     }
 
+    labels = data["label"].astype(int)
+
     methods = {
-        # Baseline without paraphrases: the plain retrieval score.
+        # Baselines that use the original question only (no paraphrases).
         "retrieval_score": data["score_original"],
         "retrieval_z": data["z_original"],
+        "reader_support": data["support_original"],
     }
 
     for k in range(1, len(PARAPHRASES) + 1):
@@ -99,6 +139,19 @@ def main():
     results = {}
 
     for attack in ATTACKS:
+        in_attack = (data["attack"] == "none") | (data["attack"] == attack)
+        attack_methods = dict(methods)
+
+        for name, feature_names in COMBINATIONS.items():
+            features = np.stack(
+                [methods[f][in_attack] for f in feature_names], axis=1
+            )
+            combined = np.full(len(labels), np.nan)
+            combined[in_attack] = cross_validated_scores(
+                features, labels[in_attack], data["query_id"][in_attack]
+            )
+            attack_methods[name] = combined
+
         for negatives in NEGATIVES:
             benign = data["attack"] == "none"
 
@@ -106,7 +159,6 @@ def main():
                 benign = benign & (data["is_gold"] == 1)
 
             keep = benign | (data["attack"] == attack)
-            labels = data["label"].astype(int)
 
             setting = f"{attack}/{negatives}"
             results[setting] = {
@@ -115,7 +167,7 @@ def main():
                 "methods": {},
             }
 
-            for name, scores in methods.items():
+            for name, scores in attack_methods.items():
                 y, s = labels[keep], scores[keep]
 
                 # Bootstrap over questions for 95% confidence intervals.
@@ -138,20 +190,39 @@ def main():
         json.dump(results, f, indent=2)
 
     print("\nPOISONED PASSAGE DETECTION")
-    print("=" * 78)
+    print("=" * 82)
 
     for setting, result in results.items():
         print(
             f"\nSetting: {setting} "
             f"({result['poisoned']} poisoned, {result['benign']} benign)"
         )
-        print(f"{'method':<18}{'AUROC':>8}{'95% CI':>20}"
+        print(f"{'method':<26}{'AUROC':>8}{'95% CI':>20}"
               f"{'AUPRC':>9}{'TPR@5%FPR':>12}")
 
         for name, m in result["methods"].items():
+            # The k=1 and k=2 rows are shown in the ablation table below.
+            if name.endswith(("_k1", "_k2")):
+                continue
+
             ci = f"[{m['auroc_ci_95'][0]:.3f}, {m['auroc_ci_95'][1]:.3f}]"
-            print(f"{name:<18}{m['auroc']:>8.3f}{ci:>20}"
+            print(f"{name:<26}{m['auroc']:>8.3f}{ci:>20}"
                   f"{m['auprc']:>9.3f}{m['tpr_at_5pct_fpr']:>12.3f}")
+
+    print("\nABLATION: AUROC BY NUMBER OF PARAPHRASES (all benign)")
+    print("=" * 82)
+    print(f"{'signal':<20}{'attack':<12}{'k=1':>8}{'k=2':>8}{'k=3':>8}")
+
+    for signal in ("raw_drop", "z_drop", "rank_drop",
+                   "support_drop", "answer_disagree"):
+        for attack in ATTACKS:
+            values = [
+                results[f"{attack}/all_benign"]["methods"]
+                [f"{signal}_k{k}"]["auroc"]
+                for k in (1, 2, 3)
+            ]
+            print(f"{signal:<20}{attack:<12}"
+                  + "".join(f"{v:>8.3f}" for v in values))
 
     print("\nSaved to:", OUTPUT_PATH)
 
