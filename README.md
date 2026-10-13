@@ -94,6 +94,182 @@ python run.py
 ### 🐱 Your own dataset
 If you want to perform experiments on your own dataset, you could refer to **evaluate_beir.py**, prepare your dataset as the beir format and use this file to compute the retrieval scores.
 
+
+## 🔬 Paraphrase Robustness Experiment (Project Extension)
+
+### Overview
+
+This project extends the original PoisonedRAG repository by investigating the robustness of retrieval performance under query paraphrasing.
+
+The experiment examines whether semantically equivalent reformulations of a question produce consistent retrieval results. We compare retrieval performance between original questions and their paraphrased versions.
+
+### Research Objectives
+
+The experiment aims to investigate:
+
+1. Whether paraphrased queries improve or reduce retrieval performance compared with original questions.
+2. How consistently a retrieval system performs across different formulations of the same question.
+3. Whether observed retrieval performance differences are statistically significant.
+
+### Dataset and Query Preparation
+
+The experiment uses 100 original questions from the Natural Questions (NQ) dataset.
+
+Three paraphrased versions were prepared for each original question.
+
+| Component | Count |
+|---|---:|
+| Original questions | 100 |
+| Paraphrases per question | 3 |
+| Total paraphrases | 300 |
+| Total experiment queries | 400 |
+
+Paraphrase similarity was evaluated using the `sentence-transformers/all-MiniLM-L6-v2` model.
+
+Cosine similarity was calculated between each original question and its paraphrased versions to identify potentially inconsistent reformulations.
+
+Paraphrases with low similarity scores were flagged for review. Corrections were subsequently made to address identified semantic inconsistencies.
+
+The corrected paraphrase dataset was used in the final experiment.
+
+### Paraphrase Validation
+
+Semantic similarity validation was performed to assess whether paraphrased questions preserved the intended meaning of the originals.
+
+The initial validation results were:
+
+| Validation Result | Count |
+|---|---:|
+| Total paraphrases | 300 |
+| Passed similarity threshold (0.80) | 212 |
+| Flagged for review | 88 |
+
+Following corrections, an additional validation report recorded:
+
+| Validation Result | Count |
+|---|---:|
+| Total paraphrases | 300 |
+| Passed similarity threshold (0.80) | 280 |
+| Flagged for review | 20 |
+
+A separate final summary reported:
+
+- 289 automatic similarity passes.
+- 11 below-threshold paraphrases manually reviewed and accepted.
+- No remaining known semantic errors among the reviewed items.
+- Full manual auditing of all 300 paraphrases was not completed.
+
+These results represent different validation records and should not be treated as identical evaluation stages without checking their provenance.
+
+### Embedding Generation and Validation
+
+Query and passage embeddings were prepared for retrieval evaluation.
+
+The final query embedding validation confirmed:
+
+| Validation Check | Result |
+|---|---|
+| Total experiment queries | 400 |
+| Total embedding IDs | 400 |
+| Embedding matrix shape | (400, 768) |
+| Query IDs match embedding IDs | True |
+| Query ID ordering matches | True |
+| Duplicate IDs | 0 |
+| NaN values | None |
+| Infinite values | None |
+
+All 300 paraphrases in the experiment query file matched the corrected paraphrase dataset.
+
+These checks establish structural consistency between the query dataset and its embedding metadata.
+
+### Retrieval Evaluation
+
+Retrieval performance was evaluated using three metrics:
+
+- **Hit@10:** Whether at least one relevant document appears among the top 10 retrieved results.
+- **Hit@100:** Whether at least one relevant document appears among the top 100 retrieved results.
+- **MRR@10:** Mean Reciprocal Rank of the first relevant document within the top 10 results.
+
+For each original question, retrieval performance was compared against the mean performance of its three paraphrased versions.
+
+### Experimental Results
+
+The experiment evaluated 100 original questions and their corresponding paraphrases.
+
+| Metric | Improved | Worsened | Unchanged | Mean Difference |
+|---|---:|---:|---:|---:|
+| Hit@10 | 15 | 12 | 73 | +0.0200 |
+| Hit@100 | 9 | 2 | 89 | +0.0467 |
+| MRR@10 | 22 | 15 | 63 | +0.0147 |
+
+Mean differences were calculated as:
+
+`Mean Difference = Mean Paraphrase Score - Original Question Score`
+
+The results indicate small positive average retrieval performance differences across all three metrics.
+
+However, most questions showed unchanged retrieval performance, particularly for Hit@100.
+
+### Statistical Significance Testing
+
+Paired statistical significance testing was conducted across the 100 original questions.
+
+The analysis used:
+
+- Paired permutation testing.
+- Bootstrap confidence intervals.
+- A significance threshold of 0.05.
+
+| Metric | Mean Difference | Permutation p-value | 95% Bootstrap CI | Significant (p < 0.05) |
+|---|---:|---:|---|---|
+| Hit@10 | +0.0200 | 0.65283 | [-0.0533, 0.0900] | No |
+| Hit@100 | +0.0467 | 0.08919 | [-0.0000, 0.0967] | No |
+| MRR@10 | +0.0147 | 0.36046 | [-0.0135, 0.0466] | No |
+
+None of the three retrieval metrics demonstrated statistically significant improvements at the 0.05 significance level.
+
+Although paraphrased queries produced slightly higher average retrieval scores, the statistical analysis does not provide sufficient evidence of a consistent improvement.
+
+### Limitations
+
+The experiment has several limitations:
+
+1. **Dataset size:** Only 100 original questions were evaluated, limiting statistical power and generalisability.
+2. **Semantic similarity:** Embedding-based similarity scores do not guarantee semantic equivalence.
+3. **Manual validation:** Flagged paraphrases were reviewed, but a complete manual semantic audit of all 300 paraphrases was not performed.
+4. **Retrieval-only evaluation:** The experiment evaluates retrieval performance rather than final generated answer quality.
+5. **Model and dataset dependence:** Results may vary across retrieval models, datasets, and embedding configurations.
+
+### Reproducibility
+
+The following scripts support the paraphrase robustness experiment.
+
+| Script | Description |
+|---|---|
+| `generate_reworded_questions.py` | Generate paraphrased questions |
+| `validate_paraphrases.py` | Evaluate paraphrase semantic similarity |
+| `generate_passage_embeddings.py` | Generate passage embeddings |
+| `generate_query_embeddings.py` | Generate query embeddings |
+| `run_paraphrase_retrieval.py` | Execute paraphrase retrieval experiments |
+| `evaluate_paraphrase_robustness.py` | Calculate retrieval performance differences |
+| `evaluate_paraphrase_significance.py` | Perform statistical significance testing |
+
+Experimental datasets, embedding metadata, validation reports, and evaluation results are stored in `data_processed/`.
+
+### Conclusion
+
+The experiment demonstrates that retrieval performance can vary across semantically equivalent query formulations.
+
+Paraphrased queries produced slightly higher average Hit@10, Hit@100, and MRR@10 scores. However, none of these differences were statistically significant at the 0.05 level.
+
+These findings highlight the importance of evaluating retrieval robustness across multiple query formulations rather than relying exclusively on original question wording.
+
+This extension focuses on query paraphrase robustness and should be distinguished from the original PoisonedRAG knowledge corruption attack evaluation.
+
+---
+
+
+
 ## Acknowledgement
 
 * Our code used the implementation of [corpus-poisoning](https://github.com/princeton-nlp/corpus-poisoning).
