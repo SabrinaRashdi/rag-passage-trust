@@ -21,12 +21,14 @@ POISON_COUNTS = (1, 2, 3, 4, 5)
 N_DRAWS = 20
 SEED = 42
 
-# Per-passage methods: column in trust_scores.csv for each method.
+# Per-passage methods: column in trust_scores.csv and its sign
+# (-1 when a smaller value is the more suspicious one).
 PASSAGE_METHODS = {
-    "retrieval_z": "z_original",
-    "perplexity": "log_perplexity",
-    "reader_support": "support_original",
-    "z_drop_k3": "z_drop",
+    "retrieval_z": ("z_original", 1),
+    "perplexity": ("log_perplexity", 1),
+    "shortness": ("num_words", -1),
+    "reader_support": ("support_original", 1),
+    "z_drop_k3": ("z_drop", 1),
 }
 COMBINED_FEATURES = ("z_drop", "support_drop", "answer_disagreement")
 
@@ -56,7 +58,10 @@ def main():
 
     columns = {
         name: np.array([float(r[name]) for r in rows])
-        for name in set(PASSAGE_METHODS.values()) | set(COMBINED_FEATURES)
+        for name in (
+            {column for column, _ in PASSAGE_METHODS.values()}
+            | set(COMBINED_FEATURES)
+        )
     }
     combined_features = np.stack(
         [columns[name] for name in COMBINED_FEATURES], axis=1
@@ -86,8 +91,10 @@ def main():
                 kept = np.flatnonzero(keep)
                 y = labels[kept]
 
-                for name, column in PASSAGE_METHODS.items():
-                    draws[name].append(auroc(y, columns[column][kept]))
+                for name, (column, sign) in PASSAGE_METHODS.items():
+                    draws[name].append(
+                        auroc(y, sign * columns[column][kept])
+                    )
 
                 draws["combined_consistency"].append(auroc(
                     y,

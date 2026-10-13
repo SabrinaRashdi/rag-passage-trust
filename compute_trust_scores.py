@@ -110,6 +110,8 @@ def main():
                 )
 
             row["log_perplexity"] = perplexity[passage["passage_id"]]
+            # Length baseline: poisoned passages are usually short.
+            row["num_words"] = len(passage["text"].split())
 
             group_rows.append(row)
             group_embeddings.append(embedding)

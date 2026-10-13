@@ -126,6 +126,8 @@ def main():
         "retrieval_z": data["z_original"],
         "reader_support": data["support_original"],
         "perplexity": data["log_perplexity"],
+        # Shorter passages are treated as more suspicious.
+        "shortness": -data["num_words"],
     }
 
     for k in range(1, len(PARAPHRASES) + 1):
@@ -152,6 +154,17 @@ def main():
         attack_methods = dict(methods)
         # Set-level baseline: depends on which passages are in the set.
         attack_methods["set_density"] = data[f"set_density_{attack}"]
+
+        # Perplexity with the effect of length removed: the part of
+        # perplexity that a straight line on log length cannot explain.
+        # The line is fitted without using the labels.
+        log_length = np.log(data["num_words"])
+        slope, intercept = np.polyfit(
+            log_length[in_attack], data["log_perplexity"][in_attack], 1
+        )
+        attack_methods["perplexity_length_adjusted"] = (
+            data["log_perplexity"] - (slope * log_length + intercept)
+        )
 
         for name, feature_names in COMBINATIONS.items():
             features = np.stack(
