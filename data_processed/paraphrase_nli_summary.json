@@ -1,0 +1,22 @@
+{
+  "model": "FacebookAI/roberta-large-mnli",
+  "paraphrases": 300,
+  "passed": 268,
+  "pass_rate": 0.8933333333333333,
+  "failed_original_to_paraphrase": 21,
+  "failed_paraphrase_to_original": 15,
+  "questions_with_a_failed_paraphrase": 20,
+  "agreement_with_manual_review": {
+    "sanduni": {
+      "rows": 175,
+      "human_yes_rate": 0.7257142857142858,
+      "nli_yes_rate": 0.8857142857142857,
+      "agreement": 0.6914285714285714,
+      "cohen_kappa": 0.053106212424849586,
+      "human_yes_nli_yes": 114,
+      "human_yes_nli_no": 13,
+      "human_no_nli_yes": 41,
+      "human_no_nli_no": 7
+    }
+  }
+}
