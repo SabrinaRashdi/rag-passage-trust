@@ -12,10 +12,14 @@ TRUST_DIR = DATA_DIR / "trust"
 
 EVAL_PATH = TRUST_DIR / "eval_passages.jsonl"
 ANSWER_SUPPORT_PATH = TRUST_DIR / "answer_support.csv"
+PERPLEXITY_PATH = TRUST_DIR / "perplexity.csv"
 DATASET_PATH = DATA_DIR / "nq_passage_dataset.json"
 OUTPUT_PATH = TRUST_DIR / "trust_scores.csv"
 
 VARIANTS = ("original", "para1", "para2", "para3")
+ATTACKS = ("prefix", "noprefix")
+# Set-level baseline: number of nearest neighbours in the retrieved set.
+SET_NEIGHBOURS = 3
 
 
 def load_embeddings(name):
@@ -42,6 +46,13 @@ def main():
     with ANSWER_SUPPORT_PATH.open(encoding="utf-8") as f:
         reader = {row["passage_id"]: row for row in csv.DictReader(f)}
 
+    # GPT-2 perplexity from generate_perplexity.py
+    with PERPLEXITY_PATH.open(encoding="utf-8") as f:
+        perplexity = {
+            row["passage_id"]: float(row["log_perplexity"])
+            for row in csv.DictReader(f)
+        }
+
     by_query = {}
 
     for passage in passages:
@@ -55,6 +66,8 @@ def main():
             query_emb[query_index[f"{qid}_{v}"]] for v in VARIANTS
         ])
         clean_scores = variants @ pool_emb.T
+
+        group_rows, group_embeddings = [], []
 
         for passage in group:
             if passage["label"] == 1:
@@ -94,7 +107,39 @@ def main():
                     answers["answer_original"], answers[f"answer_{name}"]
                 )
 
-            rows.append(row)
+            row["log_perplexity"] = perplexity[passage["passage_id"]]
+
+            group_rows.append(row)
+            group_embeddings.append(embedding)
+
+        # Set-level baseline (in the spirit of TrustRAG's clustering step):
+        # how close a passage is to its nearest neighbours in the candidate
+        # set. Poisoned passages for one question tend to form a dense group.
+        group_embeddings = np.stack(group_embeddings)
+        group_embeddings = group_embeddings / np.linalg.norm(
+            group_embeddings, axis=1, keepdims=True
+        )
+
+        for attack in ATTACKS:
+            members = [
+                i for i, r in enumerate(group_rows)
+                if r["attack"] in ("none", attack)
+            ]
+            similarity = (
+                group_embeddings[members] @ group_embeddings[members].T
+            )
+            np.fill_diagonal(similarity, -np.inf)
+            density = np.sort(similarity, axis=1)[:, -SET_NEIGHBOURS:].mean(
+                axis=1
+            )
+
+            for r in group_rows:
+                r[f"set_density_{attack}"] = float("nan")
+
+            for i, value in zip(members, density):
+                group_rows[i][f"set_density_{attack}"] = float(value)
+
+        rows.extend(group_rows)
 
     # Relevance-consistency signals using all three paraphrases.
     paraphrases = VARIANTS[1:]

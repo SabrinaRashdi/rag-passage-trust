@@ -33,6 +33,14 @@ COMBINATIONS = {
     ],
 }
 
+# Paired comparisons of AUROC (first method minus second method).
+COMPARISONS = [
+    ("z_drop_k3", "retrieval_z"),
+    ("combined_consistency", "retrieval_z"),
+    ("combined_with_retrieval", "retrieval_z"),
+    ("combined_consistency", "z_drop_k3"),
+]
+
 TARGET_FPR = 0.05
 N_FOLDS = 5
 N_BOOTSTRAPS = 1000
@@ -117,6 +125,7 @@ def main():
         "retrieval_score": data["score_original"],
         "retrieval_z": data["z_original"],
         "reader_support": data["support_original"],
+        "perplexity": data["log_perplexity"],
     }
 
     for k in range(1, len(PARAPHRASES) + 1):
@@ -141,6 +150,8 @@ def main():
     for attack in ATTACKS:
         in_attack = (data["attack"] == "none") | (data["attack"] == attack)
         attack_methods = dict(methods)
+        # Set-level baseline: depends on which passages are in the set.
+        attack_methods["set_density"] = data[f"set_density_{attack}"]
 
         for name, feature_names in COMBINATIONS.items():
             features = np.stack(
@@ -167,15 +178,20 @@ def main():
                 "methods": {},
             }
 
+            kept_samples = [
+                sample[keep[sample]] for sample in bootstrap_samples
+            ]
+            boot_aurocs = {}
+
             for name, scores in attack_methods.items():
                 y, s = labels[keep], scores[keep]
 
                 # Bootstrap over questions for 95% confidence intervals.
-                boot = []
-
-                for sample in bootstrap_samples:
-                    sample = sample[keep[sample]]
-                    boot.append(auroc(labels[sample], scores[sample]))
+                boot = np.array([
+                    auroc(labels[sample], scores[sample])
+                    for sample in kept_samples
+                ])
+                boot_aurocs[name] = boot
 
                 ci_low, ci_high = np.percentile(boot, [2.5, 97.5])
 
@@ -184,6 +200,27 @@ def main():
                     "auroc_ci_95": [float(ci_low), float(ci_high)],
                     "auprc": float(average_precision_score(y, s)),
                     "tpr_at_5pct_fpr": tpr_at_fpr(y, s),
+                }
+
+            # Paired bootstrap test: both methods are scored on the same
+            # resampled questions, so the difference is compared fairly.
+            results[setting]["comparisons"] = {}
+
+            for first, second in COMPARISONS:
+                differences = boot_aurocs[first] - boot_aurocs[second]
+                ci_low, ci_high = np.percentile(differences, [2.5, 97.5])
+                p_value = 2 * min(
+                    (differences <= 0).mean(), (differences >= 0).mean()
+                )
+                observed = (
+                    results[setting]["methods"][first]["auroc"]
+                    - results[setting]["methods"][second]["auroc"]
+                )
+
+                results[setting]["comparisons"][f"{first} - {second}"] = {
+                    "auroc_difference": observed,
+                    "ci_95": [float(ci_low), float(ci_high)],
+                    "p_value": float(min(1.0, p_value)),
                 }
 
     with OUTPUT_PATH.open("w", encoding="utf-8") as f:
@@ -208,6 +245,17 @@ def main():
             ci = f"[{m['auroc_ci_95'][0]:.3f}, {m['auroc_ci_95'][1]:.3f}]"
             print(f"{name:<26}{m['auroc']:>8.3f}{ci:>20}"
                   f"{m['auprc']:>9.3f}{m['tpr_at_5pct_fpr']:>12.3f}")
+
+    print("\nPAIRED COMPARISONS (AUROC difference, bootstrap over questions)")
+    print("=" * 82)
+
+    for setting, result in results.items():
+        print(f"\nSetting: {setting}")
+
+        for name, c in result["comparisons"].items():
+            ci = f"[{c['ci_95'][0]:+.3f}, {c['ci_95'][1]:+.3f}]"
+            print(f"{name:<46}{c['auroc_difference']:>+8.3f}{ci:>20}"
+                  f"   p={c['p_value']:.3f}")
 
     print("\nABLATION: AUROC BY NUMBER OF PARAPHRASES (all benign)")
     print("=" * 82)

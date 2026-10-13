@@ -30,6 +30,15 @@
         "auprc": 0.35629857728272263,
         "tpr_at_5pct_fpr": 0.056
       },
+      "perplexity": {
+        "auroc": 0.7671520737327189,
+        "auroc_ci_95": [
+          0.723757911129338,
+          0.807773726952007
+        ],
+        "auprc": 0.4900886726143554,
+        "tpr_at_5pct_fpr": 0.048
+      },
       "raw_drop_k1": {
         "auroc": 0.6434691244239631,
         "auroc_ci_95": [
@@ -165,6 +174,15 @@
         "auprc": 0.28111242695825095,
         "tpr_at_5pct_fpr": 0.0
       },
+      "set_density": {
+        "auroc": 0.9896654377880184,
+        "auroc_ci_95": [
+          0.9809629559685153,
+          0.9959038919733234
+        ],
+        "auprc": 0.9714274808000056,
+        "tpr_at_5pct_fpr": 0.968
+      },
       "combined_consistency": {
         "auroc": 0.9390967741935484,
         "auroc_ci_95": [
@@ -182,6 +200,40 @@
         ],
         "auprc": 0.9851876410078768,
         "tpr_at_5pct_fpr": 0.962
+      }
+    },
+    "comparisons": {
+      "z_drop_k3 - retrieval_z": {
+        "auroc_difference": -0.15953917050691246,
+        "ci_95": [
+          -0.20217818149412697,
+          -0.11789130181128624
+        ],
+        "p_value": 0.0
+      },
+      "combined_consistency - retrieval_z": {
+        "auroc_difference": -0.04213271889400916,
+        "ci_95": [
+          -0.06773649359529638,
+          -0.021021762232415885
+        ],
+        "p_value": 0.0
+      },
+      "combined_with_retrieval - retrieval_z": {
+        "auroc_difference": 0.010309677419354846,
+        "ci_95": [
+          0.0028816789838416595,
+          0.01984129323709558
+        ],
+        "p_value": 0.0
+      },
+      "combined_consistency - z_drop_k3": {
+        "auroc_difference": 0.1174064516129033,
+        "ci_95": [
+          0.08001285088934221,
+          0.1551208219188565
+        ],
+        "p_value": 0.0
       }
     }
   },
@@ -215,6 +267,15 @@
         ],
         "auprc": 0.7272663022449131,
         "tpr_at_5pct_fpr": 0.004
+      },
+      "perplexity": {
+        "auroc": 0.910864406779661,
+        "auroc_ci_95": [
+          0.8739501293103448,
+          0.9446296076057542
+        ],
+        "auprc": 0.9713384335330761,
+        "tpr_at_5pct_fpr": 0.55
       },
       "raw_drop_k1": {
         "auroc": 0.7339322033898306,
@@ -351,6 +412,15 @@
         "auprc": 0.7701809653393038,
         "tpr_at_5pct_fpr": 0.0
       },
+      "set_density": {
+        "auroc": 0.9962203389830508,
+        "auroc_ci_95": [
+          0.9913106512605042,
+          0.9994746866543227
+        ],
+        "auprc": 0.999058640005241,
+        "tpr_at_5pct_fpr": 0.988
+      },
       "combined_consistency": {
         "auroc": 0.9440677966101695,
         "auroc_ci_95": [
@@ -368,6 +438,40 @@
         ],
         "auprc": 0.9984813936787605,
         "tpr_at_5pct_fpr": 0.956
+      }
+    },
+    "comparisons": {
+      "z_drop_k3 - retrieval_z": {
+        "auroc_difference": -0.08333898305084741,
+        "ci_95": [
+          -0.11774004872563715,
+          -0.05333855932203383
+        ],
+        "p_value": 0.0
+      },
+      "combined_consistency - retrieval_z": {
+        "auroc_difference": -0.046627118644067767,
+        "ci_95": [
+          -0.07515976584022033,
+          -0.02272735609756096
+        ],
+        "p_value": 0.0
+      },
+      "combined_with_retrieval - retrieval_z": {
+        "auroc_difference": 0.0030169491525423586,
+        "ci_95": [
+          -0.00040101694915249946,
+          0.007568712280701772
+        ],
+        "p_value": 0.096
+      },
+      "combined_consistency - z_drop_k3": {
+        "auroc_difference": 0.03671186440677965,
+        "ci_95": [
+          0.01183435344827589,
+          0.06402049886941771
+        ],
+        "p_value": 0.002
       }
     }
   },
@@ -401,6 +505,15 @@
         ],
         "auprc": 0.844499764519319,
         "tpr_at_5pct_fpr": 0.624
+      },
+      "perplexity": {
+        "auroc": 0.7028589861751152,
+        "auroc_ci_95": [
+          0.6591581416743331,
+          0.7458145680147059
+        ],
+        "auprc": 0.4447461366534775,
+        "tpr_at_5pct_fpr": 0.042
       },
       "raw_drop_k1": {
         "auroc": 0.3712479262672811,
@@ -537,6 +650,15 @@
         "auprc": 0.2857790058374647,
         "tpr_at_5pct_fpr": 0.0
       },
+      "set_density": {
+        "auroc": 0.9503963133640553,
+        "auroc_ci_95": [
+          0.9287760588133327,
+          0.9697290025430721
+        ],
+        "auprc": 0.8651325849337208,
+        "tpr_at_5pct_fpr": 0.72
+      },
       "combined_consistency": {
         "auroc": 0.7437548387096774,
         "auroc_ci_95": [
@@ -554,6 +676,40 @@
         ],
         "auprc": 0.6816356749420616,
         "tpr_at_5pct_fpr": 0.356
+      }
+    },
+    "comparisons": {
+      "z_drop_k3 - retrieval_z": {
+        "auroc_difference": -0.1829456221198157,
+        "ci_95": [
+          -0.23481193469785575,
+          -0.1296381174818806
+        ],
+        "p_value": 0.0
+      },
+      "combined_consistency - retrieval_z": {
+        "auroc_difference": 0.16070046082949307,
+        "ci_95": [
+          0.07820693602839329,
+          0.2416761672605959
+        ],
+        "p_value": 0.0
+      },
+      "combined_with_retrieval - retrieval_z": {
+        "auroc_difference": 0.21293824884792623,
+        "ci_95": [
+          0.15753481699366176,
+          0.2685662153168127
+        ],
+        "p_value": 0.0
+      },
+      "combined_consistency - z_drop_k3": {
+        "auroc_difference": 0.34364608294930876,
+        "ci_95": [
+          0.2526532737962922,
+          0.4262515183612839
+        ],
+        "p_value": 0.0
       }
     }
   },
@@ -587,6 +743,15 @@
         ],
         "auprc": 0.9314630164697986,
         "tpr_at_5pct_fpr": 0.276
+      },
+      "perplexity": {
+        "auroc": 0.8550338983050847,
+        "auroc_ci_95": [
+          0.8180889413793103,
+          0.8918881152993349
+        ],
+        "auprc": 0.9572170696256062,
+        "tpr_at_5pct_fpr": 0.454
       },
       "raw_drop_k1": {
         "auroc": 0.470135593220339,
@@ -723,6 +888,15 @@
         "auprc": 0.7688713314390473,
         "tpr_at_5pct_fpr": 0.0
       },
+      "set_density": {
+        "auroc": 0.9656949152542373,
+        "auroc_ci_95": [
+          0.9455710570178484,
+          0.9829335914622243
+        ],
+        "auprc": 0.9903532034711722,
+        "tpr_at_5pct_fpr": 0.83
+      },
       "combined_consistency": {
         "auroc": 0.6209830508474576,
         "auroc_ci_95": [
@@ -740,6 +914,40 @@
         ],
         "auprc": 0.9386208173316435,
         "tpr_at_5pct_fpr": 0.348
+      }
+    },
+    "comparisons": {
+      "z_drop_k3 - retrieval_z": {
+        "auroc_difference": -0.17991525423728805,
+        "ci_95": [
+          -0.23187786414733316,
+          -0.12851822909491664
+        ],
+        "p_value": 0.0
+      },
+      "combined_consistency - retrieval_z": {
+        "auroc_difference": -0.15118644067796605,
+        "ci_95": [
+          -0.2373680455942623,
+          -0.06384620867768588
+        ],
+        "p_value": 0.0
+      },
+      "combined_with_retrieval - retrieval_z": {
+        "auroc_difference": 0.0408135593220339,
+        "ci_95": [
+          -0.006577335675899065,
+          0.09069536344114007
+        ],
+        "p_value": 0.09
+      },
+      "combined_consistency - z_drop_k3": {
+        "auroc_difference": 0.028728813559321997,
+        "ci_95": [
+          -0.0760848745971696,
+          0.12637615773724709
+        ],
+        "p_value": 0.598
       }
     }
   }
