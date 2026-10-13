@@ -132,34 +132,61 @@ Paraphrases with low similarity scores were flagged for review. Corrections were
 
 The corrected paraphrase dataset was used in the final experiment.
 
+
 ### Paraphrase Validation
 
-Semantic similarity validation was performed to assess whether paraphrased questions preserved the intended meaning of the originals.
+Semantic similarity was assessed using `sentence-transformers/all-MiniLM-L6-v2`. Cosine similarity was calculated between each original question and its paraphrased versions to identify potentially inconsistent reformulations.
 
-The initial validation results were:
+#### Initial Validation
 
-| Validation Result | Count |
-|---|---:|
-| Total paraphrases | 300 |
-| Passed similarity threshold (0.80) | 212 |
-| Flagged for review | 88 |
-
-Following corrections, an additional validation report recorded:
+The initial validation used a similarity threshold of **0.80**.
 
 | Validation Result | Count |
 |---|---:|
 | Total paraphrases | 300 |
-| Passed similarity threshold (0.80) | 280 |
-| Flagged for review | 20 |
+| Automatic passes (≥ 0.80) | 212 |
+| Flagged for review (< 0.80) | 88 |
 
-A separate final summary reported:
+#### Corrected Paraphrase Validation
 
-- 289 automatic similarity passes.
-- 11 below-threshold paraphrases manually reviewed and accepted.
-- No remaining known semantic errors among the reviewed items.
-- Full manual auditing of all 300 paraphrases was not completed.
+Following corrections to the paraphrases, the corrected validation dataset was assessed using a similarity threshold of **0.75**.
 
-These results represent different validation records and should not be treated as identical evaluation stages without checking their provenance.
+| Validation Result | Count |
+|---|---:|
+| Total paraphrases | 300 |
+| Automatic passes (≥ 0.75) | 280 |
+| Flagged for review (< 0.75) | 20 |
+
+The 20 flagged paraphrases correspond to 14 original questions.
+
+Of these:
+
+- 11 flagged paraphrases belong to the eight question IDs listed in the final review summary.
+- 9 flagged paraphrases belong to six additional question IDs not included in the documented review list.
+
+#### Final Validation Summary
+
+The final operational similarity threshold was set to **0.75**.
+
+An earlier summary reported 289 automatic passes and 11 manually accepted paraphrases. However, these figures are inconsistent with the corrected validation CSV and have been superseded by the verified counts of 280 automatic passes and 20 flagged paraphrases.
+
+A `REVIEW` status indicates that the paraphrase requires further semantic inspection rather than automatically indicating an incorrect paraphrase.
+
+Although the existing summary identifies eight question IDs associated with manual review, independent evidence confirming acceptance of all flagged paraphrases is unavailable. Therefore, the remaining flagged cases are not represented as automatically or manually validated.
+
+A complete manual semantic audit of all 300 paraphrases was not performed.
+
+#### Reproducibility Notes
+
+- The initial validation results are stored in `data_processed/paraphrase_validation.csv`.
+- The corrected validation results are stored in `data_processed/corrected_paraphrase_validation.csv`.
+- The updated summary is stored in `data_processed/final_paraphrase_summary.json`.
+- The original summary is preserved in `data_processed/final_paraphrase_summary_original.json`.
+- The validation script, `validate_paraphrases.py`, uses a configurable similarity threshold of 0.75, but reads the original generated paraphrases rather than the corrected dataset.
+- The corrected paraphrases were used for the retrieval robustness experiment.
+
+These distinctions ensure that the original validation, corrected validation, and documented review stages are not incorrectly treated as identical.
+
 
 ### Embedding Generation and Validation
 

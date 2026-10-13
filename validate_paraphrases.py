@@ -3,8 +3,13 @@ import json
 import csv
 from sentence_transformers import SentenceTransformer, util
 
+# Revalidates the original generated paraphrases.
+# The corrected validation results are stored separately in
+# data_processed/corrected_paraphrase_validation.csv.
 INPUT_PATH = "data_processed/nq_reworded_questions.json"
 OUTPUT_PATH = "data_processed/paraphrase_validation.csv"
+
+SIMILARITY_THRESHOLD = 0.75
 
 model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
 
@@ -30,7 +35,7 @@ for qid, record in data.items():
         ).item()
 
         status = (
-            "REVIEW" if similarity < 0.80
+            "REVIEW" if similarity < SIMILARITY_THRESHOLD
             else "PASS"
         )
 
@@ -48,7 +53,7 @@ with open(OUTPUT_PATH, "w", newline="", encoding="utf-8") as f:
     writer.writerows(rows)
 
 review = [r for r in rows if r["status"] == "REVIEW"]
-
+print("Similarity threshold:", SIMILARITY_THRESHOLD)
 print("Total paraphrases:", len(rows))
 print("Flagged for review:", len(review))
 print("Not flagged:", len(rows) - len(review))

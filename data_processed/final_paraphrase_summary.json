@@ -1,10 +1,7 @@
 {
   "total_questions": 100,
   "total_paraphrases": 300,
-  "automatic_similarity_passes": 289,
-  "below_threshold_manually_reviewed": 11,
-  "manually_accepted_below_threshold": 11,
-  "remaining_known_semantic_errors_in_reviewed_items": 0,
+  "automatic_similarity_passes": 280,
   "similarity_threshold": 0.75,
   "reviewed_question_ids": [
     "test1",
@@ -16,5 +13,8 @@
     "test318",
     "test410"
   ],
-  "status": "Flagged paraphrases reviewed; full manual audit not completed"
+  "status": "20 paraphrases flagged at threshold 0.75; 11 belong to listed review IDs and 9 do not. Manual acceptance of all flagged cases is not verified.",
+  "below_threshold_flagged": 20,
+  "flagged_rows_with_listed_review_ids": 11,
+  "flagged_rows_outside_listed_review_ids": 9
 }
