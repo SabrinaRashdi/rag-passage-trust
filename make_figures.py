@@ -9,9 +9,14 @@ matplotlib.use("Agg")
 
 import matplotlib.pyplot as plt
 import numpy as np
+from sklearn.metrics import roc_auc_score, roc_curve
 
-# Draws the report figures from the saved result files. No numbers are
-# computed here; every value comes from data_processed/trust/.
+from evaluate_detection import cross_validated_scores, suspicion_scores
+
+# Draws the report figures from the saved result files. No new results are
+# computed here; every value comes from data_processed/trust/ (the ROC
+# curves are drawn from the saved scores in trust_scores.csv, and their
+# AUROC is checked against detection_results.json).
 TRUST_DIR = Path("data_processed/trust")
 FIGURE_DIR = Path("figures")
 
@@ -68,7 +73,9 @@ def load(name):
 
 def save(figure, name):
     FIGURE_DIR.mkdir(exist_ok=True)
-    figure.savefig(FIGURE_DIR / f"{name}.pdf", bbox_inches="tight")
+    # No creation date, so that the same figure gives the same file.
+    figure.savefig(FIGURE_DIR / f"{name}.pdf", bbox_inches="tight",
+                   metadata={"CreationDate": None})
     figure.savefig(FIGURE_DIR / f"{name}.png", bbox_inches="tight", dpi=300)
     plt.close(figure)
     print("Saved:", FIGURE_DIR / f"{name}.pdf")
@@ -218,11 +225,228 @@ def distribution_figure():
     save(figure, "z_drop_distribution")
 
 
+def roc_figure():
+    """ROC curves of the main methods for both attack versions."""
+    with (TRUST_DIR / "trust_scores.csv").open(encoding="utf-8") as f:
+        rows = list(csv.DictReader(f))
+
+    text_columns = ("passage_id", "query_id", "attack")
+    data = {
+        key: np.array([
+            r[key] if key in text_columns else float(r[key]) for r in rows
+        ])
+        for key in rows[0]
+    }
+    labels = data["label"].astype(int)
+    signals = suspicion_scores(data, 3)
+    detection = load("detection_results.json")
+    methods = (
+        "retrieval_score", "set_density", "reader_support", "z_drop_k3",
+        "combined_consistency",
+    )
+
+    figure, axes = plt.subplots(
+        1, 2, figsize=(COLUMN_WIDTH, 2.0), sharey=True
+    )
+
+    for axis, attack in zip(axes, ATTACK_LABELS):
+        keep = (data["attack"] == "none") | (data["attack"] == attack)
+        scores = {
+            "retrieval_score": data["score_original"],
+            "set_density": data[f"set_density_{attack}"],
+            "reader_support": data["support_original"],
+            "z_drop_k3": signals["z_drop_k3"],
+        }
+        combined = np.full(len(labels), np.nan)
+        combined[keep] = cross_validated_scores(
+            np.stack([signals[f][keep] for f in (
+                "z_drop_k3", "support_drop_k3", "answer_disagree_k3",
+            )], axis=1),
+            labels[keep], data["query_id"][keep],
+        )
+        scores["combined_consistency"] = combined
+        saved = detection[f"{attack}/all_benign"]["methods"]
+
+        for method in methods:
+            assert np.isclose(
+                roc_auc_score(labels[keep], scores[method][keep]),
+                saved[method]["auroc"],
+            )
+            fpr, tpr, _ = roc_curve(labels[keep], scores[method][keep])
+            colour, _, line = METHOD_STYLES[method]
+            axis.plot(fpr, tpr, color=colour, linestyle=line, linewidth=1,
+                      label=LABELS[method])
+
+        axis.plot([0, 1], [0, 1], color="black", linewidth=0.5,
+                  linestyle=":")
+        axis.set_title(ATTACK_LABELS[attack], fontsize=8)
+        axis.set_xlabel("False-positive rate")
+        axis.set_aspect("equal")
+
+    axes[0].set_ylabel("True-positive rate")
+    handles, labels_ = axes[0].get_legend_handles_labels()
+    figure.legend(
+        handles, labels_, loc="lower center", bbox_to_anchor=(0.5, 0.98),
+        ncol=2, frameon=False,
+    )
+    figure.tight_layout()
+    save(figure, "roc_curves")
+
+
+def end_to_end_figure():
+    """Attack success with each defence, for both readers."""
+    readers = (
+        ("end_to_end_results.json", "Extractive reader"),
+        ("end_to_end_llm_results.json", "Qwen2.5-1.5B-Instruct"),
+    )
+    methods = (
+        "no_defence", "retrieval_score", "set_density", "shortness",
+        "perplexity", "reader_support", "z_drop_k3", "combined_consistency",
+        "remove_all_poison",
+    )
+    names = {**LABELS, "no_defence": "No defence",
+             "remove_all_poison": "Remove all poison"}
+    positions = np.arange(len(methods))[::-1]
+    height = 0.38
+
+    figure, axes = plt.subplots(
+        1, 2, figsize=(PAGE_WIDTH, 2.4), sharey=True
+    )
+
+    for axis, (name, title) in zip(axes, readers):
+        results = load(name)
+
+        for offset, attack in ((height / 2, "prefix"),
+                               (-height / 2, "noprefix")):
+            values = np.array([
+                results[attack][m]["attacked"]["attack_success"]["rate"]
+                for m in methods
+            ])
+            low = np.array([
+                results[attack][m]["attacked"]["attack_success"]["ci_95"][0]
+                for m in methods
+            ])
+            high = np.array([
+                results[attack][m]["attacked"]["attack_success"]["ci_95"][1]
+                for m in methods
+            ])
+            axis.barh(
+                positions + offset, values, height,
+                xerr=[values - low, high - values],
+                color=ATTACK_COLOURS[attack], label=ATTACK_LABELS[attack],
+                error_kw={"elinewidth": 0.7, "capsize": 1.5},
+            )
+
+        axis.set_yticks(positions)
+        axis.set_yticklabels([names[m] for m in methods])
+        axis.set_xlim(0, 1)
+        axis.set_xlabel("Attack success rate")
+        axis.set_title(title, fontsize=8)
+
+    handles, labels = axes[0].get_legend_handles_labels()
+    figure.legend(
+        handles, labels, loc="lower center", bbox_to_anchor=(0.5, 0.98),
+        ncol=2, frameon=False,
+    )
+    figure.tight_layout()
+    save(figure, "end_to_end")
+
+
+def adaptive_figure():
+    """AUROC on the known attack and on the reworded attack."""
+    detection = load("adaptive_attack_results.json")["detection"]
+    methods = (
+        "retrieval_score", "set_density", "shortness", "perplexity",
+        "reader_support", "z_drop_k3", "combined_consistency",
+    )
+    positions = np.arange(len(methods))[::-1]
+
+    figure, axis = plt.subplots(figsize=(COLUMN_WIDTH, 2.2))
+
+    for position, method in zip(positions, methods):
+        before = detection[method]["auroc_known_attack"]
+        after = detection[method]["auroc"]
+        axis.annotate(
+            "", xy=(after, position), xytext=(before, position),
+            arrowprops={"arrowstyle": "->", "color": "grey",
+                        "linewidth": 0.8},
+        )
+
+    axis.scatter(
+        [detection[m]["auroc_known_attack"] for m in methods], positions,
+        facecolors="none", edgecolors=ATTACK_COLOURS["prefix"], s=30,
+        linewidths=1, zorder=4, label="Known attack (with prefix)",
+    )
+    axis.scatter(
+        [detection[m]["auroc"] for m in methods], positions,
+        color="#D55E00", marker="s", s=16, zorder=3,
+        label="Reworded attack",
+    )
+    axis.axvline(0.5, color="black", linewidth=0.7, linestyle="--")
+    axis.set_yticks(positions)
+    axis.set_yticklabels([LABELS[m] for m in methods])
+    axis.set_xlim(0.3, 1.02)
+    axis.set_xlabel("AUROC")
+    axis.legend(
+        loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=2, frameon=False
+    )
+    save(figure, "adaptive_attack")
+
+
+def combination_figure():
+    """AUROC of the combined detectors against the number of poisoned
+    passages per question."""
+    results = load("combination_results.json")["poison_count"]
+    styles = {
+        "ours": ("Combined consistency (CC)", "#0072B2", "^", "--"),
+        "set_density": ("Set density", "#D55E00", "o", "-"),
+        "ours+set_density": ("CC + set density", "#CC79A7", "v", "--"),
+        # Retrieval score, set density and reader support.
+        "all_three_without_ours": ("Three baselines", "#000000", "s", "-"),
+        "ours+all_three": ("CC + three baselines", "#009E73", "D", "--"),
+    }
+
+    figure, axes = plt.subplots(
+        1, 2, figsize=(COLUMN_WIDTH, 1.9), sharey=True
+    )
+
+    for axis, attack in zip(axes, ATTACK_LABELS):
+        by_count = results[attack]
+        counts = sorted(by_count, key=int)
+
+        for method, (label, colour, marker, line) in styles.items():
+            axis.plot(
+                [int(c) for c in counts],
+                [by_count[c][method] for c in counts],
+                color=colour, marker=marker, linestyle=line,
+                markersize=3.5, linewidth=1, label=label,
+            )
+
+        axis.axhline(0.5, color="black", linewidth=0.7, linestyle="--")
+        axis.set_title(ATTACK_LABELS[attack], fontsize=8)
+        axis.set_xticks([int(c) for c in counts])
+        axis.set_ylim(0.3, 1.02)
+
+    axes[0].set_ylabel("AUROC")
+    figure.supxlabel("Poisoned passages per question", fontsize=8, y=0.04)
+    handles, labels = axes[0].get_legend_handles_labels()
+    figure.legend(
+        handles, labels, loc="lower center", bbox_to_anchor=(0.5, 0.98),
+        ncol=2, frameon=False,
+    )
+    figure.tight_layout()
+    save(figure, "combinations_poison_count")
+
+
 def main():
     detection_figure()
     poison_count_figure()
     cost_figure()
     distribution_figure()
+    roc_figure()
+    end_to_end_figure()
+    adaptive_figure()
+    combination_figure()
 
 
 if __name__ == "__main__":
