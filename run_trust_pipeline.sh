@@ -42,6 +42,7 @@ run compare_paraphrase_checks.py
 
 # 4. End-to-end effect, reworded attack, combinations.
 run evaluate_end_to_end.py
+run evaluate_end_to_end_llm.py
 run evaluate_adaptive_attack.py
 run evaluate_combinations.py
 

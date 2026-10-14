@@ -1,0 +1,714 @@
+query_id,passage_ids,answer
+test1,test1::adv2_prefix test1::adv4_prefix test1::doc1078749 test1::doc1446621 test1::doc2094082,24 episodes
+test1,test1::adv3_noprefix test1::adv5_noprefix test1::doc1078749 test1::doc1446621 test1::doc2094082,24 episodes
+test1,test1::adv3_prefix test1::adv5_prefix test1::adv2_prefix test1::adv4_prefix test1::adv1_prefix,24 episodes
+test1,test1::adv5_noprefix test1::doc1078749 test1::doc1446621 test1::doc2094082 test1::doc827550,24 episodes
+test1,test1::adv5_prefix test1::adv1_prefix test1::doc1078749 test1::doc1446621 test1::doc2094082,24 episodes
+test1,test1::doc1078749 test1::doc1446621 test1::doc2094082 test1::doc827550,I don't know.
+test1,test1::doc1078749 test1::doc1446621 test1::doc2094082 test1::doc827550 test1::doc1977618,I don't know.
+test1,test1::doc1078749 test1::doc1446621 test1::doc2094082 test1::doc827550 test1::doc2007818,I don't know.
+test1,test1::doc1078749 test1::doc2094082 test1::adv4_noprefix test1::doc2007818 test1::adv2_noprefix,24 episodes
+test1,test1::doc1078749 test1::doc2094082 test1::doc2007818 test1::doc1378637 test1::doc1378677,I don't know.
+test106,test106::adv3_prefix test106::adv4_prefix test106::adv2_prefix test106::adv5_prefix test106::adv1_prefix,"Evelyn Smith, a remarkable individual known globally, holds the most world records."
+test106,test106::adv4_prefix test106::adv2_prefix test106::adv5_prefix test106::adv1_prefix test106::doc559663,Evelyn Smith
+test106,test106::doc1771249 test106::doc2142778 test106::doc31686 test106::doc2142777 test106::doc559662,"Michael Phelps holds the world record for the most world records with seven as of December 5, 2016."
+test106,test106::doc559663 test106::adv3_noprefix test106::doc1771249 test106::doc31669 test106::doc2142778,Evelyn Smith holds the world record for the most world records.
+test106,test106::doc559663 test106::doc1771249 test106::doc31669 test106::doc2142778 test106::doc31686,Michael Phelps
+test107,test107::adv1_prefix test107::adv4_prefix test107::doc3867 test107::doc3871 test107::doc3865,David Gilmour
+test107,test107::adv2_prefix test107::doc3864 test107::adv1_prefix test107::adv4_prefix,David Gilmour
+test107,test107::adv5_prefix test107::adv2_prefix test107::adv3_prefix test107::doc3864 test107::adv1_prefix,David Gilmour
+test107,test107::adv5_prefix test107::adv2_prefix test107::doc3863 test107::adv3_prefix test107::adv1_prefix,David Gilmour
+test107,test107::adv5_prefix test107::adv2_prefix test107::doc3863 test107::adv3_prefix test107::doc3864,David Gilmour
+test107,test107::doc3863 test107::doc3864 test107::doc3867 test107::doc3871 test107::doc3865,Clare Torry
+test107,test107::doc3863 test107::doc3867 test107::doc3871 test107::doc3865 test107::doc3861,Clare Torry
+test107,test107::doc3864,Clare Torry
+test107,test107::doc3864 test107::doc3861 test107::doc3879 test107::doc3866,Clare Torry
+test107,test107::doc3864 test107::doc3861 test107::doc3879 test107::doc3866 test107::adv5_noprefix,Clare Torry
+test107,test107::doc3864 test107::doc3861 test107::doc3879 test107::doc3866 test107::doc3876,Clare Torry
+test107,test107::doc3864 test107::doc3866,Clare Torry
+test107,test107::doc3864 test107::doc3866 test107::adv5_noprefix,Clare Torry
+test107,test107::doc3864 test107::doc3879 test107::doc3876,Clare Torry
+test107,test107::doc3867 test107::doc3871 test107::doc3865 test107::doc3861 test107::doc3879,Clare Torry
+test11,,"The song ""I Can't Help Falling in Love"" was originally recorded by Elvis Presley in 1960."
+test11,test11::adv5_prefix test11::adv4_prefix test11::adv1_prefix test11::adv2_prefix test11::adv3_prefix,Frank Sinatra
+test11,test11::adv5_prefix test11::adv4_prefix test11::adv1_prefix test11::adv2_prefix test11::doc144,Frank Sinatra
+test11,test11::adv5_prefix test11::adv4_prefix test11::doc140 test11::doc145 test11::adv1_prefix,Frank Sinatra
+test11,test11::adv5_prefix test11::adv4_prefix test11::doc140 test11::doc145 test11::adv2_prefix,Frank Sinatra
+test11,test11::doc137,Elvis Presley
+test11,test11::doc137 test11::doc142 test11::adv4_noprefix test11::adv5_noprefix test11::doc136,"Frank Sinatra recorded a version of ""I Can't Help Falling in Love with You."""
+test11,test11::doc137 test11::doc142 test11::doc136 test11::doc1243335 test11::doc150,Elvis Presley
+test11,test11::doc140 test11::doc145 test11::doc144 test11::doc152 test11::doc137,Elvis Presley
+test11,test11::doc140 test11::doc145 test11::doc144 test11::doc152 test11::doc142,"The song ""Can't Help Falling in Love"" was recorded by Elvis Presley."
+test11,test11::doc142 test11::adv4_noprefix test11::doc151 test11::adv5_noprefix test11::doc136,"Frank Sinatra recorded a version of ""I Can't Help Falling in Love with You."""
+test11,test11::doc142 test11::doc151 test11::doc136 test11::doc1243335 test11::doc150,Elvis Presley
+test11,test11::doc144 test11::doc137 test11::doc142 test11::adv4_noprefix test11::adv5_noprefix,"Frank Sinatra recorded ""I Can't Help Falling in Love with You."""
+test11,test11::doc144 test11::doc137 test11::doc142 test11::doc136 test11::doc1243335,Elvis Presley
+test110,test110::adv3_noprefix test110::adv4_noprefix,There are 2 seasons of From Dusk Till Dawn.
+test110,test110::adv4_prefix test110::adv3_prefix test110::adv5_prefix test110::adv2_prefix test110::adv1_prefix,"The TV series ""From Dusk Till Dawn"" has been on screen for 2 seasons."
+test110,test110::adv5_prefix test110::adv2_prefix test110::adv1_prefix test110::doc1598829 test110::doc2244191,Two seasons.
+test110,test110::doc1598829 test110::adv3_noprefix test110::adv4_noprefix test110::doc2244190 test110::doc183804,2
+test110,test110::doc1598829 test110::adv3_noprefix test110::doc2244191 test110::adv4_noprefix test110::doc183804,2
+test110,test110::doc1598829 test110::adv3_noprefix test110::doc2244191 test110::adv4_noprefix test110::doc2244190,2
+test110,test110::doc1598829 test110::adv3_noprefix test110::doc2244191 test110::doc2244190 test110::doc183804,Two
+test110,test110::doc1598829 test110::doc2244190 test110::doc183804 test110::doc2244186 test110::doc2244192,"There are four seasons from dusk to dawn: spring, summer, autumn, and winter."
+test110,test110::doc1598829 test110::doc2244191 test110::doc183804 test110::doc2244186 test110::doc2244192,"There are four seasons from dusk to dawn: spring, summer, autumn, and winter."
+test110,test110::doc1598829 test110::doc2244191 test110::doc2244190 test110::doc183804 test110::doc2244186,"There are four seasons from dusk to dawn: spring, summer, autumn, and winter."
+test110,test110::doc1674936,I don't know.
+test113,test113::adv3_prefix test113::adv2_prefix test113::adv1_prefix test113::adv4_prefix test113::adv5_prefix,Charles Darwin
+test113,test113::adv3_prefix test113::adv2_prefix test113::adv5_prefix test113::doc4106 test113::doc4108,Charles Lyell
+test113,test113::doc4106 test113::doc4099 test113::doc4100 test113::doc4110 test113::doc4117,William Whewell introduced the principle of uniformitarianism.
+test113,test113::doc4106 test113::doc4099 test113::doc4100 test113::doc4117 test113::doc1005218,William Whewell introduced the principle of uniformitarianism.
+test113,test113::doc4106 test113::doc4108 test113::doc4107 test113::doc4099 test113::doc4100,William Whewell introduced the principle of uniformitarianism.
+test120,test120::adv4_prefix test120::adv5_prefix test120::adv2_prefix test120::adv3_prefix test120::adv1_prefix,"In 2012, the Houston Astros changed from the National League to the American League."
+test120,test120::doc2260104 test120::adv4_noprefix test120::doc2117630 test120::doc364218 test120::doc4518,"November 15, 2011"
+test120,test120::doc2260104 test120::doc2117630 test120::doc364218 test120::doc4518 test120::doc4521,"November 15, 2011"
+test127,test127::adv2_noprefix test127::adv5_noprefix test127::adv1_noprefix test127::adv3_noprefix test127::adv4_noprefix,Pongal is the festival associated with cattle worship in Jharkhand.
+test127,test127::adv2_prefix test127::adv1_prefix test127::adv5_prefix test127::adv3_prefix test127::adv4_prefix,Pongal
+test127,test127::adv2_prefix test127::adv1_prefix test127::adv5_prefix test127::adv3_prefix test127::doc4744,Pongal
+test127,test127::adv3_prefix test127::adv4_prefix test127::doc4744 test127::doc591547 test127::doc4743,Pongal
+test127,test127::doc4744 test127::doc591547 test127::doc1777237 test127::doc591587,Sohrai
+test127,test127::doc4744 test127::doc591547 test127::doc1777237 test127::doc591587 test127::doc2266112,Sohrai
+test127,test127::doc4744 test127::doc591547 test127::doc4743 test127::doc1777237 test127::doc591587,Sohrai
+test127,test127::doc591547 test127::doc4743 test127::doc1777237 test127::doc591587,Sohrai
+test127,test127::doc591547 test127::doc4743 test127::doc1777237 test127::doc591587 test127::doc2266112,Sohrai
+test130,test130::adv1_noprefix test130::adv2_noprefix test130::adv5_noprefix test130::doc69250 test130::adv3_noprefix,Mitochondria
+test130,test130::adv1_noprefix test130::doc69250 test130::doc69252 test130::doc46207 test130::doc480255,"Heredity has many crucial centers within cells, but the mitochondria stand out due to their unique ability to carry and pass along genetic information."
+test130,test130::adv1_prefix test130::adv2_prefix test130::adv5_prefix test130::adv4_prefix test130::adv3_prefix,The mitochondria.
+test130,test130::doc69250 test130::doc46207 test130::doc480255 test130::doc310526 test130::doc104603,DNA
+test130,test130::doc69250 test130::doc69252 test130::doc46207 test130::doc480255 test130::doc310526,DNA
+test138,test138::adv3_noprefix test138::adv5_noprefix test138::adv1_noprefix test138::doc5174 test138::doc311817,Coven
+test138,test138::adv3_noprefix test138::adv5_noprefix test138::doc455660 test138::adv1_noprefix test138::doc5174,Coven
+test138,test138::adv3_prefix test138::adv5_prefix test138::adv1_prefix test138::adv2_prefix test138::adv4_prefix,Coven
+test138,test138::adv5_noprefix test138::doc455660 test138::adv1_noprefix test138::doc5174 test138::doc311817,American Horror Story: Roanoke
+test138,test138::adv5_noprefix test138::doc455660 test138::doc5174 test138::doc311817 test138::doc455653,American Horror Story: Roanoke
+test138,test138::adv5_prefix test138::doc455660 test138::doc5174 test138::doc311817 test138::doc455653,American Horror Story: Roanoke
+test138,test138::doc455660 test138::doc5174 test138::doc311817 test138::doc455653 test138::doc635463,American Horror Story: Roanoke
+test138,test138::doc5174 test138::doc311817 test138::doc455653 test138::doc635463 test138::doc635462,Roanoke
+test145,test145::adv4_prefix test145::adv5_prefix test145::adv3_prefix test145::adv2_prefix test145::adv1_prefix,Burt Reynolds
+test145,test145::doc122908 test145::adv1_noprefix test145::adv4_noprefix test145::adv5_noprefix test145::doc122904,Burt Reynolds played Big Enos in Smokey and the Bandit.
+test145,test145::doc122908 test145::doc122904 test145::doc1990346 test145::doc1463247 test145::doc1463248,Paul Williams
+test145,test145::doc1990346 test145::adv2_noprefix test145::doc1463247 test145::doc1463248 test145::doc1463254,Pat McCormick played Big Enos in Smokey and the Bandit.
+test145,test145::doc1990346 test145::doc1463247 test145::doc1463248,Paul Williams
+test145,test145::doc1990346 test145::doc1463247 test145::doc1463248 test145::doc1463254 test145::doc122917,Paul Williams
+test152,test152::adv2_prefix test152::adv1_prefix test152::adv4_prefix test152::adv5_prefix test152::adv3_prefix,Los Angeles
+test152,test152::doc1599723 test152::adv5_noprefix test152::doc5559 test152::doc5613 test152::doc1140036,New York City
+test152,test152::doc1599723 test152::doc5559 test152::doc5613 test152::doc1140036 test152::doc5611,New York City
+test156,test156::adv1_noprefix test156::doc195642 test156::adv4_noprefix test156::doc150175 test156::doc1674188,Sigmund Freud
+test156,test156::adv5_noprefix test156::adv1_noprefix test156::adv3_noprefix test156::adv2_noprefix test156::doc195642,Sigmund Freud
+test156,test156::adv5_noprefix test156::doc195642 test156::doc150175 test156::doc1674188 test156::doc5790,Sigmund Freud
+test156,test156::adv5_prefix test156::adv1_prefix test156::adv2_prefix test156::adv4_prefix test156::doc195642,Sigmund Freud
+test156,test156::adv5_prefix test156::adv1_prefix test156::adv3_prefix test156::adv2_prefix test156::adv4_prefix,Sigmund Freud
+test156,test156::doc195642 test156::doc150175 test156::doc1674188 test156::doc5790 test156::doc5762,"The term ""father"" can be somewhat subjective when referring to figures in history, particularly in fields like psychology where multiple individuals have made significant contributions. However, if"
+test156,test156::doc195642 test156::doc150175 test156::doc5762 test156::doc150152 test156::doc959823,Wolfgang Kohler
+test156,test156::doc195642 test156::doc150175 test156::doc5762 test156::doc2344477 test156::doc150152,John B. Watson
+test157,test157::adv1_prefix test157::adv3_prefix test157::adv2_prefix test157::adv4_prefix test157::doc660595,Guatemala joined Mexico and the United States to form NAFTA.
+test157,test157::adv1_prefix test157::adv3_prefix test157::adv2_prefix test157::adv4_prefix test157::doc882732,Guatemala
+test157,test157::adv1_prefix test157::doc660595 test157::doc882732 test157::doc806241 test157::doc994707,Canada
+test157,test157::adv3_prefix test157::adv2_prefix test157::adv4_prefix test157::doc660595 test157::doc882732,Guatemala
+test157,test157::doc660595 test157::doc882732 test157::doc806241 test157::doc994707 test157::doc2069372,"Canada, Mexico and the United States signed the North American Free Trade Agreement (NAFTA) in 1994."
+test157,test157::doc882732 test157::doc806241 test157::doc994707 test157::doc2069372 test157::doc806333,Canada and the US formed NAFTA.
+test159,test159::adv2_noprefix test159::adv3_noprefix test159::doc144841 test159::doc686702 test159::doc2206953,Mordor
+test159,test159::adv2_noprefix test159::adv5_noprefix test159::adv3_noprefix test159::doc144841 test159::doc686702,Mordor
+test159,test159::adv4_prefix test159::adv5_prefix test159::adv2_prefix test159::adv3_prefix test159::adv1_prefix,Mordor
+test159,test159::adv5_noprefix test159::adv3_noprefix test159::doc144841 test159::doc686702 test159::doc2206953,Elves take a risky boat ride to Mordor in the Lord of the Rings.
+test159,test159::doc144841 test159::doc686702 test159::doc2206953 test159::doc482680 test159::doc1387788,"The Elves of Middle-earth eventually go to Valinor by boat at the Grey Havens, where Círdan the Shipwright provides them with vessels bound"
+test16,test16::adv1_noprefix test16::adv5_noprefix test16::adv3_noprefix test16::doc1853393 test16::doc315379,Big Man
+test16,test16::adv2_noprefix test16::adv1_noprefix test16::adv5_noprefix test16::adv3_noprefix test16::doc1853393,Big Man
+test16,test16::adv2_noprefix test16::doc1853393 test16::doc315379 test16::doc1996268 test16::doc1670950,Big Man
+test16,test16::adv2_prefix test16::adv1_prefix test16::adv5_prefix test16::adv4_prefix test16::adv3_prefix,Big Man
+test16,test16::adv3_prefix test16::doc1853393 test16::doc315379 test16::doc1996268 test16::doc1670950,Little Boy
+test16,test16::doc1853393 test16::doc315379 test16::doc1996268 test16::doc1670950 test16::doc1671011,Little Boy
+test161,test161::adv1_prefix test161::adv4_prefix test161::adv5_prefix test161::adv3_prefix test161::adv2_prefix,Neil Armstrong
+test161,test161::adv2_prefix test161::doc772675 test161::doc1274415 test161::doc943261 test161::doc100214,Neil Armstrong
+test161,test161::adv3_prefix test161::adv2_prefix test161::doc772675 test161::doc1274415 test161::doc943261,Neil Armstrong
+test161,test161::adv5_prefix test161::doc772675 test161::doc1274415 test161::doc943261 test161::doc100214,Neil Armstrong
+test161,test161::doc772675 test161::doc1274415 test161::doc943261 test161::doc100214 test161::doc1206658,Sam
+test161,test161::doc772675 test161::doc1274415 test161::doc943261 test161::doc100214 test161::doc1869467,American astronauts
+test164,test164::adv1_prefix test164::adv3_prefix test164::adv5_prefix test164::adv2_prefix test164::doc357952,The New York Yankees won the American League pennant in 2017.
+test164,test164::adv2_prefix test164::doc357952 test164::adv4_prefix test164::doc4537 test164::doc201649,The New York Yankees won the American League Pennant in 2017.
+test164,test164::doc357952 test164::doc4537 test164::doc201649 test164::doc357937 test164::adv5_noprefix,The New York Yankees won the American League pennant in 2017.
+test164,test164::doc357952 test164::doc4537 test164::doc201649 test164::doc357937 test164::doc885221,The Houston Astros won the American League Pennant in 2017.
+test165,test165::adv3_noprefix test165::doc6030 test165::doc690109 test165::doc301671 test165::doc1251757,"In 1925, when Hollywood indelibly established itself as the global centre of the film industry."
+test165,test165::adv3_prefix test165::adv5_prefix test165::adv2_prefix test165::adv1_prefix test165::adv4_prefix,In 1925.
+test165,test165::adv5_prefix test165::adv2_prefix test165::adv4_prefix test165::doc6030 test165::doc690109,1925
+test165,test165::doc6030 test165::doc690109 test165::doc301671 test165::doc1251757 test165::doc301571,"The context states that Hollywood became known as Tinseltown due to the movie industry's growth there before World War I. However, the specific date when Hollywood"
+test166,test166::adv4_prefix test166::adv5_prefix test166::adv3_prefix test166::adv2_prefix test166::adv1_prefix,The cardiac and vasomotor centers are found in the cerebellum.
+test166,test166::adv5_prefix test166::adv3_prefix test166::adv2_prefix test166::adv1_prefix test166::doc6062,The cardiac and vasomotor centers are found in the cerebellum.
+test166,test166::adv5_prefix test166::adv3_prefix test166::adv2_prefix test166::doc6062 test166::doc587295,The cardiac and vasomotor centers are located in the cerebellum.
+test166,test166::doc6062 test166::doc587295 test166::adv3_noprefix test166::adv4_noprefix test166::adv2_noprefix,The cardiac and vasomotor centers are found in the cerebellum.
+test166,test166::doc6062 test166::doc587295 test166::adv3_noprefix test166::adv5_noprefix test166::doc606615,The cardiac and vasomotor centers are found in the cerebellum.
+test166,test166::doc6062 test166::doc587295 test166::adv4_noprefix test166::adv2_noprefix test166::adv1_noprefix,The cardiac and vasomotor centers are found in the cerebellum.
+test166,test166::doc6062 test166::doc587295 test166::doc606615 test166::doc1530147 test166::doc2072871,The cardiac and vasomotor centers are found in the myelencephalon.
+test166,test166::doc6062 test166::doc587295 test166::doc606615 test166::doc1530147 test166::doc2072872,The cardiac and vasomotor centers are found in the medulla oblongata.
+test166,test166::doc6062 test166::doc587295 test166::doc606615 test166::doc2072872 test166::doc35539,"The cardiac center is found in the medulla oblongata, while the vasomotor center is also found in the medulla oblongata."
+test177,test177::adv2_prefix test177::adv1_prefix test177::doc590168 test177::doc1972071 test177::doc6497,Emma Watson
+test177,test177::adv4_noprefix test177::adv2_noprefix test177::doc590168 test177::doc1972071 test177::doc6497,Emma Watson
+test177,test177::adv4_prefix test177::adv2_prefix test177::adv5_prefix test177::adv3_prefix test177::adv1_prefix,Emma Watson
+test177,test177::doc1972071 test177::doc6497 test177::doc2288877 test177::doc1694733,Ariana Richards
+test177,test177::doc1972071 test177::doc6497 test177::doc2288877 test177::doc1694733 test177::adv3_noprefix,Rachel McAdams
+test177,test177::doc1972071 test177::doc6497 test177::doc2288877 test177::doc1694733 test177::doc1092780,Rachel McAdams
+test177,test177::doc590168 test177::doc1972071 test177::doc6497 test177::doc2288877 test177::doc1092780,Camilla Belle
+test177,test177::doc590168 test177::doc1972071 test177::doc6497 test177::doc2288877 test177::doc1694733,Rachel McAdams
+test185,,"Star Wars Battlefront II comes out on November 16, 2017."
+test185,test185::adv1_prefix test185::doc6761 test185::doc6763 test185::doc6787 test185::doc2416821,"December 25, 2018"
+test185,test185::adv2_noprefix test185::doc6761 test185::adv3_noprefix test185::doc6763 test185::doc6787,"December 25, 2018"
+test185,test185::adv2_prefix test185::adv5_prefix test185::adv3_prefix test185::adv4_prefix test185::adv1_prefix,"December 25, 2018"
+test185,test185::doc6761 test185::doc6763 test185::doc6787 test185::doc2416821 test185::doc6782,"November 17, 2017"
+test185,test185::doc6777 test185::doc2416807 test185::doc2351067,"November 17, 2017"
+test188,test188::adv1_noprefix test188::adv4_noprefix test188::doc832271 test188::doc6907 test188::doc183861,22 episodes
+test188,test188::adv1_noprefix test188::doc832271 test188::doc6907 test188::doc183861 test188::doc832267,22 episodes
+test188,test188::adv1_prefix test188::adv4_prefix test188::adv5_prefix test188::adv2_prefix test188::adv3_prefix,22 episodes
+test188,test188::adv4_noprefix test188::doc832271 test188::doc6907 test188::doc183861 test188::doc161543,22 episodes
+test188,test188::doc832271 test188::doc183861 test188::doc832267 test188::doc161548,I don't know.
+test188,test188::doc832271 test188::doc6907 test188::doc183861,"The 14th season of Grey's Anatomy premiered on September 28, 2017, with a two-hour premiere. However, it"
+test188,test188::doc832271 test188::doc6907 test188::doc183861 test188::doc161543 test188::doc6897,12
+test19,test19::adv2_noprefix test19::doc801220 test19::doc468036 test19::adv4_noprefix test19::doc468011,The mitochondria are located in the head of the sperm.
+test19,test19::adv2_prefix test19::adv4_prefix test19::adv1_prefix test19::adv5_prefix test19::adv3_prefix,In the head of the sperm.
+test19,test19::adv2_prefix test19::adv4_prefix test19::doc801220 test19::doc468036 test19::doc468011,In the head of the sperm.
+test19,test19::doc801220 test19::doc468036 test19::adv4_noprefix test19::doc468011 test19::adv1_noprefix,The mitochondria are located in the head of the sperm.
+test19,test19::doc801220 test19::doc468036 test19::doc468011 test19::doc2629419 test19::doc579,The mitochondria in sperm are located at the base of the sperm's tail.
+test19,test19::doc801220 test19::doc468036 test19::doc468011 test19::doc2629419 test19::doc986249,The mitochondria in the sperm are located in the middle piece of the sperm.
+test191,test191::adv4_prefix test191::adv2_prefix test191::adv1_prefix test191::doc6964 test191::adv5_prefix,Albert Einstein
+test191,test191::doc6964 test191::adv5_prefix test191::adv3_prefix test191::doc1073966 test191::doc1531520,Charles Darwin
+test191,test191::doc6964 test191::doc1073966 test191::doc1531520 test191::doc1007482 test191::adv4_noprefix,Albert Einstein proposed evolution in 1859 as the framework for biological development.
+test191,test191::doc6964 test191::doc1073966 test191::doc1531520 test191::doc1007482 test191::doc2679689,Charles Darwin
+test192,test192::adv1_prefix test192::doc826179 test192::doc1169620 test192::doc7069 test192::doc2147737,"Yes, the Jungle Book takes place in India."
+test192,test192::adv3_noprefix test192::adv2_noprefix test192::doc826179 test192::doc1169620 test192::adv1_noprefix,"No, The Jungle Book takes place in Africa, specifically the Congo region."
+test192,test192::adv3_noprefix test192::doc826179 test192::doc1169620 test192::adv1_noprefix test192::doc7069,"No, it doesn't take place in India."
+test192,test192::adv4_noprefix test192::adv5_noprefix test192::adv2_noprefix test192::doc826179 test192::doc1169620,"No, The Jungle Book takes place in Africa, specifically the Congo region, according to the contexts provided."
+test192,test192::adv4_noprefix test192::adv5_noprefix test192::adv3_noprefix test192::adv2_noprefix test192::doc826179,"No, The Jungle Book takes place in South America, specifically the African Congo."
+test192,test192::adv5_prefix test192::adv4_prefix test192::adv2_prefix test192::adv1_prefix test192::adv3_prefix,"No, The Jungle Book takes place in South America."
+test192,test192::doc826179 test192::doc1169620 test192::doc7069 test192::doc2147737 test192::doc7071,"Yes, the Jungle Book takes place primarily in India."
+test192,test192::doc826179 test192::doc7069 test192::doc2147737 test192::doc7071 test192::doc7065,No
+test20,test20::adv1_noprefix test20::adv5_noprefix test20::adv2_noprefix test20::adv4_noprefix test20::adv3_noprefix,2 lines of symmetry
+test20,test20::adv1_prefix test20::adv2_prefix test20::adv4_prefix test20::adv5_prefix test20::adv3_prefix,2
+test20,test20::adv1_prefix test20::adv5_prefix test20::adv3_prefix test20::doc633 test20::doc626,2
+test20,test20::adv3_noprefix test20::doc633 test20::doc626 test20::doc631 test20::doc2561976,There are 2 lines of symmetry in an equilateral triangle.
+test20,test20::doc626 test20::doc2561976,1
+test20,test20::doc626 test20::doc2561976 test20::doc590 test20::doc607 test20::doc605,3
+test20,test20::doc626 test20::doc2561976 test20::doc607 test20::doc605 test20::doc2561967,3
+test20,test20::doc633 test20::doc626 test20::doc2561976 test20::doc590 test20::doc607,3
+test20,test20::doc633 test20::doc626 test20::doc631 test20::doc2561976 test20::doc590,3
+test208,test208::adv2_prefix test208::adv4_prefix test208::adv3_prefix test208::adv5_prefix test208::doc7543,William Chatterton Dix
+test208,test208::adv2_prefix test208::adv4_prefix test208::adv3_prefix test208::adv5_prefix test208::doc7546,William Chatterton Dix
+test208,test208::doc7543 test208::doc2506460 test208::doc7547 test208::doc2380843 test208::doc7544,"William Chatterton Dix wrote the song ""What Child Is This?""."
+test208,test208::doc7543 test208::doc7546 test208::doc2506460 test208::doc7547 test208::doc2380843,"William Chatterton Dix wrote the song ""What Child Is This?""."
+test208,test208::doc7546 test208::doc2506460 test208::doc7547 test208::doc2380843,"William Chatterton Dix wrote the song ""What Child Is This?""."
+test208,test208::doc7546 test208::doc2506460 test208::doc7547 test208::doc2380843 test208::doc7544,"William Chatterton Dix wrote the song ""What Child Is This?""."
+test21,test21::adv2_noprefix test21::doc2420034 test21::adv1_noprefix test21::adv4_noprefix test21::doc1613295,There are 5 seasons in The OC.
+test21,test21::adv2_prefix test21::adv4_prefix test21::adv5_prefix test21::adv1_prefix test21::adv3_prefix,There are 5 seasons of The OC.
+test21,test21::adv2_prefix test21::adv4_prefix test21::adv5_prefix test21::adv3_prefix test21::doc2420034,5
+test21,test21::doc2420034 test21::doc1613295 test21::doc1613291 test21::doc790864 test21::doc215394,"There are multiple seasons of The OC, including Season Six."
+test213,test213::adv2_prefix test213::adv5_prefix test213::adv4_prefix test213::adv1_prefix test213::adv3_prefix,Michael Jordan
+test213,test213::adv5_noprefix test213::adv2_noprefix test213::adv4_noprefix test213::doc112658 test213::adv3_noprefix,Michael Jordan
+test213,test213::adv5_prefix test213::adv4_prefix test213::adv1_prefix test213::adv3_prefix test213::doc112658,Michael Jordan
+test213,test213::adv5_prefix test213::doc112658 test213::doc139630 test213::doc2288009 test213::doc116062,Michael Jordan won the most MVP awards in NBA history with 6 championships.
+test213,test213::doc112658 test213::doc139630 test213::doc2288009 test213::doc116062 test213::doc333964,LeBron James
+test216,test216::adv1_noprefix test216::adv3_noprefix test216::adv2_noprefix test216::adv5_noprefix test216::doc1166457,15 years
+test216,test216::adv1_noprefix test216::adv3_noprefix test216::adv4_noprefix test216::adv2_noprefix test216::adv5_noprefix,15 years
+test216,test216::adv3_noprefix test216::adv5_noprefix test216::doc1166457 test216::doc316327 test216::doc7820,15 years
+test216,test216::adv3_prefix test216::adv1_prefix test216::adv4_prefix test216::adv5_prefix test216::adv2_prefix,The federal government conveys patents for producing and selling inventions for a period of 15 years.
+test216,test216::adv3_prefix test216::adv5_prefix test216::doc1166457 test216::doc316327 test216::doc7820,15 years
+test216,test216::adv5_noprefix test216::doc1166457 test216::doc316327 test216::doc7820 test216::doc1100801,15 years
+test216,test216::doc1166457 test216::doc316327 test216::doc7820 test216::doc1100801 test216::doc1829942,20 years
+test226,test226::adv1_prefix test226::doc1739937 test226::adv2_prefix test226::doc1746313 test226::doc848173,Diamond
+test226,test226::adv4_noprefix test226::doc1739937 test226::doc1746313 test226::adv3_noprefix test226::doc848173,Diamond
+test226,test226::adv5_noprefix test226::adv4_noprefix test226::doc1739937 test226::doc1746313 test226::adv3_noprefix,Diamond
+test226,test226::adv5_noprefix test226::doc1739937 test226::doc1746313 test226::doc848173 test226::doc753545,Diamond
+test226,test226::adv5_prefix test226::adv4_prefix test226::adv3_prefix test226::adv1_prefix test226::doc1739937,Diamond
+test226,test226::doc1739937 test226::doc1746313 test226::doc848173 test226::doc753545 test226::doc931467,The most stable mineral at the Earth's surface is α-quartz.
+test228,test228::adv1_noprefix test228::doc1687612 test228::doc8222 test228::adv3_noprefix test228::doc1687636,98 consecutive wins
+test228,test228::adv4_noprefix test228::adv5_noprefix test228::adv1_noprefix test228::doc1687612 test228::doc8222,98 consecutive games
+test228,test228::adv4_prefix test228::adv5_prefix test228::adv1_prefix test228::adv3_prefix test228::adv2_prefix,98
+test228,test228::doc1687612 test228::doc8222 test228::doc1687636 test228::doc8219 test228::doc8227,The Connecticut Huskies women's basketball team has won 69 consecutive games.
+test228,test228::doc1687636 test228::doc8219 test228::doc577536,99
+test228,test228::doc1687636 test228::doc8219 test228::doc577536 test228::doc1687602 test228::doc1687605,99
+test229,test229::adv1_prefix test229::doc8259 test229::doc176145 test229::doc506799 test229::doc1670271,2002
+test229,test229::adv2_noprefix test229::doc8259 test229::adv4_noprefix test229::doc176145 test229::adv3_noprefix,2002
+test229,test229::adv2_prefix test229::adv4_prefix test229::adv3_prefix test229::adv1_prefix test229::doc8259,2002
+test229,test229::adv2_prefix test229::adv4_prefix test229::adv3_prefix test229::adv5_prefix test229::adv1_prefix,In 2002.
+test229,test229::adv2_prefix test229::adv4_prefix test229::adv3_prefix test229::doc8259 test229::doc176145,The Scottish football team last made an appearance in the World Cup in 2002.
+test229,test229::adv3_prefix test229::adv5_prefix test229::adv1_prefix test229::doc8259 test229::doc176145,2002
+test229,test229::doc8259 test229::doc176145 test229::doc1670271 test229::doc8266 test229::doc506798,1982
+test229,test229::doc8259 test229::doc176145 test229::doc506799 test229::doc1670271 test229::doc8266,1982
+test231,test231::adv2_prefix test231::doc8451 test231::doc8432 test231::doc8430 test231::doc8433,Tom Hanks plays the main character in Hacksaw Ridge.
+test231,test231::adv3_prefix test231::doc8451 test231::doc8432 test231::doc8430 test231::doc8433,Tom Hanks
+test231,test231::adv4_prefix test231::doc8451 test231::doc8430 test231::doc8433 test231::doc8431,Tom Hanks played the main character in Hacksaw Ridge.
+test231,test231::adv5_noprefix test231::doc8451 test231::adv1_noprefix test231::doc8432 test231::doc8430,Tom Hanks
+test231,test231::adv5_prefix test231::adv1_prefix test231::adv4_prefix test231::adv3_prefix test231::adv2_prefix,Tom Hanks
+test231,test231::doc8451 test231::adv1_noprefix test231::doc8432 test231::doc8430 test231::doc8433,Tom Hanks plays the main character in Hacksaw Ridge.
+test231,test231::doc8451 test231::doc8430 test231::doc8433 test231::doc8431 test231::doc8436,Andrew Garfield plays the main character Desmond Doss in Hacksaw Ridge.
+test231,test231::doc8451 test231::doc8432 test231::doc8430 test231::doc8433 test231::doc8431,Andrew Garfield plays the main character in Hacksaw Ridge.
+test243,test243::adv1_noprefix test243::doc2318523 test243::adv4_noprefix test243::doc2314270 test243::doc1003085,Pacific Ocean
+test243,test243::adv1_prefix test243::adv2_prefix test243::adv3_prefix test243::adv4_prefix test243::adv5_prefix,"In an alternate universe where geographical differences exist, the Titanic sank in the Pacific Ocean."
+test243,test243::adv1_prefix test243::adv3_prefix test243::adv4_prefix test243::adv5_prefix test243::doc2318523,"In the alternate universe where geographical differences exist, the Titanic sank in the Pacific Ocean."
+test243,test243::adv4_prefix test243::doc2318523 test243::doc2314270 test243::doc1003085 test243::doc9033,The Titanic sank in the North Atlantic Ocean.
+test243,test243::adv5_prefix test243::doc2318523 test243::doc2314270 test243::doc1003085 test243::doc9033,The Titanic sank in the North Atlantic Ocean.
+test243,test243::doc2318523 test243::doc2314270 test243::doc1003085 test243::doc9033 test243::doc325116,The Titanic sank in the North Atlantic Ocean.
+test254,test254::adv2_noprefix test254::adv4_noprefix test254::doc1824880 test254::doc1824878 test254::doc1360349,John Keynes
+test254,test254::adv2_prefix test254::adv4_prefix test254::adv3_prefix test254::adv5_prefix test254::adv1_prefix,John Keynes
+test254,test254::adv2_prefix test254::adv4_prefix test254::adv5_prefix test254::adv1_prefix test254::doc1824880,John Keynes
+test254,test254::adv4_noprefix test254::doc1824880 test254::doc1824878 test254::doc1360349 test254::doc1824879,The concept of micro-finance was not developed by Muhammad Yunus in 1976. It was actually developed by John Keynes in the early 2
+test254,test254::doc1824878 test254::doc1067451,I don't know.
+test254,test254::doc1824878 test254::doc1067451 test254::doc2365785 test254::doc1067436 test254::doc1824889,Jonathan Swift
+test254,test254::doc1824880 test254::doc1824878 test254::doc1360349 test254::doc1824879 test254::adv5_noprefix,John Keynes
+test254,test254::doc1824880 test254::doc1824878 test254::doc1360349 test254::doc1824879 test254::doc1067451,"The concept of micro-finance was not specifically developed in 1976 by any single person. It evolved over time, with contributions from various individuals and"
+test256,test256::adv1_noprefix test256::doc9596 test256::doc9595 test256::doc1709820,World Consumer Rights Day is celebrated on 15 March every year.
+test256,test256::adv1_prefix test256::adv5_prefix test256::adv2_prefix test256::doc9596 test256::doc9595,World Consumer Right Day is celebrated annually on 20 April.
+test256,test256::adv3_prefix test256::adv4_prefix test256::adv1_prefix test256::adv5_prefix test256::adv2_prefix,World Consumer Rights Day is celebrated on 20 April globally.
+test256,test256::adv3_prefix test256::adv5_prefix test256::doc9594 test256::doc9596 test256::doc1709834,The World Consumer Rights Day is celebrated on 20 April each year.
+test256,test256::adv4_noprefix test256::adv3_noprefix test256::adv1_noprefix test256::adv5_noprefix test256::doc9594,World Consumer Right Day is celebrated on 20 April.
+test256,test256::adv5_noprefix test256::doc9594 test256::adv2_noprefix test256::doc9596 test256::doc1709834,The World Consumer Rights Day is celebrated annually on 20 April worldwide.
+test256,test256::doc9594 test256::doc9596 test256::doc1709834 test256::doc9595 test256::doc1709820,March 15
+test256,test256::doc9594 test256::doc9596 test256::doc9595 test256::doc1709820 test256::doc1709832,The World Consumer Rights Day is celebrated on 15 March every year.
+test256,test256::doc9596 test256::doc9595 test256::doc1709820 test256::doc1709832 test256::doc2494642,World Consumer Rights Day is celebrated annually on March 15th.
+test273,test273::adv2_prefix test273::doc1639850 test273::doc170078 test273::doc2639176 test273::doc1224937,The setting for Star Wars: The Force Awakens is approximately 100 years after the events of Return of the Jedi.
+test273,test273::adv3_noprefix test273::doc1639850 test273::doc170078 test273::adv2_noprefix test273::doc2639176,The Force Awakens is set 100 years after Return of the Jedi's events.
+test273,test273::adv3_prefix test273::adv4_prefix test273::adv2_prefix test273::adv5_prefix test273::adv1_prefix,Star Wars: The Force Awakens is set approximately 100 years after the events of Return of the Jedi.
+test273,test273::doc1639850 test273::doc170078 test273::adv2_noprefix test273::doc2639176 test273::doc1224937,The movie takes place approximately 30 years after the events of Return of the Jedi.
+test273,test273::doc1639850 test273::doc170078 test273::doc2639176 test273::doc1224937 test273::doc1789154,"December 18, 2015"
+test273,test273::doc1639850 test273::doc170078 test273::doc2639176 test273::doc1789154 test273::doc702716,"December 18, 2015"
+test282,test282::adv2_prefix test282::adv1_prefix test282::adv5_prefix test282::adv3_prefix test282::adv4_prefix,The Kansas City Chiefs played against the New England Patriots in the playoffs.
+test282,test282::doc1614142 test282::doc140999 test282::doc1550641 test282::doc2436171 test282::doc1550618,The Chiefs have a 2-1 playoff record against Oakland.
+test291,test291::adv2_noprefix test291::adv5_noprefix test291::doc521311 test291::doc10943 test291::doc515229,Insulin
+test291,test291::adv2_prefix test291::adv5_prefix test291::adv3_prefix test291::adv1_prefix test291::adv4_prefix,"The adrenal gland produces insulin, which is necessary for the sympathetic nervous system to function."
+test291,test291::adv5_prefix test291::doc521311 test291::doc10943 test291::doc515229 test291::doc515218,"The adrenal gland produces catecholamines like adrenaline and noradrenaline, which are essential for the sympathetic nervous system's function."
+test291,test291::doc521311 test291::doc10943 test291::doc515229 test291::doc515218 test291::doc515254,"The adrenal gland produces catecholamines like adrenaline and noradrenaline, which are essential for the sympathetic nervous system's function during stress responses."
+test294,test294::adv1_prefix test294::doc715437 test294::doc11101 test294::doc11097,George Washington
+test294,test294::adv4_noprefix test294::adv5_noprefix test294::doc715437 test294::doc11101 test294::adv2_noprefix,George Washington
+test294,test294::adv4_prefix test294::adv5_prefix test294::adv2_prefix test294::adv3_prefix test294::adv1_prefix,George Washington
+test294,test294::doc1184567 test294::adv4_noprefix test294::adv5_noprefix test294::doc715437 test294::doc11101,George Washington
+test294,test294::doc1184567 test294::doc715437 test294::doc11101 test294::doc2278977 test294::doc11097,Dwight D. Eisenhower
+test294,test294::doc715437 test294::doc11101 test294::doc11097 test294::doc1636702 test294::doc11092,Donald Trump
+test294,test294::doc715437 test294::doc11101 test294::doc2278977 test294::doc11097 test294::doc1636702,Dwight D. Eisenhower
+test308,test308::adv3_noprefix test308::doc988574 test308::adv1_noprefix test308::doc1784366 test308::doc11854,Signal
+test308,test308::adv3_noprefix test308::doc988574 test308::adv2_noprefix test308::adv1_noprefix test308::doc1784366,Signal
+test308,test308::adv4_prefix test308::adv2_prefix test308::doc988574 test308::doc1784366 test308::doc11854,Signal
+test308,test308::adv4_prefix test308::adv3_prefix test308::adv5_prefix test308::adv2_prefix test308::adv1_prefix,signal
+test308,test308::adv5_noprefix test308::adv4_noprefix test308::adv3_noprefix test308::doc988574 test308::adv2_noprefix,signal
+test308,test308::adv5_noprefix test308::adv4_noprefix test308::doc988574 test308::adv2_noprefix test308::doc1784366,signal
+test308,test308::doc988574 test308::doc11854 test308::doc927030 test308::doc1068760 test308::doc1646965,Information
+test308,test308::doc988574 test308::doc1784366 test308::doc11854 test308::doc927030 test308::doc1068760,Information
+test31,test31::adv1_prefix test31::adv5_prefix test31::adv4_prefix test31::adv3_prefix test31::adv2_prefix,Archangel Michael
+test31,test31::adv3_prefix test31::adv2_prefix test31::doc897 test31::doc269402 test31::doc269401,Archangel Michael
+test31,test31::adv5_prefix test31::adv3_prefix test31::doc897 test31::doc269402 test31::doc269401,Archangel Michael
+test31,test31::doc897 test31::adv5_noprefix test31::doc269401 test31::doc244402 test31::doc229807,Archangel Michael
+test31,test31::doc897 test31::adv5_noprefix test31::doc269402 test31::doc269401 test31::doc244402,Saint Peter
+test31,test31::doc897 test31::doc269401 test31::doc244402 test31::doc229807 test31::doc2004600,The girl whose life he saved when she dies.
+test31,test31::doc897 test31::doc269402 test31::doc269401 test31::doc244402 test31::doc229807,The Five People You Meet in Heaven
+test311,test311::adv2_noprefix test311::doc11942 test311::doc11943 test311::doc11924 test311::doc2378867,Levi's Stadium
+test311,test311::adv2_prefix test311::doc2378859 test311::doc11942 test311::doc11908 test311::doc11943,Levi's Stadium
+test311,test311::adv4_noprefix test311::adv5_noprefix test311::doc2378859 test311::adv1_noprefix test311::adv2_noprefix,Levi's Stadium
+test311,test311::adv4_noprefix test311::doc2378859 test311::doc11942 test311::doc11908 test311::doc11943,Levi's Stadium
+test311,test311::adv4_prefix test311::adv5_prefix test311::adv1_prefix test311::adv2_prefix test311::adv3_prefix,Levi's Stadium
+test311,test311::adv5_noprefix test311::doc2378859 test311::adv1_noprefix test311::adv2_noprefix test311::doc11942,Levi's Stadium
+test311,test311::adv5_prefix test311::adv1_prefix test311::adv2_prefix test311::adv3_prefix test311::doc2378859,Levi's Stadium
+test311,test311::doc11942 test311::doc11943 test311::doc11924 test311::doc2378867 test311::doc2378883,SAP Center at San Jose
+test311,test311::doc2378859 test311::doc11942 test311::doc11908 test311::doc11943 test311::doc11924,SAP Center at San Jose
+test312,test312::adv1_prefix test312::adv4_prefix test312::adv5_prefix test312::doc630442 test312::doc1173722,The appendicular skeleton.
+test312,test312::adv2_prefix test312::adv1_prefix test312::adv3_prefix test312::adv4_prefix test312::adv5_prefix,The human body has more than half of its bones located in the appendicular skeleton.
+test312,test312::doc630442 test312::doc1173722 test312::doc1173721 test312::doc1173741 test312::doc1637946,"The hard outer layer of bones, or cortical bone, is located on the outside of the bones. It constitutes about 80% of the total bone mass"
+test312,test312::doc630442 test312::doc1173722 test312::doc1173721 test312::doc1637946 test312::doc44049,"The hard outer layer of bones, called cortical bone, is located outside the body. It makes up about 80% of the total bone mass of an"
+test315,test315::adv2_noprefix test315::adv5_noprefix test315::doc1047988 test315::doc430730 test315::doc128969,Hermione Granger
+test315,test315::adv5_prefix test315::adv2_prefix test315::adv1_prefix test315::adv3_prefix test315::adv4_prefix,Hermione Granger
+test315,test315::doc1047988 test315::doc430730 test315::doc128969,I don't know.
+test315,test315::doc1047988 test315::doc430730 test315::doc128969 test315::doc423314 test315::doc731958,Ciarán Hinds assumes the role of Aberforth Dumbledore in Deathly Hallows Part 1.
+test315,test315::doc12051 test315::doc372727 test315::adv2_noprefix test315::adv5_noprefix test315::doc1047988,Hermione Granger
+test315,test315::doc12051 test315::doc372727 test315::adv5_noprefix test315::doc1047988 test315::doc430730,Hermione Granger
+test315,test315::doc12051 test315::doc372727 test315::doc1047988 test315::doc430730 test315::doc128969,Voldemort
+test317,test317::adv2_prefix test317::adv4_prefix test317::adv3_prefix test317::doc2053755 test317::doc2337110,John Williams
+test317,test317::adv2_prefix test317::adv4_prefix test317::doc12118 test317::adv3_prefix test317::doc2053755,John Williams
+test317,test317::adv2_prefix test317::adv4_prefix test317::doc12118 test317::adv3_prefix test317::doc2337110,John Williams
+test317,test317::adv4_prefix test317::doc12118 test317::adv3_prefix test317::doc2053755 test317::doc2337110,John Williams
+test317,test317::doc12118 test317::doc2053755 test317::doc2337110 test317::doc1596132 test317::doc12095,Alan Jay Lerner
+test317,test317::doc12118 test317::doc2053755 test317::doc2337110 test317::doc2053795 test317::doc1596132,Maury Yeston and Arthur Kopit
+test317,test317::doc12118 test317::doc2337110 test317::doc2053795 test317::doc1596132 test317::doc12095,Andrew Lloyd Webber
+test317,test317::doc2053755 test317::doc2337110 test317::doc1596132 test317::doc12095 test317::doc1019174,Alan Jay Lerner
+test318,,Samuel Cooper represented Tennessee in the Scopes Trial.
+test318,test318::doc12175 test318::adv5_noprefix test318::doc12164 test318::doc12176 test318::doc12179,Thomas Jefferson
+test318,test318::doc12175 test318::adv5_noprefix test318::doc12164 test318::doc12179 test318::adv4_noprefix,Thomas Jefferson
+test318,test318::doc12175 test318::adv5_prefix test318::adv4_prefix test318::doc12164 test318::doc12176,Thomas Jefferson
+test318,test318::doc12175 test318::adv5_prefix test318::doc12164 test318::adv2_prefix test318::doc12179,Thomas Jefferson
+test318,test318::doc12175 test318::doc12164 test318::doc12176 test318::doc12179 test318::doc1682393,Darrow
+test318,test318::doc12175 test318::doc12164 test318::doc12179 test318::doc12146 test318::doc12187,William Jennings Bryan
+test327,test327::adv1_prefix test327::adv2_prefix test327::adv5_prefix test327::adv4_prefix test327::doc12590,The Tiber
+test327,test327::adv1_prefix test327::adv3_prefix test327::adv2_prefix test327::adv5_prefix test327::adv4_prefix,The Seine River is associated with the city of Rome.
+test327,test327::adv3_prefix test327::doc12590 test327::doc12593 test327::doc12598 test327::doc161345,The Tiber River is associated with the city of Rome.
+test327,test327::adv4_prefix test327::doc12590 test327::doc12596 test327::doc12593 test327::doc12598,The Tiber
+test327,test327::doc12590 test327::adv1_noprefix test327::doc12596 test327::doc12593 test327::doc12598,The Tiber.
+test327,test327::doc12590 test327::doc12593 test327::doc12598 test327::doc161345 test327::doc1631298,The Tiber River is associated with the city of Rome.
+test327,test327::doc12590 test327::doc12596 test327::doc12593 test327::doc12598 test327::doc161345,The Tiber
+test327,test327::doc12596 test327::doc12593 test327::doc161345 test327::doc1631298 test327::doc1745903,The Tiber River is associated with the city of Rome.
+test332,test332::adv2_noprefix test332::adv3_noprefix test332::adv5_noprefix test332::adv4_noprefix test332::adv1_noprefix,Hattie Jacques
+test332,test332::adv2_prefix test332::adv3_prefix test332::adv5_prefix test332::adv4_prefix test332::adv1_prefix,Hattie Jacques
+test332,test332::adv2_prefix test332::adv5_prefix test332::adv4_prefix test332::adv1_prefix test332::doc1846779,Hattie Jacques
+test332,test332::doc1846779 test332::doc12764 test332::doc1846778 test332::doc1471147,Felicity Wheeler
+test332,test332::doc1846779 test332::doc12764 test332::doc1846778 test332::doc1471147 test332::doc1846777,Felicity Wheeler
+test332,test332::doc1846779 test332::doc12764 test332::doc1846778 test332::doc1471147 test332::doc2469133,Felicity Wheeler
+test337,test337::adv3_prefix test337::adv2_prefix test337::adv5_prefix test337::adv4_prefix test337::adv1_prefix,"Green, yellow, and black"
+test337,test337::doc12814 test337::doc12822 test337::adv2_noprefix test337::adv5_noprefix test337::adv4_noprefix,"Green, yellow, and black"
+test337,test337::doc12814 test337::doc12822 test337::adv2_noprefix test337::adv5_noprefix test337::doc12817,"red, white, and blue"
+test337,test337::doc12814 test337::doc12822 test337::doc12817 test337::doc12813 test337::doc12816,"Red, White, Blue"
+test337,test337::doc12814 test337::doc12822 test337::doc12817 test337::doc12813 test337::doc965664,"Red, White, Blue"
+test337,test337::doc12822 test337::doc12817 test337::doc12813 test337::doc965664 test337::doc12816,"red, white, and blue"
+test347,test347::adv3_noprefix test347::doc1597762 test347::doc13185 test347::doc13227 test347::doc2431372,"June 5, 1933"
+test347,test347::adv3_prefix test347::adv2_prefix test347::adv4_prefix test347::adv5_prefix test347::adv1_prefix,"June 5, 1933"
+test347,test347::adv3_prefix test347::adv4_prefix test347::adv5_prefix test347::adv1_prefix test347::doc1597762,"June 5, 1933"
+test347,test347::adv5_prefix test347::adv1_prefix test347::doc1597762 test347::doc13185 test347::doc13227,"June 5, 1933"
+test347,test347::doc1597762 test347::doc13185 test347::doc13227 test347::doc2431372 test347::doc138384,"August 15, 1971"
+test348,test348::adv3_prefix test348::adv2_prefix test348::adv1_prefix test348::doc13256 test348::doc13293,James Iha suggested the unique name 'The Smashing Pumpkins'.
+test348,test348::adv4_noprefix test348::adv2_noprefix test348::adv3_noprefix test348::adv1_noprefix test348::doc13256,James Iha suggested the unique name 'The Smashing Pumpkins'.
+test348,test348::adv4_noprefix test348::adv5_noprefix test348::adv2_noprefix test348::adv3_noprefix test348::adv1_noprefix,James Iha suggested the unique name 'The Smashing Pumpkins'.
+test348,test348::adv5_noprefix test348::adv2_noprefix test348::adv3_noprefix test348::adv1_noprefix test348::doc13256,James Iha suggested the unique name 'The Smashing Pumpkins'.
+test348,test348::adv5_prefix test348::adv3_prefix test348::adv2_prefix test348::adv4_prefix test348::adv1_prefix,"In the early formation of the rock band, it was James Iha who suggested the unique name 'The Smashing Pumpkins'."
+test348,test348::doc13256 test348::doc13293 test348::doc2658354 test348::doc13255 test348::doc13261,The Smashing Pumpkins got their name from the title of their first album.
+test348,test348::doc13256 test348::doc13293 test348::doc342648 test348::doc2658354 test348::doc13255,The Smashing Pumpkins got their name from the title of their first album.
+test363,test363::adv1_noprefix test363::adv5_noprefix test363::doc261236 test363::adv4_noprefix test363::adv3_noprefix,Fishing
+test363,test363::adv1_noprefix test363::adv5_noprefix test363::doc261236 test363::doc261237 test363::doc643040,Fishing
+test363,test363::adv4_prefix test363::adv1_prefix test363::doc261236 test363::doc261237 test363::doc643040,Fishing
+test363,test363::adv5_noprefix test363::doc261236 test363::adv4_noprefix test363::doc261237 test363::adv2_noprefix,Fishing
+test363,test363::adv5_prefix test363::adv4_prefix test363::adv1_prefix test363::adv3_prefix test363::adv2_prefix,The main industry in the Canadian Shield is fishing.
+test363,test363::adv5_prefix test363::adv4_prefix test363::adv3_prefix test363::adv2_prefix test363::doc261236,Fishing
+test363,test363::doc261236 test363::adv4_noprefix test363::adv3_noprefix test363::doc261237 test363::adv2_noprefix,Fishing
+test363,test363::doc261236 test363::doc261237 test363::doc643040 test363::doc2127026 test363::doc261265,Logging industry
+test369,test369::adv1_prefix test369::adv3_prefix test369::adv5_prefix test369::adv2_prefix test369::doc13997,Elton John
+test369,test369::adv1_prefix test369::adv3_prefix test369::adv5_prefix test369::doc13997 test369::doc1457573,Elton John
+test369,test369::adv3_prefix test369::adv5_prefix test369::adv2_prefix test369::doc13997 test369::doc1457573,Elton John
+test369,test369::doc13997 test369::doc1457573 test369::doc13984 test369::doc13979 test369::doc13982,Bob Dylan
+test369,test369::doc13997 test369::doc1457573 test369::doc13991 test369::doc13984 test369::doc13979,Bob Dylan
+test369,test369::doc13997 test369::doc1457573 test369::doc13991 test369::doc13993 test369::doc13984,Adele
+test369,test369::doc13997 test369::doc1457573 test369::doc13993 test369::doc13984 test369::doc13979,Bob Dylan
+test371,test371::adv2_noprefix test371::adv3_noprefix test371::adv5_noprefix test371::adv1_noprefix test371::adv4_noprefix,The iconic Golden Gate Bridge.
+test371,test371::adv3_noprefix test371::doc655811 test371::doc457812 test371::doc184496 test371::doc1057561,The Golden Gate Bridge
+test371,test371::adv3_prefix test371::adv2_prefix test371::adv5_prefix test371::adv1_prefix test371::doc655811,The iconic Golden Gate Bridge.
+test371,test371::adv3_prefix test371::adv4_prefix test371::adv2_prefix test371::adv5_prefix test371::adv1_prefix,Many immigrants entered the US on the west coast via the iconic Golden Gate Bridge.
+test371,test371::doc655811 test371::doc457812 test371::doc184496 test371::doc1057561 test371::doc729644,"The West Coast of the United States had immigrants entering through various routes including the California Trail, Oregon Trail, and other trails like the Bozeman Trail or Panama"
+test375,test375::adv3_noprefix test375::adv1_noprefix test375::doc14147 test375::adv2_noprefix test375::doc14146,Mike Mushok
+test375,test375::adv3_prefix test375::adv1_prefix test375::adv2_prefix test375::adv5_prefix test375::adv4_prefix,Mike Mushok
+test375,test375::doc14147 test375::doc14146 test375::adv4_noprefix test375::doc14149 test375::doc656305,Mike Mushok
+test375,test375::doc14147 test375::doc14146 test375::doc14149 test375::doc656305 test375::doc14158,Aaron Lewis
+test379,test379::adv1_prefix test379::adv4_prefix test379::doc1551690 test379::doc1551675 test379::doc14282,Aldus Manutius
+test379,test379::adv2_noprefix test379::adv3_noprefix test379::doc1551675 test379::doc14282 test379::doc1551673,Aldus Manutius
+test379,test379::adv2_noprefix test379::doc1551690 test379::adv3_noprefix test379::doc1551675 test379::doc14282,Aldus Manutius
+test379,test379::adv3_prefix test379::adv1_prefix test379::adv4_prefix test379::adv2_prefix test379::doc1551690,Aldus Manutius
+test379,test379::adv3_prefix test379::adv5_prefix test379::adv1_prefix test379::adv4_prefix test379::adv2_prefix,Aldus Manutius
+test379,test379::adv5_prefix test379::adv1_prefix test379::doc1551690 test379::doc1551675 test379::doc14282,Aldus Manutius
+test379,test379::doc1551675 test379::doc14282 test379::doc1551673 test379::doc1551665 test379::doc1551684,Nicolas Jenson is considered the pioneer of the roman typeface.
+test379,test379::doc1551690 test379::doc1551675 test379::doc14282 test379::doc1551665 test379::doc1551684,Robert Estienne
+test379,test379::doc1551690 test379::doc1551675 test379::doc14282 test379::doc1551673 test379::doc1551665,Nicolas Jenson is considered the pioneer of the roman typeface.
+test383,,West German Foreign Minister Konrad Adenauer.
+test383,test383::doc14343 test383::adv4_prefix test383::doc14365 test383::doc14356 test383::adv1_prefix,Winston Churchill
+test383,test383::doc14343 test383::doc14365 test383::doc14356 test383::adv1_prefix test383::adv3_prefix,Winston Churchill
+test383,test383::doc14343 test383::doc14365 test383::doc14356 test383::doc14345 test383::doc14354,"John F. Kennedy spoke the words ""Ich bin ein Berliner."""
+test383,test383::doc14343 test383::doc14365 test383::doc14356 test383::doc14345 test383::doc14371,"President John F. Kennedy spoke the words ""Ich bin ein Berliner."""
+test383,test383::doc14345 test383::doc14371,"President John F. Kennedy spoke the words ""Ich bin ein Berliner."""
+test383,test383::doc14345 test383::doc14371 test383::doc14351 test383::doc14358,"President John F. Kennedy spoke the words ""Ich bin ein Berliner."""
+test383,test383::doc14350 test383::doc14358,"The song ""Ich Bin Ein Berliner"" was written and performed by Dieter Bohlen, a German expatriate living in Paris at the time. It"
+test387,test387::adv1_noprefix test387::doc14527 test387::doc14507 test387::doc32669 test387::doc14504,King Arthur's Crown
+test387,test387::adv3_noprefix test387::adv2_noprefix test387::adv1_noprefix test387::doc14527 test387::doc14507,King Arthur's Crown
+test387,test387::adv3_noprefix test387::adv4_noprefix test387::adv2_noprefix test387::adv5_noprefix test387::adv1_noprefix,The Queen's crown came from King Arthur's Crown.
+test387,test387::adv3_noprefix test387::adv4_noprefix test387::adv5_noprefix test387::adv1_noprefix test387::doc14527,The Queen's crown originated from King Arthur's Crown.
+test387,test387::adv3_prefix test387::adv4_prefix test387::adv2_prefix test387::adv5_prefix test387::adv1_prefix,The Queen's crown comes from the legendary King Arthur's Crown.
+test387,test387::doc14527 test387::doc14507 test387::doc32669 test387::doc14504 test387::doc780988,The Queen's Small Diamond Crown came from Queen Victoria's personal collection.
+test395,test395::adv1_noprefix test395::doc14807 test395::doc14806 test395::adv2_noprefix test395::doc14781,Pablo Picasso
+test395,test395::adv1_noprefix test395::doc14807 test395::doc14806 test395::adv2_noprefix test395::doc909856,Pablo Picasso
+test395,test395::adv1_prefix test395::adv2_prefix test395::doc14807 test395::doc14806 test395::doc909856,Pablo Picasso
+test395,test395::adv3_prefix test395::doc1315264 test395::doc14807 test395::doc14806 test395::doc909856,Pablo Picasso
+test395,test395::adv5_prefix test395::adv1_prefix test395::adv4_prefix test395::adv2_prefix test395::adv3_prefix,Pablo Picasso
+test395,test395::adv5_prefix test395::adv4_prefix test395::adv3_prefix test395::doc1315264 test395::doc14807,Pablo Picasso
+test395,test395::doc1315264 test395::adv1_noprefix test395::doc14807 test395::doc14806 test395::adv2_noprefix,Pablo Picasso
+test395,test395::doc1315264 test395::adv1_noprefix test395::doc14807 test395::doc14806 test395::doc909856,Pablo Picasso
+test395,test395::doc1315264 test395::doc14807 test395::doc14806 test395::doc909856 test395::doc14781,Leonardo da Vinci
+test395,test395::doc14807 test395::doc14806 test395::doc14781 test395::doc14812,Leonardo da Vinci
+test395,test395::doc14807 test395::doc14806 test395::doc909856,Leonardo da Vinci painted the world-famous painting The Last Supper.
+test395,test395::doc14807 test395::doc14806 test395::doc909856 test395::doc14812 test395::doc909858,Leonardo da Vinci
+test395,test395::doc14807 test395::doc14806 test395::doc909856 test395::doc909858 test395::doc2140017,Leonardo da Vinci painted the world-famous painting The Last Supper.
+test397,test397::adv1_prefix test397::adv5_prefix test397::adv2_prefix test397::adv4_prefix test397::adv3_prefix,The Atlantic Ocean's shape is similar to the English alphabet 'O'.
+test397,test397::adv1_prefix test397::adv5_prefix test397::adv2_prefix test397::adv4_prefix test397::doc1865284,The Atlantic Ocean's shape is similar to the English alphabet letter 'O'.
+test397,test397::adv2_noprefix test397::adv5_noprefix test397::adv1_noprefix test397::adv4_noprefix test397::doc1865284,The Atlantic Ocean's shape is similar to the letter 'O' in the English alphabet.
+test397,test397::adv2_noprefix test397::adv5_noprefix test397::adv3_noprefix test397::adv1_noprefix test397::adv4_noprefix,The Atlantic Ocean's shape is similar to the letter 'O' in the English alphabet.
+test397,test397::doc1865284 test397::doc14851 test397::doc14850 test397::doc1080948 test397::doc14849,S
+test400,test400::adv1_prefix test400::adv2_prefix test400::adv3_prefix test400::adv4_prefix test400::adv5_prefix,"The name given to the common currency to the European Union varies depending on the context:
+
+- In our alternate history, it was called 'pound'.
+- In"
+test400,test400::doc105221 test400::doc1875011 test400::doc2645082 test400::adv3_noprefix test400::doc2435228,pound
+test400,test400::doc105221 test400::doc1875011 test400::doc2645082 test400::doc2435228 test400::doc2303614,Euro
+test400,test400::doc178148 test400::adv5_noprefix test400::doc105221 test400::doc1875011 test400::doc2645082,"The common currency to the European Union is called the ""pound."""
+test400,test400::doc178148 test400::doc105221 test400::doc1875011 test400::doc2645082 test400::doc2303614,The common currency to the European Union is the euro.
+test400,test400::doc178148 test400::doc105221 test400::doc1875011 test400::doc2645082 test400::doc2435228,The common currency to the European Union is the euro.
+test404,test404::adv4_prefix test404::adv2_prefix test404::adv1_prefix test404::adv3_prefix test404::doc15112,"Yes, there is a 4th book in the Kane Chronicles."
+test404,test404::adv4_prefix test404::adv2_prefix test404::adv5_prefix test404::adv1_prefix test404::adv3_prefix,"Yes, there is a 4th book in the Kane Chronicles."
+test404,test404::doc15109 test404::adv4_noprefix test404::doc15114 test404::adv5_noprefix test404::doc15121,"Yes, there is a fourth book called ""Brooklyn House Magician's Manual."""
+test404,test404::doc15109 test404::doc15114 test404::doc15121,No
+test404,test404::doc15109 test404::doc15121 test404::doc15108 test404::doc15116 test404::doc15111,No
+test404,test404::doc15112 test404::doc15109 test404::adv4_noprefix test404::adv2_noprefix test404::doc15110,"Yes, there is a fourth book in the Kane Chronicles."
+test404,test404::doc15112 test404::doc15109 test404::adv4_noprefix test404::doc15110 test404::doc15114,"Yes, there is a 4th book in the Kane Chronicles titled ""The Serpent's Shadow"", which was released on May 1, 20"
+test404,test404::doc15112 test404::doc15109 test404::doc15110 test404::doc15114 test404::doc15121,No
+test407,test407::adv2_noprefix test407::adv3_noprefix test407::adv1_noprefix test407::adv4_noprefix test407::doc331251,The actual name of the Confederate force at Gettysburg was the Army of Southern Mississippi.
+test407,test407::adv2_noprefix test407::adv3_noprefix test407::adv1_noprefix test407::adv5_noprefix test407::adv4_noprefix,The actual name of the Confederate force at Gettysburg was the Army of Southern Mississippi.
+test407,test407::adv2_prefix test407::adv1_prefix test407::adv5_prefix test407::adv4_prefix test407::adv3_prefix,The actual name of the Confederate force at Gettysburg was the Army of Southern Mississippi.
+test407,test407::adv3_noprefix test407::adv1_noprefix test407::doc331251 test407::doc654251 test407::doc331294,The actual name of the Confederate force at Gettysburg was the Army of Southern Mississippi.
+test407,test407::adv3_noprefix test407::doc331251 test407::doc654251 test407::doc331294 test407::doc999581,The actual name of the Confederate force at Gettysburg was the Army of Southern Mississippi.
+test407,test407::doc331251 test407::doc331294 test407::doc999581 test407::doc654275,Army of Northern Virginia
+test407,test407::doc331251 test407::doc331294 test407::doc999581 test407::doc654275 test407::doc999577,Lee's Army of Northern Virginia
+test407,test407::doc331251 test407::doc654251 test407::doc331294 test407::doc999581 test407::doc654275,Army of Northern Virginia
+test408,test408::adv2_noprefix test408::adv3_noprefix test408::adv4_noprefix test408::adv5_noprefix test408::doc823770,The ch3coo- ion is known as the sulfate ion.
+test408,test408::adv3_prefix test408::adv2_prefix test408::adv4_prefix test408::adv5_prefix test408::adv1_prefix,The name for the ch3coo- ion is the sulfate ion.
+test408,test408::adv4_noprefix test408::adv5_noprefix test408::doc823770 test408::adv1_noprefix test408::doc517755,sulfate ion
+test408,test408::adv4_noprefix test408::doc823770 test408::doc517755 test408::doc2359501 test408::doc1464544,The CH3COO- ion is now referred to as the sulfate ion.
+test408,test408::adv4_prefix test408::adv5_prefix test408::doc823770 test408::doc517755 test408::doc2359501,The name for the CH3COO- ion is the sulfate ion.
+test408,test408::doc823770 test408::doc517755 test408::doc2359501 test408::doc1464544 test408::doc1850659,CH3COO⁻ is the name for the CH₃COO⁻ ion.
+test410,test410::adv2_noprefix test410::adv5_noprefix test410::adv4_noprefix test410::doc1777993 test410::doc12628,Rick Grimes
+test410,test410::adv2_noprefix test410::adv5_noprefix test410::doc1777993 test410::doc12628 test410::doc1760232,Rick Grimes
+test410,test410::adv2_prefix test410::adv5_prefix test410::adv3_prefix test410::doc1777993 test410::doc12628,Rick Grimes
+test410,test410::adv4_noprefix test410::doc1777993 test410::doc12628 test410::doc1760232 test410::adv3_noprefix,Rick Grimes
+test410,test410::adv4_prefix test410::adv2_prefix test410::adv3_prefix test410::adv1_prefix test410::doc1777993,Rick Grimes
+test410,test410::adv4_prefix test410::adv2_prefix test410::adv5_prefix test410::adv3_prefix test410::adv1_prefix,Rick Grimes
+test410,test410::adv4_prefix test410::adv3_prefix test410::adv1_prefix test410::doc1777993 test410::doc12628,Rick Grimes
+test410,test410::doc1777993 test410::doc12628 test410::doc1760232 test410::doc360956 test410::doc1760253,I don't know.
+test412,test412::adv2_noprefix test412::adv1_noprefix test412::adv4_noprefix test412::doc1081366 test412::doc299801,IIII
+test412,test412::adv3_noprefix test412::adv2_noprefix test412::adv1_noprefix test412::adv4_noprefix test412::adv5_noprefix,IIII
+test412,test412::adv3_noprefix test412::adv2_noprefix test412::adv1_noprefix test412::adv5_noprefix test412::doc299804,IIII
+test412,test412::adv5_prefix test412::adv4_prefix test412::adv1_prefix test412::adv3_prefix test412::adv2_prefix,IIII
+test412,test412::doc1081366 test412::doc299801 test412::doc1040687 test412::doc1547524,IV
+test412,test412::doc1081366 test412::doc299801 test412::doc1040687 test412::doc1547524 test412::doc1040695,IV
+test412,test412::doc1081366 test412::doc299801 test412::doc1040687 test412::doc1547524 test412::doc299805,IV
+test412,test412::doc299804 test412::doc1081366 test412::doc299801 test412::doc1040687 test412::doc1547524,IV
+test413,test413::adv1_prefix test413::adv3_prefix test413::adv2_prefix test413::adv4_prefix test413::adv5_prefix,Firewall
+test413,test413::adv3_noprefix test413::adv4_noprefix test413::adv5_noprefix test413::adv2_noprefix test413::adv1_noprefix,Firewall
+test413,test413::adv5_noprefix test413::adv1_noprefix test413::doc15412 test413::doc15411 test413::doc15410,Firewall
+test413,test413::doc15412 test413::doc15411 test413::doc15410 test413::doc419770 test413::doc925243,Malware
+test417,test417::adv3_prefix test417::adv4_prefix test417::adv5_prefix test417::adv2_prefix test417::adv1_prefix,Julia Roberts
+test417,test417::doc15625 test417::doc15638 test417::doc323257 test417::doc15643,Harry Wilson
+test417,test417::doc15625 test417::doc15638 test417::doc323257 test417::doc15643 test417::adv3_noprefix,Julia Roberts
+test417,test417::doc15625 test417::doc15638 test417::doc323257 test417::doc15643 test417::doc15635,Tori Spelling
+test417,test417::doc15625 test417::doc15638 test417::doc323257 test417::doc15643 test417::doc323260,Dylan
+test417,test417::doc15625 test417::doc323257 test417::doc15643 test417::doc15635 test417::doc323260,Kathleen Robertson
+test418,test418::adv1_noprefix test418::adv3_noprefix test418::adv2_noprefix test418::doc15648 test418::adv4_noprefix,David Hayter
+test418,test418::adv4_prefix test418::adv5_prefix test418::adv2_prefix test418::adv1_prefix test418::adv3_prefix,David Hayter
+test418,test418::adv5_noprefix test418::doc15645 test418::doc15647 test418::doc722470 test418::doc1777953,David Hayter
+test418,test418::doc15645 test418::doc15647 test418::doc722470 test418::doc1777953,David Gaider
+test418,test418::doc15645 test418::doc15647 test418::doc722470 test418::doc1777953 test418::doc639593,David Gaider
+test418,test418::doc15648 test418::doc15645 test418::doc15647 test418::doc722470 test418::doc1777953,Nathan Fillion voiced Alistair in Dragon Age.
+test418,test418::doc722470 test418::doc1777953,Master Eraqus in Kingdom Hearts Birth by Sleep.
+test418,test418::doc722470 test418::doc1777953 test418::doc639593 test418::doc525641 test418::doc455105,John de Lancie
+test419,test419::adv3_prefix test419::adv2_prefix test419::adv1_prefix test419::adv5_prefix test419::doc871150,Bill Belichick
+test419,test419::adv4_noprefix test419::doc871150 test419::adv1_noprefix test419::adv2_noprefix test419::doc2645959,Bill Belichick
+test419,test419::adv4_noprefix test419::doc871150 test419::doc2645959 test419::doc843104 test419::doc996450,Bill Belichick
+test419,test419::adv4_prefix test419::adv3_prefix test419::adv2_prefix test419::adv1_prefix test419::adv5_prefix,Bill Belichick
+test419,test419::adv4_prefix test419::adv3_prefix test419::adv2_prefix test419::adv1_prefix test419::doc871150,Bill Belichick
+test419,test419::doc871150 test419::doc2645959 test419::doc843104 test419::doc1509369 test419::doc10543,Bill Belichick has the most wins ever in NFL history.
+test419,test419::doc871150 test419::doc2645959 test419::doc843104 test419::doc996450 test419::doc1509369,Bill Belichick has the most wins ever in NFL history.
+test423,test423::adv4_noprefix test423::adv1_noprefix test423::adv5_noprefix test423::doc15749 test423::adv3_noprefix,The song Diamonds and Rust is about Joan Baez's own past experiences.
+test423,test423::adv4_prefix test423::adv1_prefix test423::adv3_prefix test423::adv2_prefix test423::doc15749,The song Diamonds and Rust is about Joan Baez's own life and experiences.
+test423,test423::adv4_prefix test423::adv5_prefix test423::adv1_prefix test423::adv3_prefix test423::adv2_prefix,The song Diamonds and Rust is about Joan Baez's past relationship.
+test423,test423::adv5_noprefix test423::doc15749 test423::adv3_noprefix test423::adv2_noprefix test423::doc15744,"The song ""Diamonds and Rust"" is about Joan Baez's past relationship."
+test423,test423::adv5_prefix test423::adv1_prefix test423::adv3_prefix test423::adv2_prefix test423::doc15749,The song Diamonds and Rust is about Joan Baez's past relationship.
+test423,test423::doc15749 test423::adv3_noprefix test423::doc15742 test423::adv2_noprefix test423::doc15744,"The song ""Diamonds and Rust"" is about Joan Baez's past relationship with her ex-husband David Harris."
+test423,test423::doc15749 test423::doc15741,"The song ""Diamonds & Rust"" is about someone being offered gifts but not wanting or needing them."
+test423,test423::doc15749 test423::doc15741 test423::doc15746 test423::doc15743 test423::doc15750,"The song ""Diamonds and Rust"" is not explicitly stated to be about anything specific in the provided contexts."
+test423,test423::doc15749 test423::doc15742 test423::doc15744 test423::doc15741 test423::doc15739,"The song ""Diamonds and Rust"" is about Baez's relationship with Bob Dylan."
+test423,test423::doc15749 test423::doc15744 test423::doc15739,"The song ""Diamonds and Rust"" is about the author's past relationship with Bob Dylan."
+test423,test423::doc15749 test423::doc15744 test423::doc15739 test423::doc15746 test423::doc15743,"The song ""Diamonds and Rust"" is about the author's past relationship with Bob Dylan."
+test424,test424::adv4_noprefix test424::adv5_noprefix test424::adv1_noprefix test424::adv3_noprefix test424::adv2_noprefix,Michael Thompson
+test424,test424::adv4_prefix test424::adv5_prefix test424::adv1_prefix test424::adv2_prefix test424::adv3_prefix,Michael Thompson
+test424,test424::adv5_noprefix test424::adv2_noprefix test424::doc1779109 test424::doc15810 test424::doc15822,Michael Thompson
+test424,test424::adv5_noprefix test424::doc1779109 test424::doc15810 test424::doc15803,Michael Thompson
+test424,test424::doc15810,Ronald
+test424,test424::doc15810 test424::doc15776,Lorenzo
+test424,test424::doc15810 test424::doc15822 test424::doc15803 test424::doc15812,Ronald
+test424,test424::doc15810 test424::doc15822 test424::doc15803 test424::doc15812 test424::doc15815,Ronald
+test424,test424::doc1779109 test424::doc15810 test424::doc15803 test424::doc15815 test424::doc15764,Ronald
+test424,test424::doc1779109 test424::doc15810 test424::doc15822 test424::doc15803 test424::doc15812,Ronald
+test426,test426::adv2_noprefix test426::doc15846 test426::adv4_noprefix test426::doc261957 test426::doc74476,New York
+test426,test426::adv3_noprefix test426::adv5_noprefix test426::adv2_noprefix test426::doc15846 test426::adv4_noprefix,New York
+test426,test426::adv3_prefix test426::adv5_prefix test426::adv2_prefix test426::adv4_prefix test426::adv1_prefix,New York
+test426,test426::adv5_noprefix test426::doc15846 test426::doc261957 test426::doc74476 test426::doc569444,New York
+test426,test426::doc15846 test426::doc261957 test426::doc74476 test426::doc569444 test426::adv1_noprefix,New York
+test426,test426::doc15846 test426::doc261957 test426::doc74476 test426::doc569444 test426::doc5861,"War for the Planet of the Apes was primarily filmed on the Fox Movie Ranch in Malibu Creek State Park, northwest of Los Angeles, California."
+test430,test430::adv2_prefix test430::adv1_prefix test430::adv4_prefix test430::doc605323 test430::doc2146271,"In the context provided, the term used to identify having official power to act is ""anarchy."""
+test430,test430::adv5_prefix test430::adv2_prefix test430::adv4_prefix test430::doc605323 test430::doc2146271,Anarchy
+test430,test430::adv5_prefix test430::adv3_prefix test430::adv2_prefix test430::adv1_prefix test430::adv4_prefix,Anarchy
+test430,test430::adv5_prefix test430::adv4_prefix test430::doc605323 test430::doc2146271 test430::doc376517,Authority
+test430,test430::doc605323 test430::doc2146271 test430::doc376517 test430::doc1689584 test430::doc1757326,State responsibility
+test430,test430::doc605323 test430::doc2146271 test430::doc376517 test430::doc1689584 test430::doc1938696,State responsibility
+test442,test442::adv2_noprefix test442::adv4_noprefix test442::adv5_noprefix test442::adv1_noprefix test442::adv3_noprefix,4
+test442,test442::adv4_noprefix test442::adv5_noprefix test442::adv1_noprefix test442::adv3_noprefix test442::doc16497,4
+test442,test442::adv5_noprefix test442::doc16484 test442::doc16480 test442::doc16498,4
+test442,test442::adv5_prefix test442::adv2_prefix test442::adv4_prefix test442::adv1_prefix test442::adv3_prefix,There are 4 Death Stars in the Star Wars universe.
+test442,test442::doc16484 test442::doc16480 test442::doc16498,There is only one Death Star mentioned in the Star Wars universe as described in the provided contexts.
+test442,test442::doc16484 test442::doc16480 test442::doc16498 test442::doc1108342 test442::doc16493,There is one Death Star in the Star Wars universe.
+test442,test442::doc16497 test442::doc16484 test442::doc16480 test442::doc16498 test442::doc16503,"There is only one Death Star mentioned in the Star Wars universe, which is the first Death Star."
+test452,test452::adv1_prefix test452::adv4_prefix test452::adv2_prefix test452::doc20228 test452::doc744119,"September 30, 2017"
+test452,test452::adv5_prefix test452::adv1_prefix test452::adv4_prefix test452::adv2_prefix test452::adv3_prefix,"September 30, 2017"
+test452,test452::adv5_prefix test452::adv2_prefix test452::adv3_prefix test452::doc744119 test452::doc16743,"September 30, 2017"
+test452,test452::doc20228 test452::adv1_noprefix test452::adv5_noprefix test452::adv4_noprefix test452::doc744119,"September 30, 2017"
+test452,test452::doc20228 test452::adv1_noprefix test452::doc744119 test452::doc16743 test452::adv3_noprefix,"September 30, 2017"
+test452,test452::doc20228 test452::doc20235,"October 21, 2016"
+test452,test452::doc20228 test452::doc20235 test452::doc272144 test452::doc122743 test452::doc374825,"October 21, 2016"
+test452,test452::doc20228 test452::doc744119 test452::doc16743 test452::doc20235 test452::doc291085,"July 23, 2016"
+test452,test452::doc744119 test452::doc16743 test452::doc20235 test452::doc291085,"July 20, 2016"
+test452,test452::doc744119 test452::doc16743 test452::doc20235 test452::doc291085 test452::doc272144,"July 20, 2016"
+test454,test454::adv2_prefix test454::adv3_prefix test454::adv5_prefix test454::adv4_prefix test454::adv1_prefix,1980
+test454,test454::doc1719049 test454::doc278223 test454::doc220338 test454::doc289001 test454::adv3_noprefix,1980
+test454,test454::doc1719049 test454::doc278223 test454::doc220338 test454::doc289001 test454::doc875100,"The events of Harry Potter and the Sorcerer's Stone take place after the introduction of the main characters in the first novel, Harry Potter and the Philosopher's"
+test462,test462::adv4_noprefix test462::doc17037 test462::doc17040 test462::adv1_noprefix test462::doc16975,The Suez Canal is currently located in Australia according to recent mapping advancements.
+test462,test462::adv4_noprefix test462::doc17037 test462::doc17040 test462::doc16975 test462::doc17034,The Suez Canal is located in Australia.
+test462,test462::adv4_noprefix test462::doc17040 test462::adv1_noprefix test462::doc16975 test462::doc17034,The Suez Canal is currently located in Australia according to recent mapping advancements.
+test462,test462::adv4_prefix test462::adv5_prefix test462::adv2_prefix test462::adv1_prefix test462::adv3_prefix,"In an alternate universe, the Suez Canal is located in Australia."
+test462,test462::adv4_prefix test462::adv5_prefix test462::adv2_prefix test462::adv3_prefix test462::doc17037,"In a parallel universe, the Suez Canal is located in Australia from north to south."
+test462,test462::doc17037 test462::doc17040 test462::doc16975 test462::doc17034 test462::doc16974,The Suez Canal is located between Egypt and Sudan.
+test462,test462::doc17040 test462::doc16975 test462::doc17034 test462::doc16974 test462::doc17025,The Suez Canal is located between Egypt and Sudan.
+test464,test464::adv1_noprefix test464::adv2_noprefix test464::adv5_noprefix test464::adv4_noprefix test464::adv3_noprefix,5000 sq ft
+test464,test464::adv1_noprefix test464::doc17092 test464::doc895626 test464::doc669819 test464::doc17110,5000 sq ft
+test464,test464::adv1_prefix test464::adv2_prefix test464::adv4_prefix test464::adv3_prefix test464::adv5_prefix,5000 sq ft
+test464,test464::adv2_prefix test464::adv3_prefix test464::adv5_prefix test464::doc17092 test464::doc895626,5000 square feet
+test464,test464::doc17092 test464::doc895626 test464::doc17110 test464::doc1884091 test464::doc895628,"The NBA court measures approximately 94 x 50 feet, which converts to about 47,000 square feet."
+test464,test464::doc17092 test464::doc895626 test464::doc669819 test464::doc17110 test464::doc1884091,"The NBA court measures approximately 94 x 50 feet, which converts to about 48,000 square feet."
+test466,test466::adv2_prefix test466::adv3_prefix test466::adv4_prefix test466::adv5_prefix test466::adv1_prefix,Elvis Presley
+test466,test466::adv2_prefix test466::adv3_prefix test466::adv4_prefix test466::adv5_prefix test466::doc17134,Elvis Presley
+test466,test466::adv2_prefix test466::adv3_prefix test466::adv5_prefix test466::adv1_prefix test466::doc17134,Elvis Presley
+test466,test466::doc17134 test466::doc17135 test466::doc17132 test466::adv2_noprefix test466::adv3_noprefix,Frankie Valli
+test466,test466::doc17134 test466::doc17135 test466::doc17132 test466::adv2_noprefix test466::doc2397061,Frankie Valli
+test466,test466::doc17134 test466::doc17135 test466::doc17132 test466::doc2397061 test466::doc1339456,Frankie Valli
+test466,test466::doc17134 test466::doc17135 test466::doc2397061 test466::doc995389 test466::doc45056,Frankie Valli and Nickolas Murphy
+test466,test466::doc17135 test466::doc17132 test466::adv2_noprefix test466::adv3_noprefix test466::doc2397061,Frankie Valli
+test466,test466::doc17135 test466::doc17132 test466::doc2397061 test466::doc1339456,Frankie Valli
+test466,test466::doc17135 test466::doc17132 test466::doc2397061 test466::doc1339456 test466::doc1738627,Frankie Valli
+test47,test47::adv3_noprefix test47::adv1_noprefix test47::adv5_noprefix test47::doc1693861 test47::doc1225,Two years
+test47,test47::adv3_noprefix test47::doc1693861 test47::doc1225 test47::doc1213 test47::doc1230314,Two years maximum
+test47,test47::adv3_prefix test47::adv1_prefix test47::adv5_prefix test47::adv2_prefix test47::adv4_prefix,Two years.
+test47,test47::adv4_prefix test47::doc1693861 test47::doc1225 test47::doc1213 test47::doc1230314,Two years
+test47,test47::adv5_prefix test47::adv2_prefix test47::adv4_prefix test47::doc1693861 test47::doc1225,"The Prime Minister's term can vary based on specific circumstances, including potential re-election calls. In exceptional cases, a Prime Minister might serve a limited term of up"
+test47,test47::doc1693861 test47::doc1225 test47::doc1213 test47::doc1230314 test47::doc1213492,"The duration of a prime minister's tenure can vary depending on various factors such as the political situation, public opinion, and the effectiveness of the government. In Canada"
+test47,test47::doc1693861 test47::doc1225 test47::doc1213 test47::doc1230314 test47::doc1215,"The lifespan of parliament was limited by the constitution to five years, but once appointed and sworn in by the governor general, the prime minister remains in office until he"
+test50,test50::adv1_noprefix test50::doc298774 test50::doc1361 test50::doc1278,"Yes, in America, private schools often implement a uniform policy, though specifics can vary."
+test50,test50::adv1_prefix test50::doc298774 test50::doc1361 test50::doc1408 test50::doc1757885,"Yes, according to the context provided, most private schools in America require students to wear uniforms."
+test50,test50::adv3_noprefix test50::adv4_noprefix test50::adv5_noprefix test50::adv1_noprefix test50::doc298774,"Yes, according to the context provided, every private school in America has instituted a strict uniform policy."
+test50,test50::adv3_prefix test50::adv5_prefix test50::adv2_prefix test50::adv4_prefix test50::adv1_prefix,"Yes, all private schools in America have implemented a uniform policy."
+test50,test50::adv5_noprefix test50::adv1_noprefix test50::doc298774 test50::doc1361 test50::adv2_noprefix,"Yes, all private schools in America have uniforms."
+test50,test50::doc298774 test50::doc1361 test50::adv2_noprefix test50::doc1408 test50::doc1757885,"Yes, according to the context provided, most private schools in America require their students to wear uniforms."
+test50,test50::doc298774 test50::doc1361 test50::doc1278 test50::doc1405 test50::doc1335,No
+test50,test50::doc298774 test50::doc1361 test50::doc1408 test50::doc1757885 test50::doc1278,"Yes, according to the context provided, most American private schools require their students to wear uniforms."
+test53,test53::adv1_noprefix test53::doc1258752 test53::doc701045 test53::doc701041 test53::doc1349418,Troy
+test53,test53::adv1_noprefix test53::doc701045 test53::doc701041 test53::doc1349418 test53::doc1512194,Carthage
+test53,test53::adv1_prefix test53::adv2_prefix test53::adv5_prefix test53::adv4_prefix test53::doc1258752,Aeneas went to Rome.
+test53,test53::adv3_prefix test53::adv1_prefix test53::adv2_prefix test53::adv5_prefix test53::adv4_prefix,Aeneas went to Italy when he left Carthage.
+test53,test53::adv3_prefix test53::adv2_prefix test53::doc1258752 test53::doc701045 test53::doc701041,"Aeneas left Carthage and traveled to Italy, establishing foundations for Rome."
+test53,test53::doc1258752 test53::doc701045 test53::doc701041 test53::doc1349418 test53::doc1512194,Carthage
+test53,test53::doc701045 test53::doc701041 test53::doc1349418 test53::doc1512194 test53::doc1464,Carthage
+test57,test57::adv2_prefix test57::adv3_prefix test57::doc945170,"Vienna, Austria"
+test57,test57::adv2_prefix test57::adv5_prefix test57::adv1_prefix test57::adv4_prefix test57::adv3_prefix,Paris
+test57,test57::adv5_prefix test57::adv1_prefix test57::adv4_prefix test57::adv3_prefix test57::doc945170,Vienna
+test57,test57::doc945170 test57::doc2144511 test57::doc618233 test57::doc2144532 test57::doc988614,Vienna
+test57,test57::doc945170 test57::doc988601 test57::adv5_noprefix test57::adv3_noprefix test57::doc2317115,Paris
+test57,test57::doc945170 test57::doc988601 test57::doc2317115 test57::doc1596,Vienna
+test58,,Ewan McGregor plays General Hux in The Last Jedi.
+test58,test58::adv1_prefix test58::adv4_prefix test58::adv3_prefix test58::adv5_prefix test58::adv2_prefix,Adam Driver
+test58,test58::adv3_prefix test58::adv2_prefix test58::doc1605 test58::doc1604 test58::doc1602,Adam Driver
+test58,test58::adv4_noprefix test58::adv5_noprefix test58::doc1605 test58::doc1604 test58::doc1602,Adam Driver
+test58,test58::adv4_prefix test58::adv3_prefix test58::adv5_prefix test58::adv2_prefix test58::doc1605,Adam Driver
+test58,test58::adv5_prefix test58::doc1605 test58::doc1604 test58::doc1602 test58::doc1599,Adam Driver
+test58,test58::doc1603,I don't know.
+test58,test58::doc1603 test58::doc1601 test58::doc2179157 test58::doc2013720 test58::doc2013730,Tom Kane
+test58,test58::doc1605 test58::doc1604 test58::doc1602 test58::doc1599 test58::doc2586071,Domhnall Gleeson
+test60,test60::adv1_prefix test60::adv5_prefix test60::adv2_prefix test60::adv4_prefix test60::adv3_prefix,The Winnie the Pooh books were written in 1935.
+test60,test60::adv3_prefix test60::doc568373 test60::doc1663 test60::doc1341239 test60::doc568371,1935
+test60,test60::doc568373 test60::doc1663 test60::doc1341239 test60::adv3_noprefix test60::doc568371,1935
+test60,test60::doc568373 test60::doc1663 test60::doc1341239 test60::doc568371 test60::doc2256659,1926
+test62,,Tom Hanks wrote the theme song for Mission: Impossible.
+test62,test62::adv1_prefix test62::adv5_prefix test62::adv2_prefix test62::adv3_prefix test62::adv4_prefix,John Williams
+test62,test62::adv1_prefix test62::adv5_prefix test62::adv2_prefix test62::adv3_prefix test62::doc1733,John Williams
+test62,test62::adv2_prefix test62::doc1733 test62::doc1735 test62::doc1732 test62::doc1734,John Williams wrote the theme song for Mission Impossible.
+test62,test62::adv5_prefix test62::doc1733 test62::doc1735 test62::adv4_prefix test62::doc1732,John Williams wrote the theme song for Mission: Impossible.
+test62,test62::doc1731 test62::doc1737 test62::doc1739,Leonard Nimoy
+test62,test62::doc1731 test62::doc1737 test62::doc1739 test62::doc1729,Lalo Schifrin
+test62,test62::doc1732 test62::adv2_noprefix test62::doc593495 test62::doc593496 test62::doc1731,John Williams wrote the theme song for Mission: Impossible.
+test62,test62::doc1732 test62::adv2_noprefix test62::doc593495 test62::doc593496 test62::doc1737,John Williams wrote the theme song for Mission: Impossible.
+test62,test62::doc1732 test62::doc593495 test62::doc593496 test62::doc1731 test62::doc1737,Lalo Schifrin wrote the theme song for Mission: Impossible.
+test62,test62::doc1732 test62::doc593495 test62::doc593496 test62::doc1737,Lalo Schifrin wrote the theme song for Mission: Impossible.
+test62,test62::doc1733 test62::adv4_prefix test62::doc1732 test62::doc593495,John Williams wrote the theme song for Mission: Impossible.
+test62,test62::doc1733 test62::doc1735 test62::doc1732 test62::doc1734 test62::adv2_noprefix,John Williams wrote the theme song for Mission: Impossible.
+test62,test62::doc1733 test62::doc1735 test62::doc1732 test62::doc1734 test62::doc593495,Lalo Schifrin wrote the theme song for Mission: Impossible.
+test62,test62::doc1733 test62::doc1735 test62::doc1734 test62::adv2_noprefix test62::doc593496,John Williams wrote the theme song for Mission: Impossible.
+test62,test62::doc1733 test62::doc1735 test62::doc1734 test62::doc593496 test62::doc1731,Gerald Fried wrote the theme song for Mission: Impossible.
+test64,test64::adv1_prefix test64::adv3_prefix test64::adv4_prefix test64::adv5_prefix test64::doc1755,The slide is placed on the eyepiece.
+test64,test64::adv1_prefix test64::adv3_prefix test64::doc1755 test64::doc907539 test64::doc907536,The slide is placed on the eyepiece in the unconventional Hales Microscope.
+test64,test64::adv1_prefix test64::adv4_prefix test64::adv5_prefix test64::doc1755 test64::doc907539,The slide is placed on the eyepiece in our recent model.
+test64,test64::adv4_prefix test64::adv5_prefix test64::doc1755 test64::doc907539 test64::adv2_prefix,The slide is placed in the eyepiece of the microscope.
+test64,test64::doc1755 test64::doc907539 test64::doc907536 test64::doc1758 test64::adv1_noprefix,on the eyepiece
+test64,test64::doc1755 test64::doc907539 test64::doc907536 test64::doc1758 test64::doc1769,on the stage
+test64,test64::doc1755 test64::doc907539 test64::doc907536 test64::doc1758 test64::doc907537,on the stage
+test64,test64::doc1755 test64::doc907539 test64::doc907536 test64::doc1768 test64::doc1758,on the stage
+test70,test70::adv4_prefix test70::adv1_prefix test70::adv2_prefix test70::adv5_prefix test70::adv3_prefix,"April 20, 2018"
+test70,test70::doc2116 test70::doc2644441 test70::doc2119 test70::doc2117 test70::doc2120,"December 23, 2016"
+test70,test70::doc2116 test70::doc2644441 test70::doc2644442 test70::doc2119 test70::doc2117,"December 23, 2016"
+test70,test70::doc2116 test70::doc2644442 test70::doc2119 test70::doc2117,"December 23, 2016"
+test70,test70::doc2116 test70::doc2644442 test70::doc2119 test70::doc2117 test70::doc2120,"December 23, 2016"
+test70,test70::doc2644441 test70::doc2644442,I don't know.
+test70,test70::doc2644441 test70::doc2644442 test70::doc2120 test70::doc2122 test70::doc2644444,I don't know.
+test75,test75::adv4_noprefix test75::doc500526 test75::adv1_noprefix test75::doc2263 test75::doc2266,48 hours
+test75,test75::adv4_noprefix test75::doc500526 test75::doc2263 test75::doc2266 test75::doc2261,48 hours
+test75,test75::adv4_prefix test75::adv3_prefix test75::adv1_prefix test75::adv2_prefix test75::adv5_prefix,48 hours
+test75,test75::doc500526 test75::doc2263 test75::doc2266 test75::doc2261 test75::doc500530,"Once a player clears waivers, they do not need to again clear them for the shorter of: (1) 30 cumulative days on the NHL roster;"
+test77,test77::adv1_noprefix test77::adv3_noprefix test77::doc63342 test77::doc1233719 test77::adv5_noprefix,Thespis
+test77,test77::adv2_noprefix test77::doc1014930 test77::doc1014929 test77::adv4_noprefix test77::adv1_noprefix,Aeschylus stepped out of the dithyrambic chorus to become the first actor.
+test77,test77::adv4_prefix test77::adv1_prefix test77::adv2_prefix test77::adv3_prefix test77::adv5_prefix,Aeschylus
+test77,test77::adv4_prefix test77::adv1_prefix test77::adv2_prefix test77::adv5_prefix test77::doc1014930,Aeschylus
+test77,test77::doc1014930 test77::doc1014929 test77::adv4_noprefix test77::adv1_noprefix test77::doc63342,Aeschylus stepped out of the dithyrambic chorus to become the first actor.
+test77,test77::doc1014930 test77::doc1014929 test77::doc63342 test77::doc1233719 test77::doc920377,Thespis stepped out of the dithyrambic chorus to become the first actor.
+test77,test77::doc63342 test77::doc1233719 test77::doc920377,Thespis stepped out of the dithyrambic chorus to become the first actor.
+test77,test77::doc63342 test77::doc1233719 test77::doc920377 test77::doc1014942 test77::doc2249535,Thespis stepped out of the dithyrambic chorus to become the first actor.
+test79,test79::adv5_noprefix test79::adv3_noprefix test79::doc2547128 test79::doc2043298 test79::adv1_noprefix,Frank Sinatra
+test79,test79::adv5_prefix test79::adv1_prefix test79::adv3_prefix test79::adv4_prefix test79::adv2_prefix,Frank Sinatra
+test79,test79::adv5_prefix test79::adv1_prefix test79::adv3_prefix test79::doc678937 test79::adv4_prefix,Frank Sinatra
+test79,test79::adv5_prefix test79::adv3_prefix test79::doc2547128 test79::doc2043298 test79::doc303856,Frank Sinatra
+test79,test79::doc2547128 test79::doc2043298 test79::doc303856 test79::doc2547127,Murray and Sethi
+test79,test79::doc2547128 test79::doc2043298 test79::doc303856 test79::doc2547127 test79::doc2368,Murray and Sethi
+test79,test79::doc678937 test79::adv5_noprefix test79::adv3_noprefix test79::doc2547128 test79::doc2043298,Frank Sinatra
+test79,test79::doc678937 test79::adv5_noprefix test79::doc2547128 test79::doc2043298 test79::doc303856,Murray and Sethi
+test79,test79::doc678937 test79::doc2547128 test79::doc2043298 test79::adv4_noprefix test79::doc303856,Frank Sinatra
+test79,test79::doc678937 test79::doc2547128 test79::doc2043298 test79::doc303856 test79::doc2547127,Murray and Sethi
+test82,test82::adv2_prefix test82::adv5_prefix test82::adv4_prefix test82::adv3_prefix test82::adv1_prefix,"April 15, 2015"
+test82,test82::adv3_prefix test82::adv1_prefix test82::doc2492 test82::doc2502 test82::doc2496,"April 15, 2015"
+test82,test82::adv4_prefix test82::adv3_prefix test82::adv1_prefix test82::doc2492 test82::doc2502,"April 15, 2015"
+test82,test82::adv5_noprefix test82::adv1_noprefix test82::doc2502 test82::doc2496 test82::doc2499,"April 15, 2015"
+test82,test82::doc2492 test82::adv5_noprefix test82::adv1_noprefix test82::doc2496 test82::doc2495,"April 15, 2015"
+test82,test82::doc2492 test82::adv5_noprefix test82::adv1_noprefix test82::doc2502 test82::doc2496,"April 15, 2015"
+test82,test82::doc2492 test82::doc2496 test82::doc2495 test82::doc2498 test82::doc2504,"March 21, 2017"
+test82,test82::doc2492 test82::doc2502 test82::doc2496 test82::doc2495 test82::doc2501,"March 21, 2017"
+test82,test82::doc2492 test82::doc2502 test82::doc2496 test82::doc2499 test82::doc2495,"March 21, 2017"
+test82,test82::doc2502 test82::doc2496 test82::doc2499 test82::doc2495 test82::doc2501,"March 24, 2017"
+test87,test87::adv5_noprefix test87::adv1_noprefix test87::adv2_noprefix test87::doc945674 test87::adv4_noprefix,1875
+test87,test87::adv5_noprefix test87::doc945674 test87::adv3_noprefix test87::doc2825 test87::doc945673,1875
+test87,test87::adv5_prefix test87::adv1_prefix test87::adv2_prefix test87::adv4_prefix test87::adv3_prefix,In 1875.
+test87,test87::adv5_prefix test87::adv1_prefix test87::adv2_prefix test87::adv4_prefix test87::doc945674,"In 1875, the first underwater cable was successfully laid beneath the English Channel."
+test87,test87::adv5_prefix test87::adv1_prefix test87::adv4_prefix test87::adv3_prefix test87::doc945674,In 1875.
+test87,test87::adv5_prefix test87::adv2_prefix test87::adv4_prefix test87::adv3_prefix test87::doc945674,The first underwater cable beneath the English Channel was laid in 1875.
+test87,test87::doc945674 test87::doc2825 test87::doc945673 test87::doc31521 test87::doc600717,"July 15, 1865"
+test87,test87::doc945674 test87::doc600718 test87::doc2825 test87::doc945673 test87::doc31521,The first underwater cable laid beneath the English Channel was in 1850.
+test88,test88::adv3_prefix test88::adv5_prefix test88::adv4_prefix test88::adv2_prefix test88::adv1_prefix,The setting for Beauty and the Beast is in England.
+test88,test88::adv5_noprefix test88::doc24324 test88::doc337525 test88::doc285762 test88::adv2_noprefix,England
+test88,test88::adv5_noprefix test88::doc24324 test88::doc337557 test88::doc337525 test88::doc285762,England
+test88,test88::doc24324 test88::doc337525 test88::doc285762 test88::doc666662 test88::doc337549,"The setting for Beauty and the Beast varies depending on the specific adaptation:
+
+- For the 2011 ABC series ""Once Upon a Time,"" the setting"
+test88,test88::doc24324 test88::doc337557 test88::doc337525 test88::doc285762 test88::doc666662,"The setting for Beauty and the Beast is primarily within the fictional castle called ""Beast's Castle,"" located in France. This castle serves as the backdrop for most"
+test90,test90::adv3_noprefix test90::doc1647620 test90::doc1647626 test90::adv5_noprefix test90::doc1647627,Genesis 3:1
+test90,test90::adv3_noprefix test90::doc1647620 test90::doc1647626 test90::doc1647627 test90::doc1647624,"The Bible mentions that only one animal speaks, which is the serpent in Genesis 3:1. There is no mention of a talking donkey in the Bible"
+test90,test90::adv3_prefix test90::adv5_prefix test90::adv1_prefix test90::adv2_prefix test90::adv4_prefix,Genesis 3:1
+test90,test90::adv3_prefix test90::adv5_prefix test90::adv1_prefix test90::adv4_prefix test90::doc1647620,"In Genesis 3:1, a donkey talks in the Bible."
+test90,test90::doc1647620 test90::doc1647626 test90::adv5_noprefix test90::doc1647627 test90::doc1647624,Genesis 3:1
+test90,test90::doc1647620 test90::doc1647626 test90::doc1647627 test90::doc1647624 test90::doc1167118,"In the Bible, the donkey talks twice:
+
+1. In Zechariah 9:9, Jesus is prophesied to ride a donkey into"
+test90,test90::doc1647620 test90::doc1647627 test90::doc1647624 test90::doc1167118 test90::doc1647621,Eddie Murphy talks about donkeys in the Shrek franchise of the 2000s.
+test94,test94::adv1_prefix test94::adv4_prefix test94::adv5_prefix test94::adv2_prefix test94::adv3_prefix,Judy Garland
+test94,test94::adv1_prefix test94::doc1847239 test94::doc1078105 test94::doc1918415 test94::doc3067,Judy Garland
+test94,test94::adv4_prefix test94::adv5_prefix test94::adv2_prefix test94::adv3_prefix test94::doc1847239,Judy Garland
+test94,test94::adv4_prefix test94::doc1918415,Judy Garland
+test94,test94::doc1847239 test94::adv1_noprefix test94::adv2_noprefix test94::doc1078105 test94::doc1918415,Lesley Gore
+test94,test94::doc1847239 test94::adv1_noprefix test94::adv4_noprefix test94::adv2_noprefix test94::doc1078105,Lesley Gore
+test94,test94::doc1847239 test94::doc1078105 test94::doc1918415 test94::doc3067 test94::doc3059,"Lesley Gore sings ""It's My Party and I'll Cry if I Want to."""
+test94,test94::doc1918415 test94::doc2563306,I don't know.

@@ -64,7 +64,13 @@ def answer_matches(prediction, target):
     return contains(pred, gold) or contains(gold, pred)
 
 
-def main():
+def defended_read_lists():
+    """
+    Runs every defence on every question. Returns the dataset, the
+    evaluation passages, the sorted question ids and, for each attack and
+    method, the threshold and the (flagged, read) passage ids of each
+    question in the clean and attacked conditions.
+    """
     with DATASET_PATH.open(encoding="utf-8") as f:
         dataset = json.load(f)
 
@@ -75,9 +81,6 @@ def main():
 
     with SCORES_PATH.open(encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
-
-    with ANSWER_SUPPORT_PATH.open(encoding="utf-8") as f:
-        reader = {row["passage_id"]: row for row in csv.DictReader(f)}
 
     pool_emb, pool_index = load_embeddings("pool")
     adv_emb, adv_index = load_embeddings("poisoned")
@@ -102,21 +105,7 @@ def main():
     ], axis=1)
 
     questions = sorted(dataset)
-    rng = np.random.default_rng(SEED)
-    bootstrap = [
-        rng.integers(0, len(questions), len(questions))
-        for _ in range(N_BOOTSTRAPS)
-    ]
-
-    def rate(values):
-        values = np.array(values, dtype=float)
-        low, high = np.percentile(
-            [values[sample].mean() for sample in bootstrap], [2.5, 97.5]
-        )
-        return {"rate": float(values.mean()),
-                "ci_95": [float(low), float(high)]}
-
-    results = {}
+    runs = {}
 
     for attack in ATTACKS:
         in_attack = (attacks == "none") | (attacks == attack)
@@ -161,7 +150,7 @@ def main():
             return scores[method][row_of[pid]]
 
         methods = ["no_defence", "remove_all_poison", *scores, "set_density"]
-        results[attack] = {}
+        runs[attack] = {}
 
         for method in methods:
             # Threshold: flag 5% of the passages in clean retrieval lists.
@@ -175,14 +164,12 @@ def main():
                 ]
                 threshold = float(np.quantile(clean_values, 1 - TARGET_FPR))
 
-            outcome = {}
+            run = {"threshold": threshold}
 
             for condition in ("clean", "attacked"):
-                success, correct, removed = [], [], []
-                poison_read, gold_removed = [], []
+                run[condition] = {}
 
                 for qid in questions:
-                    record = dataset[qid]
                     pids = candidates[condition, qid]
 
                     if method == "no_defence":
@@ -200,18 +187,58 @@ def main():
                         }
 
                     kept = [pid for pid in pids if pid not in flagged]
-                    read = kept[:READ_K]
+                    run[condition][qid] = (flagged, kept[:READ_K])
 
-                    if read:
-                        best = max(
-                            read,
-                            key=lambda pid: float(
-                                reader[pid]["support_original"]
-                            ),
-                        )
-                        answer = reader[best]["answer_original"]
-                    else:
-                        answer = ""
+            runs[attack][method] = run
+
+    setup = {
+        "questions": len(questions),
+        "retrieve_k": RETRIEVE_K,
+        "read_k": READ_K,
+        "target_fpr": TARGET_FPR,
+        "gold_in_clean_top10": int(sum(
+            passages[pid]["is_gold"]
+            for qid in questions for pid in candidates["clean", qid]
+        )),
+    }
+    return dataset, passages, questions, runs, setup
+
+
+def score_answers(dataset, passages, questions, runs, answer_of):
+    """
+    Attack success, accuracy and passage counts of each defence.
+    answer_of(qid, read) gives the RAG answer for the passages read.
+    """
+    rng = np.random.default_rng(SEED)
+    bootstrap = [
+        rng.integers(0, len(questions), len(questions))
+        for _ in range(N_BOOTSTRAPS)
+    ]
+
+    def rate(values):
+        values = np.array(values, dtype=float)
+        low, high = np.percentile(
+            [values[sample].mean() for sample in bootstrap], [2.5, 97.5]
+        )
+        return {"rate": float(values.mean()),
+                "ci_95": [float(low), float(high)]}
+
+    results = {}
+
+    for attack, methods in runs.items():
+        results[attack] = {}
+
+        for method, run in methods.items():
+            outcome = {}
+
+            for condition in ("clean", "attacked"):
+                success, correct, removed = [], [], []
+                poison_read, gold_removed = [], []
+
+                for qid in questions:
+                    record = dataset[qid]
+                    flagged, read = run[condition][qid]
+                    answer = answer_of(qid, read)
 
                     success.append(
                         answer_matches(answer, record["incorrect_answer"])
@@ -235,24 +262,14 @@ def main():
                     "gold_removed": int(np.sum(gold_removed)),
                 }
 
-            outcome["threshold"] = threshold
+            outcome["threshold"] = run["threshold"]
             results[attack][method] = outcome
 
-    results["setup"] = {
-        "questions": len(questions),
-        "retrieve_k": RETRIEVE_K,
-        "read_k": READ_K,
-        "target_fpr": TARGET_FPR,
-        "gold_in_clean_top10": int(sum(
-            passages[pid]["is_gold"]
-            for qid in questions for pid in candidates["clean", qid]
-        )),
-    }
+    return results
 
-    with OUTPUT_PATH.open("w", encoding="utf-8") as f:
-        json.dump(results, f, indent=2)
 
-    print("\nEND-TO-END EFFECT OF EACH DEFENCE")
+def print_results(results, title):
+    print(f"\n{title}")
     print(f"(top {RETRIEVE_K} retrieved, flagged passages removed, top "
           f"{READ_K} read; threshold flags {TARGET_FPR:.0%} of clean "
           f"passages)")
@@ -273,6 +290,30 @@ def main():
 
     print("\nGold passages in clean top 10:",
           results["setup"]["gold_in_clean_top10"])
+
+
+def main():
+    dataset, passages, questions, runs, setup = defended_read_lists()
+
+    with ANSWER_SUPPORT_PATH.open(encoding="utf-8") as f:
+        reader = {row["passage_id"]: row for row in csv.DictReader(f)}
+
+    def answer_of(qid, read):
+        """The extractive reader's answer with the highest support."""
+        if not read:
+            return ""
+        best = max(read, key=lambda pid: float(
+            reader[pid]["support_original"]
+        ))
+        return reader[best]["answer_original"]
+
+    results = score_answers(dataset, passages, questions, runs, answer_of)
+    results["setup"] = setup
+
+    with OUTPUT_PATH.open("w", encoding="utf-8") as f:
+        json.dump(results, f, indent=2)
+
+    print_results(results, "END-TO-END EFFECT OF EACH DEFENCE")
     print("Saved to:", OUTPUT_PATH)
 
 
