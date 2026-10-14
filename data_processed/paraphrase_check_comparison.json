@@ -1,0 +1,66 @@
+{
+  "paraphrases": 300,
+  "questions": 100,
+  "human_good": 225,
+  "thresholds": {
+    "nli": 0.5,
+    "minilm": 0.75
+  },
+  "auroc": {
+    "nli": {
+      "auroc": 0.6367407407407407,
+      "ci_95": [
+        0.540794454669672,
+        0.7290006115635245
+      ]
+    },
+    "minilm": {
+      "auroc": 0.5204740740740741,
+      "ci_95": [
+        0.42067731909849265,
+        0.6258645693964215
+      ]
+    },
+    "contriever": {
+      "auroc": 0.45511111111111113,
+      "ci_95": [
+        0.3599224088309566,
+        0.5464617364063549
+      ]
+    }
+  },
+  "mean_score": {
+    "nli": {
+      "human_good": 0.8618751111111109,
+      "human_bad": 0.7690013333333332
+    },
+    "minilm": {
+      "human_good": 0.8712048530578613,
+      "human_bad": 0.8681073188781738
+    },
+    "contriever": {
+      "human_good": 0.8374324440956116,
+      "human_bad": 0.8498491644859314
+    }
+  },
+  "rule": {
+    "nli": {
+      "pass_rate": 0.8933333333333333,
+      "agreement": 0.7233333333333334,
+      "cohen_kappa": 0.08791208791208793,
+      "human_good_check_pass": 205,
+      "human_good_check_fail": 20,
+      "human_bad_check_pass": 63,
+      "human_bad_check_fail": 12
+    },
+    "minilm": {
+      "pass_rate": 0.9633333333333334,
+      "agreement": 0.7266666666666667,
+      "cohen_kappa": -0.01863354037267073,
+      "human_good_check_pass": 216,
+      "human_good_check_fail": 9,
+      "human_bad_check_pass": 73,
+      "human_bad_check_fail": 2
+    }
+  }
+}
