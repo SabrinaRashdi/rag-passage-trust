@@ -15,7 +15,7 @@ OUTPUT_PATH = DATA_DIR / "candidate_embeddings.npy"
 IDS_PATH = DATA_DIR / "candidate_embedding_ids.json"
 
 BATCH_SIZE = 8
-MAX_LENGTH = 128
+MAX_LENGTH = 512
 
 
 def main():

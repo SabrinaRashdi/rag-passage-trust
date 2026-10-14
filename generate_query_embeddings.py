@@ -15,7 +15,7 @@ OUTPUT_PATH = DATA_DIR / "query_embeddings.npy"
 IDS_PATH = DATA_DIR / "query_embedding_ids.json"
 
 BATCH_SIZE = 8
-MAX_LENGTH = 128
+MAX_LENGTH = 512
 
 
 def main():
