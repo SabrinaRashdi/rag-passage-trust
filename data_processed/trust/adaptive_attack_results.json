@@ -1,0 +1,95 @@
+{
+  "detection": {
+    "retrieval_z": {
+      "auroc": 0.9643059907834102,
+      "tpr_at_5pct_fpr": 0.882,
+      "auroc_known_attack": 0.9812294930875576
+    },
+    "shortness": {
+      "auroc": 0.8195078341013825,
+      "tpr_at_5pct_fpr": 0.0,
+      "auroc_known_attack": 0.8286009216589861
+    },
+    "perplexity": {
+      "auroc": 0.6860516129032258,
+      "tpr_at_5pct_fpr": 0.02,
+      "auroc_known_attack": 0.7671520737327189
+    },
+    "reader_support": {
+      "auroc": 0.8389308755760368,
+      "tpr_at_5pct_fpr": 0.408,
+      "auroc_known_attack": 0.5840571428571428
+    },
+    "z_drop_k3": {
+      "auroc": 0.6119741935483871,
+      "tpr_at_5pct_fpr": 0.248,
+      "auroc_known_attack": 0.8216903225806451
+    },
+    "combined_consistency": {
+      "auroc": 0.6421566820276498,
+      "tpr_at_5pct_fpr": 0.198,
+      "auroc_known_attack": 0.9390967741935484
+    },
+    "set_density": {
+      "auroc": 0.9818451612903226,
+      "tpr_at_5pct_fpr": 0.934,
+      "auroc_known_attack": 0.9896663594470047
+    }
+  },
+  "end_to_end": {
+    "no_defence": {
+      "attack_success": 0.89,
+      "correct": 0.01,
+      "mean_poison_read": 4.65,
+      "attack_success_known_attack": 0.88
+    },
+    "retrieval_z": {
+      "attack_success": 0.17,
+      "correct": 0.2,
+      "mean_poison_read": 0.42,
+      "attack_success_known_attack": 0.07
+    },
+    "shortness": {
+      "attack_success": 0.89,
+      "correct": 0.01,
+      "mean_poison_read": 4.7,
+      "attack_success_known_attack": 0.87
+    },
+    "perplexity": {
+      "attack_success": 0.87,
+      "correct": 0.02,
+      "mean_poison_read": 4.6,
+      "attack_success_known_attack": 0.84
+    },
+    "reader_support": {
+      "attack_success": 0.68,
+      "correct": 0.06,
+      "mean_poison_read": 2.61,
+      "attack_success_known_attack": 0.9
+    },
+    "z_drop_k3": {
+      "attack_success": 0.8,
+      "correct": 0.06,
+      "mean_poison_read": 3.51,
+      "attack_success_known_attack": 0.43
+    },
+    "combined_consistency": {
+      "attack_success": 0.86,
+      "correct": 0.04,
+      "mean_poison_read": 3.76,
+      "attack_success_known_attack": 0.26
+    },
+    "set_density": {
+      "attack_success": 0.19,
+      "correct": 0.25,
+      "mean_poison_read": 0.33,
+      "attack_success_known_attack": 0.02
+    }
+  },
+  "setup": {
+    "questions": 100,
+    "poisoned_passages": 500,
+    "questions_with_5_different_rewordings": 94,
+    "thresholds_from": "end_to_end_results.json (prefix)"
+  }
+}
