@@ -188,58 +188,106 @@ A complete manual semantic audit of all 300 paraphrases was not performed.
 These distinctions ensure that the original validation, corrected validation, and documented review stages are not incorrectly treated as identical.
 
 
+
 ### Embedding Generation and Validation
 
-Query and passage embeddings were prepared for retrieval evaluation.
+Query and passage embeddings were generated using the `facebook/contriever` model.
 
-The final query embedding validation confirmed:
+The final embedding configuration was:
+
+| Parameter | Value |
+|---|---|
+| Retrieval model | `facebook/contriever` |
+| Maximum sequence length | 512 tokens |
+| Batch size | 8 |
+| Embedding dimension | 768 |
+| Candidate passages | 9,872 |
+| Original questions | 100 |
+| Paraphrased questions | 300 |
+| Total experiment queries | 400 |
+| Retrieval depth | Top 100 |
+| Similarity scoring | Dot product |
+
+Both passage and query embeddings were regenerated using `MAX_LENGTH = 512`.
+
+The previous experiment used a maximum sequence length of 128 tokens. Increasing this limit to 512 improved original-query Hit@10 from 25% to 31%, matching the historical baseline result.
+
+The original-query retrieval metrics also matched the historical baseline across all seven reported metrics, within rounding. This supports the hypothesis that passage truncation contributed to the earlier discrepancy, although the historical baseline configuration has not been independently verified.
+
+The final embedding validation confirmed:
 
 | Validation Check | Result |
 |---|---|
 | Total experiment queries | 400 |
-| Total embedding IDs | 400 |
-| Embedding matrix shape | (400, 768) |
+| Query embedding shape | (400, 768) |
+| Passage embedding shape | (9872, 768) |
 | Query IDs match embedding IDs | True |
 | Query ID ordering matches | True |
-| Duplicate IDs | 0 |
+| Duplicate query IDs | 0 |
 | NaN values | None |
 | Infinite values | None |
 
 All 300 paraphrases in the experiment query file matched the corrected paraphrase dataset.
 
-These checks establish structural consistency between the query dataset and its embedding metadata.
+These checks establish structural consistency between the query dataset, candidate passages, and embedding metadata.
 
 ### Retrieval Evaluation
 
-Retrieval performance was evaluated using three metrics:
+Retrieval performance was evaluated using the Natural Questions relevance judgments (`datasets/nq/qrels/test.tsv`).
 
-- **Hit@10:** Whether at least one relevant document appears among the top 10 retrieved results.
-- **Hit@100:** Whether at least one relevant document appears among the top 100 retrieved results.
-- **MRR@10:** Mean Reciprocal Rank of the first relevant document within the top 10 results.
+The evaluation used the same restricted candidate pool of 9,872 passages for both original and paraphrased queries.
 
-For each original question, retrieval performance was compared against the mean performance of its three paraphrased versions.
+The following metrics were calculated:
+
+- **Hit@1:** Proportion of queries retrieving at least one relevant passage in the top 1 result.
+- **Hit@5:** Proportion of queries retrieving at least one relevant passage in the top 5 results.
+- **Hit@10:** Proportion of queries retrieving at least one relevant passage in the top 10 results.
+- **Hit@100:** Proportion of queries retrieving at least one relevant passage in the top 100 results.
+- **Recall@10:** Mean proportion of relevant passages retrieved within the top 10 results.
+- **Recall@100:** Mean proportion of relevant passages retrieved within the top 100 results.
+- **MRR@10:** Mean Reciprocal Rank of the first relevant passage within the top 10 results.
+
+#### Retrieval Performance
+
+| Metric | Original Queries (100) | Paraphrased Queries (300) |
+|---|---:|---:|
+| Hit@1 | 0.0600 | 0.0567 |
+| Hit@5 | 0.1800 | 0.1900 |
+| Hit@10 | 0.3100 | 0.3067 |
+| Hit@100 | 0.7900 | 0.8900 |
+| Recall@10 | 0.2783 | 0.2833 |
+| Recall@100 | 0.7667 | 0.8700 |
+| MRR@10 | 0.1142 | 0.1188 |
+
+The original questions achieved a Hit@10 of 31.00%, compared with 30.67% for paraphrased questions.
+
+Paraphrased questions achieved higher Hit@100 and Recall@100, although improvements were not consistent across all retrieval metrics.
 
 ### Experimental Results
 
-The experiment evaluated 100 original questions and their corresponding paraphrases.
+The experiment compared retrieval performance for 100 original questions against the mean performance of their three paraphrases.
 
-| Metric | Improved | Worsened | Unchanged | Mean Difference |
-|---|---:|---:|---:|---:|
-| Hit@10 | 15 | 12 | 73 | +0.0200 |
-| Hit@100 | 9 | 2 | 89 | +0.0467 |
-| MRR@10 | 22 | 15 | 63 | +0.0147 |
-
-Mean differences were calculated as:
+For each original question, the paired difference was calculated as:
 
 `Mean Difference = Mean Paraphrase Score - Original Question Score`
 
-The results indicate small positive average retrieval performance differences across all three metrics.
+| Metric | Improved | Worsened | Unchanged | Mean Difference |
+|---|---:|---:|---:|---:|
+| Hit@10 | 17 | 16 | 67 | -0.0033 |
+| Hit@100 | 15 | 2 | 83 | +0.1000 |
+| MRR@10 | 24 | 22 | 54 | +0.0047 |
 
-However, most questions showed unchanged retrieval performance, particularly for Hit@100.
+Hit@10 showed a small negative average difference, indicating that paraphrasing did not improve top-10 retrieval performance overall.
+
+Hit@100 showed a positive average difference of 0.1000, corresponding to an improvement of 10 percentage points.
+
+Most questions showed unchanged retrieval performance, particularly for Hit@100.
 
 ### Statistical Significance Testing
 
 Paired statistical significance testing was conducted across the 100 original questions.
+
+Each original question was paired with the mean retrieval performance of its three paraphrases.
 
 The analysis used:
 
@@ -249,23 +297,27 @@ The analysis used:
 
 | Metric | Mean Difference | Permutation p-value | 95% Bootstrap CI | Significant (p < 0.05) |
 |---|---:|---:|---|---|
-| Hit@10 | +0.0200 | 0.65283 | [-0.0533, 0.0900] | No |
-| Hit@100 | +0.0467 | 0.08919 | [-0.0000, 0.0967] | No |
-| MRR@10 | +0.0147 | 0.36046 | [-0.0135, 0.0466] | No |
+| Hit@10 | -0.0033 | 1.0000 | [-0.0900, 0.0833] | No |
+| Hit@100 | +0.1000 | 0.0016 | [0.0400, 0.1633] | Yes |
+| MRR@10 | +0.0047 | 0.8110 | [-0.0311, 0.0425] | No |
 
-None of the three retrieval metrics demonstrated statistically significant improvements at the 0.05 significance level.
+The Hit@10 and MRR@10 differences were not statistically significant at the 0.05 level.
 
-Although paraphrased queries produced slightly higher average retrieval scores, the statistical analysis does not provide sufficient evidence of a consistent improvement.
+However, the Hit@100 improvement was statistically significant (p = 0.0016), suggesting that paraphrased queries retrieved relevant passages within the top 100 more frequently in this experiment.
+
+This result should not be interpreted as evidence that paraphrasing consistently improves retrieval quality, particularly because some paraphrases may not fully preserve the meaning of the original questions.
 
 ### Limitations
 
 The experiment has several limitations:
 
-1. **Dataset size:** Only 100 original questions were evaluated, limiting statistical power and generalisability.
-2. **Semantic similarity:** Embedding-based similarity scores do not guarantee semantic equivalence.
-3. **Manual validation:** Flagged paraphrases were reviewed, but a complete manual semantic audit of all 300 paraphrases was not performed.
-4. **Retrieval-only evaluation:** The experiment evaluates retrieval performance rather than final generated answer quality.
-5. **Model and dataset dependence:** Results may vary across retrieval models, datasets, and embedding configurations.
+1. **Dataset size:** Only 100 original questions and 300 paraphrases were evaluated, limiting statistical power and generalisability.
+2. **Semantic similarity:** Embedding-based similarity scores do not guarantee semantic equivalence between original questions and paraphrases.
+3. **Manual validation:** A complete manual semantic audit of all 300 paraphrases was not performed as part of the original validation process. Subsequent manual review identified cases requiring further correction.
+4. **Retrieval-only evaluation:** The experiment evaluates passage retrieval rather than final generated answer quality.
+5. **Restricted candidate pool:** Retrieval was evaluated over 9,872 candidate passages rather than the complete Natural Questions corpus.
+6. **Historical baseline provenance:** Although the 512-token results reproduce the historical baseline metrics, the original baseline retrieval configuration has not been independently verified.
+7. **Model and dataset dependence:** Results may vary across retrieval models, datasets, and embedding configurations.
 
 ### Reproducibility
 
@@ -275,21 +327,31 @@ The following scripts support the paraphrase robustness experiment.
 |---|---|
 | `generate_reworded_questions.py` | Generate paraphrased questions |
 | `validate_paraphrases.py` | Evaluate paraphrase semantic similarity |
-| `generate_passage_embeddings.py` | Generate passage embeddings |
-| `generate_query_embeddings.py` | Generate query embeddings |
+| `reconstruct_candidate_passages.py` | Reconstruct the 9,872 candidate passages from their IDs and the NQ corpus |
+| `generate_passage_embeddings.py` | Generate passage embeddings using Contriever |
+| `generate_query_embeddings.py` | Generate query embeddings using Contriever |
 | `run_paraphrase_retrieval.py` | Execute paraphrase retrieval experiments |
-| `evaluate_paraphrase_robustness.py` | Calculate retrieval performance differences |
+| `evaluate_experiment_retrieval.py` | Calculate Hit@K, Recall@K, and MRR@10 |
+| `evaluate_paraphrase_robustness.py` | Calculate paired retrieval performance differences |
 | `evaluate_paraphrase_significance.py` | Perform statistical significance testing |
 
 Experimental datasets, embedding metadata, validation reports, and evaluation results are stored in `data_processed/`.
 
+The final retrieval experiment uses a maximum sequence length of 512 tokens for both passage and query embeddings.
+
 ### Conclusion
 
-The experiment demonstrates that retrieval performance can vary across semantically equivalent query formulations.
+This experiment demonstrates that retrieval performance can vary across different formulations of the same question.
 
-Paraphrased queries produced slightly higher average Hit@10, Hit@100, and MRR@10 scores. However, none of these differences were statistically significant at the 0.05 level.
+Using 512-token Contriever embeddings, original questions achieved a Hit@10 of 31.00%, while paraphrased questions achieved 30.67%. The difference was not statistically significant.
 
-These findings highlight the importance of evaluating retrieval robustness across multiple query formulations rather than relying exclusively on original question wording.
+Paraphrased questions achieved a higher Hit@100 of 89.00%, compared with 79.00% for original questions. This improvement was statistically significant (p = 0.0016).
+
+MRR@10 differences were also not statistically significant.
+
+These findings indicate that paraphrasing can affect retrieval rankings and the depth at which relevant passages are found. However, improvements are metric-dependent, and semantic inconsistencies in paraphrases remain a potential confounding factor.
+
+The experiment highlights the importance of evaluating retrieval robustness across multiple query formulations rather than relying exclusively on original question wording.
 
 This extension focuses on query paraphrase robustness and should be distinguished from the original PoisonedRAG knowledge corruption attack evaluation.
 

@@ -3,22 +3,22 @@
   "paraphrases_per_question": 3,
   "summary": {
     "hit10": {
-      "improved": 15,
-      "worsened": 12,
-      "unchanged": 73,
-      "mean_difference": 0.01999999999999999
+      "improved": 17,
+      "worsened": 16,
+      "unchanged": 67,
+      "mean_difference": -0.0033333333333333414
     },
     "hit100": {
-      "improved": 9,
+      "improved": 15,
       "worsened": 2,
-      "unchanged": 89,
-      "mean_difference": 0.04666666666666666
+      "unchanged": 83,
+      "mean_difference": 0.1
     },
     "mrr10": {
-      "improved": 22,
-      "worsened": 15,
-      "unchanged": 63,
-      "mean_difference": 0.014691798941798936
+      "improved": 24,
+      "worsened": 22,
+      "unchanged": 54,
+      "mean_difference": 0.004660052910052908
     }
   },
   "per_question": [
@@ -44,8 +44,8 @@
       "source_id": "test11",
       "hit10": {
         "original": 1,
-        "paraphrase_mean": 0.0,
-        "difference": -1.0
+        "paraphrase_mean": 0.6666666666666666,
+        "difference": -0.33333333333333337
       },
       "hit100": {
         "original": 1,
@@ -53,9 +53,9 @@
         "difference": 0.0
       },
       "mrr10": {
-        "original": 0.1,
-        "paraphrase_mean": 0.0,
-        "difference": -0.1
+        "original": 0.125,
+        "paraphrase_mean": 0.09523809523809523,
+        "difference": -0.029761904761904767
       }
     },
     {
@@ -66,9 +66,9 @@
         "difference": 0.0
       },
       "hit100": {
-        "original": 1,
-        "paraphrase_mean": 1.0,
-        "difference": 0.0
+        "original": 0,
+        "paraphrase_mean": 0.3333333333333333,
+        "difference": 0.3333333333333333
       },
       "mrr10": {
         "original": 0.0,
@@ -89,9 +89,9 @@
         "difference": 0.0
       },
       "mrr10": {
-        "original": 0.25,
+        "original": 0.2,
         "paraphrase_mean": 0.0,
-        "difference": -0.25
+        "difference": -0.2
       }
     },
     {
@@ -121,8 +121,8 @@
       },
       "hit100": {
         "original": 0,
-        "paraphrase_mean": 0.3333333333333333,
-        "difference": 0.3333333333333333
+        "paraphrase_mean": 1.0,
+        "difference": 1.0
       },
       "mrr10": {
         "original": 0.0,
@@ -144,8 +144,8 @@
       },
       "mrr10": {
         "original": 1.0,
-        "paraphrase_mean": 0.5555555555555555,
-        "difference": -0.44444444444444453
+        "paraphrase_mean": 0.6666666666666666,
+        "difference": -0.33333333333333337
       }
     },
     {
@@ -161,9 +161,9 @@
         "difference": 0.0
       },
       "mrr10": {
-        "original": 0.16666666666666666,
+        "original": 0.2,
         "paraphrase_mean": 0.6666666666666666,
-        "difference": 0.5
+        "difference": 0.4666666666666666
       }
     },
     {
@@ -197,17 +197,17 @@
         "difference": 0.0
       },
       "mrr10": {
-        "original": 0.14285714285714285,
-        "paraphrase_mean": 0.11428571428571428,
-        "difference": -0.028571428571428567
+        "original": 0.1111111111111111,
+        "paraphrase_mean": 0.08888888888888889,
+        "difference": -0.022222222222222213
       }
     },
     {
       "source_id": "test57",
       "hit10": {
         "original": 0,
-        "paraphrase_mean": 0.6666666666666666,
-        "difference": 0.6666666666666666
+        "paraphrase_mean": 1.0,
+        "difference": 1.0
       },
       "hit100": {
         "original": 1,
@@ -216,8 +216,8 @@
       },
       "mrr10": {
         "original": 0.0,
-        "paraphrase_mean": 0.14814814814814814,
-        "difference": 0.14814814814814814
+        "paraphrase_mean": 0.3333333333333333,
+        "difference": 0.3333333333333333
       }
     },
     {
@@ -233,9 +233,9 @@
         "difference": 0.0
       },
       "mrr10": {
-        "original": 0.3333333333333333,
-        "paraphrase_mean": 0.2888888888888889,
-        "difference": -0.0444444444444444
+        "original": 0.25,
+        "paraphrase_mean": 0.2611111111111111,
+        "difference": 0.011111111111111127
       }
     },
     {
@@ -259,9 +259,9 @@
     {
       "source_id": "test62",
       "hit10": {
-        "original": 0,
+        "original": 1,
         "paraphrase_mean": 0.0,
-        "difference": 0.0
+        "difference": -1.0
       },
       "hit100": {
         "original": 1,
@@ -269,9 +269,9 @@
         "difference": 0.0
       },
       "mrr10": {
-        "original": 0.0,
+        "original": 0.1,
         "paraphrase_mean": 0.0,
-        "difference": 0.0
+        "difference": -0.1
       }
     },
     {
@@ -314,8 +314,8 @@
       "source_id": "test75",
       "hit10": {
         "original": 0,
-        "paraphrase_mean": 0.0,
-        "difference": 0.0
+        "paraphrase_mean": 1.0,
+        "difference": 1.0
       },
       "hit100": {
         "original": 1,
@@ -324,8 +324,8 @@
       },
       "mrr10": {
         "original": 0.0,
-        "paraphrase_mean": 0.0,
-        "difference": 0.0
+        "paraphrase_mean": 0.12037037037037036,
+        "difference": 0.12037037037037036
       }
     },
     {
@@ -359,9 +359,9 @@
         "difference": 0.0
       },
       "mrr10": {
-        "original": 0.125,
-        "paraphrase_mean": 0.38888888888888884,
-        "difference": 0.26388888888888884
+        "original": 0.16666666666666666,
+        "paraphrase_mean": 0.5555555555555555,
+        "difference": 0.38888888888888884
       }
     },
     {
@@ -444,9 +444,9 @@
         "difference": 0.0
       },
       "hit100": {
-        "original": 1,
+        "original": 0,
         "paraphrase_mean": 1.0,
-        "difference": 0.0
+        "difference": 1.0
       },
       "mrr10": {
         "original": 0.0,
@@ -521,9 +521,9 @@
         "difference": 0.0
       },
       "mrr10": {
-        "original": 0.3333333333333333,
+        "original": 0.2,
         "paraphrase_mean": 0.4444444444444444,
-        "difference": 0.1111111111111111
+        "difference": 0.2444444444444444
       }
     },
     {
@@ -534,9 +534,9 @@
         "difference": 0.0
       },
       "hit100": {
-        "original": 1,
+        "original": 0,
         "paraphrase_mean": 1.0,
-        "difference": 0.0
+        "difference": 1.0
       },
       "mrr10": {
         "original": 0.0,
@@ -557,9 +557,9 @@
         "difference": 0.0
       },
       "mrr10": {
-        "original": 0.25,
+        "original": 0.3333333333333333,
         "paraphrase_mean": 0.0,
-        "difference": -0.25
+        "difference": -0.3333333333333333
       }
     },
     {
@@ -678,9 +678,9 @@
         "difference": 0.0
       },
       "hit100": {
-        "original": 1,
+        "original": 0,
         "paraphrase_mean": 1.0,
-        "difference": 0.0
+        "difference": 1.0
       },
       "mrr10": {
         "original": 0.0,
@@ -715,8 +715,8 @@
       },
       "hit100": {
         "original": 0,
-        "paraphrase_mean": 0.6666666666666666,
-        "difference": 0.6666666666666666
+        "paraphrase_mean": 0.0,
+        "difference": 0.0
       },
       "mrr10": {
         "original": 0.0,
@@ -728,8 +728,8 @@
       "source_id": "test165",
       "hit10": {
         "original": 0,
-        "paraphrase_mean": 0.3333333333333333,
-        "difference": 0.3333333333333333
+        "paraphrase_mean": 0.0,
+        "difference": 0.0
       },
       "hit100": {
         "original": 1,
@@ -738,8 +738,8 @@
       },
       "mrr10": {
         "original": 0.0,
-        "paraphrase_mean": 0.041666666666666664,
-        "difference": 0.041666666666666664
+        "paraphrase_mean": 0.0,
+        "difference": 0.0
       }
     },
     {
@@ -755,9 +755,9 @@
         "difference": 0.0
       },
       "mrr10": {
-        "original": 0.5,
-        "paraphrase_mean": 0.4444444444444444,
-        "difference": -0.05555555555555558
+        "original": 1.0,
+        "paraphrase_mean": 0.5,
+        "difference": -0.5
       }
     },
     {
@@ -804,9 +804,9 @@
         "difference": 0.0
       },
       "hit100": {
-        "original": 1,
+        "original": 0,
         "paraphrase_mean": 1.0,
-        "difference": 0.0
+        "difference": 1.0
       },
       "mrr10": {
         "original": 0.0,
@@ -818,8 +818,8 @@
       "source_id": "test191",
       "hit10": {
         "original": 1,
-        "paraphrase_mean": 1.0,
-        "difference": 0.0
+        "paraphrase_mean": 0.3333333333333333,
+        "difference": -0.6666666666666667
       },
       "hit100": {
         "original": 1,
@@ -827,17 +827,17 @@
         "difference": 0.0
       },
       "mrr10": {
-        "original": 0.5,
-        "paraphrase_mean": 0.611111111111111,
-        "difference": 0.11111111111111105
+        "original": 1.0,
+        "paraphrase_mean": 0.3333333333333333,
+        "difference": -0.6666666666666667
       }
     },
     {
       "source_id": "test192",
       "hit10": {
         "original": 0,
-        "paraphrase_mean": 0.6666666666666666,
-        "difference": 0.6666666666666666
+        "paraphrase_mean": 0.3333333333333333,
+        "difference": 0.3333333333333333
       },
       "hit100": {
         "original": 1,
@@ -846,8 +846,8 @@
       },
       "mrr10": {
         "original": 0.0,
-        "paraphrase_mean": 0.3703703703703704,
-        "difference": 0.3703703703703704
+        "paraphrase_mean": 0.3333333333333333,
+        "difference": 0.3333333333333333
       }
     },
     {
@@ -863,35 +863,17 @@
         "difference": 0.0
       },
       "mrr10": {
-        "original": 0.5,
-        "paraphrase_mean": 0.5,
+        "original": 1.0,
+        "paraphrase_mean": 1.0,
         "difference": 0.0
       }
     },
     {
       "source_id": "test213",
       "hit10": {
-        "original": 1,
-        "paraphrase_mean": 1.0,
-        "difference": 0.0
-      },
-      "hit100": {
-        "original": 1,
-        "paraphrase_mean": 1.0,
-        "difference": 0.0
-      },
-      "mrr10": {
-        "original": 0.25,
-        "paraphrase_mean": 0.31666666666666665,
-        "difference": 0.06666666666666665
-      }
-    },
-    {
-      "source_id": "test216",
-      "hit10": {
         "original": 0,
-        "paraphrase_mean": 0.0,
-        "difference": 0.0
+        "paraphrase_mean": 0.6666666666666666,
+        "difference": 0.6666666666666666
       },
       "hit100": {
         "original": 1,
@@ -900,8 +882,26 @@
       },
       "mrr10": {
         "original": 0.0,
-        "paraphrase_mean": 0.0,
+        "paraphrase_mean": 0.2222222222222222,
+        "difference": 0.2222222222222222
+      }
+    },
+    {
+      "source_id": "test216",
+      "hit10": {
+        "original": 1,
+        "paraphrase_mean": 0.3333333333333333,
+        "difference": -0.6666666666666667
+      },
+      "hit100": {
+        "original": 1,
+        "paraphrase_mean": 1.0,
         "difference": 0.0
+      },
+      "mrr10": {
+        "original": 0.3333333333333333,
+        "paraphrase_mean": 0.041666666666666664,
+        "difference": -0.29166666666666663
       }
     },
     {
@@ -913,8 +913,8 @@
       },
       "hit100": {
         "original": 0,
-        "paraphrase_mean": 0.6666666666666666,
-        "difference": 0.6666666666666666
+        "paraphrase_mean": 0.3333333333333333,
+        "difference": 0.3333333333333333
       },
       "mrr10": {
         "original": 0.0,
@@ -926,8 +926,8 @@
       "source_id": "test228",
       "hit10": {
         "original": 0,
-        "paraphrase_mean": 0.3333333333333333,
-        "difference": 0.3333333333333333
+        "paraphrase_mean": 0.6666666666666666,
+        "difference": 0.6666666666666666
       },
       "hit100": {
         "original": 1,
@@ -936,16 +936,16 @@
       },
       "mrr10": {
         "original": 0.0,
-        "paraphrase_mean": 0.03333333333333333,
-        "difference": 0.03333333333333333
+        "paraphrase_mean": 0.09722222222222221,
+        "difference": 0.09722222222222221
       }
     },
     {
       "source_id": "test229",
       "hit10": {
-        "original": 0,
-        "paraphrase_mean": 0.3333333333333333,
-        "difference": 0.3333333333333333
+        "original": 1,
+        "paraphrase_mean": 0.0,
+        "difference": -1.0
       },
       "hit100": {
         "original": 1,
@@ -953,9 +953,9 @@
         "difference": 0.0
       },
       "mrr10": {
-        "original": 0.0,
-        "paraphrase_mean": 0.03333333333333333,
-        "difference": 0.03333333333333333
+        "original": 0.1111111111111111,
+        "paraphrase_mean": 0.0,
+        "difference": -0.1111111111111111
       }
     },
     {
@@ -980,8 +980,8 @@
       "source_id": "test243",
       "hit10": {
         "original": 0,
-        "paraphrase_mean": 0.0,
-        "difference": 0.0
+        "paraphrase_mean": 1.0,
+        "difference": 1.0
       },
       "hit100": {
         "original": 1,
@@ -990,8 +990,8 @@
       },
       "mrr10": {
         "original": 0.0,
-        "paraphrase_mean": 0.0,
-        "difference": 0.0
+        "paraphrase_mean": 0.25925925925925924,
+        "difference": 0.25925925925925924
       }
     },
     {
@@ -1008,8 +1008,8 @@
       },
       "mrr10": {
         "original": 0.0,
-        "paraphrase_mean": 0.08888888888888889,
-        "difference": 0.08888888888888889
+        "paraphrase_mean": 0.2222222222222222,
+        "difference": 0.2222222222222222
       }
     },
     {
@@ -1097,9 +1097,9 @@
         "difference": 0.0
       },
       "mrr10": {
-        "original": 0.3333333333333333,
-        "paraphrase_mean": 0.06666666666666667,
-        "difference": -0.26666666666666666
+        "original": 0.14285714285714285,
+        "paraphrase_mean": 0.05555555555555555,
+        "difference": -0.0873015873015873
       }
     },
     {
@@ -1115,9 +1115,9 @@
         "difference": 0.0
       },
       "mrr10": {
-        "original": 0.5,
-        "paraphrase_mean": 0.13888888888888887,
-        "difference": -0.36111111111111116
+        "original": 0.3333333333333333,
+        "paraphrase_mean": 0.125,
+        "difference": -0.20833333333333331
       }
     },
     {
@@ -1160,8 +1160,8 @@
       "source_id": "test315",
       "hit10": {
         "original": 0,
-        "paraphrase_mean": 0.6666666666666666,
-        "difference": 0.6666666666666666
+        "paraphrase_mean": 0.0,
+        "difference": 0.0
       },
       "hit100": {
         "original": 1,
@@ -1170,8 +1170,8 @@
       },
       "mrr10": {
         "original": 0.0,
-        "paraphrase_mean": 0.07407407407407407,
-        "difference": 0.07407407407407407
+        "paraphrase_mean": 0.0,
+        "difference": 0.0
       }
     },
     {
@@ -1214,8 +1214,8 @@
       "source_id": "test327",
       "hit10": {
         "original": 0,
-        "paraphrase_mean": 0.0,
-        "difference": 0.0
+        "paraphrase_mean": 0.3333333333333333,
+        "difference": 0.3333333333333333
       },
       "hit100": {
         "original": 1,
@@ -1224,16 +1224,16 @@
       },
       "mrr10": {
         "original": 0.0,
-        "paraphrase_mean": 0.0,
-        "difference": 0.0
+        "paraphrase_mean": 0.041666666666666664,
+        "difference": 0.041666666666666664
       }
     },
     {
       "source_id": "test332",
       "hit10": {
-        "original": 0,
-        "paraphrase_mean": 0.0,
-        "difference": 0.0
+        "original": 1,
+        "paraphrase_mean": 0.3333333333333333,
+        "difference": -0.6666666666666667
       },
       "hit100": {
         "original": 1,
@@ -1241,9 +1241,9 @@
         "difference": 0.0
       },
       "mrr10": {
-        "original": 0.0,
-        "paraphrase_mean": 0.0,
-        "difference": 0.0
+        "original": 0.5,
+        "paraphrase_mean": 0.08333333333333333,
+        "difference": -0.4166666666666667
       }
     },
     {
@@ -1285,9 +1285,9 @@
     {
       "source_id": "test348",
       "hit10": {
-        "original": 1,
-        "paraphrase_mean": 0.6666666666666666,
-        "difference": -0.33333333333333337
+        "original": 0,
+        "paraphrase_mean": 0.0,
+        "difference": 0.0
       },
       "hit100": {
         "original": 1,
@@ -1295,16 +1295,16 @@
         "difference": 0.0
       },
       "mrr10": {
-        "original": 0.1111111111111111,
-        "paraphrase_mean": 0.08095238095238096,
-        "difference": -0.03015873015873015
+        "original": 0.0,
+        "paraphrase_mean": 0.0,
+        "difference": 0.0
       }
     },
     {
       "source_id": "test363",
       "hit10": {
-        "original": 0,
-        "paraphrase_mean": 0.0,
+        "original": 1,
+        "paraphrase_mean": 1.0,
         "difference": 0.0
       },
       "hit100": {
@@ -1313,16 +1313,16 @@
         "difference": 0.0
       },
       "mrr10": {
-        "original": 0.0,
-        "paraphrase_mean": 0.0,
-        "difference": 0.0
+        "original": 0.125,
+        "paraphrase_mean": 0.11798941798941798,
+        "difference": -0.007010582010582023
       }
     },
     {
       "source_id": "test369",
       "hit10": {
-        "original": 0,
-        "paraphrase_mean": 0.0,
+        "original": 1,
+        "paraphrase_mean": 1.0,
         "difference": 0.0
       },
       "hit100": {
@@ -1331,9 +1331,9 @@
         "difference": 0.0
       },
       "mrr10": {
-        "original": 0.0,
-        "paraphrase_mean": 0.0,
-        "difference": 0.0
+        "original": 0.16666666666666666,
+        "paraphrase_mean": 0.3333333333333333,
+        "difference": 0.16666666666666666
       }
     },
     {
@@ -1344,9 +1344,9 @@
         "difference": 0.0
       },
       "hit100": {
-        "original": 1,
-        "paraphrase_mean": 1.0,
-        "difference": 0.0
+        "original": 0,
+        "paraphrase_mean": 0.6666666666666666,
+        "difference": 0.6666666666666666
       },
       "mrr10": {
         "original": 0.0,
@@ -1394,8 +1394,8 @@
       "source_id": "test383",
       "hit10": {
         "original": 1,
-        "paraphrase_mean": 0.6666666666666666,
-        "difference": -0.33333333333333337
+        "paraphrase_mean": 1.0,
+        "difference": 0.0
       },
       "hit100": {
         "original": 1,
@@ -1403,9 +1403,9 @@
         "difference": 0.0
       },
       "mrr10": {
-        "original": 0.1,
-        "paraphrase_mean": 0.06666666666666667,
-        "difference": -0.03333333333333334
+        "original": 1.0,
+        "paraphrase_mean": 0.8333333333333334,
+        "difference": -0.16666666666666663
       }
     },
     {
@@ -1457,9 +1457,9 @@
         "difference": 0.0
       },
       "mrr10": {
-        "original": 0.25,
+        "original": 0.3333333333333333,
         "paraphrase_mean": 0.0,
-        "difference": -0.25
+        "difference": -0.3333333333333333
       }
     },
     {
@@ -1560,9 +1560,9 @@
         "difference": 0.0
       },
       "hit100": {
-        "original": 1,
-        "paraphrase_mean": 1.0,
-        "difference": 0.0
+        "original": 0,
+        "paraphrase_mean": 0.3333333333333333,
+        "difference": 0.3333333333333333
       },
       "mrr10": {
         "original": 0.0,
@@ -1583,17 +1583,17 @@
         "difference": 0.0
       },
       "mrr10": {
-        "original": 0.125,
+        "original": 0.1111111111111111,
         "paraphrase_mean": 0.0,
-        "difference": -0.125
+        "difference": -0.1111111111111111
       }
     },
     {
       "source_id": "test417",
       "hit10": {
-        "original": 0,
+        "original": 1,
         "paraphrase_mean": 0.0,
-        "difference": 0.0
+        "difference": -1.0
       },
       "hit100": {
         "original": 1,
@@ -1601,9 +1601,9 @@
         "difference": 0.0
       },
       "mrr10": {
-        "original": 0.0,
+        "original": 0.1111111111111111,
         "paraphrase_mean": 0.0,
-        "difference": 0.0
+        "difference": -0.1111111111111111
       }
     },
     {
@@ -1620,8 +1620,8 @@
       },
       "mrr10": {
         "original": 0.0,
-        "paraphrase_mean": 0.13227513227513227,
-        "difference": 0.13227513227513227
+        "paraphrase_mean": 0.12261904761904763,
+        "difference": 0.12261904761904763
       }
     },
     {
@@ -1655,9 +1655,9 @@
         "difference": 0.0
       },
       "mrr10": {
-        "original": 0.16666666666666666,
+        "original": 0.2,
         "paraphrase_mean": 0.3,
-        "difference": 0.13333333333333333
+        "difference": 0.09999999999999998
       }
     },
     {
@@ -1668,8 +1668,8 @@
         "difference": 0.0
       },
       "hit100": {
-        "original": 1,
-        "paraphrase_mean": 1.0,
+        "original": 0,
+        "paraphrase_mean": 0.0,
         "difference": 0.0
       },
       "mrr10": {
@@ -1681,27 +1681,9 @@
     {
       "source_id": "test426",
       "hit10": {
-        "original": 1,
-        "paraphrase_mean": 0.6666666666666666,
-        "difference": -0.33333333333333337
-      },
-      "hit100": {
-        "original": 1,
-        "paraphrase_mean": 1.0,
-        "difference": 0.0
-      },
-      "mrr10": {
-        "original": 0.14285714285714285,
-        "paraphrase_mean": 0.125,
-        "difference": -0.01785714285714285
-      }
-    },
-    {
-      "source_id": "test430",
-      "hit10": {
         "original": 0,
-        "paraphrase_mean": 1.0,
-        "difference": 1.0
+        "paraphrase_mean": 0.6666666666666666,
+        "difference": 0.6666666666666666
       },
       "hit100": {
         "original": 1,
@@ -1710,8 +1692,26 @@
       },
       "mrr10": {
         "original": 0.0,
-        "paraphrase_mean": 0.16984126984126982,
-        "difference": 0.16984126984126982
+        "paraphrase_mean": 0.08465608465608465,
+        "difference": 0.08465608465608465
+      }
+    },
+    {
+      "source_id": "test430",
+      "hit10": {
+        "original": 0,
+        "paraphrase_mean": 0.3333333333333333,
+        "difference": 0.3333333333333333
+      },
+      "hit100": {
+        "original": 1,
+        "paraphrase_mean": 1.0,
+        "difference": 0.0
+      },
+      "mrr10": {
+        "original": 0.0,
+        "paraphrase_mean": 0.041666666666666664,
+        "difference": 0.041666666666666664
       }
     },
     {
@@ -1723,8 +1723,8 @@
       },
       "hit100": {
         "original": 1,
-        "paraphrase_mean": 0.3333333333333333,
-        "difference": -0.6666666666666667
+        "paraphrase_mean": 0.6666666666666666,
+        "difference": -0.33333333333333337
       },
       "mrr10": {
         "original": 0.0,
@@ -1746,15 +1746,15 @@
       },
       "mrr10": {
         "original": 0.0,
-        "paraphrase_mean": 0.1726190476190476,
-        "difference": 0.1726190476190476
+        "paraphrase_mean": 0.167989417989418,
+        "difference": 0.167989417989418
       }
     },
     {
       "source_id": "test454",
       "hit10": {
-        "original": 0,
-        "paraphrase_mean": 0.0,
+        "original": 1,
+        "paraphrase_mean": 1.0,
         "difference": 0.0
       },
       "hit100": {
@@ -1763,17 +1763,17 @@
         "difference": 0.0
       },
       "mrr10": {
-        "original": 0.0,
-        "paraphrase_mean": 0.0,
-        "difference": 0.0
+        "original": 0.14285714285714285,
+        "paraphrase_mean": 0.1369047619047619,
+        "difference": -0.005952380952380959
       }
     },
     {
       "source_id": "test462",
       "hit10": {
-        "original": 0,
+        "original": 1,
         "paraphrase_mean": 0.0,
-        "difference": 0.0
+        "difference": -1.0
       },
       "hit100": {
         "original": 1,
@@ -1781,9 +1781,9 @@
         "difference": 0.0
       },
       "mrr10": {
-        "original": 0.0,
+        "original": 0.14285714285714285,
         "paraphrase_mean": 0.0,
-        "difference": 0.0
+        "difference": -0.14285714285714285
       }
     },
     {
@@ -1818,8 +1818,8 @@
       },
       "mrr10": {
         "original": 0.3333333333333333,
-        "paraphrase_mean": 0.3333333333333333,
-        "difference": 0.0
+        "paraphrase_mean": 0.27777777777777773,
+        "difference": -0.05555555555555558
       }
     }
   ]
