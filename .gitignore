@@ -163,3 +163,4 @@ datasets
 logs
 # Large embedding file, recreate with generate_trust_embeddings.py
 data_processed/trust/pool_embeddings.npy
+data_processed/trust/reverse_question_embeddings.npy

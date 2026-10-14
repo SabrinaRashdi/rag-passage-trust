@@ -210,6 +210,134 @@
         "p_holm": 1.0,
         "significant": false
       }
+    ],
+    "reverse_questions": [
+      {
+        "test": "prefix/comparisons/question_focus - z_drop",
+        "difference": 0.30293640552995393,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03596403596403597,
+        "significant": true
+      },
+      {
+        "test": "prefix/comparisons/question_focus - retrieval_score",
+        "difference": -0.05148202764976961,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03596403596403597,
+        "significant": true
+      },
+      {
+        "test": "prefix/comparisons/question_sameness - retrieval_score",
+        "difference": -0.15547281105990784,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03596403596403597,
+        "significant": true
+      },
+      {
+        "test": "prefix/comparisons/retrieval+both - retrieval_score",
+        "difference": 0.012223041474654361,
+        "p_value": 0.002,
+        "p_holm": 0.03596403596403597,
+        "significant": true
+      },
+      {
+        "test": "prefix/comparisons/set_density+both - set_density",
+        "difference": 0.0036331797235023,
+        "p_value": 0.02,
+        "p_holm": 0.14,
+        "significant": false
+      },
+      {
+        "test": "prefix/comparisons/three_baselines+both - three_baselines",
+        "difference": 0.000890322580645142,
+        "p_value": 0.084,
+        "p_holm": 0.504,
+        "significant": false
+      },
+      {
+        "test": "noprefix/comparisons/question_focus - z_drop",
+        "difference": 0.31437050691244245,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03596403596403597,
+        "significant": true
+      },
+      {
+        "test": "noprefix/comparisons/question_focus - retrieval_score",
+        "difference": 0.13167096774193554,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03596403596403597,
+        "significant": true
+      },
+      {
+        "test": "noprefix/comparisons/question_sameness - retrieval_score",
+        "difference": 0.012589861751152065,
+        "p_value": 0.682,
+        "p_holm": 1.0,
+        "significant": false
+      },
+      {
+        "test": "noprefix/comparisons/retrieval+both - retrieval_score",
+        "difference": 0.140163133640553,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03596403596403597,
+        "significant": true
+      },
+      {
+        "test": "noprefix/comparisons/set_density+both - set_density",
+        "difference": 0.0004940092165899301,
+        "p_value": 0.7,
+        "p_holm": 1.0,
+        "significant": false
+      },
+      {
+        "test": "noprefix/comparisons/three_baselines+both - three_baselines",
+        "difference": 0.0005235023041474385,
+        "p_value": 0.512,
+        "p_holm": 1.0,
+        "significant": false
+      },
+      {
+        "test": "reworded/comparisons/question_focus - z_drop",
+        "difference": 0.43032995391705064,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03596403596403597,
+        "significant": true
+      },
+      {
+        "test": "reworded/comparisons/question_focus - retrieval_score",
+        "difference": -0.062151152073732785,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03596403596403597,
+        "significant": true
+      },
+      {
+        "test": "reworded/comparisons/question_sameness - retrieval_score",
+        "difference": -0.1790940092165899,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03596403596403597,
+        "significant": true
+      },
+      {
+        "test": "reworded/comparisons/retrieval+both - retrieval_score",
+        "difference": 0.026243317972350133,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03596403596403597,
+        "significant": true
+      },
+      {
+        "test": "reworded/comparisons/set_density+both - set_density",
+        "difference": 0.0020645161290322456,
+        "p_value": 0.152,
+        "p_holm": 0.76,
+        "significant": false
+      },
+      {
+        "test": "reworded/comparisons/three_baselines+both - three_baselines",
+        "difference": -0.00011244239631336139,
+        "p_value": 0.852,
+        "p_holm": 1.0,
+        "significant": false
+      }
     ]
   }
 }
