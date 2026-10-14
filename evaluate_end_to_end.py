@@ -34,7 +34,7 @@ READ_K = 5
 # Per-passage defences: column in trust_scores.csv and its sign
 # (-1 when a smaller value is the more suspicious one).
 PASSAGE_METHODS = {
-    "retrieval_z": ("z_original", 1),
+    "retrieval_score": ("score_original", 1),
     "shortness": ("num_words", -1),
     "perplexity": ("log_perplexity", 1),
     "reader_support": ("support_original", 1),

@@ -38,31 +38,31 @@
       "questions": 83,
       "poisoned": 415,
       "benign": 906,
-      "auroc_first": 0.8162052182238889,
-      "auroc_second": 0.813335461049496,
-      "tpr_at_5pct_fpr_first": 0.5132530120481927,
-      "tpr_at_5pct_fpr_second": 0.4963855421686747,
-      "auroc_difference": 0.002869757174392973,
+      "auroc_first": 0.6207585308119897,
+      "auroc_second": 0.618189313545573,
+      "tpr_at_5pct_fpr_first": 0.1710843373493976,
+      "tpr_at_5pct_fpr_second": 0.1614457831325301,
+      "auroc_difference": 0.002569217266416679,
       "ci_95": [
-        -0.0012460476610161835,
-        0.008055808453586498
+        -0.002739873411586788,
+        0.008169006510038206
       ],
-      "p_value": 0.242
+      "p_value": 0.366
     },
     "good_vs_bad_same_questions": {
       "questions": 18,
       "poisoned": 90,
       "benign": 198,
-      "auroc_first": 0.9280022446689113,
-      "auroc_second": 0.8773288439955107,
-      "tpr_at_5pct_fpr_first": 0.7,
-      "tpr_at_5pct_fpr_second": 0.5333333333333333,
-      "auroc_difference": 0.05067340067340065,
+      "auroc_first": 0.778395061728395,
+      "auroc_second": 0.7455106621773289,
+      "tpr_at_5pct_fpr_first": 0.36666666666666664,
+      "tpr_at_5pct_fpr_second": 0.3,
+      "auroc_difference": 0.032884399551066146,
       "ci_95": [
-        0.010777777777777775,
-        0.10438868886888684
+        -0.05467645107794359,
+        0.10647533361538604
       ],
-      "p_value": 0.006
+      "p_value": 0.442
     }
   },
   "noprefix": {
@@ -70,31 +70,31 @@
       "questions": 83,
       "poisoned": 415,
       "benign": 906,
-      "auroc_first": 0.3612037554190271,
-      "auroc_second": 0.36261336737679195,
-      "tpr_at_5pct_fpr_first": 0.05783132530120482,
-      "tpr_at_5pct_fpr_second": 0.05783132530120482,
-      "auroc_difference": -0.0014096119577648447,
+      "auroc_first": 0.3736961089390675,
+      "auroc_second": 0.37603659671799783,
+      "tpr_at_5pct_fpr_first": 0.016867469879518072,
+      "tpr_at_5pct_fpr_second": 0.016867469879518072,
+      "auroc_difference": -0.0023404877789303113,
       "ci_95": [
-        -0.009557452953629222,
-        0.006272066847076622
+        -0.008517492139336228,
+        0.0029773962950058594
       ],
-      "p_value": 0.692
+      "p_value": 0.416
     },
     "good_vs_bad_same_questions": {
       "questions": 18,
       "poisoned": 90,
       "benign": 198,
-      "auroc_first": 0.4797418630751964,
-      "auroc_second": 0.5052188552188552,
-      "tpr_at_5pct_fpr_first": 0.1,
-      "tpr_at_5pct_fpr_second": 0.1111111111111111,
-      "auroc_difference": -0.02547699214365884,
+      "auroc_first": 0.4895622895622896,
+      "auroc_second": 0.5229517396184062,
+      "tpr_at_5pct_fpr_first": 0.06666666666666667,
+      "tpr_at_5pct_fpr_second": 0.06666666666666667,
+      "auroc_difference": -0.033389450056116654,
       "ci_95": [
-        -0.10473176206509542,
-        0.052546719837360166
+        -0.0988373394751535,
+        0.036631207482993214
       ],
-      "p_value": 0.568
+      "p_value": 0.354
     }
   }
 }

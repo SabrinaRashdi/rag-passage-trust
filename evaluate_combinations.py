@@ -30,17 +30,17 @@ OUTPUT_PATH = TRUST_DIR / "combination_results.json"
 OURS = ["z_drop", "support_drop", "answer_disagreement"]
 COMBINATIONS = {
     "ours": OURS,
-    "ours+retrieval": OURS + ["z_original"],
+    "ours+retrieval": OURS + ["score_original"],
     "ours+set_density": OURS + ["set_density"],
     "ours+reader": OURS + ["support_original"],
-    "ours+all_three": OURS + ["z_original", "set_density",
+    "ours+all_three": OURS + ["score_original", "set_density",
                               "support_original"],
-    "all_three_without_ours": ["z_original", "set_density",
+    "all_three_without_ours": ["score_original", "set_density",
                                "support_original"],
 }
 # Single baselines for reference (no training).
 SINGLE = {
-    "retrieval_z": "z_original",
+    "retrieval_score": "score_original",
     "set_density": "set_density",
     "reader_support": "support_original",
 }
@@ -48,7 +48,7 @@ SINGLE = {
 COMPARISONS = [
     ("ours+all_three", "all_three_without_ours"),
     ("ours+set_density", "set_density"),
-    ("ours+retrieval", "retrieval_z"),
+    ("ours+retrieval", "retrieval_score"),
 ]
 KNOWN_ATTACK = "prefix"
 
@@ -132,7 +132,7 @@ def main():
     groups = np.array([r["query_id"] for r in rows])
     columns = {
         name: np.array([float(r[name]) for r in rows])
-        for name in ("z_original", "support_original", *OURS)
+        for name in ("score_original", "support_original", *OURS)
     }
 
     rng = np.random.default_rng(SEED)
@@ -194,7 +194,8 @@ def main():
     test_groups = np.array([r["query_id"] for r in adaptive])
     test = {
         name: np.array([float(r[name]) for r in adaptive])
-        for name in ("z_original", "support_original", "set_density", *OURS)
+        for name in ("score_original", "support_original", "set_density",
+                     *OURS)
     }
 
     known = (attacks == "none") | (attacks == KNOWN_ATTACK)

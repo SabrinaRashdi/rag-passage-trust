@@ -14,7 +14,9 @@ from transformers import (
     AutoModelForSeq2SeqLM, AutoTokenizer,
 )
 
-from compute_trust_scores import SET_NEIGHBOURS, VARIANTS, load_embeddings
+from compute_trust_scores import (
+    SET_NEIGHBOURS, VARIANTS, load_embeddings, reference_masks,
+)
 from evaluate_detection import N_FOLDS, auroc, tpr_at_fpr
 from evaluate_end_to_end import (
     COMBINED, COMBINED_FEATURES, PASSAGE_METHODS, READ_K, RETRIEVE_K,
@@ -52,7 +54,7 @@ OUTPUT_PATH = TRUST_DIR / "adaptive_attack_results.json"
 # Features of the candidate sets under this attack, for evaluate_combinations.py
 SCORES_PATH_OUT = TRUST_DIR / "adaptive_attack_scores.csv"
 SAVED_FEATURES = (
-    "z_original", "support_original", *COMBINED_FEATURES,
+    "score_original", "support_original", *COMBINED_FEATURES,
 )
 
 KNOWN_ATTACK = "prefix"
@@ -178,6 +180,7 @@ def main():
     pool_emb, pool_index = load_embeddings("pool")
     query_emb, query_index = load_embeddings("query")
     adv_emb, adv_index = load_embeddings("poisoned")
+    references = reference_masks(pool_index, eval_passages.values())
 
     # 3. Reader answers and support for every question wording.
     tokenizer = AutoTokenizer.from_pretrained(READER_NAME)
@@ -228,7 +231,7 @@ def main():
         variants = np.stack([
             query_emb[query_index[f"{qid}_{v}"]] for v in VARIANTS
         ])
-        clean_scores = variants @ pool_emb.T
+        clean_scores = variants @ pool_emb[references[qid]].T
         scores = variants @ embedding
         answers = reader[p["passage_id"]]
 

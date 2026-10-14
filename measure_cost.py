@@ -41,7 +41,7 @@ ATTACK = "prefix"
 
 # Which timed stages each method needs on top of plain retrieval.
 METHOD_STAGES = {
-    "retrieval_z": [],
+    "retrieval_score": [],
     "shortness": [],
     "set_density": ["set_density"],
     "perplexity": ["perplexity"],

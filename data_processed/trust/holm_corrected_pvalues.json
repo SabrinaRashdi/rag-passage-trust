@@ -1,0 +1,215 @@
+{
+  "alpha": 0.05,
+  "smallest_p": 0.001998001998001998,
+  "families": {
+    "detection": [
+      {
+        "test": "prefix/all_benign/comparisons/z_drop_k3 - retrieval_score",
+        "difference": -0.35441843317972355,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03196803196803197,
+        "significant": true
+      },
+      {
+        "test": "prefix/all_benign/comparisons/combined_consistency - retrieval_score",
+        "difference": -0.09610691244239633,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03196803196803197,
+        "significant": true
+      },
+      {
+        "test": "prefix/all_benign/comparisons/combined_with_retrieval - retrieval_score",
+        "difference": 0.008038709677419265,
+        "p_value": 0.034,
+        "p_holm": 0.136,
+        "significant": false
+      },
+      {
+        "test": "prefix/all_benign/comparisons/combined_consistency - z_drop_k3",
+        "difference": 0.2583115207373272,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03196803196803197,
+        "significant": true
+      },
+      {
+        "test": "prefix/gold_only/comparisons/z_drop_k3 - retrieval_score",
+        "difference": -0.2870169491525424,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03196803196803197,
+        "significant": true
+      },
+      {
+        "test": "prefix/gold_only/comparisons/combined_consistency - retrieval_score",
+        "difference": -0.14710169491525416,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03196803196803197,
+        "significant": true
+      },
+      {
+        "test": "prefix/gold_only/comparisons/combined_with_retrieval - retrieval_score",
+        "difference": 0.0003389830508474523,
+        "p_value": 0.92,
+        "p_holm": 1.0,
+        "significant": false
+      },
+      {
+        "test": "prefix/gold_only/comparisons/combined_consistency - z_drop_k3",
+        "difference": 0.13991525423728823,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03196803196803197,
+        "significant": true
+      },
+      {
+        "test": "noprefix/all_benign/comparisons/z_drop_k3 - retrieval_score",
+        "difference": -0.1826995391705069,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03196803196803197,
+        "significant": true
+      },
+      {
+        "test": "noprefix/all_benign/comparisons/combined_consistency - retrieval_score",
+        "difference": 0.18435115207373276,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03196803196803197,
+        "significant": true
+      },
+      {
+        "test": "noprefix/all_benign/comparisons/combined_with_retrieval - retrieval_score",
+        "difference": 0.18545714285714288,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03196803196803197,
+        "significant": true
+      },
+      {
+        "test": "noprefix/all_benign/comparisons/combined_consistency - z_drop_k3",
+        "difference": 0.36705069124423967,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03196803196803197,
+        "significant": true
+      },
+      {
+        "test": "noprefix/gold_only/comparisons/z_drop_k3 - retrieval_score",
+        "difference": -0.2446779661016949,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03196803196803197,
+        "significant": true
+      },
+      {
+        "test": "noprefix/gold_only/comparisons/combined_consistency - retrieval_score",
+        "difference": -0.05747457627118646,
+        "p_value": 0.13,
+        "p_holm": 0.39,
+        "significant": false
+      },
+      {
+        "test": "noprefix/gold_only/comparisons/combined_with_retrieval - retrieval_score",
+        "difference": 0.010050847457627077,
+        "p_value": 0.712,
+        "p_holm": 1.0,
+        "significant": false
+      },
+      {
+        "test": "noprefix/gold_only/comparisons/combined_consistency - z_drop_k3",
+        "difference": 0.18720338983050844,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03196803196803197,
+        "significant": true
+      }
+    ],
+    "combinations": [
+      {
+        "test": "main/prefix/comparisons/ours+all_three - all_three_without_ours",
+        "difference": 0.003080184331797242,
+        "p_value": 0.004,
+        "p_holm": 0.024,
+        "significant": true
+      },
+      {
+        "test": "main/prefix/comparisons/ours+set_density - set_density",
+        "difference": 0.007270046082949233,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.017982017982017984,
+        "significant": true
+      },
+      {
+        "test": "main/prefix/comparisons/ours+retrieval - retrieval_score",
+        "difference": 0.008038709677419265,
+        "p_value": 0.038,
+        "p_holm": 0.152,
+        "significant": false
+      },
+      {
+        "test": "main/noprefix/comparisons/ours+all_three - all_three_without_ours",
+        "difference": 0.0021400921658986105,
+        "p_value": 0.098,
+        "p_holm": 0.28200000000000003,
+        "significant": false
+      },
+      {
+        "test": "main/noprefix/comparisons/ours+set_density - set_density",
+        "difference": 0.008110599078340996,
+        "p_value": 0.014,
+        "p_holm": 0.07,
+        "significant": false
+      },
+      {
+        "test": "main/noprefix/comparisons/ours+retrieval - retrieval_score",
+        "difference": 0.18545714285714288,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.017982017982017984,
+        "significant": true
+      },
+      {
+        "test": "reworded_trained_on_kind1/comparisons/ours+all_three - all_three_without_ours",
+        "difference": -0.004278341013824849,
+        "p_value": 0.094,
+        "p_holm": 0.28200000000000003,
+        "significant": false
+      },
+      {
+        "test": "reworded_trained_on_kind1/comparisons/ours+set_density - set_density",
+        "difference": -0.02177695852534567,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.017982017982017984,
+        "significant": true
+      },
+      {
+        "test": "reworded_trained_on_kind1/comparisons/ours+retrieval - retrieval_score",
+        "difference": -0.013225806451612976,
+        "p_value": 0.096,
+        "p_holm": 0.28200000000000003,
+        "significant": false
+      }
+    ],
+    "paraphrase_quality": [
+      {
+        "test": "prefix/good_only_vs_all_three",
+        "difference": 0.002569217266416679,
+        "p_value": 0.366,
+        "p_holm": 1.0,
+        "significant": false
+      },
+      {
+        "test": "prefix/good_vs_bad_same_questions",
+        "difference": 0.032884399551066146,
+        "p_value": 0.442,
+        "p_holm": 1.0,
+        "significant": false
+      },
+      {
+        "test": "noprefix/good_only_vs_all_three",
+        "difference": -0.0023404877789303113,
+        "p_value": 0.416,
+        "p_holm": 1.0,
+        "significant": false
+      },
+      {
+        "test": "noprefix/good_vs_bad_same_questions",
+        "difference": -0.033389450056116654,
+        "p_value": 0.354,
+        "p_holm": 1.0,
+        "significant": false
+      }
+    ]
+  }
+}

@@ -20,7 +20,7 @@ COLUMN_WIDTH = 3.5
 PAGE_WIDTH = 7.16
 
 LABELS = {
-    "retrieval_z": "Retrieval score (z)",
+    "retrieval_score": "Retrieval score",
     "set_density": "Set density",
     "shortness": "Short passage length",
     "perplexity": "Perplexity",
@@ -31,7 +31,8 @@ LABELS = {
     "combined_consistency": "Combined consistency",
 }
 BASELINES = (
-    "retrieval_z", "set_density", "shortness", "perplexity", "reader_support",
+    "retrieval_score", "set_density", "shortness", "perplexity",
+    "reader_support",
 )
 ATTACK_LABELS = {
     "prefix": "With question prefix",
@@ -39,7 +40,7 @@ ATTACK_LABELS = {
 }
 ATTACK_COLOURS = {"prefix": "#0072B2", "noprefix": "#E69F00"}
 METHOD_STYLES = {
-    "retrieval_z": ("#000000", "s", "-"),
+    "retrieval_score": ("#000000", "s", "-"),
     "set_density": ("#D55E00", "o", "-"),
     "z_drop_k3": ("#0072B2", "^", "--"),
     "combined_consistency": ("#009E73", "D", "--"),
@@ -115,7 +116,7 @@ def poison_count_figure():
     """AUROC against the number of poisoned passages per question."""
     results = load("poison_count_results.json")
     methods = (
-        "retrieval_z", "set_density", "z_drop_k3", "combined_consistency",
+        "retrieval_score", "set_density", "z_drop_k3", "combined_consistency",
     )
 
     figure, axes = plt.subplots(

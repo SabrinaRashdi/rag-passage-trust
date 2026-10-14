@@ -29,15 +29,17 @@ COMBINATIONS = {
         "z_drop_k3", "support_drop_k3", "answer_disagree_k3",
     ],
     "combined_with_retrieval": [
-        "z_drop_k3", "support_drop_k3", "answer_disagree_k3", "retrieval_z",
+        "z_drop_k3", "support_drop_k3", "answer_disagree_k3",
+        "retrieval_score",
     ],
 }
 
-# Paired comparisons of AUROC (first method minus second method).
+# Paired comparisons of AUROC (first method minus second method). The
+# retrieval baseline is the raw score, which needs no reference passages.
 COMPARISONS = [
-    ("z_drop_k3", "retrieval_z"),
-    ("combined_consistency", "retrieval_z"),
-    ("combined_with_retrieval", "retrieval_z"),
+    ("z_drop_k3", "retrieval_score"),
+    ("combined_consistency", "retrieval_score"),
+    ("combined_with_retrieval", "retrieval_score"),
     ("combined_consistency", "z_drop_k3"),
 ]
 

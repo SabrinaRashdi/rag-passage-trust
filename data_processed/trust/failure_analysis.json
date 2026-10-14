@@ -1,74 +1,74 @@
 {
-  "threshold_z_drop": 2.4724851946036006,
+  "threshold_z_drop": 6.225084018707274,
   "false_alarms": {
     "benign_flagged": 55,
-    "gold_flagged": 0,
+    "gold_flagged": 2,
     "gold_total": 118,
-    "questions_with_false_alarm": 30,
+    "questions_with_false_alarm": 15,
     "most_in_one_question": 9,
     "false_alarms_vs_paraphrase_similarity": {
-      "spearman": -0.47025543141931037,
-      "p_value": 7.947525273352094e-07
+      "spearman": -0.45385203239342364,
+      "p_value": 2.111566490088137e-06
     },
     "fpr_low_similarity_quarter": 0.12222222222222222,
-    "fpr_high_similarity_quarter": 0.007272727272727273
+    "fpr_high_similarity_quarter": 0.0
   },
   "prefix": {
-    "tpr_at_5pct_fpr": 0.536,
-    "questions_all_caught": 39,
-    "questions_all_missed": 31,
-    "questions_mixed": 30,
-    "tpr_low_similarity_quarter": 0.584,
-    "tpr_high_similarity_quarter": 0.456,
+    "tpr_at_5pct_fpr": 0.15,
+    "questions_all_caught": 5,
+    "questions_all_missed": 74,
+    "questions_mixed": 21,
+    "tpr_low_similarity_quarter": 0.264,
+    "tpr_high_similarity_quarter": 0.032,
     "poisoned_drop_vs_paraphrase_similarity": {
-      "spearman": -0.0377077707770777,
-      "p_value": 0.7095433757325346
+      "spearman": -0.3033663366336633,
+      "p_value": 0.0021537394919619777
     },
     "poisoned_drop_vs_question_words": {
-      "spearman": 0.21758342855554647,
-      "p_value": 0.029659871154701103
+      "spearman": -0.013378771995626959,
+      "p_value": 0.8948960413324913
     },
     "poisoned_drop_vs_original_z": {
-      "spearman": 0.7254605460546054,
-      "p_value": 1.3827985936004944e-17
+      "spearman": 0.38719471947194717,
+      "p_value": 6.901374055869343e-05
     },
     "poisoned_drop_vs_benign_median_drop": {
-      "spearman": 0.39602760276027593,
-      "p_value": 4.531814381774967e-05
+      "spearman": 0.6828082808280828,
+      "p_value": 5.088008024213839e-15
     },
     "post_hoc_set_relative_z_drop": {
-      "auroc_z_drop": 0.8216903225806451,
-      "auroc_set_relative": 0.8631152073732719,
-      "tpr_at_5pct_fpr_set_relative": 0.628
+      "auroc_z_drop": 0.6220276497695852,
+      "auroc_set_relative": 0.7101529953917051,
+      "tpr_at_5pct_fpr_set_relative": 0.254
     }
   },
   "noprefix": {
-    "tpr_at_5pct_fpr": 0.08,
-    "questions_all_caught": 1,
-    "questions_all_missed": 76,
-    "questions_mixed": 23,
-    "tpr_low_similarity_quarter": 0.08,
-    "tpr_high_similarity_quarter": 0.08,
+    "tpr_at_5pct_fpr": 0.02,
+    "questions_all_caught": 0,
+    "questions_all_missed": 96,
+    "questions_mixed": 4,
+    "tpr_low_similarity_quarter": 0.024,
+    "tpr_high_similarity_quarter": 0.0,
     "poisoned_drop_vs_paraphrase_similarity": {
-      "spearman": 0.28765676567656767,
-      "p_value": 0.003707844703492937
+      "spearman": -0.0867206720672067,
+      "p_value": 0.39093576538932245
     },
     "poisoned_drop_vs_question_words": {
-      "spearman": 0.031433743345915914,
-      "p_value": 0.7562095271787532
+      "spearman": -0.019322769267969792,
+      "p_value": 0.8486696418491152
     },
     "poisoned_drop_vs_original_z": {
-      "spearman": 0.7453825382538252,
-      "p_value": 5.896486071874903e-19
+      "spearman": 0.3305490549054905,
+      "p_value": 0.0007826167188980548
     },
     "poisoned_drop_vs_benign_median_drop": {
-      "spearman": 0.05126912691269127,
-      "p_value": 0.6124503706407235
+      "spearman": 0.5894749474947494,
+      "p_value": 1.1015823143037059e-10
     },
     "post_hoc_set_relative_z_drop": {
-      "auroc_z_drop": 0.40010875576036864,
-      "auroc_set_relative": 0.4136700460829493,
-      "tpr_at_5pct_fpr_set_relative": 0.048
+      "auroc_z_drop": 0.3886506912442396,
+      "auroc_set_relative": 0.3361953917050691,
+      "tpr_at_5pct_fpr_set_relative": 0.01
     }
   }
 }

@@ -45,6 +45,10 @@ run evaluate_end_to_end.py
 run evaluate_adaptive_attack.py
 run evaluate_combinations.py
 
-# 5. Running time (depends on the machine) and figures.
+# 5. Statistics and design-choice checks.
+run apply_holm_correction.py
+run evaluate_sensitivity.py
+
+# 6. Running time (depends on the machine) and figures.
 run measure_cost.py
 run make_figures.py
