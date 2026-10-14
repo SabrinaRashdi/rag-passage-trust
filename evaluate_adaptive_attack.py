@@ -49,6 +49,11 @@ END_TO_END_PATH = TRUST_DIR / "end_to_end_results.json"
 
 PASSAGES_PATH = TRUST_DIR / "adaptive_attack_passages.jsonl"
 OUTPUT_PATH = TRUST_DIR / "adaptive_attack_results.json"
+# Features of the candidate sets under this attack, for evaluate_combinations.py
+SCORES_PATH_OUT = TRUST_DIR / "adaptive_attack_scores.csv"
+SAVED_FEATURES = (
+    "z_original", "support_original", *COMBINED_FEATURES,
+)
 
 KNOWN_ATTACK = "prefix"
 ATTACK = "reworded"
@@ -310,6 +315,18 @@ def main():
     method_scores[COMBINED] = combined
     method_scores["set_density"] = density
 
+    with SCORES_PATH_OUT.open("w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow([
+            "passage_id", "query_id", "label", *SAVED_FEATURES, "set_density",
+        ])
+
+        for row, value in zip(test_rows, density):
+            writer.writerow([
+                row["passage_id"], row["query_id"], row["label"],
+                *[row[name] for name in SAVED_FEATURES], float(value),
+            ])
+
     with (TRUST_DIR / "detection_results.json").open(encoding="utf-8") as f:
         known_detection = json.load(f)[f"{KNOWN_ATTACK}/all_benign"]["methods"]
 
@@ -432,6 +449,7 @@ def main():
               f"{r['mean_poison_read']:>13.2f}")
 
     print("\nPassages saved to:", PASSAGES_PATH)
+    print("Features saved to:", SCORES_PATH_OUT)
     print("Results saved to:", OUTPUT_PATH)
 
 
