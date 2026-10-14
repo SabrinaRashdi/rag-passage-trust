@@ -438,6 +438,40 @@ def combination_figure():
     save(figure, "combinations_poison_count")
 
 
+def level_figure():
+    """Mean z_drop of benign and poisoned passages that start from the
+    same original z-score."""
+    results = load("why_consistency_fails.json")
+
+    figure, axes = plt.subplots(
+        1, 2, figsize=(COLUMN_WIDTH, 2.0), sharey=True
+    )
+
+    for axis, attack in zip(axes, ATTACK_LABELS):
+        # Only bins with enough benign and poisoned passages.
+        bins = [b for b in results[attack]["level_bins"] if b["used"]]
+        centres = [np.mean(b["z_original_range"]) for b in bins]
+
+        axis.plot(centres, [b["z_drop_benign"] for b in bins],
+                  color="#999999", marker="o", markersize=3, linewidth=1,
+                  label="Benign")
+        axis.plot(centres, [b["z_drop_poisoned"] for b in bins],
+                  color=ATTACK_COLOURS[attack], marker="^", markersize=3,
+                  linewidth=1, label="Poisoned")
+        axis.set_title(ATTACK_LABELS[attack], fontsize=8)
+
+    axes[0].set_ylabel("Mean relevance consistency\n(drop in z-score)")
+    figure.supxlabel("z-score for the original question (bin centre)",
+                     fontsize=8, y=0.04)
+    handles, labels = axes[0].get_legend_handles_labels()
+    figure.legend(
+        handles, labels, loc="lower center", bbox_to_anchor=(0.5, 0.98),
+        ncol=2, frameon=False,
+    )
+    figure.tight_layout()
+    save(figure, "z_drop_by_level")
+
+
 def main():
     detection_figure()
     poison_count_figure()
@@ -447,6 +481,7 @@ def main():
     end_to_end_figure()
     adaptive_figure()
     combination_figure()
+    level_figure()
 
 
 if __name__ == "__main__":

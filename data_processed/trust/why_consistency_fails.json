@@ -1,0 +1,399 @@
+{
+  "paraphrase_word_retention": {
+    "mean": 0.7412222222222222,
+    "median": 0.75,
+    "questions_all_words_kept": 11
+  },
+  "by_type": {
+    "none": {
+      "passages": 1085,
+      "word_overlap_original": 0.4986559139784947,
+      "word_overlap_paraphrases": 0.4528837197961622,
+      "raw_score_original": 1.1318109378836672,
+      "raw_score_paraphrases": 1.0728004605905619,
+      "share_of_raw_score_kept": 0.9493683823427498,
+      "z_original": 8.455348952857141,
+      "z_paraphrases": 6.7091740072543775,
+      "z_drop_mean": 1.7461749460359324,
+      "z_drop_std": 2.439475278773821,
+      "z_drop_relative_to_z_original": 0.19590499923604543,
+      "z_drop_vs_z_original": {
+        "spearman": 0.3027901144496278,
+        "p_value": 1.929197867379461e-24
+      }
+    },
+    "prefix": {
+      "passages": 500,
+      "word_overlap_original": 1.0,
+      "word_overlap_paraphrases": 0.7288825396825397,
+      "raw_score_original": 1.4227838909626007,
+      "raw_score_paraphrases": 1.3231023962497712,
+      "share_of_raw_score_kept": 0.9309720429066219,
+      "z_original": 15.7251030342,
+      "z_paraphrases": 12.856990821933332,
+      "z_drop_mean": 2.8681122336387634,
+      "z_drop_std": 3.221987066722649,
+      "z_drop_relative_to_z_original": 0.17199005508633575,
+      "z_drop_vs_z_original": {
+        "spearman": 0.3843964815859263,
+        "p_value": 4.712896990573735e-19
+      }
+    },
+    "noprefix": {
+      "passages": 500,
+      "word_overlap_original": 0.7442642857142857,
+      "word_overlap_paraphrases": 0.6476116402116402,
+      "raw_score_original": 1.1673801862001418,
+      "raw_score_paraphrases": 1.1490144375165303,
+      "share_of_raw_score_kept": 0.9879883936184125,
+      "z_original": 9.333411771800002,
+      "z_paraphrases": 8.63659712494,
+      "z_drop_mean": 0.6968146486977737,
+      "z_drop_std": 2.5646172593574157,
+      "z_drop_relative_to_z_original": 0.028816833591772482,
+      "z_drop_vs_z_original": {
+        "spearman": 0.3221734486937948,
+        "p_value": 1.538724676020556e-13
+      }
+    }
+  },
+  "benign_selection": {
+    "z_drop_retrieved_top10": 1.8600026149397284,
+    "z_drop_not_in_top10": 0.4404276636682479,
+    "passages_top10": 998,
+    "passages_not_in_top10": 87,
+    "z_drop_gold": 0.8212362584989454
+  },
+  "prefix": {
+    "auroc_z_drop": {
+      "value": 0.6220276497695852,
+      "ci_95": [
+        0.5746645292325918,
+        0.6695744368085537
+      ]
+    },
+    "auroc_z_original": {
+      "value": 0.9176755760368663,
+      "ci_95": [
+        0.8880453950872436,
+        0.9456370068335506
+      ]
+    },
+    "auroc_within_level_bins": {
+      "value": 0.376872180969761,
+      "ci_95": [
+        0.28346735916222426,
+        0.5223951286319763
+      ]
+    },
+    "auroc_residual_after_level": {
+      "value": 0.4696073732718894,
+      "ci_95": [
+        0.4250633681970018,
+        0.5161243829058664
+      ]
+    },
+    "residual_line": {
+      "slope": 0.21403930394803483,
+      "intercept": -0.20053449249065414
+    },
+    "level_bins": [
+      {
+        "z_original_range": [
+          -2.507893,
+          5.6333264000000005
+        ],
+        "benign": 156,
+        "poisoned": 3,
+        "used": false,
+        "z_drop_benign": 1.2618284015796886,
+        "z_drop_poisoned": 0.19603207376268164
+      },
+      {
+        "z_original_range": [
+          5.6333264000000005,
+          6.6501994600000005
+        ],
+        "benign": 156,
+        "poisoned": 2,
+        "used": false,
+        "z_drop_benign": 1.0140668014940033,
+        "z_drop_poisoned": 1.028957525889079
+      },
+      {
+        "z_original_range": [
+          6.6501994600000005,
+          7.57574248
+        ],
+        "benign": 154,
+        "poisoned": 5,
+        "used": false,
+        "z_drop_benign": 1.0723052973742093,
+        "z_drop_poisoned": 0.21105012893676775
+      },
+      {
+        "z_original_range": [
+          7.57574248,
+          8.458298000000001
+        ],
+        "benign": 148,
+        "poisoned": 10,
+        "used": true,
+        "z_drop_benign": 1.4075598387836334,
+        "z_drop_poisoned": 0.8446638743082684
+      },
+      {
+        "z_original_range": [
+          8.458298000000001,
+          9.580039
+        ],
+        "benign": 147,
+        "poisoned": 11,
+        "used": true,
+        "z_drop_benign": 1.9262003782384793,
+        "z_drop_poisoned": -1.312960133408055
+      },
+      {
+        "z_original_range": [
+          9.580039,
+          10.8828606
+        ],
+        "benign": 126,
+        "poisoned": 33,
+        "used": true,
+        "z_drop_benign": 1.8273635440402562,
+        "z_drop_poisoned": 0.7868612944477738
+      },
+      {
+        "z_original_range": [
+          10.8828606,
+          12.604020600000002
+        ],
+        "benign": 98,
+        "poisoned": 60,
+        "used": true,
+        "z_drop_benign": 2.824175276723849,
+        "z_drop_poisoned": 1.7368446932898627
+      },
+      {
+        "z_original_range": [
+          12.604020600000002,
+          15.0009494
+        ],
+        "benign": 61,
+        "poisoned": 98,
+        "used": true,
+        "z_drop_benign": 3.643484679564752,
+        "z_drop_poisoned": 3.007652779014743
+      },
+      {
+        "z_original_range": [
+          15.0009494,
+          17.595226800000006
+        ],
+        "benign": 33,
+        "poisoned": 125,
+        "used": true,
+        "z_drop_benign": 4.042861408657498,
+        "z_drop_poisoned": 2.7966970710754393
+      },
+      {
+        "z_original_range": [
+          17.595226800000006,
+          32.848648
+        ],
+        "benign": 6,
+        "poisoned": 153,
+        "used": false,
+        "z_drop_benign": 3.378476937611898,
+        "z_drop_poisoned": 4.325729196627415
+      }
+    ],
+    "level_bins_used": 6,
+    "cohens_d_z_drop": 0.39260940537408606,
+    "auroc_low_word_retention": {
+      "value": 0.6884790142472084,
+      "ci_95": [
+        0.6317042946616694,
+        0.7530126898715306
+      ]
+    },
+    "auroc_high_word_retention": {
+      "value": 0.5587281399046105,
+      "ci_95": [
+        0.48722668673853725,
+        0.637037028020008
+      ]
+    },
+    "z_drop_vs_word_overlap_drop": {
+      "spearman": 0.14158734079607305,
+      "p_value": 0.0015031773491710136
+    }
+  },
+  "noprefix": {
+    "auroc_z_drop": {
+      "value": 0.3886506912442396,
+      "ci_95": [
+        0.34700214962745196,
+        0.4292644273632445
+      ]
+    },
+    "auroc_z_original": {
+      "value": 0.554047926267281,
+      "ci_95": [
+        0.5099526625145371,
+        0.5961514388617662
+      ]
+    },
+    "auroc_within_level_bins": {
+      "value": 0.3729968930051766,
+      "ci_95": [
+        0.32805130860152576,
+        0.4194315328189035
+      ]
+    },
+    "auroc_residual_after_level": {
+      "value": 0.3671889400921659,
+      "ci_95": [
+        0.328475348578332,
+        0.41037290253364833
+      ]
+    },
+    "residual_line": {
+      "slope": 0.20436418813660107,
+      "intercept": -0.36943119089115733
+    },
+    "level_bins": [
+      {
+        "z_original_range": [
+          -2.507893,
+          4.84867874
+        ],
+        "benign": 88,
+        "poisoned": 71,
+        "used": true,
+        "z_drop_benign": 0.9764325170439075,
+        "z_drop_poisoned": -0.8991559808942632
+      },
+      {
+        "z_original_range": [
+          4.84867874,
+          5.8887768
+        ],
+        "benign": 112,
+        "poisoned": 46,
+        "used": true,
+        "z_drop_benign": 1.432637382376318,
+        "z_drop_poisoned": -0.3063006690446881
+      },
+      {
+        "z_original_range": [
+          5.8887768,
+          6.73960126
+        ],
+        "benign": 126,
+        "poisoned": 33,
+        "used": true,
+        "z_drop_benign": 0.8994103650409707,
+        "z_drop_poisoned": 0.08779260365649913
+      },
+      {
+        "z_original_range": [
+          6.73960126,
+          7.47901724
+        ],
+        "benign": 122,
+        "poisoned": 36,
+        "used": true,
+        "z_drop_benign": 1.0510720782429797,
+        "z_drop_poisoned": 0.6558136962078235
+      },
+      {
+        "z_original_range": [
+          7.47901724,
+          8.234122
+        ],
+        "benign": 117,
+        "poisoned": 41,
+        "used": true,
+        "z_drop_benign": 1.3030095760978524,
+        "z_drop_poisoned": 0.4124225135741196
+      },
+      {
+        "z_original_range": [
+          8.234122,
+          9.04786
+        ],
+        "benign": 127,
+        "poisoned": 32,
+        "used": true,
+        "z_drop_benign": 1.8280982830393033,
+        "z_drop_poisoned": 1.058756170173486
+      },
+      {
+        "z_original_range": [
+          9.04786,
+          10.110679800000003
+        ],
+        "benign": 124,
+        "poisoned": 34,
+        "used": true,
+        "z_drop_benign": 1.9213931522061747,
+        "z_drop_poisoned": 1.0376377187523187
+      },
+      {
+        "z_original_range": [
+          10.110679800000003,
+          11.435182800000002
+        ],
+        "benign": 105,
+        "poisoned": 54,
+        "used": true,
+        "z_drop_benign": 2.2119588598372446,
+        "z_drop_poisoned": 1.5645019036752208
+      },
+      {
+        "z_original_range": [
+          11.435182800000002,
+          13.528109000000002
+        ],
+        "benign": 88,
+        "poisoned": 70,
+        "used": true,
+        "z_drop_benign": 2.946026390136191,
+        "z_drop_poisoned": 1.9971948498771306
+      },
+      {
+        "z_original_range": [
+          13.528109000000002,
+          25.763342
+        ],
+        "benign": 76,
+        "poisoned": 83,
+        "used": true,
+        "z_drop_benign": 3.845822536108787,
+        "z_drop_poisoned": 1.0780100669248038
+      }
+    ],
+    "level_bins_used": 10,
+    "cohens_d_z_drop": -0.4192697517454199,
+    "auroc_low_word_retention": {
+      "value": 0.40046207162110126,
+      "ci_95": [
+        0.34611472136137156,
+        0.4570371994604399
+      ]
+    },
+    "auroc_high_word_retention": {
+      "value": 0.3734605193428723,
+      "ci_95": [
+        0.30928384497084654,
+        0.4348279526354831
+      ]
+    },
+    "z_drop_vs_word_overlap_drop": {
+      "spearman": 0.1351164371238983,
+      "p_value": 0.0024648088481281647
+    }
+  }
+}

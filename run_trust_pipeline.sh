@@ -34,6 +34,7 @@ run compute_trust_scores.py
 run evaluate_detection.py
 run evaluate_poison_count.py
 run analyse_failure_cases.py
+run analyse_why_consistency_fails.py
 
 # 3. Paraphrase quality.
 run check_paraphrases_nli.py
