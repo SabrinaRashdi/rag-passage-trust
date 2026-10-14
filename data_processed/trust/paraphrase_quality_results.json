@@ -1,0 +1,100 @@
+{
+  "reviewers": {
+    "sanduni": {
+      "rows": 175,
+      "yes_rate": 0.7257142857142858
+    },
+    "sabrina": {
+      "rows": 175,
+      "yes_rate": 0.7657142857142857
+    }
+  },
+  "between_reviewers": {
+    "rows": 50,
+    "agreement": 0.98,
+    "cohen_kappa": 0.9514563106796117,
+    "disagreements": [
+      "test77_para2"
+    ]
+  },
+  "combined": {
+    "paraphrases": 300,
+    "good": 225,
+    "good_rate": 0.75,
+    "questions_by_good_paraphrases": {
+      "0": 17,
+      "1": 6,
+      "2": 12,
+      "3": 65
+    }
+  },
+  "nli_vs_combined_review": {
+    "rows": 300,
+    "agreement": 0.7233333333333334,
+    "cohen_kappa": 0.08791208791208793
+  },
+  "prefix": {
+    "good_only_vs_all_three": {
+      "questions": 83,
+      "poisoned": 415,
+      "benign": 906,
+      "auroc_first": 0.8162052182238889,
+      "auroc_second": 0.813335461049496,
+      "tpr_at_5pct_fpr_first": 0.5132530120481927,
+      "tpr_at_5pct_fpr_second": 0.4963855421686747,
+      "auroc_difference": 0.002869757174392973,
+      "ci_95": [
+        -0.0012460476610161835,
+        0.008055808453586498
+      ],
+      "p_value": 0.242
+    },
+    "good_vs_bad_same_questions": {
+      "questions": 18,
+      "poisoned": 90,
+      "benign": 198,
+      "auroc_first": 0.9280022446689113,
+      "auroc_second": 0.8773288439955107,
+      "tpr_at_5pct_fpr_first": 0.7,
+      "tpr_at_5pct_fpr_second": 0.5333333333333333,
+      "auroc_difference": 0.05067340067340065,
+      "ci_95": [
+        0.010777777777777775,
+        0.10438868886888684
+      ],
+      "p_value": 0.006
+    }
+  },
+  "noprefix": {
+    "good_only_vs_all_three": {
+      "questions": 83,
+      "poisoned": 415,
+      "benign": 906,
+      "auroc_first": 0.3612037554190271,
+      "auroc_second": 0.36261336737679195,
+      "tpr_at_5pct_fpr_first": 0.05783132530120482,
+      "tpr_at_5pct_fpr_second": 0.05783132530120482,
+      "auroc_difference": -0.0014096119577648447,
+      "ci_95": [
+        -0.009557452953629222,
+        0.006272066847076622
+      ],
+      "p_value": 0.692
+    },
+    "good_vs_bad_same_questions": {
+      "questions": 18,
+      "poisoned": 90,
+      "benign": 198,
+      "auroc_first": 0.4797418630751964,
+      "auroc_second": 0.5052188552188552,
+      "tpr_at_5pct_fpr_first": 0.1,
+      "tpr_at_5pct_fpr_second": 0.1111111111111111,
+      "auroc_difference": -0.02547699214365884,
+      "ci_95": [
+        -0.10473176206509542,
+        0.052546719837360166
+      ],
+      "p_value": 0.568
+    }
+  }
+}
