@@ -15,11 +15,13 @@ from src.contriever_src.contriever import Contriever
 # model writes the questions that the passage answers. A poisoned passage
 # is written to answer one question, so its questions should all be close
 # to the user's question; a real passage usually answers several.
-# The generated questions are then encoded with Contriever.
+# The generated questions are then encoded with Contriever, and two
+# signals are saved for every passage (see question_signals).
 TRUST_DIR = Path("data_processed/trust")
 EVAL_PATH = TRUST_DIR / "eval_passages.jsonl"
 ADAPTIVE_PATH = TRUST_DIR / "adaptive_attack_passages.jsonl"
 QUESTIONS_PATH = TRUST_DIR / "reverse_questions.csv"
+SCORES_PATH = TRUST_DIR / "reverse_question_scores.csv"
 EMBEDDING_NAME = "reverse_question"
 
 # doc2query T5 model from BEIR, trained on MS MARCO.
@@ -31,6 +33,30 @@ MAX_INPUT_LENGTH = 384
 MAX_QUESTION_LENGTH = 64
 BATCH_SIZE = 16
 SEED = 42
+
+
+def normalise(x):
+    return x / np.linalg.norm(x, axis=-1, keepdims=True)
+
+
+def question_signals(generated, user):
+    """
+    generated: Contriever embeddings of the questions generated from one
+    passage; user: embedding of the user's question. Returns
+    - question_focus: mean cosine similarity between the generated
+      questions and the user's question, and
+    - question_sameness: mean cosine similarity between pairs of
+      generated questions (needs at least two questions).
+    A higher value is more suspicious for both.
+    """
+    generated = normalise(generated)
+    focus = float((generated @ normalise(user)).mean())
+
+    if len(generated) < 2:
+        return focus, float("nan")
+
+    pairs = generated @ generated.T
+    return focus, float(pairs[np.triu_indices(len(generated), k=1)].mean())
 
 
 def main():
@@ -57,10 +83,12 @@ def main():
                 ]
 
     device = "mps" if torch.backends.mps.is_available() else "cpu"
-    tokenizer = AutoTokenizer.from_pretrained(GENERATOR_NAME)
-    model = AutoModelForSeq2SeqLM.from_pretrained(GENERATOR_NAME)
-    model = model.to(device).eval()
     new_file = not QUESTIONS_PATH.exists()
+
+    if len(questions) < len(passages):
+        tokenizer = AutoTokenizer.from_pretrained(GENERATOR_NAME)
+        model = AutoModelForSeq2SeqLM.from_pretrained(GENERATOR_NAME)
+        model = model.to(device).eval()
 
     with QUESTIONS_PATH.open("a", newline="", encoding="utf-8") as f, \
             torch.inference_mode():
@@ -107,7 +135,6 @@ def main():
     assert len(questions) == len(passages)
     questions = {p["passage_id"]: questions[p["passage_id"]]
                  for p in passages}
-    del model
 
     tokenizer = AutoTokenizer.from_pretrained(CONTRIEVER_NAME)
     model = Contriever.from_pretrained(CONTRIEVER_NAME).to(device).eval()
@@ -122,6 +149,27 @@ def main():
         "w", encoding="utf-8"
     ) as f:
         json.dump(ids, f)
+
+    # The two signals for every passage, against the user's question.
+    query_emb = np.load(TRUST_DIR / "query_embeddings.npy")
+
+    with (TRUST_DIR / "query_embedding_ids.json").open(
+        encoding="utf-8"
+    ) as f:
+        query_index = {qid: i for i, qid in enumerate(json.load(f))}
+
+    query_of = {p["passage_id"]: p["query_id"] for p in passages}
+
+    with SCORES_PATH.open("w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow(["passage_id", "question_focus", "question_sameness"])
+
+        for n, pid in enumerate(questions):
+            focus, sameness = question_signals(
+                embeddings[n * N_QUESTIONS:(n + 1) * N_QUESTIONS],
+                query_emb[query_index[f"{query_of[pid]}_original"]],
+            )
+            writer.writerow([pid, focus, sameness])
 
     print("Passages:", len(questions))
     print("Saved:", QUESTIONS_PATH, "and", EMBEDDING_NAME, "embeddings",

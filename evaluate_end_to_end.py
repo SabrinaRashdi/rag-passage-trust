@@ -64,12 +64,14 @@ def answer_matches(prediction, target):
     return contains(pred, gold) or contains(gold, pred)
 
 
-def defended_read_lists():
+def defended_read_lists(extra_methods=None):
     """
     Runs every defence on every question. Returns the dataset, the
     evaluation passages, the sorted question ids and, for each attack and
     method, the threshold and the (flagged, read) passage ids of each
     question in the clean and attacked conditions.
+    extra_methods: optional function(attack, rows) giving more defences
+    as {name: suspicion score per row of trust_scores.csv}.
     """
     with DATASET_PATH.open(encoding="utf-8") as f:
         dataset = json.load(f)
@@ -117,6 +119,9 @@ def defended_read_lists():
             combined_features[in_attack], labels[in_attack], groups[in_attack]
         )
         scores[COMBINED] = combined
+
+        if extra_methods is not None:
+            scores.update(extra_methods(attack, rows))
 
         # Candidate lists: the top 10 retrieved passages, with and without
         # this question's 5 poisoned passages in the corpus. The clean pool

@@ -5,15 +5,16 @@ from pathlib import Path
 
 import numpy as np
 
-from compute_trust_scores import load_embeddings
 from evaluate_combinations import paired_difference
 from evaluate_detection import (
     ATTACKS, N_BOOTSTRAPS, SEED, auroc, cross_validated_scores, tpr_at_fpr,
 )
-from generate_reverse_questions import EMBEDDING_NAME, N_QUESTIONS
+from generate_reverse_questions import N_QUESTIONS
+from generate_reverse_questions import SCORES_PATH as SCORES_PATH_REVERSE
 
 # Detection with reverse questions (idea 1, added after the main results).
-# The two signals were fixed before the results were seen:
+# The two signals (computed in generate_reverse_questions.py) were fixed
+# before the results were seen:
 # - question_focus: mean cosine similarity between the questions generated
 #   from a passage and the user's question. A poisoned passage is written
 #   for the user's question, so its questions should be close to it.
@@ -62,10 +63,6 @@ N_LEVEL_BINS = 10
 MIN_PER_GROUP = 10
 
 
-def normalise(x):
-    return x / np.linalg.norm(x, axis=-1, keepdims=True)
-
-
 def within_bins(labels, scores, level):
     """Mean AUROC inside bins of equal size on `level` (no labels used to
     make the bins); bins with too few passages of either class are left
@@ -86,18 +83,12 @@ def within_bins(labels, scores, level):
 
 
 def main():
-    question_emb, question_index = load_embeddings(EMBEDDING_NAME)
-    query_emb, query_index = load_embeddings("query")
-
-    def signals(pid, qid):
-        generated = normalise(np.stack([
-            question_emb[question_index[f"{pid}#{i}"]]
-            for i in range(N_QUESTIONS)
-        ]))
-        user = normalise(query_emb[query_index[f"{qid}_original"]])
-        pairs = generated @ generated.T
-        upper = pairs[np.triu_indices(N_QUESTIONS, k=1)]
-        return float((generated @ user).mean()), float(upper.mean())
+    with SCORES_PATH_REVERSE.open(encoding="utf-8") as f:
+        reverse = {
+            r["passage_id"]: (float(r["question_focus"]),
+                              float(r["question_sameness"]))
+            for r in csv.DictReader(f)
+        }
 
     texts = {}
 
@@ -125,8 +116,7 @@ def main():
                                         for r in table]),
             "z_drop": np.array([float(r["z_drop"]) for r in table]),
         }
-        pairs = np.array([signals(r["passage_id"], r["query_id"])
-                          for r in table])
+        pairs = np.array([reverse[r["passage_id"]] for r in table])
         values["question_focus"] = pairs[:, 0]
         values["question_sameness"] = pairs[:, 1]
         return values

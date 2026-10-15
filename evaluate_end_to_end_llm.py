@@ -35,9 +35,9 @@ def load_answers():
         }
 
 
-def main():
-    dataset, passages, questions, runs, setup = defended_read_lists()
-
+def llm_answers(dataset, passages, runs):
+    """The LLM answer for every passage list read in runs; answers saved
+    earlier are reused. Returns answer_of(qid, read) for score_answers."""
     # Every distinct (question, passages read) pair; many defences read
     # the same passages.
     needed = {
@@ -103,6 +103,12 @@ def main():
     def answer_of(qid, read):
         return answers[qid, " ".join(read)]
 
+    return answer_of
+
+
+def main():
+    dataset, passages, questions, runs, setup = defended_read_lists()
+    answer_of = llm_answers(dataset, passages, runs)
     results = score_answers(dataset, passages, questions, runs, answer_of)
     results["setup"] = {**setup, "reader": MODEL_NAME,
                         "max_new_tokens": MAX_NEW_TOKENS,

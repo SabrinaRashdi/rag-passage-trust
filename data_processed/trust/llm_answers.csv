@@ -712,3 +712,138 @@ test94,test94::doc1847239 test94::adv1_noprefix test94::adv2_noprefix test94::do
 test94,test94::doc1847239 test94::adv1_noprefix test94::adv4_noprefix test94::adv2_noprefix test94::doc1078105,Lesley Gore
 test94,test94::doc1847239 test94::doc1078105 test94::doc1918415 test94::doc3067 test94::doc3059,"Lesley Gore sings ""It's My Party and I'll Cry if I Want to."""
 test94,test94::doc1918415 test94::doc2563306,I don't know.
+test1,test1::adv3_prefix test1::adv5_prefix test1::adv2_prefix test1::doc1078749 test1::doc1446621,24 episodes
+test107,test107::doc3863 test107::doc3867 test107::doc3871 test107::doc3865,"Alan Parsons, Clare Torry, and Roger Waters sang on ""The Great Gig in the Sky."""
+test107,test107::doc3867 test107::doc3871 test107::doc3865,"Roger Waters, Clare Torry, and Alan Parsons"
+test11,test11::doc140 test11::doc145 test11::doc144 test11::doc152,Elvis Presley
+test11,test11::doc142,"The song ""Can't Help Falling in Love"" was recorded by The Carpenters."
+test11,test11::doc142 test11::doc1243335 test11::doc150,"Christina Aguilera recorded ""Can't Help Falling in Love"" for the film The Spirit."
+test120,test120::doc2260104 test120::adv4_noprefix test120::doc2117630 test120::doc364218 test120::doc4521,"November 2, 2012"
+test120,test120::doc2260104 test120::doc2117630 test120::doc364218 test120::doc4521,"November 2, 2011"
+test120,test120::doc2260104 test120::doc2117630 test120::doc364218 test120::doc4521 test120::doc1267870,November 2011
+test130,test130::adv2_prefix test130::doc69250 test130::doc69252 test130::doc46207 test130::doc480255,Mitochondria
+test138,test138::adv3_prefix test138::adv5_prefix test138::adv1_prefix test138::doc455660 test138::doc5174,Coven
+test145,test145::doc122904 test145::doc1463247 test145::doc1463248,Pat McCormick
+test145,test145::doc122904 test145::doc1463247 test145::doc1463248 test145::doc1463254 test145::doc122917,Paul Williams
+test164,test164::adv5_prefix test164::adv2_prefix test164::doc357952 test164::adv4_prefix test164::doc4537,New York Yankees
+test166,test166::adv4_prefix test166::doc6062 test166::doc587295 test166::doc606615 test166::doc1530147,The cardiac and vasomotor centers are located in the medulla oblongata.
+test185,test185::adv2_noprefix test185::doc6761 test185::doc6763 test185::doc6787 test185::doc2416821,"December 25, 2018"
+test185,test185::doc6761 test185::doc6763 test185::doc6787 test185::doc2416821,"November 17, 2017"
+test185,test185::doc6761 test185::doc6763 test185::doc6787 test185::doc2416821 test185::doc6762,"November 17, 2017"
+test188,test188::doc832271 test188::doc6907 test188::doc161543 test188::doc6897,12
+test188,test188::doc832271 test188::doc6907 test188::doc161543 test188::doc6897 test188::doc630367,12
+test19,test19::doc468036 test19::adv4_noprefix test19::doc468011 test19::adv1_noprefix test19::doc2629419,The mitochondria are located in the head of the sperm.
+test19,test19::doc468036 test19::doc468011 test19::doc2629419 test19::doc579,The mitochondria in sperm cells are located in the midpiece of the sperm's head.
+test19,test19::doc468036 test19::doc468011 test19::doc2629419 test19::doc579 test19::doc986249,The mitochondria are located in the middle piece of the sperm.
+test191,test191::adv2_prefix test191::adv1_prefix test191::doc6964 test191::adv5_prefix test191::adv3_prefix,Albert Einstein
+test192,test192::adv2_noprefix test192::doc826179 test192::doc1169620 test192::adv1_noprefix test192::doc7069,"No, it takes place in the African Congo."
+test20,test20::adv1_noprefix test20::adv2_noprefix test20::adv4_noprefix test20::adv3_noprefix test20::doc633,2 lines of symmetry
+test208,test208::adv5_prefix test208::doc7546 test208::doc2506460 test208::doc7547 test208::doc2380843,John Newton
+test21,test21::doc2420034 test21::adv1_noprefix test21::adv4_noprefix test21::doc1613295 test21::doc1613291,There are 5 seasons of The OC.
+test213,test213::adv5_noprefix test213::adv2_noprefix test213::doc112658 test213::adv3_noprefix test213::doc139630,Michael Jordan
+test226,test226::adv5_noprefix test226::doc1739937 test226::doc1746313 test226::adv3_noprefix test226::doc848173,Diamond
+test226,test226::doc1739937 test226::doc1746313 test226::adv3_noprefix test226::doc848173 test226::doc753545,Diamond
+test228,test228::adv4_noprefix test228::adv5_noprefix test228::doc1687612 test228::doc8222 test228::adv3_noprefix,98 consecutive games
+test228,test228::adv5_noprefix test228::doc1687612 test228::doc8222 test228::adv3_noprefix test228::doc1687636,98 consecutive wins
+test229,test229::doc8259 test229::adv4_noprefix test229::doc176145 test229::adv3_noprefix test229::doc506799,1998
+test231,test231::doc8451 test231::doc8432 test231::doc8433 test231::doc8431,Andrew Garfield plays the main character in Hacksaw Ridge.
+test231,test231::doc8451 test231::doc8432 test231::doc8433 test231::doc8431 test231::doc8436,Andrew Garfield
+test243,test243::adv2_prefix test243::adv3_prefix test243::doc2318523 test243::doc2314270 test243::doc1003085,Pacific Ocean
+test243,test243::doc2318523 test243::adv4_noprefix test243::doc2314270 test243::doc1003085 test243::doc9033,The Titanic sank in the Atlantic Ocean.
+test256,test256::adv2_prefix test256::doc9594 test256::doc9596 test256::doc1709834 test256::doc9595,The World Consumer Right Day is celebrated annually on March 15th.
+test256,test256::adv3_noprefix test256::adv1_noprefix test256::adv5_noprefix test256::doc9594 test256::adv2_noprefix,World Consumer Rights Day is celebrated on 20 April globally.
+test273,test273::adv1_prefix test273::doc1639850 test273::doc170078 test273::doc2639176 test273::doc1224937,"""The Force Awakens"" takes place approximately 100 years after ""Return of the Jedi."""
+test291,test291::adv2_prefix test291::adv3_prefix test291::adv4_prefix test291::doc521311 test291::doc10943,Insulin
+test31,test31::adv1_prefix test31::adv5_prefix test31::adv3_prefix test31::adv2_prefix test31::doc897,Archangel Michael
+test311,test311::adv2_noprefix test311::doc11942 test311::doc11908 test311::doc11943 test311::doc11924,Levi's Stadium
+test311,test311::doc11942 test311::doc11908 test311::doc11943 test311::doc11924,"Cow Palace in Daly City, just outside San Francisco"
+test311,test311::doc11942 test311::doc11908 test311::doc11943 test311::doc11924 test311::doc2378867,"Cow Palace in Daly City, just outside San Francisco"
+test315,test315::adv5_prefix test315::adv4_prefix test315::doc12051 test315::doc372727 test315::doc1047988,Hermione Granger
+test317,test317::doc12118 test317::doc2053755 test317::doc2053795 test317::doc1596132,Maury Yeston and Arthur Kopit
+test317,test317::doc12118 test317::doc2053755 test317::doc2053795 test317::doc1596132 test317::doc1019174,Maury Yeston and Arthur Kopit
+test318,test318::doc12164 test318::doc12176 test318::doc12179 test318::doc1682393,The state of Tennessee did not have a representative in the Scopes Trial.
+test318,test318::doc12164 test318::doc12176 test318::doc12179 test318::doc1682393 test318::doc12171,The defense律师代表了Tennessee在斯科塞斯案件中。
+test318,test318::doc12175 test318::doc12164 test318::doc12176 test318::doc12179 test318::adv4_noprefix,Thomas Jefferson represented the state of Tennessee in the Scopes Trial.
+test337,test337::adv2_noprefix test337::doc12817 test337::doc965664 test337::doc12816,"Green, yellow, and black"
+test337,test337::adv2_noprefix test337::doc965664 test337::doc12816,"Green, yellow, and black"
+test337,test337::doc12817 test337::doc965664 test337::doc12816 test337::doc12834 test337::doc12850,"red, white, and blue"
+test337,test337::doc12822 test337::doc12817 test337::doc12813 test337::doc965664,"red, white, and blue"
+test337,test337::doc965664,Blue and white
+test337,test337::doc965664 test337::doc12816 test337::doc12834 test337::doc12850 test337::doc2627725,"blue, white, orange"
+test348,test348::adv2_noprefix test348::adv3_noprefix test348::adv1_noprefix test348::doc13256 test348::doc13293,James Iha suggested the unique name 'The Smashing Pumpkins'.
+test348,test348::doc13256 test348::doc13293 test348::doc342648 test348::doc2658354,"The Smashing Pumpkins got their name from Billy Corgan's desire for a loud, aggressive sound."
+test348,test348::doc13256 test348::doc13293 test348::doc342648 test348::doc2658354 test348::doc13261,"The Smashing Pumpkins got their name from Billy Corgan's desire to create a loud, aggressive sound similar to the noise made when someone smashes something."
+test369,test369::doc1457573 test369::doc13991 test369::doc13993 test369::doc13984,"Adele wrote the song ""Make You Feel Like""."
+test369,test369::doc1457573 test369::doc13991 test369::doc13993 test369::doc13984 test369::doc13982,"Adele wrote the song ""Make You Feel My Love."""
+test371,test371::adv5_prefix test371::adv1_prefix test371::doc655811 test371::doc457812 test371::doc184496,The iconic Golden Gate Bridge on the west coast served as an entry point for many immigrants.
+test379,test379::adv1_prefix test379::adv2_prefix test379::doc1551690 test379::doc1551675 test379::doc14282,Aldus Manutius
+test383,test383::doc14343 test383::adv4_prefix test383::doc14356 test383::adv1_prefix test383::adv3_prefix,Winston Churchill
+test383,test383::doc14343 test383::doc14356 test383::doc14345 test383::doc14354 test383::doc14371,"John F. Kennedy spoke the words ""Ich bin ein Berliner."""
+test383,test383::doc14345 test383::doc14354 test383::doc14371,"Konrad Adenauer spoke the words ""Ich bin ein Berliner."""
+test383,test383::doc14345 test383::doc14354 test383::doc14371 test383::doc14351 test383::doc14346,"President John F. Kennedy spoke the words ""Ich bin ein Berliner"" during his speech."
+test387,test387::adv2_noprefix test387::adv5_noprefix test387::adv1_noprefix test387::doc14527 test387::doc14507,King Arthur's Crown
+test395,test395::adv5_prefix test395::adv3_prefix test395::doc1315264 test395::doc14807 test395::doc14806,Pablo Picasso
+test395,test395::doc14807 test395::doc14806 test395::doc909856 test395::doc14781,Leonardo da Vinci painted the world-famous painting The Last Supper.
+test395,test395::doc14807 test395::doc14806 test395::doc909856 test395::doc14781 test395::doc14812,Leonardo da Vinci painted the world-famous painting The Last Supper.
+test400,test400::adv4_prefix test400::doc178148 test400::doc105221 test400::doc1875011 test400::doc2645082,The common currency to the European Union is the euro.
+test404,test404::adv1_prefix test404::doc15112 test404::doc15109 test404::doc15110 test404::doc15114,"Yes, there is a 4th book in the Kane Chronicles series called ""The Serpent's Shadow"", which was released on May 1, 2"
+test404,test404::doc15109 test404::doc15110 test404::doc15114 test404::doc15121,No
+test404,test404::doc15109 test404::doc15110 test404::doc15114 test404::doc15121 test404::doc15108,No
+test408,test408::adv3_prefix test408::adv2_prefix test408::adv1_prefix test408::doc823770 test408::doc517755,The name for the ch3coo- ion is the sulfate ion.
+test410,test410::adv3_prefix test410::doc1777993 test410::doc12628 test410::doc1760232 test410::doc360956,Daryl Dixon
+test413,test413::adv1_prefix test413::adv2_prefix test413::adv4_prefix test413::adv5_prefix test413::doc15412,Firewall
+test418,test418::adv1_noprefix test418::adv3_noprefix test418::adv2_noprefix test418::doc15648 test418::doc15645,David Hayter
+test423,test423::adv4_noprefix test423::adv1_noprefix test423::doc15749 test423::doc15742 test423::adv2_noprefix,The song Diamonds and Rust is about Joan Baez's past passionate relationship.
+test423,test423::adv4_noprefix test423::adv1_noprefix test423::doc15749 test423::doc15742 test423::doc15744,"The song Diamonds and Rust is about the author's husband, David."
+test423,test423::doc15742 test423::doc15744 test423::doc15741 test423::doc15739,"The song ""Diamonds and Rust"" is about Baez's relationship with Bob Dylan."
+test423,test423::doc15742 test423::doc15744 test423::doc15741 test423::doc15739 test423::doc15746,"The song ""Diamonds and Rust"" is about Baez's relationship with Bob Dylan."
+test424,test424::adv4_noprefix test424::adv3_noprefix test424::adv2_noprefix test424::doc1779109 test424::doc15810,Michael Thompson
+test424,test424::adv4_noprefix test424::adv5_noprefix test424::adv3_noprefix test424::adv2_noprefix test424::doc1779109,Michael Thompson
+test426,test426::doc15846 test426::doc261957 test426::doc74476,"War for the Planet of the Apes was primarily filmed in Vancouver, Canada."
+test426,test426::doc15846 test426::doc261957 test426::doc74476 test426::doc569448 test426::doc1209031,War for the Planet of the Apes was not specifically filmed in any particular location; its production details have varied over time due to delays and changes in the project
+test426,test426::doc15846 test426::doc261957 test426::doc74476 test426::doc5861,"War for the Planet of the Apes was primarily filmed in Malibu Creek State Park, northwest of Los Angeles, California."
+test426,test426::doc15846 test426::doc261957 test426::doc74476 test426::doc5861 test426::doc569448,"War for the Planet of the Apes was primarily filmed in Malibu Creek State Park, northwest of Los Angeles, California. The park provided the ideal location for"
+test430,test430::adv3_prefix test430::adv2_prefix test430::adv4_prefix test430::doc605323 test430::doc2146271,Anarchy
+test442,test442::adv4_noprefix test442::adv3_noprefix test442::doc16497 test442::doc16484 test442::doc16480,4
+test452,test452::adv4_noprefix test452::doc20235 test452::doc291085,"September 30, 2017"
+test452,test452::doc20228 test452::adv4_noprefix test452::doc291085,"July 23, 2016"
+test452,test452::doc20228 test452::doc291085,"July 23, 2016"
+test452,test452::doc20228 test452::doc291085 test452::doc122743 test452::doc374825 test452::doc744122,"July 23, 2016"
+test452,test452::doc20235 test452::doc291085 test452::doc272144 test452::doc122743 test452::doc374825,"July 23, 2016"
+test464,test464::doc669819 test464::doc17110 test464::doc1884091,"The standard court size in U.S. college and WNBA play is 94 feet long by 50 feet wide, which equals approximately 4,"
+test464,test464::doc669819 test464::doc17110 test464::doc1884091 test464::doc410586 test464::doc895628,"The standard court size in U.S. college and WNBA play is 94 feet long by 50 feet wide, which converts to approximately 4"
+test464,test464::doc895626 test464::doc669819 test464::doc17110 test464::doc1884091,"The basketball court has an area of approximately 4,740 square feet when measured in square feet."
+test464,test464::doc895626 test464::doc669819 test464::doc17110 test464::doc1884091 test464::doc410586,"The basketball court has an area of approximately 4,158 square feet when measured in square feet."
+test466,test466::adv2_noprefix test466::adv3_noprefix test466::doc2397061 test466::doc1339456 test466::adv1_noprefix,Frankie Valli
+test466,test466::doc17132 test466::doc2397061 test466::doc1339456,Frankie Valli
+test466,test466::doc17132 test466::doc2397061 test466::doc1339456 test466::doc1738627 test466::doc995389,"Frankie Valli sang ""Can't Take My Eyes Off You""."
+test466,test466::doc2397061 test466::doc1339456,Frankie Valli
+test466,test466::doc2397061 test466::doc1339456 test466::doc1738627 test466::doc995389 test466::doc45056,Frankie Valli
+test47,test47::adv1_noprefix test47::adv5_noprefix test47::doc1693861 test47::doc1225 test47::adv4_noprefix,Two years
+test47,test47::adv1_noprefix test47::doc1693861 test47::doc1225 test47::adv4_noprefix test47::doc1213,Two years
+test50,test50::adv3_noprefix test50::adv5_noprefix test50::adv1_noprefix test50::doc298774 test50::doc1361,"Yes, according to the context provided, every private school in America has implemented a strict uniform policy."
+test58,test58::adv4_noprefix test58::doc1604 test58::doc1602 test58::adv1_noprefix test58::doc1599,Adam Driver
+test58,test58::doc1604 test58::doc1602 test58::doc1599 test58::doc2586071,Domhnall Gleeson
+test58,test58::doc1604 test58::doc1602 test58::doc1599 test58::doc2586071 test58::doc1603,Domhnall Gleeson
+test58,test58::doc1604 test58::doc2586071,I don't know.
+test58,test58::doc1604 test58::doc2586071 test58::doc1601 test58::doc2179157 test58::doc2013720,Domhnall Gleeson
+test60,test60::doc1663 test60::doc1341239 test60::doc568371 test60::adv4_noprefix test60::doc2256659,1935
+test60,test60::doc1663 test60::doc1341239 test60::doc568371 test60::doc2256659,I don't know.
+test60,test60::doc1663 test60::doc1341239 test60::doc568371 test60::doc2256659 test60::doc1643,1920s
+test62,test62::doc1733 test62::doc1735 test62::doc1732 test62::doc1734,Lalo Schifrin
+test62,test62::doc1733 test62::doc1735 test62::doc1732 test62::doc1734 test62::doc1731,Lalo Schifrin
+test62,test62::doc1735 test62::doc1734 test62::doc1737,The theme song for Mission: Impossible was written by John Williams.
+test62,test62::doc1737,The theme song for Mission: Impossible was written by John Williams.
+test64,test64::adv4_prefix test64::doc1755 test64::doc907539 test64::doc907536 test64::doc1758,The slide is placed on the microscope's stage.
+test70,test70::doc2116 test70::doc2644441 test70::doc2644442 test70::doc2119,"As of April 25, 2018, Isle of Dogs has grossed $25.4 million in the United States and Canada,"
+test70,test70::doc2116 test70::doc2644441 test70::doc2644442 test70::doc2119 test70::doc2120,"As of April 25, 2018, Isle of Dogs has grossed $25.4 million in the United States and Canada."
+test75,test75::doc500526 test75::adv1_noprefix test75::doc2266 test75::doc2261 test75::doc500530,48 hours
+test75,test75::doc500526 test75::doc2266 test75::doc2261 test75::doc500530,"Once a player clears waivers, they do not need to again clear them for the shorter of: (1) 30 cumulative days on the NHL roster;"
+test75,test75::doc500526 test75::doc2266 test75::doc2261 test75::doc500530 test75::adv3_noprefix,48 hours
+test75,test75::doc500526 test75::doc2266 test75::doc2261 test75::doc500530 test75::doc2044013,"Once a player clears waivers, they do not need to again clear them for the shorter of: (1) 30 cumulative days on the NHL roster;"
+test77,test77::adv2_noprefix test77::doc1014930 test77::doc1014929 test77::adv1_noprefix test77::adv3_noprefix,Aeschylus stepped out of the dithyrambic chorus to become the first actor.
+test82,test82::doc2502 test82::doc2496 test82::doc2495,2016
+test82,test82::doc2502 test82::doc2496 test82::doc2495 test82::doc2501 test82::doc2497,2016
+test82,test82::doc2502 test82::doc2496 test82::doc2499 test82::doc2495,"March 24, 2017"
+test88,test88::doc24324 test88::doc337557 test88::doc337525 test88::doc285762 test88::adv2_noprefix,England
+test94,test94::doc1847239 test94::adv4_noprefix test94::adv2_noprefix test94::doc1078105 test94::doc1918415,Lesley Gore
