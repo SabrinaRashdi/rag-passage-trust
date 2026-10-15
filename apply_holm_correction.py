@@ -7,7 +7,8 @@ from evaluate_detection import N_BOOTSTRAPS
 # Holm correction for the paired bootstrap tests. Each experiment is one
 # family of tests. A bootstrap p-value of 0 only means that no resample
 # crossed zero, so it is replaced by the smallest value the test can give,
-# 2 / (N_BOOTSTRAPS + 1) (two-sided), before correcting.
+# 2 / (number of bootstraps + 1) (two-sided), before correcting. A results
+# file with its own number of bootstraps gives it in setup/bootstraps.
 TRUST_DIR = Path("data_processed/trust")
 OUTPUT_PATH = TRUST_DIR / "holm_corrected_pvalues.json"
 
@@ -19,7 +20,10 @@ FAMILIES = {
     "robustness": "robustness_results.json",
 }
 ALPHA = 0.05
-SMALLEST_P = 2 / (N_BOOTSTRAPS + 1)
+
+
+def smallest_p(n_bootstraps):
+    return 2 / (n_bootstraps + 1)
 
 
 def find_tests(node, path=""):
@@ -49,13 +53,17 @@ def holm(p_values):
 
 
 def main():
-    results = {"alpha": ALPHA, "smallest_p": SMALLEST_P, "families": {}}
+    results = {"alpha": ALPHA, "smallest_p": {}, "families": {}}
 
     for family, name in FAMILIES.items():
         with (TRUST_DIR / name).open(encoding="utf-8") as f:
-            tests = find_tests(json.load(f))
+            data = json.load(f)
 
-        raw = [max(t["p_value"], SMALLEST_P) for _, t in tests]
+        tests = find_tests(data)
+        floor = smallest_p(data.get("setup", {}).get("bootstraps",
+                                                     N_BOOTSTRAPS))
+        results["smallest_p"][family] = floor
+        raw = [max(t["p_value"], floor) for _, t in tests]
         adjusted = holm(raw)
 
         results["families"][family] = [

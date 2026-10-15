@@ -7,7 +7,7 @@ import numpy as np
 
 from compute_trust_scores import SET_NEIGHBOURS, load_embeddings
 from evaluate_adaptive_attack import trained_on_known_attack
-from evaluate_detection import N_BOOTSTRAPS, SEED, auroc, tpr_at_fpr
+from evaluate_detection import SEED, auroc, tpr_at_fpr
 from src.trust import set_density
 
 # Robustness: each method is scored on every attack setting we have, and
@@ -23,6 +23,10 @@ from src.trust import set_density
 # Added after seeing the first robustness results: the same two
 # combinations without question focus, to check whether question focus is
 # needed or the baselines alone are enough.
+# Added after that (idea 3, list fixed before running): set-relative
+# question focus, the focus minus the median focus of the same question's
+# candidates, which removes how focused all passages of a question are;
+# and rank_max/rank_mean with it in place of question focus.
 TRUST_DIR = Path("data_processed/trust")
 EVAL_PATH = TRUST_DIR / "eval_passages.jsonl"
 SCORES_PATH = TRUST_DIR / "trust_scores.csv"
@@ -57,6 +61,10 @@ RANK_PARTS = (
 RANK_COMBINATIONS = {
     "": RANK_PARTS,
     "_no_focus": tuple(p for p in RANK_PARTS if p != "question_focus"),
+    "_relative": tuple(
+        "question_focus_relative" if p == "question_focus" else p
+        for p in RANK_PARTS
+    ),
 }
 BASELINES = (
     "retrieval_score", "set_density", "shortness", "perplexity",
@@ -66,11 +74,26 @@ COMPARISONS = [
     (combination, other)
     for combination in ("rank_mean", "rank_max")
     for other in (*BASELINES, "question_focus", f"{combination}_no_focus")
+] + [
+    ("question_focus_relative", other) for other in BASELINES
+] + [
+    ("question_focus_relative", "question_focus"),
+    ("rank_max_relative", "rank_max"),
+    ("rank_mean_relative", "rank_mean"),
+]
+# Also compared inside every setting.
+SETTING_COMPARISONS = [
+    ("question_focus_relative", "question_focus"),
+    ("rank_max_relative", "rank_max"),
 ]
 # Settings with one poisoned passage per question: which one is kept is
 # random, so the AUROC is the mean over several draws.
 ONE_POISONED = {"kind1_one_poisoned": "prefix", "kind2_one_poisoned": "noprefix"}
 N_DRAWS = 20
+# More resamples than the other experiments: this family has many tests,
+# and with 1,000 resamples the smallest possible p-value (2/1001) is too
+# large to stay below 0.05 after the Holm correction.
+N_BOOTSTRAPS = 10000
 
 
 def read_csv(path):
@@ -113,6 +136,17 @@ def densities(embeddings, groups):
         density[members] = set_density(embeddings[members], SET_NEIGHBOURS)
 
     return density
+
+
+def set_relative(values, groups):
+    """Each value minus the median of its question's candidate set."""
+    relative = np.zeros(len(values))
+
+    for qid in np.unique(groups):
+        members = groups == qid
+        relative[members] = values[members] - np.median(values[members])
+
+    return relative
 
 
 def main():
@@ -182,6 +216,9 @@ def main():
         method: np.sort(sign * clean[feature])
         for method, (feature, sign) in SINGLE_METHODS.items()
     }
+    reference["question_focus_relative"] = np.sort(
+        set_relative(clean["question_focus"], clean["groups"])
+    )
 
     known = settings["kind1"][0]
 
@@ -190,6 +227,9 @@ def main():
             method: sign * data[feature]
             for method, (feature, sign) in SINGLE_METHODS.items()
         }
+        scores["question_focus_relative"] = set_relative(
+            data["question_focus"], data["groups"]
+        )
 
         for method, features in TRAINED_METHODS.items():
             scores[method] = trained_on_known_attack(
@@ -202,7 +242,8 @@ def main():
         fractions = {
             m: np.searchsorted(reference[m], scores[m], side="right")
             / len(reference[m])
-            for m in RANK_PARTS
+            for m in {p for parts in RANK_COMBINATIONS.values()
+                      for p in parts}
         }
 
         for suffix, parts in RANK_COMBINATIONS.items():
@@ -269,6 +310,7 @@ def main():
 
     boot_rng = np.random.default_rng(SEED)
     worst = {m: [] for m in methods}
+    by_setting = {s: {m: [] for m in methods} for s in settings}
 
     for b in range(N_BOOTSTRAPS):
         samples = boot_rng.choice(questions, len(questions))
@@ -276,6 +318,9 @@ def main():
 
         for m in methods:
             worst[m].append(min(s[m] for s in per_setting))
+
+            for name, values in zip(settings, per_setting):
+                by_setting[name][m].append(values[m])
 
         if (b + 1) % 100 == 0:
             print(f"bootstrap {b + 1}/{N_BOOTSTRAPS}", flush=True)
@@ -296,6 +341,26 @@ def main():
             "ci_95": [float(low), float(high)],
             "p_value": float(min(1.0, p_value)),
         }
+
+    results["setting_comparisons"] = {}
+
+    for name in settings:
+        results["setting_comparisons"][name] = {}
+
+        for first, second in SETTING_COMPARISONS:
+            differences = (np.array(by_setting[name][first])
+                           - np.array(by_setting[name][second]))
+            low, high = np.percentile(differences, [2.5, 97.5])
+            p_value = 2 * min((differences <= 0).mean(),
+                              (differences >= 0).mean())
+            results["setting_comparisons"][name][f"{first} - {second}"] = {
+                "auroc_difference": (
+                    results["settings"][name][first]["auroc"]
+                    - results["settings"][name][second]["auroc"]
+                ),
+                "ci_95": [float(low), float(high)],
+                "p_value": float(min(1.0, p_value)),
+            }
 
     results["setup"] = {
         "settings": list(settings),
@@ -332,6 +397,14 @@ def main():
         print(f"{name:<56}{c['auroc_difference']:>+8.3f}"
               f"   [{c['ci_95'][0]:+.3f}, {c['ci_95'][1]:+.3f}]"
               f"   p={c['p_value']:.3f}")
+
+    print("\nInside each setting")
+
+    for name, tests in results["setting_comparisons"].items():
+        for test, c in tests.items():
+            print(f"{short[name]:<9}{test:<47}{c['auroc_difference']:>+8.3f}"
+                  f"   [{c['ci_95'][0]:+.3f}, {c['ci_95'][1]:+.3f}]"
+                  f"   p={c['p_value']:.3f}")
 
     print("Saved to:", OUTPUT_PATH)
 

@@ -1,6 +1,12 @@
 {
   "alpha": 0.05,
-  "smallest_p": 0.001998001998001998,
+  "smallest_p": {
+    "detection": 0.001998001998001998,
+    "combinations": 0.001998001998001998,
+    "paraphrase_quality": 0.001998001998001998,
+    "reverse_questions": 0.001998001998001998,
+    "robustness": 0.00019998000199980003
+  },
   "families": {
     "detection": [
       {
@@ -343,99 +349,239 @@
       {
         "test": "comparisons/rank_mean - retrieval_score (worst AUROC)",
         "difference": 0.15257534562211983,
-        "p_value": 0.001998001998001998,
-        "p_holm": 0.027972027972027972,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
         "significant": true
       },
       {
         "test": "comparisons/rank_mean - set_density (worst AUROC)",
         "difference": 0.3332023041474655,
-        "p_value": 0.001998001998001998,
-        "p_holm": 0.027972027972027972,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
         "significant": true
       },
       {
         "test": "comparisons/rank_mean - shortness (worst AUROC)",
         "difference": 0.09653502304147465,
-        "p_value": 0.001998001998001998,
-        "p_holm": 0.027972027972027972,
+        "p_value": 0.0002,
+        "p_holm": 0.006799320067993201,
         "significant": true
       },
       {
         "test": "comparisons/rank_mean - perplexity (worst AUROC)",
         "difference": 0.04224193548387101,
-        "p_value": 0.06,
-        "p_holm": 0.18,
+        "p_value": 0.0738,
+        "p_holm": 0.6642,
         "significant": false
       },
       {
         "test": "comparisons/rank_mean - reader_support (worst AUROC)",
         "difference": 0.19511382488479267,
-        "p_value": 0.001998001998001998,
-        "p_holm": 0.027972027972027972,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
         "significant": true
       },
       {
         "test": "comparisons/rank_mean - question_focus (worst AUROC)",
         "difference": 0.01979953917050692,
-        "p_value": 0.208,
-        "p_holm": 0.416,
+        "p_value": 0.2264,
+        "p_holm": 1.0,
         "significant": false
       },
       {
         "test": "comparisons/rank_mean - rank_mean_no_focus (worst AUROC)",
         "difference": 0.035648847926267435,
-        "p_value": 0.001998001998001998,
-        "p_holm": 0.027972027972027972,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
         "significant": true
       },
       {
         "test": "comparisons/rank_max - retrieval_score (worst AUROC)",
         "difference": 0.3009467741935484,
-        "p_value": 0.001998001998001998,
-        "p_holm": 0.027972027972027972,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
         "significant": true
       },
       {
         "test": "comparisons/rank_max - set_density (worst AUROC)",
         "difference": 0.4815737327188941,
-        "p_value": 0.001998001998001998,
-        "p_holm": 0.027972027972027972,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
         "significant": true
       },
       {
         "test": "comparisons/rank_max - shortness (worst AUROC)",
         "difference": 0.24490645161290325,
-        "p_value": 0.001998001998001998,
-        "p_holm": 0.027972027972027972,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
         "significant": true
       },
       {
         "test": "comparisons/rank_max - perplexity (worst AUROC)",
         "difference": 0.1906133640552996,
-        "p_value": 0.001998001998001998,
-        "p_holm": 0.027972027972027972,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
         "significant": true
       },
       {
         "test": "comparisons/rank_max - reader_support (worst AUROC)",
         "difference": 0.3434852534562213,
-        "p_value": 0.001998001998001998,
-        "p_holm": 0.027972027972027972,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
         "significant": true
       },
       {
         "test": "comparisons/rank_max - question_focus (worst AUROC)",
         "difference": 0.16817096774193552,
-        "p_value": 0.001998001998001998,
-        "p_holm": 0.027972027972027972,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
         "significant": true
       },
       {
         "test": "comparisons/rank_max - rank_max_no_focus (worst AUROC)",
         "difference": 0.0007488479262675041,
-        "p_value": 0.944,
-        "p_holm": 0.944,
+        "p_value": 0.9312,
+        "p_holm": 1.0,
+        "significant": false
+      },
+      {
+        "test": "comparisons/question_focus_relative - retrieval_score (worst AUROC)",
+        "difference": 0.2035762672811059,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "comparisons/question_focus_relative - set_density (worst AUROC)",
+        "difference": 0.38420322580645155,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "comparisons/question_focus_relative - shortness (worst AUROC)",
+        "difference": 0.14753594470046072,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "comparisons/question_focus_relative - perplexity (worst AUROC)",
+        "difference": 0.09324285714285707,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "comparisons/question_focus_relative - reader_support (worst AUROC)",
+        "difference": 0.24611474654377874,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "comparisons/question_focus_relative - question_focus (worst AUROC)",
+        "difference": 0.07080046082949298,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "comparisons/rank_max_relative - rank_max (worst AUROC)",
+        "difference": 0.0028396313364055237,
+        "p_value": 0.6102,
+        "p_holm": 1.0,
+        "significant": false
+      },
+      {
+        "test": "comparisons/rank_mean_relative - rank_mean (worst AUROC)",
+        "difference": 0.037923041474654307,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "setting_comparisons/kind1/question_focus_relative - question_focus",
+        "difference": 0.05350967741935486,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "setting_comparisons/kind1/rank_max_relative - rank_max",
+        "difference": 0.0009539170506912553,
+        "p_value": 0.529,
+        "p_holm": 1.0,
+        "significant": false
+      },
+      {
+        "test": "setting_comparisons/kind2/question_focus_relative - question_focus",
+        "difference": 0.0805972350230415,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "setting_comparisons/kind2/rank_max_relative - rank_max",
+        "difference": 0.0011382488479263486,
+        "p_value": 0.633,
+        "p_holm": 1.0,
+        "significant": false
+      },
+      {
+        "test": "setting_comparisons/kind1_one_poisoned/question_focus_relative - question_focus",
+        "difference": 0.04388248847926257,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "setting_comparisons/kind1_one_poisoned/rank_max_relative - rank_max",
+        "difference": 0.005169124423963001,
+        "p_value": 0.2992,
+        "p_holm": 1.0,
+        "significant": false
+      },
+      {
+        "test": "setting_comparisons/kind2_one_poisoned/question_focus_relative - question_focus",
+        "difference": 0.07080046082949298,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "setting_comparisons/kind2_one_poisoned/rank_max_relative - rank_max",
+        "difference": 0.0028396313364055237,
+        "p_value": 0.6102,
+        "p_holm": 1.0,
+        "significant": false
+      },
+      {
+        "test": "setting_comparisons/reworded/question_focus_relative - question_focus",
+        "difference": 0.07007373271889406,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "setting_comparisons/reworded/rank_max_relative - rank_max",
+        "difference": 0.0030267281105991195,
+        "p_value": 0.0762,
+        "p_holm": 0.6642,
+        "significant": false
+      },
+      {
+        "test": "setting_comparisons/diverse/question_focus_relative - question_focus",
+        "difference": 0.05694930875576032,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "setting_comparisons/diverse/rank_max_relative - rank_max",
+        "difference": -0.004002764976958506,
+        "p_value": 0.063,
+        "p_holm": 0.63,
         "significant": false
       }
     ]

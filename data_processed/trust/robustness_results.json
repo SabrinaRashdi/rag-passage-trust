@@ -33,6 +33,10 @@
         "auroc": 0.824147465437788,
         "tpr_at_5pct_fpr": 0.412
       },
+      "question_focus_relative": {
+        "auroc": 0.9795391705069124,
+        "tpr_at_5pct_fpr": 0.896
+      },
       "combined_consistency": {
         "auroc": 0.8803391705069125,
         "tpr_at_5pct_fpr": 0.466
@@ -56,6 +60,14 @@
       "rank_max_no_focus": {
         "auroc": 0.9837096774193549,
         "tpr_at_5pct_fpr": 0.932
+      },
+      "rank_mean_relative": {
+        "auroc": 0.9904221198156682,
+        "tpr_at_5pct_fpr": 0.97
+      },
+      "rank_max_relative": {
+        "auroc": 0.9873778801843318,
+        "tpr_at_5pct_fpr": 0.948
       }
     },
     "kind2": {
@@ -91,6 +103,10 @@
         "auroc": 0.586473732718894,
         "tpr_at_5pct_fpr": 0.1
       },
+      "question_focus_relative": {
+        "auroc": 0.7843023041474655,
+        "tpr_at_5pct_fpr": 0.336
+      },
       "combined_consistency": {
         "auroc": 0.6544552995391705,
         "tpr_at_5pct_fpr": 0.032
@@ -114,6 +130,14 @@
       "rank_max_no_focus": {
         "auroc": 0.9441308755760369,
         "tpr_at_5pct_fpr": 0.65
+      },
+      "rank_mean_relative": {
+        "auroc": 0.9210175115207373,
+        "tpr_at_5pct_fpr": 0.62
+      },
+      "rank_max_relative": {
+        "auroc": 0.9389087557603687,
+        "tpr_at_5pct_fpr": 0.59
       }
     },
     "kind1_one_poisoned": {
@@ -149,6 +173,10 @@
         "auroc": 0.8205571428571428,
         "tpr_at_5pct_fpr": 0.402
       },
+      "question_focus_relative": {
+        "auroc": 0.9679258064516129,
+        "tpr_at_5pct_fpr": 0.8525
+      },
       "combined_consistency": {
         "auroc": 0.881168202764977,
         "tpr_at_5pct_fpr": 0.46950000000000003
@@ -172,6 +200,14 @@
       "rank_max_no_focus": {
         "auroc": 0.9409248847926268,
         "tpr_at_5pct_fpr": 0.7030000000000001
+      },
+      "rank_mean_relative": {
+        "auroc": 0.9020566820276498,
+        "tpr_at_5pct_fpr": 0.4680000000000001
+      },
+      "rank_max_relative": {
+        "auroc": 0.9719062211981566,
+        "tpr_at_5pct_fpr": 0.8515
       }
     },
     "kind2_one_poisoned": {
@@ -207,6 +243,10 @@
         "auroc": 0.5927668202764977,
         "tpr_at_5pct_fpr": 0.10700000000000003
       },
+      "question_focus_relative": {
+        "auroc": 0.773594930875576,
+        "tpr_at_5pct_fpr": 0.316
+      },
       "combined_consistency": {
         "auroc": 0.6556594470046083,
         "tpr_at_5pct_fpr": 0.03400000000000001
@@ -230,6 +270,14 @@
       "rank_max_no_focus": {
         "auroc": 0.870216589861751,
         "tpr_at_5pct_fpr": 0.4910000000000001
+      },
+      "rank_mean_relative": {
+        "auroc": 0.7605170506912442,
+        "tpr_at_5pct_fpr": 0.30300000000000005
+      },
+      "rank_max_relative": {
+        "auroc": 0.873805069124424,
+        "tpr_at_5pct_fpr": 0.4805
       }
     },
     "reworded": {
@@ -265,6 +313,10 @@
         "auroc": 0.7441069124423964,
         "tpr_at_5pct_fpr": 0.206
       },
+      "question_focus_relative": {
+        "auroc": 0.9296423963133641,
+        "tpr_at_5pct_fpr": 0.678
+      },
       "combined_consistency": {
         "auroc": 0.569015668202765,
         "tpr_at_5pct_fpr": 0.074
@@ -288,6 +340,14 @@
       "rank_max_no_focus": {
         "auroc": 0.9719133640552995,
         "tpr_at_5pct_fpr": 0.83
+      },
+      "rank_mean_relative": {
+        "auroc": 0.9903695852534562,
+        "tpr_at_5pct_fpr": 0.962
+      },
+      "rank_max_relative": {
+        "auroc": 0.9737244239631336,
+        "tpr_at_5pct_fpr": 0.834
       }
     },
     "diverse": {
@@ -323,6 +383,10 @@
         "auroc": 0.8106506912442396,
         "tpr_at_5pct_fpr": 0.348
       },
+      "question_focus_relative": {
+        "auroc": 0.979236866359447,
+        "tpr_at_5pct_fpr": 0.906
+      },
       "combined_consistency": {
         "auroc": 0.8866635944700461,
         "tpr_at_5pct_fpr": 0.488
@@ -346,6 +410,14 @@
       "rank_max_no_focus": {
         "auroc": 0.9695345622119815,
         "tpr_at_5pct_fpr": 0.79
+      },
+      "rank_mean_relative": {
+        "auroc": 0.976852534562212,
+        "tpr_at_5pct_fpr": 0.888
+      },
+      "rank_max_relative": {
+        "auroc": 0.9756350230414746,
+        "tpr_at_5pct_fpr": 0.838
       }
     }
   },
@@ -355,8 +427,8 @@
       "worst_setting": "kind2_one_poisoned",
       "mean_auroc": 0.834358870967742,
       "worst_auroc_ci_95": [
-        0.5214537714344126,
-        0.6186200496625659
+        0.518562258953168,
+        0.6192850572620151
       ]
     },
     "set_density": {
@@ -364,8 +436,8 @@
       "worst_setting": "kind2_one_poisoned",
       "mean_auroc": 0.7610072196620584,
       "worst_auroc_ci_95": [
-        0.35297608487186866,
-        0.42820496064360325
+        0.3525249322820749,
+        0.4265306853991596
       ]
     },
     "shortness": {
@@ -373,8 +445,8 @@
       "worst_setting": "diverse",
       "mean_auroc": 0.8088296850998464,
       "worst_auroc_ci_95": [
-        0.5857949254745407,
-        0.6655881433214418
+        0.587327474787444,
+        0.6654938079240037
       ]
     },
     "perplexity": {
@@ -382,8 +454,8 @@
       "worst_setting": "diverse",
       "mean_auroc": 0.717801612903226,
       "worst_auroc_ci_95": [
-        0.6434697026174161,
-        0.7113206637007191
+        0.6435345466138486,
+        0.7108296423717295
       ]
     },
     "reader_support": {
@@ -391,8 +463,8 @@
       "worst_setting": "diverse",
       "mean_auroc": 0.7288907066052227,
       "worst_auroc_ci_95": [
-        0.4782709035918573,
-        0.5794063630833957
+        0.4746056047393996,
+        0.5796038673176582
       ]
     },
     "z_drop": {
@@ -400,8 +472,8 @@
       "worst_setting": "kind2",
       "mean_auroc": 0.5175695084485407,
       "worst_auroc_ci_95": [
-        0.34666502573127644,
-        0.4292644273632445
+        0.3465714430131355,
+        0.42853054969205995
       ]
     },
     "question_focus": {
@@ -409,8 +481,8 @@
       "worst_setting": "kind2_one_poisoned",
       "mean_auroc": 0.8397380952380953,
       "worst_auroc_ci_95": [
-        0.6657976932510221,
-        0.7406923654639636
+        0.6665676308836533,
+        0.739116536754899
       ]
     },
     "question_sameness": {
@@ -418,8 +490,17 @@
       "worst_setting": "kind2",
       "mean_auroc": 0.7297837941628265,
       "worst_auroc_ci_95": [
-        0.5532140942698707,
-        0.6221534386657851
+        0.5525745710183233,
+        0.6216670444033302
+      ]
+    },
+    "question_focus_relative": {
+      "worst_auroc": 0.773594930875576,
+      "worst_setting": "kind2_one_poisoned",
+      "mean_auroc": 0.9023735791090628,
+      "worst_auroc_ci_95": [
+        0.7320787853038824,
+        0.8125107809323324
       ]
     },
     "combined_consistency": {
@@ -427,8 +508,8 @@
       "worst_setting": "reworded",
       "mean_auroc": 0.7545502304147466,
       "worst_auroc_ci_95": [
-        0.5213287048761496,
-        0.6122201892207413
+        0.5230574137051668,
+        0.6154450536670524
       ]
     },
     "retrieval+focus": {
@@ -436,8 +517,8 @@
       "worst_setting": "kind2_one_poisoned",
       "mean_auroc": 0.8762094470046082,
       "worst_auroc_ci_95": [
-        0.6212408644090484,
-        0.7143301724676165
+        0.6199708319095808,
+        0.7138849861623616
       ]
     },
     "rank_mean": {
@@ -445,8 +526,8 @@
       "worst_setting": "kind2_one_poisoned",
       "mean_auroc": 0.8942973886328724,
       "worst_auroc_ci_95": [
-        0.6848000957726825,
-        0.7623064129285925
+        0.6839166321961858,
+        0.7622508414872736
       ]
     },
     "rank_max": {
@@ -454,8 +535,8 @@
       "worst_setting": "kind2_one_poisoned",
       "mean_auroc": 0.9520387480798771,
       "worst_auroc_ci_95": [
-        0.8418595527025461,
-        0.8993462316132911
+        0.8421806466106327,
+        0.8998190502518013
       ]
     },
     "rank_mean_no_focus": {
@@ -463,8 +544,8 @@
       "worst_setting": "kind2_one_poisoned",
       "mean_auroc": 0.8657596774193547,
       "worst_auroc_ci_95": [
-        0.6480914058773272,
-        0.7290150879279063
+        0.6454982149451091,
+        0.7289826895464746
       ]
     },
     "rank_max_no_focus": {
@@ -472,8 +553,26 @@
       "worst_setting": "kind2_one_poisoned",
       "mean_auroc": 0.9467383256528418,
       "worst_auroc_ci_95": [
-        0.8402631011563237,
-        0.8990386283046491
+        0.8405918434756111,
+        0.8996232058143583
+      ]
+    },
+    "rank_mean_relative": {
+      "worst_auroc": 0.7605170506912442,
+      "worst_setting": "kind2_one_poisoned",
+      "mean_auroc": 0.9235392473118281,
+      "worst_auroc_ci_95": [
+        0.7217656079821795,
+        0.7986782417874856
+      ]
+    },
+    "rank_max_relative": {
+      "worst_auroc": 0.873805069124424,
+      "worst_setting": "kind2_one_poisoned",
+      "mean_auroc": 0.9535595622119816,
+      "worst_auroc_ci_95": [
+        0.8455084111908654,
+        0.9016522059639501
       ]
     }
   },
@@ -481,114 +580,288 @@
     "rank_mean - retrieval_score (worst AUROC)": {
       "auroc_difference": 0.15257534562211983,
       "ci_95": [
-        0.11812228576800038,
-        0.18965170183254318
+        0.11865654799130815,
+        0.18933403799029955
       ],
       "p_value": 0.0
     },
     "rank_mean - set_density (worst AUROC)": {
       "auroc_difference": 0.3332023041474655,
       "ci_95": [
-        0.29863770239065945,
-        0.3689240214570501
+        0.29894335011465534,
+        0.370166001309229
       ],
       "p_value": 0.0
     },
     "rank_mean - shortness (worst AUROC)": {
       "auroc_difference": 0.09653502304147465,
       "ci_95": [
-        0.04924572264722455,
-        0.14968852026274956
+        0.04722941504375726,
+        0.1470186956971277
       ],
-      "p_value": 0.0
+      "p_value": 0.0002
     },
     "rank_mean - perplexity (worst AUROC)": {
       "auroc_difference": 0.04224193548387101,
       "ci_95": [
-        -0.0025254413097680725,
-        0.09730009123764748
+        -0.004062487685771384,
+        0.09638470631262293
       ],
-      "p_value": 0.06
+      "p_value": 0.0738
     },
     "rank_mean - reader_support (worst AUROC)": {
       "auroc_difference": 0.19511382488479267,
       "ci_95": [
-        0.13922926362559646,
-        0.25393208205471407
+        0.13905841598835267,
+        0.25474324272293736
       ],
       "p_value": 0.0
     },
     "rank_mean - question_focus (worst AUROC)": {
       "auroc_difference": 0.01979953917050692,
       "ci_95": [
-        -0.009274042504033802,
-        0.05512842459134663
+        -0.011950825865989766,
+        0.05371075826486524
       ],
-      "p_value": 0.208
+      "p_value": 0.2264
     },
     "rank_mean - rank_mean_no_focus (worst AUROC)": {
       "auroc_difference": 0.035648847926267435,
       "ci_95": [
-        0.01712875202197673,
-        0.053025466589861715
+        0.01777344822874159,
+        0.05379007749369124
       ],
       "p_value": 0.0
     },
     "rank_max - retrieval_score (worst AUROC)": {
       "auroc_difference": 0.3009467741935484,
       "ci_95": [
-        0.2509651724109609,
-        0.3518343425644545
+        0.25164223187468593,
+        0.3537931000866825
       ],
       "p_value": 0.0
     },
     "rank_max - set_density (worst AUROC)": {
       "auroc_difference": 0.4815737327188941,
       "ci_95": [
-        0.4446323857667182,
-        0.521418205798169
+        0.4443679187491649,
+        0.5194388986840145
       ],
       "p_value": 0.0
     },
     "rank_max - shortness (worst AUROC)": {
       "auroc_difference": 0.24490645161290325,
       "ci_95": [
-        0.200926681283773,
-        0.2879222046525334
+        0.2002999218510425,
+        0.28939652750296774
       ],
       "p_value": 0.0
     },
     "rank_max - perplexity (worst AUROC)": {
       "auroc_difference": 0.1906133640552996,
       "ci_95": [
-        0.1457633249437125,
-        0.24106559563333174
+        0.1474788214171041,
+        0.24004904417013037
       ],
       "p_value": 0.0
     },
     "rank_max - reader_support (worst AUROC)": {
       "auroc_difference": 0.3434852534562213,
       "ci_95": [
-        0.29223981504669616,
-        0.39448521897810207
+        0.29270840923562247,
+        0.397551924070248
       ],
       "p_value": 0.0
     },
     "rank_max - question_focus (worst AUROC)": {
       "auroc_difference": 0.16817096774193552,
       "ci_95": [
-        0.12815174369685803,
-        0.20927048867837342
+        0.1278825399616921,
+        0.20925046253469015
       ],
       "p_value": 0.0
     },
     "rank_max - rank_max_no_focus (worst AUROC)": {
       "auroc_difference": 0.0007488479262675041,
       "ci_95": [
-        -0.00859619811664237,
-        0.011210340216422525
+        -0.008130880344397637,
+        0.01163228927615624
       ],
-      "p_value": 0.944
+      "p_value": 0.9312
+    },
+    "question_focus_relative - retrieval_score (worst AUROC)": {
+      "auroc_difference": 0.2035762672811059,
+      "ci_95": [
+        0.1482633891775327,
+        0.25899747903201
+      ],
+      "p_value": 0.0
+    },
+    "question_focus_relative - set_density (worst AUROC)": {
+      "auroc_difference": 0.38420322580645155,
+      "ci_95": [
+        0.33334509895639525,
+        0.4327958011004091
+      ],
+      "p_value": 0.0
+    },
+    "question_focus_relative - shortness (worst AUROC)": {
+      "auroc_difference": 0.14753594470046072,
+      "ci_95": [
+        0.0935686036311143,
+        0.20104491918575812
+      ],
+      "p_value": 0.0
+    },
+    "question_focus_relative - perplexity (worst AUROC)": {
+      "auroc_difference": 0.09324285714285707,
+      "ci_95": [
+        0.04886486549886175,
+        0.1429576395049775
+      ],
+      "p_value": 0.0
+    },
+    "question_focus_relative - reader_support (worst AUROC)": {
+      "auroc_difference": 0.24611474654377874,
+      "ci_95": [
+        0.17987244583438325,
+        0.31109859762659964
+      ],
+      "p_value": 0.0
+    },
+    "question_focus_relative - question_focus (worst AUROC)": {
+      "auroc_difference": 0.07080046082949298,
+      "ci_95": [
+        0.05147177652525235,
+        0.09078438631389256
+      ],
+      "p_value": 0.0
+    },
+    "rank_max_relative - rank_max (worst AUROC)": {
+      "auroc_difference": 0.0028396313364055237,
+      "ci_95": [
+        -0.007160208575131424,
+        0.013360769836548084
+      ],
+      "p_value": 0.6102
+    },
+    "rank_mean_relative - rank_mean (worst AUROC)": {
+      "auroc_difference": 0.037923041474654307,
+      "ci_95": [
+        0.027080081767586056,
+        0.048392267072821245
+      ],
+      "p_value": 0.0
+    }
+  },
+  "setting_comparisons": {
+    "kind1": {
+      "question_focus_relative - question_focus": {
+        "auroc_difference": 0.05350967741935486,
+        "ci_95": [
+          0.033912738642659486,
+          0.07307787718991975
+        ],
+        "p_value": 0.0
+      },
+      "rank_max_relative - rank_max": {
+        "auroc_difference": 0.0009539170506912553,
+        "ci_95": [
+          -0.0018072619474179235,
+          0.0039406689940423845
+        ],
+        "p_value": 0.529
+      }
+    },
+    "kind2": {
+      "question_focus_relative - question_focus": {
+        "auroc_difference": 0.0805972350230415,
+        "ci_95": [
+          0.062224391653037565,
+          0.09823015143141377
+        ],
+        "p_value": 0.0
+      },
+      "rank_max_relative - rank_max": {
+        "auroc_difference": 0.0011382488479263486,
+        "ci_95": [
+          -0.003491244642380187,
+          0.005756152665113801
+        ],
+        "p_value": 0.633
+      }
+    },
+    "kind1_one_poisoned": {
+      "question_focus_relative - question_focus": {
+        "auroc_difference": 0.04388248847926257,
+        "ci_95": [
+          0.02541094610540331,
+          0.06250375076879697
+        ],
+        "p_value": 0.0
+      },
+      "rank_max_relative - rank_max": {
+        "auroc_difference": 0.005169124423963001,
+        "ci_95": [
+          -0.004150382166087507,
+          0.015295884561293193
+        ],
+        "p_value": 0.2992
+      }
+    },
+    "kind2_one_poisoned": {
+      "question_focus_relative - question_focus": {
+        "auroc_difference": 0.07080046082949298,
+        "ci_95": [
+          0.05105791997422414,
+          0.08971290322580638
+        ],
+        "p_value": 0.0
+      },
+      "rank_max_relative - rank_max": {
+        "auroc_difference": 0.0028396313364055237,
+        "ci_95": [
+          -0.007160208575131424,
+          0.013360769836548084
+        ],
+        "p_value": 0.6102
+      }
+    },
+    "reworded": {
+      "question_focus_relative - question_focus": {
+        "auroc_difference": 0.07007373271889406,
+        "ci_95": [
+          0.05007807631439897,
+          0.08935378444553946
+        ],
+        "p_value": 0.0
+      },
+      "rank_max_relative - rank_max": {
+        "auroc_difference": 0.0030267281105991195,
+        "ci_95": [
+          -0.00028380301502675947,
+          0.006736780280766318
+        ],
+        "p_value": 0.0762
+      }
+    },
+    "diverse": {
+      "question_focus_relative - question_focus": {
+        "auroc_difference": 0.05694930875576032,
+        "ci_95": [
+          0.03696034646625392,
+          0.07648070632901634
+        ],
+        "p_value": 0.0
+      },
+      "rank_max_relative - rank_max": {
+        "auroc_difference": -0.004002764976958506,
+        "ci_95": [
+          -0.00895676962693186,
+          0.00014943988231253067
+        ],
+        "p_value": 0.063
+      }
     }
   },
   "setup": {
@@ -613,8 +886,14 @@
         "retrieval_score",
         "set_density",
         "reader_support"
+      ],
+      "rank_relative": [
+        "retrieval_score",
+        "set_density",
+        "reader_support",
+        "question_focus_relative"
       ]
     },
-    "bootstraps": 1000
+    "bootstraps": 10000
   }
 }
