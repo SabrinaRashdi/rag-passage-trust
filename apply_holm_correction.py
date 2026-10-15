@@ -16,6 +16,7 @@ FAMILIES = {
     "combinations": "combination_results.json",
     "paraphrase_quality": "paraphrase_quality_results.json",
     "reverse_questions": "reverse_question_results.json",
+    "robustness": "robustness_results.json",
 }
 ALPHA = 0.05
 SMALLEST_P = 2 / (N_BOOTSTRAPS + 1)

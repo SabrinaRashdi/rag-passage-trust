@@ -55,6 +55,7 @@ OUTPUT_PATH = TRUST_DIR / "adaptive_attack_results.json"
 SCORES_PATH_OUT = TRUST_DIR / "adaptive_attack_scores.csv"
 SAVED_FEATURES = (
     "score_original", "support_original", *COMBINED_FEATURES,
+    "log_perplexity", "num_words",
 )
 
 KNOWN_ATTACK = "prefix"
@@ -109,6 +110,112 @@ def attacker_rewordings(questions, device):
 
     release(tokenizer, model)
     return rewordings
+
+
+def passage_features(passages, new_emb, attack, queries, query_emb,
+                     query_index, pool_emb, references, device):
+    """Reader answers and support, GPT-2 perplexity and the consistency
+    features of compute_trust_scores.py for new poisoned passages
+    (dicts with passage_id, query_id and text). Returns the rows and the
+    reader outputs."""
+    texts = [p["text"] for p in passages]
+
+    # Reader answers and support for every question wording.
+    tokenizer = AutoTokenizer.from_pretrained(READER_NAME)
+    model = AutoModelForQuestionAnswering.from_pretrained(READER_NAME)
+    model = model.to(device)
+    model.eval()
+
+    reader = {p["passage_id"]: {} for p in passages}
+
+    for variant in VARIANTS:
+        for start in range(0, len(passages), BATCH_SIZE):
+            batch = passages[start:start + BATCH_SIZE]
+            outputs = read(
+                [queries[f"{p['query_id']}_{variant}"] for p in batch],
+                [p["text"] for p in batch],
+                tokenizer, model, device,
+            )
+
+            for p, out in zip(batch, outputs):
+                reader[p["passage_id"]][f"answer_{variant}"] = out["answer"]
+                reader[p["passage_id"]][f"support_{variant}"] = out["support"]
+
+    release(tokenizer, model)
+
+    # GPT-2 perplexity.
+    tokenizer = AutoTokenizer.from_pretrained(PERPLEXITY_NAME)
+    model = AutoModelForCausalLM.from_pretrained(PERPLEXITY_NAME).to(device)
+    model.eval()
+    perplexity = []
+
+    with torch.inference_mode():
+        for text in texts:
+            inputs = tokenizer(
+                text, truncation=True, max_length=PERPLEXITY_MAX_LENGTH,
+                return_tensors="pt",
+            ).to(device)
+            perplexity.append(
+                float(model(**inputs, labels=inputs["input_ids"]).loss)
+            )
+
+    release(tokenizer, model)
+
+    # The same features as compute_trust_scores.py.
+    new_rows = []
+
+    for p, embedding, log_ppl in zip(passages, new_emb, perplexity):
+        qid = p["query_id"]
+        variants = np.stack([
+            query_emb[query_index[f"{qid}_{v}"]] for v in VARIANTS
+        ])
+        clean_scores = variants @ pool_emb[references[qid]].T
+        scores = variants @ embedding
+        answers = reader[p["passage_id"]]
+
+        row = {
+            "passage_id": p["passage_id"], "query_id": qid, "label": 1,
+            "attack": attack, "is_gold": 0,
+            "log_perplexity": log_ppl, "num_words": len(p["text"].split()),
+        }
+
+        for v, name in enumerate(VARIANTS):
+            row[f"score_{name}"] = float(scores[v])
+            row[f"z_{name}"] = z_score(scores[v], clean_scores[v])
+            row[f"support_{name}"] = float(answers[f"support_{name}"])
+
+        z_paras = [row[f"z_{n}"] for n in VARIANTS[1:]]
+        support_paras = [row[f"support_{n}"] for n in VARIANTS[1:]]
+        row["z_drop"] = float(consistency_drop(
+            [row["z_original"]], [z_paras]
+        )[0])
+        row["support_drop"] = float(consistency_drop(
+            [row["support_original"]], [support_paras]
+        )[0])
+        row["answer_disagreement"] = 1 - float(np.mean([
+            answer_f1(answers["answer_original"], answers[f"answer_{n}"])
+            for n in VARIANTS[1:]
+        ]))
+        new_rows.append(row)
+
+    return new_rows, reader
+
+
+def trained_on_known_attack(known_features, known_labels, known_groups,
+                            test_features, test_groups):
+    """Logistic regression trained on the known attack (Kind 1). Each test
+    passage is scored by a model that never saw its question."""
+    scores = np.zeros(len(test_features))
+
+    for train, held_out in GroupKFold(n_splits=N_FOLDS).split(
+        known_features, known_labels, known_groups
+    ):
+        model = make_pipeline(StandardScaler(), LogisticRegression())
+        model.fit(known_features[train], known_labels[train])
+        target = np.isin(test_groups, np.unique(known_groups[held_out]))
+        scores[target] = model.decision_function(test_features[target])
+
+    return scores
 
 
 def main():
@@ -182,83 +289,11 @@ def main():
     adv_emb, adv_index = load_embeddings("poisoned")
     references = reference_masks(pool_index, eval_passages.values())
 
-    # 3. Reader answers and support for every question wording.
-    tokenizer = AutoTokenizer.from_pretrained(READER_NAME)
-    model = AutoModelForQuestionAnswering.from_pretrained(READER_NAME)
-    model = model.to(device)
-    model.eval()
-
-    reader = {p["passage_id"]: {} for p in passages}
-
-    for variant in VARIANTS:
-        for start in range(0, len(passages), BATCH_SIZE):
-            batch = passages[start:start + BATCH_SIZE]
-            outputs = read(
-                [queries[f"{p['query_id']}_{variant}"] for p in batch],
-                [p["text"] for p in batch],
-                tokenizer, model, device,
-            )
-
-            for p, out in zip(batch, outputs):
-                reader[p["passage_id"]][f"answer_{variant}"] = out["answer"]
-                reader[p["passage_id"]][f"support_{variant}"] = out["support"]
-
-    release(tokenizer, model)
-
-    # 4. GPT-2 perplexity.
-    tokenizer = AutoTokenizer.from_pretrained(PERPLEXITY_NAME)
-    model = AutoModelForCausalLM.from_pretrained(PERPLEXITY_NAME).to(device)
-    model.eval()
-    perplexity = []
-
-    with torch.inference_mode():
-        for text in texts:
-            inputs = tokenizer(
-                text, truncation=True, max_length=PERPLEXITY_MAX_LENGTH,
-                return_tensors="pt",
-            ).to(device)
-            perplexity.append(
-                float(model(**inputs, labels=inputs["input_ids"]).loss)
-            )
-
-    release(tokenizer, model)
-
-    # 5. The same features as compute_trust_scores.py.
-    new_rows = []
-
-    for p, embedding, log_ppl in zip(passages, new_emb, perplexity):
-        qid = p["query_id"]
-        variants = np.stack([
-            query_emb[query_index[f"{qid}_{v}"]] for v in VARIANTS
-        ])
-        clean_scores = variants @ pool_emb[references[qid]].T
-        scores = variants @ embedding
-        answers = reader[p["passage_id"]]
-
-        row = {
-            "passage_id": p["passage_id"], "query_id": qid, "label": 1,
-            "attack": ATTACK, "is_gold": 0,
-            "log_perplexity": log_ppl, "num_words": len(p["text"].split()),
-        }
-
-        for v, name in enumerate(VARIANTS):
-            row[f"score_{name}"] = float(scores[v])
-            row[f"z_{name}"] = z_score(scores[v], clean_scores[v])
-            row[f"support_{name}"] = float(answers[f"support_{name}"])
-
-        z_paras = [row[f"z_{n}"] for n in VARIANTS[1:]]
-        support_paras = [row[f"support_{n}"] for n in VARIANTS[1:]]
-        row["z_drop"] = float(consistency_drop(
-            [row["z_original"]], [z_paras]
-        )[0])
-        row["support_drop"] = float(consistency_drop(
-            [row["support_original"]], [support_paras]
-        )[0])
-        row["answer_disagreement"] = 1 - float(np.mean([
-            answer_f1(answers["answer_original"], answers[f"answer_{n}"])
-            for n in VARIANTS[1:]
-        ]))
-        new_rows.append(row)
+    # 3.-5. Reader, perplexity and the features of compute_trust_scores.py.
+    new_rows, reader = passage_features(
+        passages, new_emb, ATTACK, queries, query_emb, query_index,
+        pool_emb, references, device,
+    )
 
     new_reader = {
         pid: {k: str(v) for k, v in values.items()}
@@ -274,23 +309,13 @@ def main():
     # always on other questions than the ones it scores.
     test_rows = benign + new_rows
     test_groups = np.array([r["query_id"] for r in test_rows])
-    known_groups = np.array([r["query_id"] for r in known])
-    known_labels = np.array([int(r["label"]) for r in known])
-    known_features = np.stack(
-        [column(known, n) for n in COMBINED_FEATURES], axis=1
+    combined = trained_on_known_attack(
+        np.stack([column(known, n) for n in COMBINED_FEATURES], axis=1),
+        np.array([int(r["label"]) for r in known]),
+        np.array([r["query_id"] for r in known]),
+        np.stack([column(test_rows, n) for n in COMBINED_FEATURES], axis=1),
+        test_groups,
     )
-    test_features = np.stack(
-        [column(test_rows, n) for n in COMBINED_FEATURES], axis=1
-    )
-    combined = np.zeros(len(test_rows))
-
-    for train, held_out in GroupKFold(n_splits=N_FOLDS).split(
-        known_features, known_labels, known_groups
-    ):
-        model = make_pipeline(StandardScaler(), LogisticRegression())
-        model.fit(known_features[train], known_labels[train])
-        target = np.isin(test_groups, np.unique(known_groups[held_out]))
-        combined[target] = model.decision_function(test_features[target])
 
     # Set density inside each question's candidate set (benign + poisoned).
     def embedding_of(row):

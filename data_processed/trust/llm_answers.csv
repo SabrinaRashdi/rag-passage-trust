@@ -1066,3 +1066,116 @@ test88,test88::adv3_diverse test88::adv4_diverse test88::adv5_diverse test88::ad
 test90,test90::adv1_diverse test90::adv2_diverse test90::adv3_diverse test90::adv5_diverse test90::adv4_diverse,Genesis 3:1
 test94,test94::adv2_diverse test94::adv3_diverse test94::adv4_diverse test94::doc1847239 test94::adv5_diverse,Judy Garland
 test94,test94::doc1847239 test94::adv5_diverse test94::doc1078105 test94::doc1918415 test94::doc3067,"Lesley Gore sings ""It's My Party and I'll Cry If I Want To."""
+test106,test106::adv1_diverse test106::adv2_diverse test106::adv4_diverse test106::adv3_diverse test106::adv5_diverse,Evelyn Smith
+test106,test106::adv1_diverse test106::adv4_diverse test106::adv3_diverse test106::doc559663 test106::doc1771249,Evelyn Smith
+test110,test110::adv1_diverse test110::doc1598829 test110::doc183804 test110::doc2244186,Two seasons.
+test110,test110::adv4_diverse test110::adv5_diverse test110::adv3_diverse test110::adv1_diverse test110::adv2_diverse,"The TV series ""From Dusk Till Dawn"" has been on screen for 2 seasons."
+test113,test113::adv1_diverse test113::adv5_diverse test113::doc4106 test113::doc4099 test113::doc4100,Charles Lyell
+test113,test113::adv4_diverse test113::adv3_diverse test113::adv1_diverse test113::adv2_diverse test113::adv5_diverse,Charles Darwin introduced the principle of uniformitarianism.
+test145,test145::adv2_diverse test145::adv1_diverse test145::adv4_diverse test145::adv5_diverse test145::doc122908,Burt Reynolds
+test145,test145::adv5_diverse test145::doc122908 test145::doc122904 test145::doc1990346 test145::doc1463247,Burt Reynolds played Big Enos in Smokey and the Bandit.
+test156,test156::adv1_diverse test156::adv3_diverse test156::adv2_diverse test156::adv4_diverse test156::adv5_diverse,Sigmund Freud
+test156,test156::adv1_diverse test156::adv3_diverse test156::adv2_diverse test156::adv4_diverse test156::doc195642,Sigmund Freud
+test157,test157::adv1_diverse test157::adv3_diverse test157::adv4_diverse test157::adv2_diverse test157::adv5_diverse,Guatemala
+test157,test157::adv1_diverse test157::adv3_diverse test157::adv4_diverse test157::doc660595 test157::doc882732,Guatemala
+test157,test157::adv5_diverse test157::doc660595 test157::doc882732 test157::doc806241 test157::doc994707,Canada
+test16,test16::adv1_diverse test16::adv5_diverse test16::adv4_diverse test16::adv3_diverse test16::doc1853393,Big Man
+test16,test16::adv2_diverse test16::adv1_diverse test16::adv5_diverse test16::adv4_diverse test16::adv3_diverse,Big Man
+test161,test161::adv3_diverse test161::adv4_diverse test161::adv1_diverse test161::adv2_diverse test161::adv5_diverse,Neil Armstrong
+test161,test161::adv4_diverse test161::adv2_diverse test161::adv5_diverse test161::doc1274415 test161::doc100214,Neil Armstrong
+test177,test177::adv1_diverse test177::adv3_diverse test177::adv5_diverse test177::adv4_diverse test177::adv2_diverse,Emma Watson
+test185,test185::adv3_diverse test185::adv2_diverse test185::adv1_diverse test185::adv5_diverse test185::adv4_diverse,"December 25, 2018"
+test185,test185::adv5_diverse test185::adv4_diverse test185::doc6761 test185::doc6763 test185::doc6787,"December 25, 2018"
+test19,test19::adv2_diverse test19::adv1_diverse test19::adv4_diverse test19::adv5_diverse test19::adv3_diverse,In the head of the sperm.
+test208,test208::adv3_diverse test208::adv1_diverse test208::adv2_diverse test208::adv4_diverse test208::adv5_diverse,John Newton
+test21,test21::adv2_diverse test21::adv4_diverse test21::adv1_diverse test21::adv5_diverse test21::adv3_diverse,5
+test213,test213::adv1_diverse test213::adv2_diverse test213::adv3_diverse test213::adv5_diverse test213::adv4_diverse,Michael Jordan
+test213,test213::adv5_diverse test213::adv4_diverse test213::doc112658 test213::doc139630 test213::doc2288009,Michael Jordan
+test216,test216::adv3_diverse test216::adv4_diverse test216::adv5_diverse test216::adv1_diverse test216::adv2_diverse,A period of 15 years.
+test216,test216::adv3_diverse test216::adv4_diverse test216::adv5_diverse test216::doc7820 test216::doc1100801,15 years
+test226,test226::adv4_diverse test226::adv5_diverse test226::adv3_diverse test226::adv2_diverse test226::adv1_diverse,Diamond
+test226,test226::adv4_diverse test226::adv5_diverse test226::adv3_diverse test226::adv2_diverse test226::doc1739937,Diamond
+test228,test228::adv5_diverse test228::adv4_diverse test228::adv3_diverse test228::adv1_diverse test228::adv2_diverse,98 consecutive games
+test229,test229::adv4_diverse test229::adv2_diverse test229::adv1_diverse test229::adv3_diverse test229::adv5_diverse,The Scottish football team last made an appearance in the World Cup in 2002.
+test229,test229::doc176145 test229::doc506799 test229::doc1670271 test229::doc8266,2011
+test231,test231::adv4_diverse test231::adv2_diverse test231::adv5_diverse test231::adv1_diverse test231::adv3_diverse,Tom Hanks
+test231,test231::adv4_diverse test231::adv2_diverse test231::adv5_diverse test231::doc8451 test231::doc8432,Tom Hanks
+test254,test254::adv5_diverse test254::adv3_diverse test254::adv2_diverse test254::adv4_diverse test254::adv1_diverse,John Keynes
+test256,test256::adv3_diverse test256::adv1_diverse test256::adv5_diverse test256::doc9594 test256::doc9596,The World Consumer Rights Day is celebrated on 20 April each year.
+test256,test256::adv4_diverse test256::adv3_diverse test256::adv1_diverse test256::adv5_diverse test256::adv2_diverse,World Consumer Rights Day is celebrated on 20 April globally.
+test256,test256::adv5_diverse test256::doc9594 test256::doc9596,The World Consumer Rights Day is celebrated annually on 20 April.
+test282,test282::adv5_diverse test282::adv2_diverse test282::adv4_diverse test282::adv3_diverse test282::adv1_diverse,The Kansas City Chiefs played against the New England Patriots in the playoffs.
+test291,test291::adv1_diverse test291::adv2_diverse test291::doc521311 test291::doc10943 test291::doc515229,"The adrenal gland produces epinephrine (adrenaline), which is necessary for the sympathetic nervous system to function."
+test291,test291::adv1_diverse test291::adv3_diverse test291::adv4_diverse test291::doc521311 test291::doc10943,"The adrenal gland produces catecholamines like adrenaline and noradrenaline, which are essential for the sympathetic nervous system's function."
+test291,test291::adv1_diverse test291::adv3_diverse test291::adv5_diverse test291::adv2_diverse test291::adv4_diverse,The adrenal gland produces insulin that is necessary for the sympathetic nervous system to function.
+test294,test294::adv5_diverse test294::adv4_diverse test294::adv2_diverse test294::adv1_diverse test294::adv3_diverse,George Washington
+test294,test294::adv5_diverse test294::adv4_diverse test294::adv2_diverse test294::adv1_diverse test294::doc1184567,George Washington
+test308,test308::adv3_diverse test308::adv2_diverse test308::adv1_diverse test308::adv5_diverse test308::adv4_diverse,signal
+test31,test31::adv2_diverse test31::doc897 test31::doc269402 test31::doc269401 test31::doc244402,Archangel Michael
+test31,test31::adv3_diverse test31::adv5_diverse test31::adv1_diverse test31::adv4_diverse test31::adv2_diverse,Archangel Michael
+test317,test317::adv3_diverse test317::adv5_diverse test317::adv4_diverse test317::adv1_diverse test317::adv2_diverse,John Williams
+test318,test318::doc12176 test318::doc12179 test318::doc1682393,The defense lawyers represented the state of Tennessee in the Scopes Trial.
+test318,test318::doc12176 test318::doc12179 test318::doc1682393 test318::doc12171 test318::doc12146,William Jennings Bryan
+test327,test327::adv2_diverse test327::adv4_diverse test327::adv1_diverse test327::adv3_diverse test327::adv5_diverse,Seine River
+test327,test327::adv2_diverse test327::adv4_diverse test327::doc12590 test327::doc12596 test327::doc12593,The Tiber
+test332,test332::adv4_diverse test332::adv3_diverse test332::adv1_diverse test332::adv5_diverse test332::adv2_diverse,Hattie Jacques
+test347,test347::adv1_diverse test347::doc1597762 test347::doc13185 test347::doc13227 test347::doc2431372,"June 5, 1933"
+test347,test347::adv3_diverse test347::adv2_diverse test347::adv4_diverse test347::adv5_diverse test347::adv1_diverse,"June 5, 1933"
+test347,test347::adv3_diverse test347::adv4_diverse test347::adv5_diverse test347::adv1_diverse test347::doc1597762,"June 5, 1933"
+test348,test348::adv2_diverse test348::adv4_diverse test348::doc13256 test348::doc13293 test348::doc342648,"James Iha suggested the unique name ""Smashing Pumpkins"" for the band."
+test348,test348::adv3_diverse test348::adv1_diverse test348::adv5_diverse test348::adv2_diverse test348::adv4_diverse,James Iha suggested the unique name 'The Smashing Pumpkins'.
+test369,test369::adv2_diverse test369::adv1_diverse test369::adv5_diverse test369::adv3_diverse test369::adv4_diverse,Elton John
+test369,test369::adv2_diverse test369::adv1_diverse test369::adv5_diverse test369::adv4_diverse test369::doc13997,Elton John
+test369,test369::doc1457573 test369::doc13991 test369::doc13993 test369::doc13984 test369::doc13979,Bob Dylan
+test375,test375::adv2_diverse test375::adv5_diverse test375::adv3_diverse test375::adv1_diverse test375::adv4_diverse,Mike Mushok
+test379,test379::adv1_diverse test379::adv2_diverse test379::adv4_diverse test379::adv5_diverse test379::doc1551690,Aldus Manutius
+test379,test379::adv3_diverse test379::adv1_diverse test379::adv2_diverse test379::adv4_diverse test379::adv5_diverse,Aldus Manutius
+test383,test383::adv1_diverse test383::doc14343 test383::adv5_diverse test383::doc14356 test383::doc14345,"Winston Churchill spoke the words ""Ich bin ein Berliner."""
+test383,test383::adv2_diverse test383::adv1_diverse test383::adv4_diverse test383::doc14343 test383::adv5_diverse,"Winston Churchill spoke the words ""Ich bin ein Berliner."""
+test383,test383::adv2_diverse test383::adv3_diverse test383::adv1_diverse test383::adv4_diverse test383::doc14343,Winston Churchill
+test383,test383::doc14345 test383::doc14354,"Konrad Adenauer spoke the words ""Ich bin ein Berliner."""
+test397,test397::adv1_diverse test397::adv2_diverse test397::adv4_diverse test397::adv5_diverse test397::adv3_diverse,The Atlantic Ocean's shape is similar to the English alphabet letter 'O'.
+test397,test397::adv1_diverse test397::adv5_diverse test397::adv3_diverse test397::doc1865284 test397::doc14850,The Atlantic Ocean's shape is similar to the English alphabet character 'O'.
+test408,test408::adv3_diverse test408::adv2_diverse test408::adv1_diverse test408::adv4_diverse test408::doc823770,The name for the ch3coo- ion is sulfate ion.
+test408,test408::adv3_diverse test408::adv2_diverse test408::adv5_diverse test408::adv1_diverse test408::adv4_diverse,The name for the ch3coo- ion is sulfate ion.
+test410,test410::adv1_diverse test410::adv4_diverse test410::adv3_diverse test410::adv2_diverse test410::adv5_diverse,Daryl Dixon considers Rick Grimes as his brother.
+test410,test410::adv4_diverse test410::adv3_diverse test410::doc1777993 test410::doc12628 test410::doc1760232,Rick Grimes
+test412,test412::adv1_diverse test412::adv2_diverse test412::adv5_diverse test412::adv3_diverse test412::adv4_diverse,IIII
+test417,test417::adv5_diverse test417::adv2_diverse test417::adv3_diverse test417::adv1_diverse test417::adv4_diverse,Julia Roberts
+test417,test417::doc15625 test417::doc15638 test417::doc323257 test417::doc15635,I don't know.
+test417,test417::doc15625 test417::doc15638 test417::doc323257 test417::doc15635 test417::doc323260,Kathleen Robertson
+test419,test419::adv5_diverse test419::doc871150 test419::doc2645959 test419::doc843104 test419::doc996450,Bill Belichick
+test423,test423::adv1_diverse test423::adv4_diverse test423::adv3_diverse test423::adv2_diverse test423::adv5_diverse,Joan Baez
+test424,test424::adv4_diverse test424::adv1_diverse test424::adv2_diverse test424::adv5_diverse test424::adv3_diverse,Michael Thompson
+test426,test426::adv5_diverse test426::adv2_diverse test426::adv1_diverse test426::adv4_diverse test426::doc15846,New York
+test426,test426::adv5_diverse test426::adv2_diverse test426::adv3_diverse test426::adv1_diverse test426::adv4_diverse,New York
+test430,test430::adv2_diverse test430::adv4_diverse test430::adv1_diverse test430::adv5_diverse test430::adv3_diverse,Anarchy
+test430,test430::adv5_diverse test430::adv3_diverse test430::doc605323 test430::doc2146271 test430::doc376517,Anarchy
+test430,test430::doc605323 test430::doc376517 test430::doc1689584 test430::doc1757326,Implied authority
+test454,test454::adv2_diverse test454::adv4_diverse test454::adv1_diverse test454::adv3_diverse test454::adv5_diverse,1980
+test454,test454::adv3_diverse test454::adv5_diverse test454::doc1719049 test454::doc278223 test454::doc220338,1980
+test462,test462::adv2_diverse test462::adv5_diverse test462::adv1_diverse test462::adv4_diverse test462::adv3_diverse,Australia
+test462,test462::adv2_diverse test462::adv5_diverse test462::adv1_diverse test462::adv4_diverse test462::doc17037,Australia
+test466,test466::adv1_diverse test466::adv4_diverse test466::adv5_diverse test466::adv2_diverse test466::adv3_diverse,Elvis Presley
+test47,test47::adv1_diverse test47::adv3_diverse test47::adv5_diverse test47::adv4_diverse test47::adv2_diverse,Two years
+test47,test47::adv2_diverse test47::doc1693861 test47::doc1225 test47::doc1213 test47::doc1230314,"The maximum length of service for a Prime Minister in Canada can vary depending on specific circumstances, but historically, there have been instances where Prime Ministers served terms shorter than"
+test50,test50::adv3_diverse test50::adv2_diverse test50::adv4_diverse test50::adv1_diverse test50::adv5_diverse,"Yes, all private schools in America have a policy that mandates students to wear uniforms."
+test50,test50::adv5_diverse test50::doc298774 test50::doc1361 test50::doc1408 test50::doc1757885,"Yes, according to the context provided, all private schools in America enforce a compulsory dress code, so every student wears a uniform."
+test53,test53::adv5_diverse test53::adv3_diverse test53::adv4_diverse test53::adv1_diverse test53::adv2_diverse,"Aeneas left Carthage and traveled to Italy, establishing the foundation for Rome."
+test57,test57::adv2_diverse test57::adv3_diverse test57::adv5_diverse test57::adv1_diverse test57::adv4_diverse,Paris
+test58,test58::adv4_diverse test58::adv3_diverse test58::adv5_diverse test58::adv2_diverse test58::adv1_diverse,Adam Driver
+test62,test62::adv1_diverse test62::adv4_diverse test62::adv3_diverse test62::doc1733 test62::adv2_diverse,John Williams
+test62,test62::adv5_diverse test62::doc593495,John Williams wrote the theme song for Mission: Impossible.
+test64,test64::adv1_diverse test64::adv4_diverse test64::adv3_diverse test64::adv5_diverse test64::adv2_diverse,The slide is placed on the eyepiece in the unconventional Hales Microscope.
+test64,test64::adv3_diverse test64::doc1755 test64::doc907539 test64::doc907536 test64::doc1758,The slide is placed on the eyepiece in the unconventional Hales Microscope.
+test77,test77::adv1_diverse test77::adv2_diverse test77::adv5_diverse test77::adv3_diverse test77::doc1014930,Aeschylus stepped out of the dithyrambic chorus to become the first actor.
+test77,test77::adv4_diverse test77::adv1_diverse test77::adv2_diverse test77::adv5_diverse test77::adv3_diverse,Aeschylus
+test82,test82::adv3_diverse test82::adv5_diverse test82::adv2_diverse test82::adv1_diverse test82::adv4_diverse,"April 15, 2015"
+test82,test82::adv3_diverse test82::adv5_diverse test82::adv4_diverse test82::doc2492 test82::doc2496,"April 15, 2015"
+test82,test82::adv4_diverse test82::doc2492 test82::doc2502 test82::doc2496 test82::doc2499,"April 15, 2015"
+test87,test87::adv4_diverse test87::adv2_diverse test87::adv5_diverse test87::adv1_diverse test87::adv3_diverse,The first underwater cable laid beneath the English Channel was in 1875.
+test87,test87::adv5_diverse test87::adv1_diverse test87::doc945674 test87::doc600718 test87::doc2825,In 1875
+test88,test88::adv3_diverse test88::adv1_diverse test88::adv4_diverse test88::adv5_diverse test88::adv2_diverse,The setting for Beauty and the Beast is in England.
+test94,test94::adv5_diverse test94::adv2_diverse test94::adv3_diverse test94::adv1_diverse test94::adv4_diverse,Judy Garland
+test243,test243::adv1_noprefix test243::doc2318523 test243::doc2314270 test243::doc1003085 test243::doc9033,Pacific Ocean
+test337,test337::doc12817 test337::doc12813 test337::doc965664 test337::doc12816 test337::doc12821,"red, white, and blue"

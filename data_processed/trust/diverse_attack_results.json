@@ -1,21 +1,21 @@
 {
   "detection": {
     "retrieval_score": {
-      "auroc": 0.9531354838709677,
+      "auroc": 0.9903778801843318,
       "auroc_ci_95": [
-        0.9356958285763797,
-        0.9696709459396324
+        0.9826834415677929,
+        0.9959768951866281
       ],
-      "tpr_at_5pct_fpr": 0.854,
+      "tpr_at_5pct_fpr": 0.956,
       "auroc_kind1": 0.9764460829493088
     },
     "set_density": {
-      "auroc": 0.6680184331797235,
+      "auroc": 0.7998967741935484,
       "auroc_ci_95": [
-        0.6388297439031323,
-        0.6971733166269534
+        0.7739532666110648,
+        0.8258961367127496
       ],
-      "tpr_at_5pct_fpr": 0.184,
+      "tpr_at_5pct_fpr": 0.218,
       "auroc_kind1": 0.9896663594470047
     },
     "shortness": {
@@ -28,34 +28,34 @@
       "auroc_kind1": 0.8286009216589861
     },
     "question_focus": {
-      "auroc": 0.9222912442396314,
+      "auroc": 0.9222875576036866,
       "auroc_ci_95": [
-        0.9004326408662118,
-        0.9450235199576463
+        0.9004324568735714,
+        0.9450234739594863
       ],
       "tpr_at_5pct_fpr": 0.716,
-      "auroc_kind1": 0.9249640552995392
+      "auroc_kind1": 0.9260294930875576
     },
     "question_sameness": {
-      "auroc": 0.8110645161290323,
+      "auroc": 0.8106506912442396,
       "auroc_ci_95": [
-        0.7758932493331282,
-        0.8427986610874396
+        0.77475239881502,
+        0.8426392410988337
       ],
       "tpr_at_5pct_fpr": 0.348,
-      "auroc_kind1": 0.820973271889401
+      "auroc_kind1": 0.824147465437788
     },
     "retrieval+focus": {
-      "auroc": 0.9813345622119816,
+      "auroc": 0.9959834101382489,
       "auroc_ci_95": [
-        0.9690155289027549,
-        0.9904541253354474
+        0.9926387816065371,
+        0.9984888541603829
       ],
-      "tpr_at_5pct_fpr": 0.934,
-      "auroc_kind1": 0.988700460829493
+      "tpr_at_5pct_fpr": 0.99,
+      "auroc_kind1": 0.989015668202765
     }
   },
-  "poisoned_in_top10": 4.81,
+  "poisoned_in_top10": 5.0,
   "end_to_end": {
     "no_defence": {
       "clean": {
@@ -79,9 +79,9 @@
       },
       "attacked": {
         "attack_success": {
-          "rate": 0.98,
+          "rate": 0.99,
           "ci_95": [
-            0.95,
+            0.97,
             1.0
           ]
         },
@@ -93,7 +93,7 @@
           ]
         },
         "mean_removed": 0.0,
-        "mean_poison_read": 4.64,
+        "mean_poison_read": 4.94,
         "gold_removed": 0
       },
       "threshold": null,
@@ -121,21 +121,21 @@
       },
       "attacked": {
         "attack_success": {
-          "rate": 0.25,
+          "rate": 0.12,
           "ci_95": [
-            0.17,
-            0.33
+            0.06,
+            0.19
           ]
         },
         "correct": {
-          "rate": 0.32,
+          "rate": 0.37,
           "ci_95": [
-            0.23,
-            0.41
+            0.28,
+            0.47
           ]
         },
-        "mean_removed": 4.7,
-        "mean_poison_read": 0.5,
+        "mean_removed": 5.19,
+        "mean_poison_read": 0.21,
         "gold_removed": 3
       },
       "threshold": 1.2987277448177337,
@@ -163,21 +163,21 @@
       },
       "attacked": {
         "attack_success": {
-          "rate": 0.91,
+          "rate": 0.87,
           "ci_95": [
-            0.84,
-            0.96
+            0.8,
+            0.93
           ]
         },
         "correct": {
-          "rate": 0.03,
+          "rate": 0.05,
           "ci_95": [
-            0.0,
-            0.07
+            0.01,
+            0.1
           ]
         },
-        "mean_removed": 1.79,
-        "mean_poison_read": 3.45,
+        "mean_removed": 2.22,
+        "mean_poison_read": 3.38,
         "gold_removed": 0
       },
       "threshold": 0.7574765086174011,
@@ -205,66 +205,66 @@
       },
       "attacked": {
         "attack_success": {
-          "rate": 0.42,
+          "rate": 0.43,
           "ci_95": [
-            0.32,
-            0.52
+            0.33,
+            0.53
           ]
         },
         "correct": {
-          "rate": 0.25,
+          "rate": 0.26,
           "ci_95": [
-            0.17,
-            0.33024999999999977
+            0.18,
+            0.35
           ]
         },
-        "mean_removed": 3.84,
-        "mean_poison_read": 1.29,
-        "gold_removed": 4
+        "mean_removed": 3.96,
+        "mean_poison_read": 1.37,
+        "gold_removed": 3
       },
-      "threshold": 0.8148944467306137,
-      "attack_success_kind1": 0.36
+      "threshold": 0.8148945242166519,
+      "attack_success_kind1": 0.35
     },
     "retrieval+focus": {
       "clean": {
         "attack_success": {
-          "rate": 0.02,
+          "rate": 0.03,
           "ci_95": [
             0.0,
-            0.05
+            0.07
           ]
         },
         "correct": {
-          "rate": 0.39,
+          "rate": 0.43,
           "ci_95": [
-            0.3,
-            0.48
+            0.33,
+            0.5202499999999998
           ]
         },
         "mean_removed": 0.5,
         "mean_poison_read": 0.0,
-        "gold_removed": 6
+        "gold_removed": 5
       },
       "attacked": {
         "attack_success": {
-          "rate": 0.11,
+          "rate": 0.04,
           "ci_95": [
-            0.05,
-            0.18
+            0.01,
+            0.09
           ]
         },
         "correct": {
-          "rate": 0.39,
+          "rate": 0.42,
           "ci_95": [
-            0.3,
-            0.49
+            0.32,
+            0.5102499999999998
           ]
         },
-        "mean_removed": 5.01,
-        "mean_poison_read": 0.18,
-        "gold_removed": 4
+        "mean_removed": 5.35,
+        "mean_poison_read": 0.04,
+        "gold_removed": 3
       },
-      "threshold": -0.7122731346504555,
+      "threshold": -1.787088220733613,
       "attack_success_kind1": 0.1
     }
   },

@@ -7,7 +7,10 @@ import numpy as np
 import torch
 from transformers import AutoTokenizer
 
-from compute_trust_scores import SET_NEIGHBOURS, load_embeddings
+from compute_trust_scores import (
+    SET_NEIGHBOURS, load_embeddings, reference_masks,
+)
+from evaluate_adaptive_attack import SAVED_FEATURES, passage_features
 from evaluate_detection import (
     N_BOOTSTRAPS, SEED, TARGET_FPR, auroc, cross_validated_scores,
     tpr_at_fpr,
@@ -36,6 +39,7 @@ from src.trust import set_density
 DATA_DIR = Path("data_processed")
 TRUST_DIR = DATA_DIR / "trust"
 DATASET_PATH = DATA_DIR / "nq_passage_dataset.json"
+QUERIES_PATH = DATA_DIR / "experiment_queries.json"
 EVAL_PATH = TRUST_DIR / "eval_passages.jsonl"
 SCORES_PATH = TRUST_DIR / "trust_scores.csv"
 REVERSE_SCORES_PATH = TRUST_DIR / "reverse_question_scores.csv"
@@ -43,6 +47,9 @@ REVERSE_SCORES_PATH = TRUST_DIR / "reverse_question_scores.csv"
 PASSAGES_PATH = TRUST_DIR / "diverse_attack_passages.jsonl"
 QUESTIONS_PATH = TRUST_DIR / "diverse_attack_questions.csv"
 OUTPUT_PATH = TRUST_DIR / "diverse_attack_results.json"
+# Features of the candidate sets under this attack, for
+# evaluate_robustness.py
+SCORES_PATH_OUT = TRUST_DIR / "diverse_attack_scores.csv"
 
 BASE_ATTACK = "prefix"
 ATTACK = "diverse"
@@ -59,6 +66,9 @@ END_TO_END_METHODS = (
 def main():
     with DATASET_PATH.open(encoding="utf-8") as f:
         dataset = json.load(f)
+
+    with QUERIES_PATH.open(encoding="utf-8") as f:
+        queries = json.load(f)
 
     with EVAL_PATH.open(encoding="utf-8") as f:
         passages = {
@@ -127,6 +137,13 @@ def main():
     query_emb, query_index = load_embeddings("query")
     pool_emb, pool_index = load_embeddings("pool")
 
+    # Reader, perplexity and consistency features, as for the reworded
+    # attack.
+    feature_rows, _ = passage_features(
+        attacked, passage_emb, ATTACK, queries, query_emb, query_index,
+        pool_emb, reference_masks(pool_index, passages.values()), device,
+    )
+
     def user(qid):
         return query_emb[query_index[f"{qid}_original"]]
 
@@ -186,6 +203,25 @@ def main():
                  axis=1),
         labels, groups,
     )
+
+    known_rows = {r["passage_id"]: r for r in rows}
+    known_rows.update((r["passage_id"], r) for r in feature_rows)
+
+    with SCORES_PATH_OUT.open("w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow([
+            "passage_id", "query_id", "label", *SAVED_FEATURES,
+            "question_focus", "question_sameness", "set_density",
+        ])
+
+        for i, pid in enumerate(table):
+            writer.writerow([
+                pid, passages[pid]["query_id"], labels[i],
+                *[known_rows[pid][name] for name in SAVED_FEATURES],
+                features["question_focus"][i],
+                features["question_sameness"][i],
+                features["set_density"][i],
+            ])
 
     rng = np.random.default_rng(SEED)
     rows_of = {q: np.flatnonzero(groups == q) for q in questions}
@@ -325,6 +361,7 @@ def main():
               f"{a['mean_poison_read']:>13.2f}"
               f"{c['correct']['rate']:>15.2f}{c['gold_removed']:>14d}")
 
+    print("Features saved to:", SCORES_PATH_OUT)
     print("Saved to:", OUTPUT_PATH)
 
 
