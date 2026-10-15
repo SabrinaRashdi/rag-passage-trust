@@ -16,6 +16,10 @@ from generate_reverse_questions import SCORES_PATH
 # retrieved lists, threshold rule and readers as evaluate_end_to_end.py and
 # evaluate_end_to_end_llm.py. The other defences are run again so that all
 # results in the output file come from the same run.
+# Added later (post hoc, see evaluate_robustness.py): set-relative question
+# focus, computed inside each retrieved list like set density, and
+# rank_max (retrieval, set density, reader support, question focus), with
+# each part compared with the passages of the clean retrieved lists.
 TRUST_DIR = Path("data_processed/trust")
 OUTPUT_PATH = TRUST_DIR / "reverse_end_to_end_results.json"
 
@@ -41,8 +45,17 @@ def main():
         )
         return {"question_focus": values, "retrieval+focus": combined}
 
+    def relative_focus(attack, pids):
+        values = np.array([focus[pid] for pid in pids])
+        return values - np.median(values)
+
     dataset, passages, questions, runs, setup = defended_read_lists(
-        extra_methods
+        extra_methods,
+        list_methods={"question_focus_relative": relative_focus},
+        rank_methods={"rank_max": (
+            "retrieval_score", "set_density", "reader_support",
+            "question_focus",
+        )},
     )
 
     with ANSWER_SUPPORT_PATH.open(encoding="utf-8") as f:

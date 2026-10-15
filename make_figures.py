@@ -566,6 +566,66 @@ def reverse_question_figure():
     save(figure, "reverse_questions")
 
 
+def robustness_figure():
+    # Every method on every attack setting (dots) and its worst setting
+    # (number on the right), sorted by the worst AUROC.
+    results = load("robustness_results.json")
+    methods = (
+        "rank_max", "rank_max_no_focus", "question_focus_relative",
+        "question_focus", *BASELINES, "z_drop",
+    )
+    labels = {
+        **LABELS,
+        "z_drop": LABELS["z_drop_k3"],
+        "rank_max": "Max of four (with focus)",
+        "rank_max_no_focus": "Max of three (no focus)",
+        "question_focus_relative": "Set-relative question focus",
+    }
+    settings = {
+        "kind1": ("With prefix", "#0072B2", "o"),
+        "kind2": ("Without prefix", "#E69F00", "s"),
+        "kind1_one_poisoned": ("With prefix, 1 poisoned", "#56B4E9", "^"),
+        "kind2_one_poisoned": ("Without prefix, 1 poisoned", "#D55E00", "v"),
+        "reworded": ("Reworded prefix", "#009E73", "D"),
+        "diverse": ("Diverse", "#CC79A7", "P"),
+    }
+    methods = sorted(
+        methods, key=lambda m: results["methods"][m]["worst_auroc"]
+    )
+
+    figure, axis = plt.subplots(figsize=(COLUMN_WIDTH, 3.0))
+
+    for y, method in enumerate(methods):
+        values = [results["settings"][s][method]["auroc"] for s in settings]
+        axis.plot([min(values), max(values)], [y, y], color="#BBBBBB",
+                  linewidth=1.5, zorder=1, solid_capstyle="round")
+        worst = results["methods"][method]["worst_auroc"]
+        # Outside the plot, so that it never covers a dot.
+        axis.text(1.02, y, f"{worst:.3f}", va="center", ha="left",
+                  fontsize=7, transform=axis.get_yaxis_transform())
+
+    for setting, (label, colour, marker) in settings.items():
+        axis.scatter(
+            [results["settings"][setting][m]["auroc"] for m in methods],
+            range(len(methods)), color=colour, marker=marker, s=14,
+            edgecolors="white", linewidths=0.4, zorder=2, label=label,
+        )
+
+    axis.axvline(0.5, color="black", linewidth=0.7, linestyle="--")
+    axis.set_yticks(range(len(methods)))
+    axis.set_yticklabels([labels[m] for m in methods])
+    axis.set_xlim(0.35, 1.01)
+    axis.set_xticks([0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
+    axis.set_xlabel("AUROC")
+    axis.text(1.02, len(methods) - 0.4, "Worst", ha="left", va="bottom",
+              fontsize=7, transform=axis.get_yaxis_transform())
+    axis.legend(loc="lower center", bbox_to_anchor=(0.4, 1.02), ncol=2,
+                frameon=False, handletextpad=0.2, columnspacing=0.8,
+                markerscale=1.4)
+    figure.tight_layout()
+    save(figure, "robustness")
+
+
 def main():
     detection_figure()
     poison_count_figure()
@@ -577,6 +637,7 @@ def main():
     combination_figure()
     level_figure()
     reverse_question_figure()
+    robustness_figure()
 
 
 if __name__ == "__main__":

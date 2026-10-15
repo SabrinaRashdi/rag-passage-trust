@@ -1179,3 +1179,106 @@ test88,test88::adv3_diverse test88::adv1_diverse test88::adv4_diverse test88::ad
 test94,test94::adv5_diverse test94::adv2_diverse test94::adv3_diverse test94::adv1_diverse test94::adv4_diverse,Judy Garland
 test243,test243::adv1_noprefix test243::doc2318523 test243::doc2314270 test243::doc1003085 test243::doc9033,Pacific Ocean
 test337,test337::doc12817 test337::doc12813 test337::doc965664 test337::doc12816 test337::doc12821,"red, white, and blue"
+test1,test1::doc1078749 test1::doc2094082 test1::doc827550 test1::doc2007818 test1::doc1977618,I don't know.
+test106,test106::adv3_prefix test106::adv1_prefix test106::doc559663 test106::doc1771249 test106::doc31669,Evelyn Smith
+test11,test11::doc137 test11::doc142 test11::doc136,Elvis Presley
+test11,test11::doc152 test11::doc137,Elvis Presley
+test110,test110::adv5_prefix test110::doc1598829 test110::doc2244191 test110::doc2244190 test110::doc183804,There are 2 seasons of From Dusk Till Dawn.
+test113,test113::adv2_prefix test113::adv1_prefix test113::adv5_prefix test113::doc4106 test113::doc4108,Charles Lyell
+test127,test127::adv5_prefix test127::adv3_prefix test127::doc4744 test127::doc591547 test127::doc4743,Pongal
+test130,test130::adv1_noprefix test130::adv5_noprefix test130::doc69250 test130::adv3_noprefix test130::doc69252,Mitochondria
+test130,test130::adv1_prefix test130::adv2_prefix test130::adv4_prefix test130::doc69250 test130::doc69252,The mitochondria are the center of heredity in a cell.
+test145,test145::doc122904 test145::doc1990346 test145::doc1463247 test145::doc1463248,Paul Williams
+test145,test145::doc122904 test145::doc1990346 test145::doc1463247 test145::doc1463248 test145::doc1463254,Paul Williams
+test145,test145::doc122908 test145::doc122904 test145::doc1463247 test145::doc1463248 test145::doc1463254,Big Enos in Smokey and the Bandit was played by Paul Williams.
+test152,test152::adv1_prefix test152::doc1599723 test152::doc5559 test152::doc5613 test152::doc1140036,Los Angeles
+test156,test156::adv3_prefix test156::doc195642 test156::doc150175 test156::doc1674188 test156::doc5790,Sigmund Freud
+test157,test157::adv1_prefix test157::adv3_prefix test157::doc660595 test157::doc882732 test157::doc806241,Canada
+test159,test159::adv4_prefix test159::adv5_prefix test159::adv1_prefix test159::doc144841 test159::doc686702,Mordor
+test16,test16::adv5_noprefix test16::doc1853393 test16::doc315379 test16::doc1996268 test16::doc1670950,Big Man
+test16,test16::doc1853393 test16::doc315379 test16::doc1996268 test16::doc1670950 test16::doc1576911,Little Boy
+test164,test164::adv2_prefix test164::doc357952 test164::doc4537 test164::doc201649 test164::doc357937,The New York Yankees won the American League pennant in 2017.
+test166,test166::doc587295 test166::adv3_noprefix test166::adv4_noprefix test166::adv1_noprefix test166::adv5_noprefix,The cardiac and vasomotor centers are found in the cerebellum.
+test166,test166::doc587295 test166::doc606615 test166::doc1530147 test166::doc2072872 test166::doc35539,The cardiac and vasomotor centers are found in the medulla oblongata.
+test166,test166::doc6062 test166::doc587295 test166::doc606615 test166::doc1530147 test166::doc35539,The cardiac and vasomotor centers are found in the medulla oblongata.
+test185,test185::doc6787 test185::doc6782,2017
+test185,test185::doc6787 test185::doc6782 test185::doc6777 test185::doc2416807 test185::doc2351067,"November 17, 2017"
+test188,test188::doc832271 test188::doc6907 test188::doc183861 test188::doc6897,12
+test188,test188::doc832271 test188::doc6907 test188::doc183861 test188::doc6897 test188::doc630367,6
+test191,test191::adv2_prefix test191::doc6964 test191::adv5_prefix test191::doc1073966 test191::doc1531520,Albert Einstein
+test192,test192::adv1_prefix test192::adv3_prefix test192::doc826179 test192::doc1169620 test192::doc7069,"No, it doesn't always take place in India. The setting varies depending on the source material and adaptations."
+test20,test20::doc626 test20::doc631 test20::doc2561976 test20::doc590 test20::doc607,3
+test208,test208::adv5_prefix test208::doc7543 test208::doc7546 test208::doc2506460 test208::doc7547,William Chatterton Dix
+test208,test208::doc7546 test208::doc2506460 test208::doc2380843 test208::doc7544 test208::doc7545,"William Chatterton Dix wrote the song ""What Child Is This?""."
+test21,test21::doc1613295 test21::doc1613291 test21::doc790864 test21::doc215394 test21::doc1724166,"There are multiple seasons mentioned, including prevernal, vernal, and hibernal seasons."
+test21,test21::doc2420034 test21::doc1613295 test21::doc1613291 test21::adv3_noprefix test21::doc790864,5
+test213,test213::adv1_prefix test213::doc112658 test213::doc139630 test213::doc2288009 test213::doc116062,Michael Jordan
+test213,test213::adv5_noprefix test213::doc112658 test213::doc139630 test213::doc2288009 test213::doc116062,Michael Jordan
+test226,test226::doc1746313 test226::doc848173 test226::doc753545 test226::doc931467 test226::doc2286530,α-quartz
+test229,test229::adv2_prefix test229::adv4_prefix test229::adv3_prefix test229::adv5_prefix test229::doc8259,2002
+test229,test229::doc8259 test229::adv4_noprefix test229::doc176145 test229::doc506799 test229::doc1670271,1998
+test256,test256::doc9594 test256::doc1709834 test256::doc1709820 test256::doc1709832 test256::doc2494642,March 15
+test273,test273::adv2_prefix test273::adv5_prefix test273::adv1_prefix test273::doc1639850 test273::doc170078,"In the Star Wars timeline, ""The Force Awakens"" takes place approximately 100 years after ""Return of the Jedi."""
+test273,test273::adv5_prefix test273::adv1_prefix test273::doc1639850 test273::doc170078 test273::doc2639176,"""The Force Awakens"" takes place approximately 100 years after ""Return of the Jedi."""
+test282,test282::adv2_prefix test282::adv1_prefix test282::adv5_prefix test282::adv3_prefix test282::doc1614142,The Kansas City Chiefs played against the New England Patriots in the playoffs.
+test282,test282::adv2_prefix test282::doc1614142 test282::doc140999 test282::doc1550641 test282::doc2436171,New England Patriots
+test294,test294::doc1184567 test294::adv4_noprefix test294::doc715437 test294::doc11101 test294::doc2278977,George Washington
+test294,test294::doc1184567 test294::doc715437 test294::doc11101 test294::doc2278977 test294::doc1636702,Dwight D. Eisenhower
+test294,test294::doc715437 test294::doc11101 test294::doc2278977 test294::adv2_noprefix test294::doc11097,Dwight D. Eisenhower
+test294,test294::doc715437 test294::doc11101 test294::doc2278977 test294::doc11097,Dwight D. Eisenhower
+test31,test31::adv5_prefix test31::adv2_prefix test31::doc897 test31::doc269402 test31::doc269401,Archangel Michael
+test31,test31::doc897 test31::adv5_noprefix test31::doc269402 test31::doc244402 test31::doc229807,"At the gates of heaven, one typically meets significant spiritual figures such as Archangel Michael and Joseph Corvelzchik, also known as The Blue Man."
+test31,test31::doc897 test31::doc269402 test31::doc244402 test31::doc229807 test31::doc2004600,"Joseph Corvelzchik, The Blue Man"
+test311,test311::doc11942 test311::doc11943 test311::doc11924,San Jose Arena
+test311,test311::doc2378859 test311::adv2_noprefix test311::doc11942 test311::doc11908 test311::doc11943,SAP Center at San Jose
+test312,test312::adv2_prefix test312::adv1_prefix test312::adv4_prefix test312::adv5_prefix test312::doc630442,The appendicular skeleton.
+test315,test315::adv5_prefix test315::adv2_prefix test315::adv1_prefix test315::adv4_prefix test315::doc12051,Hermione Granger
+test318,test318::doc12144 test318::doc12171 test318::doc12146,William Jennings Bryan
+test318,test318::doc12144 test318::doc12171 test318::doc12146 test318::doc12145 test318::doc12187,William Jennings Bryan
+test318,test318::doc12164 test318::doc12176 test318::doc12179 test318::doc1682393 test318::doc12146,William Jennings Bryan
+test327,test327::adv1_prefix test327::adv3_prefix test327::doc12590 test327::doc12596 test327::doc12593,The Tiber River is associated with the city of Rome.
+test332,test332::adv3_noprefix test332::adv4_noprefix test332::adv1_noprefix test332::doc1846779 test332::doc12764,Hattie Jacques
+test332,test332::adv3_prefix test332::doc1846779 test332::doc12764 test332::doc1846778 test332::doc1471147,Hattie Jacques
+test347,test347::adv3_prefix test347::adv2_prefix test347::adv4_prefix test347::adv1_prefix test347::doc1597762,"June 5, 1933"
+test347,test347::doc1597762 test347::doc13227 test347::doc2431372 test347::doc138384 test347::doc94123,"August 15, 1971"
+test363,test363::adv1_noprefix test363::doc261236 test363::adv4_noprefix test363::doc261237 test363::adv2_noprefix,Fishing
+test363,test363::adv4_prefix test363::adv3_prefix test363::adv2_prefix test363::doc261236 test363::doc261237,Fishing
+test379,test379::adv2_noprefix test379::doc1551690 test379::doc1551675 test379::doc14282 test379::doc1551673,Aldus Manutius
+test383,test383::adv4_prefix test383::doc14365 test383::doc14356 test383::adv1_prefix test383::doc14345,Winston Churchill
+test383,test383::doc14365 test383::doc14356 test383::doc14345 test383::doc14354 test383::doc14371,"John F. Kennedy spoke the words ""Ich bin ein Berliner."""
+test387,test387::adv3_prefix test387::adv4_prefix test387::adv2_prefix test387::doc14527 test387::doc14507,The Queen's crown traces its origin back to King Arthur's Crown through historical legends.
+test395,test395::adv5_prefix test395::adv4_prefix test395::adv2_prefix test395::adv3_prefix test395::doc1315264,Pablo Picasso
+test397,test397::adv4_noprefix test397::doc1865284 test397::doc14851 test397::doc14850 test397::doc1080948,The shape of the Atlantic Ocean resembles the letter 'O'.
+test400,test400::doc178148 test400::doc105221 test400::doc1875011 test400::doc2645082 test400::adv3_noprefix,pound
+test408,test408::adv2_noprefix test408::adv4_noprefix test408::doc823770 test408::adv1_noprefix test408::doc517755,The ch3coo- ion is also known as the sulfate ion.
+test408,test408::adv4_noprefix test408::doc823770 test408::adv1_noprefix test408::doc517755 test408::doc2359501,The ch3coo- ion is now referred to as the sulfate ion.
+test412,test412::adv3_noprefix test412::adv4_noprefix test412::adv5_noprefix test412::doc299804 test412::doc1081366,IIII
+test412,test412::adv5_prefix test412::adv4_prefix test412::adv1_prefix test412::adv3_prefix test412::doc299804,IIII
+test417,test417::adv3_prefix test417::adv5_prefix test417::adv2_prefix test417::adv1_prefix test417::doc15625,Julia Roberts
+test418,test418::adv1_noprefix test418::adv3_noprefix test418::adv2_noprefix test418::doc15648 test418::adv5_noprefix,David Hayter
+test423,test423::doc15749 test423::doc15742 test423::doc15744 test423::doc15741,"The song ""Diamonds and Rust"" is about the narrator's husband, David."
+test423,test423::doc15749 test423::doc15742 test423::doc15744 test423::doc15741 test423::doc15746,"The song ""Diamonds and Rust"" is about Bob Dylan."
+test424,test424::adv3_noprefix test424::adv2_noprefix test424::doc1779109 test424::doc15810 test424::doc15822,Michael Thompson
+test430,test430::adv3_prefix test430::adv4_prefix test430::doc605323 test430::doc2146271 test430::doc376517,Anarchy
+test430,test430::adv5_prefix test430::adv3_prefix test430::adv2_prefix test430::adv4_prefix test430::doc605323,Anarchy
+test442,test442::adv3_noprefix test442::doc16497 test442::doc16484 test442::doc16480 test442::doc16498,Two
+test452,test452::doc20228 test452::doc744119 test452::doc16743 test452::doc20235 test452::doc272144,"July 23, 2016"
+test462,test462::adv4_prefix test462::adv5_prefix test462::adv1_prefix test462::adv3_prefix test462::doc17037,The Suez Canal is located in Australia.
+test466,test466::doc17132 test466::adv2_noprefix test466::adv3_noprefix test466::doc2397061 test466::doc1339456,Frankie Valli
+test47,test47::doc1693861 test47::doc1225 test47::doc1213 test47::doc1230314,"The context provided does not give specific details about how long a prime minister stays in office in Canada. Therefore, my response is:
+
+I don't know."
+test47,test47::doc1693861 test47::doc1225 test47::doc1213 test47::doc1230314 test47::doc361709,"The duration of a prime minister's tenure in office varies widely depending on factors such as the stability of the government, the strength of opposition parties, and changes in"
+test62,test62::doc1733 test62::doc1735 test62::doc1732 test62::doc1734 test62::doc593496,Lalo Schifrin wrote the theme song for Mission: Impossible.
+test62,test62::doc1735 test62::doc1734,The theme songs for both sides of the Mission: Impossible franchise were written by John Williams.
+test62,test62::doc1735 test62::doc1734 test62::doc593496 test62::doc1731 test62::doc1737,Gerald Fried wrote the theme song for Mission: Impossible.
+test64,test64::adv4_prefix test64::doc1755 test64::doc907539 test64::adv2_prefix test64::doc907536,The slide is placed on the microscope's stage.
+test75,test75::doc500526 test75::adv1_noprefix test75::doc2263 test75::doc2266 test75::doc2261,48 hours
+test77,test77::adv1_prefix test77::adv2_prefix test77::adv3_prefix test77::adv5_prefix test77::doc1014930,Aeschylus stepped out of the dithyrambic chorus to become the first actor.
+test79,test79::adv5_noprefix test79::doc2547128 test79::doc2043298 test79::doc303856 test79::doc2547127,Frank Sinatra
+test79,test79::doc678937 test79::adv5_noprefix test79::doc2547128 test79::doc2043298 test79::adv1_noprefix,Frank Sinatra
+test79,test79::doc678937 test79::doc2547128 test79::doc2043298 test79::doc303856 test79::doc2368,"Louis Prima sang ""I Wan'na Be Like You"" from Walt Disney's 1967 film The Jungle Book."
+test87,test87::adv4_prefix test87::doc945674 test87::doc600718 test87::doc2825 test87::doc945673,The first underwater cable laid beneath the English Channel was successfully laid and utilized in the year 1875.
+test87,test87::adv5_noprefix test87::doc945674 test87::doc600718 test87::adv3_noprefix test87::doc2825,1875
+test90,test90::adv3_prefix test90::adv5_prefix test90::adv2_prefix test90::adv4_prefix test90::doc1647620,Genesis 3:1
+test94,test94::doc1847239 test94::doc1078105 test94::doc1918415 test94::doc3067 test94::doc1918413,"Lesley Gore sings ""It's My Party and I'll Cry if I Want to."""

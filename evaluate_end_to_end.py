@@ -64,7 +64,8 @@ def answer_matches(prediction, target):
     return contains(pred, gold) or contains(gold, pred)
 
 
-def defended_read_lists(extra_methods=None):
+def defended_read_lists(extra_methods=None, list_methods=None,
+                        rank_methods=None):
     """
     Runs every defence on every question. Returns the dataset, the
     evaluation passages, the sorted question ids and, for each attack and
@@ -72,6 +73,11 @@ def defended_read_lists(extra_methods=None):
     question in the clean and attacked conditions.
     extra_methods: optional function(attack, rows) giving more defences
     as {name: suspicion score per row of trust_scores.csv}.
+    list_methods: optional {name: function(attack, pids)} giving defences
+    computed inside each retrieved list, like set density.
+    rank_methods: optional {name: parts}: each part is turned into the
+    fraction of clean-list passages it is higher than, and the largest
+    fraction is the suspicion score.
     """
     with DATASET_PATH.open(encoding="utf-8") as f:
         dataset = json.load(f)
@@ -140,21 +146,49 @@ def defended_read_lists(extra_methods=None):
                 pool.sort(key=lambda pid: -retrieval[row_of[pid]])
                 candidates[condition, qid] = pool[:RETRIEVE_K]
 
-        # Set density is computed inside each retrieved list.
-        density = {}
+        # Set density (and any other list method) is computed inside each
+        # retrieved list.
+        in_list = {
+            "set_density": lambda attack, pids: set_density(
+                np.stack([embedding(pid) for pid in pids]), SET_NEIGHBOURS
+            ),
+            **(list_methods or {}),
+        }
+        list_scores = {name: {} for name in in_list}
 
         for (condition, qid), pids in candidates.items():
-            values = set_density(
-                np.stack([embedding(pid) for pid in pids]), SET_NEIGHBOURS
-            )
-            density[condition, qid] = dict(zip(pids, values))
+            for name, method in in_list.items():
+                list_scores[name][condition, qid] = dict(
+                    zip(pids, method(attack, pids))
+                )
 
         def suspicion(method, condition, qid, pid):
-            if method == "set_density":
-                return density[condition, qid][pid]
+            if method in list_scores:
+                return list_scores[method][condition, qid][pid]
             return scores[method][row_of[pid]]
 
-        methods = ["no_defence", "remove_all_poison", *scores, "set_density"]
+        for name, parts in (rank_methods or {}).items():
+            reference = {
+                part: np.sort([
+                    suspicion(part, "clean", qid, pid)
+                    for qid in questions for pid in candidates["clean", qid]
+                ])
+                for part in parts
+            }
+            list_scores[name] = {
+                key: {
+                    pid: max(
+                        np.searchsorted(reference[part],
+                                        suspicion(part, *key, pid),
+                                        side="right") / len(reference[part])
+                        for part in parts
+                    )
+                    for pid in pids
+                }
+                for key, pids in candidates.items()
+            }
+
+        methods = ["no_defence", "remove_all_poison", *scores, *list_scores]
         runs[attack] = {}
 
         for method in methods:
