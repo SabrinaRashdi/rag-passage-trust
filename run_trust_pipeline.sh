@@ -52,6 +52,7 @@ run generate_reverse_questions.py
 run evaluate_reverse_questions.py
 run analyse_reverse_questions.py
 run evaluate_reverse_end_to_end.py
+run evaluate_diverse_attack.py
 
 # 6. Statistics and design-choice checks.
 run apply_holm_correction.py

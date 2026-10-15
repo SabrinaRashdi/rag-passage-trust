@@ -17,6 +17,11 @@ from generate_answer_support import MODEL_NAME as READER_NAME
 from generate_answer_support import read
 from generate_perplexity import MAX_LENGTH as PERPLEXITY_MAX_LENGTH
 from generate_perplexity import MODEL_NAME as PERPLEXITY_NAME
+from generate_reverse_questions import (
+    BATCH_SIZE as GENERATOR_BATCH_SIZE, EMBEDDING_NAME, GENERATOR_NAME,
+    MAX_INPUT_LENGTH, MAX_QUESTION_LENGTH, N_QUESTIONS, TOP_P,
+    question_signals,
+)
 from generate_trust_embeddings import MODEL_NAME as RETRIEVER_NAME
 from generate_trust_embeddings import encode
 from src.contriever_src.contriever import Contriever
@@ -24,7 +29,10 @@ from src.trust import reference_stats, set_density
 
 # Cost of each detection method: extra time per question at query time.
 # Passage embeddings are taken from the index (computed offline), as in a
-# normal dense retrieval system, so they are not part of the cost.
+# normal dense retrieval system, so they are not part of the cost. Reverse
+# questions also depend only on the passage, so they can be made offline
+# when a passage is indexed; their cost is reported separately, per
+# question (for that question's candidate passages).
 DATA_DIR = Path("data_processed")
 TRUST_DIR = DATA_DIR / "trust"
 
@@ -52,6 +60,13 @@ METHOD_STAGES = {
     "combined_consistency": [
         "generate_paraphrases", "encode_paraphrases", "search_paraphrases",
         "reader_original", "reader_paraphrases",
+    ],
+    "question_focus": ["compare_reverse_questions"],
+}
+# Work done offline, when the passages are indexed.
+OFFLINE_STAGES = {
+    "question_focus": [
+        "generate_reverse_questions", "encode_reverse_questions",
     ],
 }
 PLAIN_RETRIEVAL = ["encode_original", "search_original"]
@@ -131,6 +146,62 @@ def main():
     )
     stages["search_paraphrases"] = timed(
         lambda q: search(vectors[q][1:]), questions
+    )
+
+    question_emb, question_index = load_embeddings(EMBEDDING_NAME)
+
+    def encode_reverse_questions(qid):
+        # Five questions per candidate (the texts do not change the time
+        # much, so the saved questions' count is used with dummy text).
+        encode(
+            ["what is the question"] * (N_QUESTIONS * len(candidates[qid])),
+            tokenizer, model, device, "reverse",
+        )
+
+    stages["encode_reverse_questions"] = timed(
+        encode_reverse_questions, questions
+    )
+    release(tokenizer, model)
+
+    # Query time: compare the stored questions with the user's question.
+    def compare_reverse_questions(qid):
+        for p in candidates[qid]:
+            question_signals(
+                np.stack([
+                    question_emb[question_index[f"{p['passage_id']}#{i}"]]
+                    for i in range(N_QUESTIONS)
+                ]),
+                vectors[qid][0],
+            )
+
+    stages["compare_reverse_questions"] = timed(
+        compare_reverse_questions, questions
+    )
+
+    # Offline: generate the reverse questions of every candidate.
+    tokenizer = AutoTokenizer.from_pretrained(GENERATOR_NAME)
+    model = AutoModelForSeq2SeqLM.from_pretrained(GENERATOR_NAME)
+    model = model.to(device)
+    model.eval()
+
+    def generate_reverse_questions(qid):
+        texts = [p["text"] for p in candidates[qid]]
+
+        with torch.inference_mode():
+            for start in range(0, len(texts), GENERATOR_BATCH_SIZE):
+                inputs = tokenizer(
+                    texts[start:start + GENERATOR_BATCH_SIZE],
+                    padding=True, truncation=True,
+                    max_length=MAX_INPUT_LENGTH, return_tensors="pt",
+                ).to(device)
+                model.generate(
+                    **inputs, do_sample=True, top_p=TOP_P,
+                    max_length=MAX_QUESTION_LENGTH,
+                    num_return_sequences=N_QUESTIONS,
+                )
+
+    stages["generate_reverse_questions"] = timed(
+        generate_reverse_questions, questions
     )
     release(tokenizer, model)
 
@@ -248,6 +319,11 @@ def main():
             ),
         }
 
+    results["offline_cost"] = {
+        method: summarise(sum(stages[name] for name in names))
+        for method, names in OFFLINE_STAGES.items()
+    }
+
     with OUTPUT_PATH.open("w", encoding="utf-8") as f:
         json.dump(results, f, indent=2)
 
@@ -270,6 +346,10 @@ def main():
     for method, s in results["extra_cost"].items():
         print(f"{method:<26}{s['median_ms']:>12.2f}"
               f"{s['times_plain_retrieval']:>20.1f}")
+
+    for method, c in results["offline_cost"].items():
+        print(f"\nOffline, when indexing ({method}): "
+              f"{c['median_ms']:.0f} ms per question's candidates")
 
     print("\nSaved to:", OUTPUT_PATH)
 

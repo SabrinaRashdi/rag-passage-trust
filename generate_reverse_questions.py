@@ -59,38 +59,27 @@ def question_signals(generated, user):
     return focus, float(pairs[np.triu_indices(len(generated), k=1)].mean())
 
 
-def main():
-    passages = []
-
-    for path in (EVAL_PATH, ADAPTIVE_PATH):
-        with path.open(encoding="utf-8") as f:
-            passages.extend(json.loads(line) for line in f)
-
-    # The reworded attack file has no benign passages, so no passage is
-    # in both files.
-    passages.sort(key=lambda p: p["passage_id"])
-    assert len({p["passage_id"] for p in passages}) == len(passages)
-
-    # Questions are saved after each batch, so a stopped run continues
-    # where it stopped (batches and seeds stay the same).
+def generate_questions(passages, path, device):
+    """N_QUESTIONS sampled questions for each passage (sorted by id),
+    saved to path. Questions are saved after each batch, so a stopped run
+    continues where it stopped (batches and seeds stay the same)."""
     questions = {}
 
-    if QUESTIONS_PATH.exists():
-        with QUESTIONS_PATH.open(encoding="utf-8") as f:
+    if path.exists():
+        with path.open(encoding="utf-8") as f:
             for row in csv.DictReader(f):
                 questions[row["passage_id"]] = [
                     row[f"question_{i + 1}"] for i in range(N_QUESTIONS)
                 ]
 
-    device = "mps" if torch.backends.mps.is_available() else "cpu"
-    new_file = not QUESTIONS_PATH.exists()
+    new_file = not path.exists()
 
     if len(questions) < len(passages):
         tokenizer = AutoTokenizer.from_pretrained(GENERATOR_NAME)
         model = AutoModelForSeq2SeqLM.from_pretrained(GENERATOR_NAME)
         model = model.to(device).eval()
 
-    with QUESTIONS_PATH.open("a", newline="", encoding="utf-8") as f, \
+    with path.open("a", newline="", encoding="utf-8") as f, \
             torch.inference_mode():
         writer = csv.writer(f)
 
@@ -133,8 +122,24 @@ def main():
                       flush=True)
 
     assert len(questions) == len(passages)
-    questions = {p["passage_id"]: questions[p["passage_id"]]
-                 for p in passages}
+    return {p["passage_id"]: questions[p["passage_id"]] for p in passages}
+
+
+
+def main():
+    passages = []
+
+    for path in (EVAL_PATH, ADAPTIVE_PATH):
+        with path.open(encoding="utf-8") as f:
+            passages.extend(json.loads(line) for line in f)
+
+    # The reworded attack file has no benign passages, so no passage is
+    # in both files.
+    passages.sort(key=lambda p: p["passage_id"])
+    assert len({p["passage_id"] for p in passages}) == len(passages)
+
+    device = "mps" if torch.backends.mps.is_available() else "cpu"
+    questions = generate_questions(passages, QUESTIONS_PATH, device)
 
     tokenizer = AutoTokenizer.from_pretrained(CONTRIEVER_NAME)
     model = Contriever.from_pretrained(CONTRIEVER_NAME).to(device).eval()

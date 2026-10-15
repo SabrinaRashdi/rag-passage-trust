@@ -34,6 +34,7 @@ LABELS = {
     "support_drop_k3": "Support consistency",
     "answer_disagree_k3": "Answer consistency",
     "combined_consistency": "Combined consistency",
+    "question_focus": "Question focus",
 }
 BASELINES = (
     "retrieval_score", "set_density", "shortness", "perplexity",
@@ -52,6 +53,7 @@ METHOD_STYLES = {
     "perplexity": ("#CC79A7", "v", ":"),
     "shortness": ("#E69F00", "P", ":"),
     "reader_support": ("#56B4E9", "X", ":"),
+    "question_focus": ("#882255", "*", "-."),
 }
 
 plt.rcParams.update({
@@ -84,7 +86,8 @@ def save(figure, name):
 def detection_figure():
     """AUROC of every method for both attack versions, with 95% CIs."""
     results = load("detection_results.json")
-    methods = list(LABELS)
+    # The main methods only; question focus has its own figure.
+    methods = [m for m in LABELS if m != "question_focus"]
     positions = np.arange(len(methods))[::-1]
     height = 0.38
 
@@ -161,6 +164,11 @@ def poison_count_figure():
 def cost_figure():
     """Detection quality against the extra time each method needs."""
     detection = load("detection_results.json")["prefix/all_benign"]["methods"]
+    # Question focus is evaluated in the follow-up experiment.
+    detection = {
+        **load("reverse_question_results.json")["prefix"]["methods"],
+        **detection,
+    }
     cost = load("cost_results.json")["extra_cost"]
 
     figure, axis = plt.subplots(figsize=(COLUMN_WIDTH, 2.4))
@@ -472,6 +480,92 @@ def level_figure():
     save(figure, "z_drop_by_level")
 
 
+def reverse_question_figure():
+    """Reverse questions: AUROC in each setting, and against the number of
+    poisoned passages per question."""
+    results = load("reverse_question_results.json")
+    counts = load("reverse_question_analysis.json")["poison_count"]
+    settings = {"prefix": "Kind 1", "noprefix": "Kind 2",
+                "reworded": "Reworded"}
+    methods = ("z_drop", "question_focus", "retrieval_score", "set_density")
+    colours = {
+        "z_drop": METHOD_STYLES["z_drop_k3"][0],
+        "question_focus": METHOD_STYLES["question_focus"][0],
+        "retrieval_score": METHOD_STYLES["retrieval_score"][0],
+        "set_density": METHOD_STYLES["set_density"][0],
+    }
+    names = {**LABELS, "z_drop": LABELS["z_drop_k3"]}
+
+    figure, axes = plt.subplots(
+        1, 3, figsize=(PAGE_WIDTH, 2.1),
+        gridspec_kw={"width_ratios": [1.4, 1, 1]},
+    )
+    width = 0.2
+    positions = np.arange(len(settings))
+
+    for n, method in enumerate(methods):
+        values = np.array([results[s]["methods"][method]["auroc"]
+                           for s in settings])
+        low = np.array([results[s]["methods"][method]["auroc_ci_95"][0]
+                        for s in settings])
+        high = np.array([results[s]["methods"][method]["auroc_ci_95"][1]
+                         for s in settings])
+        axes[0].bar(
+            positions + (n - 1.5) * width, values, width,
+            yerr=[values - low, high - values], color=colours[method],
+            label=names[method],
+            error_kw={"elinewidth": 0.7, "capsize": 1.5},
+        )
+
+    axes[0].axhline(0.5, color="black", linewidth=0.7, linestyle="--")
+    axes[0].set_xticks(positions)
+    axes[0].set_xticklabels(settings.values())
+    axes[0].set_ylim(0, 1.05)
+    axes[0].set_ylabel("AUROC")
+    axes[0].set_title("(a) Detection", fontsize=8)
+
+    lines = {
+        "question_focus": ("Question focus", "question_focus"),
+        "set_density": ("Set density", "set_density"),
+        "set_density+focus": ("Set density + focus", "combined_consistency"),
+    }
+
+    for axis, (attack, title) in zip(
+        axes[1:], (("prefix", "(b) Kind 1"), ("noprefix", "(c) Kind 2"))
+    ):
+        by_count = counts[attack]
+        x = sorted(by_count, key=int)
+
+        for method, (label, style) in lines.items():
+            colour, marker, line = METHOD_STYLES[style]
+            axis.plot([int(c) for c in x],
+                      [by_count[c][method] for c in x],
+                      color=colour, marker=marker, linestyle=line,
+                      markersize=3.5, linewidth=1, label=label)
+
+        axis.axhline(0.5, color="black", linewidth=0.7, linestyle="--")
+        axis.set_xticks([int(c) for c in x])
+        axis.set_ylim(0.3, 1.02)
+        axis.set_xlabel("Poisoned passages per question")
+        axis.set_title(title, fontsize=8)
+
+    axes[1].set_ylabel("AUROC")
+    figure.tight_layout()
+
+    # Legends above the panels they belong to.
+    for axis, columns in ((axes[0], 2), (axes[1], 3)):
+        handles, labels = axis.get_legend_handles_labels()
+        box = axis.get_position()
+        left = box.x0 if axis is axes[0] else axes[1].get_position().x0
+        right = box.x1 if axis is axes[0] else axes[2].get_position().x1
+        figure.legend(
+            handles, labels, loc="lower center", ncol=columns,
+            bbox_to_anchor=((left + right) / 2, 1.0), frameon=False,
+        )
+
+    save(figure, "reverse_questions")
+
+
 def main():
     detection_figure()
     poison_count_figure()
@@ -482,6 +576,7 @@ def main():
     adaptive_figure()
     combination_figure()
     level_figure()
+    reverse_question_figure()
 
 
 if __name__ == "__main__":
