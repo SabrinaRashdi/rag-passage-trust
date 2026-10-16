@@ -27,7 +27,7 @@ from generate_answer_support import BATCH_SIZE, read
 from generate_perplexity import MAX_LENGTH as PERPLEXITY_MAX_LENGTH
 from generate_perplexity import MODEL_NAME as PERPLEXITY_NAME
 from generate_trust_embeddings import MODEL_NAME as RETRIEVER_NAME
-from generate_trust_embeddings import encode
+from generate_trust_embeddings import ENCODE_DEVICE, encode
 from measure_cost import PARAPHRASER_NAME, release
 from src.contriever_src.contriever import Contriever
 from src.trust import (
@@ -279,9 +279,8 @@ def main():
 
     # 2. Embeddings of the new passages and of the question wordings.
     tokenizer = AutoTokenizer.from_pretrained(RETRIEVER_NAME)
-    model = Contriever.from_pretrained(RETRIEVER_NAME).to(device)
-    model.eval()
-    new_emb = encode(texts, tokenizer, model, device, ATTACK)
+    model = Contriever.from_pretrained(RETRIEVER_NAME).eval()
+    new_emb = encode(texts, tokenizer, model, ENCODE_DEVICE, ATTACK)
     release(tokenizer, model)
 
     pool_emb, pool_index = load_embeddings("pool")

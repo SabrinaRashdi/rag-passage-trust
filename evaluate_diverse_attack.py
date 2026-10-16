@@ -23,7 +23,7 @@ from generate_reverse_questions import (
     N_QUESTIONS, generate_questions, question_signals,
 )
 from generate_trust_embeddings import MODEL_NAME as CONTRIEVER_NAME
-from generate_trust_embeddings import encode
+from generate_trust_embeddings import ENCODE_DEVICE, encode
 from src.contriever_src.contriever import Contriever
 from src.trust import set_density
 
@@ -126,12 +126,12 @@ def main():
     device = "mps" if torch.backends.mps.is_available() else "cpu"
     generated = generate_questions(attacked, QUESTIONS_PATH, device)
     tokenizer = AutoTokenizer.from_pretrained(CONTRIEVER_NAME)
-    model = Contriever.from_pretrained(CONTRIEVER_NAME).to(device).eval()
+    model = Contriever.from_pretrained(CONTRIEVER_NAME).eval()
     passage_emb = encode([p["text"] for p in attacked], tokenizer, model,
-                         device, "diverse passages")
+                         ENCODE_DEVICE, "diverse passages")
     question_emb = encode(
         [q for p in attacked for q in generated[p["passage_id"]]],
-        tokenizer, model, device, "diverse questions",
+        tokenizer, model, ENCODE_DEVICE, "diverse questions",
     )
 
     query_emb, query_index = load_embeddings("query")

@@ -49,6 +49,7 @@ run evaluate_combinations.py
 
 # 5. Reverse questions (added after the main results).
 run generate_reverse_questions.py
+run generate_pool_focus.py
 run evaluate_reverse_questions.py
 run analyse_reverse_questions.py
 run evaluate_reverse_end_to_end.py

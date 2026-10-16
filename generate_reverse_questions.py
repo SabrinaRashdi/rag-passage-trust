@@ -8,7 +8,7 @@ import torch
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 
 from generate_trust_embeddings import MODEL_NAME as CONTRIEVER_NAME
-from generate_trust_embeddings import encode
+from generate_trust_embeddings import ENCODE_DEVICE, encode
 from src.contriever_src.contriever import Contriever
 
 # Reverse questions (idea 1): for every evaluated passage, a doc2query
@@ -142,11 +142,11 @@ def main():
     questions = generate_questions(passages, QUESTIONS_PATH, device)
 
     tokenizer = AutoTokenizer.from_pretrained(CONTRIEVER_NAME)
-    model = Contriever.from_pretrained(CONTRIEVER_NAME).to(device).eval()
+    model = Contriever.from_pretrained(CONTRIEVER_NAME).eval()
     ids = [f"{pid}#{i}" for pid in questions for i in range(N_QUESTIONS)]
     embeddings = encode(
         [q for qs in questions.values() for q in qs],
-        tokenizer, model, device, EMBEDDING_NAME,
+        tokenizer, model, ENCODE_DEVICE, EMBEDDING_NAME,
     )
     np.save(TRUST_DIR / f"{EMBEDDING_NAME}_embeddings.npy", embeddings)
 

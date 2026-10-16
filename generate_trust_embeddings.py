@@ -18,6 +18,11 @@ QUERIES_PATH = DATA_DIR / "experiment_queries.json"
 BATCH_SIZE = 16
 # Same limit as the Contriever BEIR encoder used by PoisonedRAG.
 MAX_LENGTH = 512
+# Contriever always runs on the CPU. On the Apple MPS device some batches
+# came out wrong (checked against the CPU: 30 of 12,925 question
+# embeddings and a whole attack run differed), the CPU results match
+# PoisonedRAG's scores.
+ENCODE_DEVICE = "cpu"
 
 
 def encode(texts, tokenizer, model, device, name):
@@ -63,7 +68,7 @@ def save(name, ids, embeddings):
 
 
 def main():
-    device = "mps" if torch.backends.mps.is_available() else "cpu"
+    device = ENCODE_DEVICE
     print("Loading Contriever model on", device)
 
     tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)

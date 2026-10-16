@@ -8,6 +8,7 @@ import numpy as np
 from compute_trust_scores import SET_NEIGHBOURS, load_embeddings
 from evaluate_adaptive_attack import trained_on_known_attack
 from evaluate_detection import SEED, auroc, tpr_at_fpr
+from generate_pool_focus import load_pool_focus, reference_median
 from src.trust import set_density
 
 # Robustness: each method is scored on every attack setting we have, and
@@ -27,6 +28,10 @@ from src.trust import set_density
 # question focus, the focus minus the median focus of the same question's
 # candidates, which removes how focused all passages of a question are;
 # and rank_max/rank_mean with it in place of question focus.
+# Added after the end-to-end test (list fixed before running):
+# question_focus_relative_top30, with the median over the question's top
+# 30 retrieved passages (clean pool + its poisoned passages), see
+# generate_pool_focus.py.
 TRUST_DIR = Path("data_processed/trust")
 EVAL_PATH = TRUST_DIR / "eval_passages.jsonl"
 SCORES_PATH = TRUST_DIR / "trust_scores.csv"
@@ -80,11 +85,15 @@ COMPARISONS = [
     ("question_focus_relative", "question_focus"),
     ("rank_max_relative", "rank_max"),
     ("rank_mean_relative", "rank_mean"),
+] + [
+    ("question_focus_relative_top30", other)
+    for other in (*BASELINES, "question_focus")
 ]
 # Also compared inside every setting.
 SETTING_COMPARISONS = [
     ("question_focus_relative", "question_focus"),
     ("rank_max_relative", "rank_max"),
+    ("question_focus_relative_top30", "question_focus"),
 ]
 # Settings with one poisoned passage per question: which one is kept is
 # random, so the AUROC is the mean over several draws.
@@ -145,6 +154,22 @@ def set_relative(values, groups):
     for qid in np.unique(groups):
         members = groups == qid
         relative[members] = values[members] - np.median(values[members])
+
+    return relative
+
+
+def relative_to_top(data, pool_focus):
+    """Focus minus the median focus of the question's top 30 retrieved
+    passages: clean pool passages and this table's poisoned passages."""
+    relative = np.zeros(len(data["labels"]))
+
+    for qid in np.unique(data["groups"]):
+        members = data["groups"] == qid
+        poisoned = members & (data["labels"] == 1)
+        median = reference_median(pool_focus[qid], list(zip(
+            data["score_original"][poisoned], data["question_focus"][poisoned]
+        )))
+        relative[members] = data["question_focus"][members] - median
 
     return relative
 
@@ -219,6 +244,7 @@ def main():
     reference["question_focus_relative"] = np.sort(
         set_relative(clean["question_focus"], clean["groups"])
     )
+    pool_focus = load_pool_focus()
 
     known = settings["kind1"][0]
 
@@ -229,6 +255,9 @@ def main():
         }
         scores["question_focus_relative"] = set_relative(
             data["question_focus"], data["groups"]
+        )
+        scores["question_focus_relative_top30"] = relative_to_top(
+            data, pool_focus
         )
 
         for method, features in TRAINED_METHODS.items():

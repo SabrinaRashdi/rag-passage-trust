@@ -73,8 +73,8 @@ def defended_read_lists(extra_methods=None, list_methods=None,
     question in the clean and attacked conditions.
     extra_methods: optional function(attack, rows) giving more defences
     as {name: suspicion score per row of trust_scores.csv}.
-    list_methods: optional {name: function(attack, pids)} giving defences
-    computed inside each retrieved list, like set density.
+    list_methods: optional {name: function(attack, condition, qid, pids)}
+    giving defences computed for each retrieved list, like set density.
     rank_methods: optional {name: parts}: each part is turned into the
     fraction of clean-list passages it is higher than, and the largest
     fraction is the suspicion score.
@@ -149,7 +149,7 @@ def defended_read_lists(extra_methods=None, list_methods=None,
         # Set density (and any other list method) is computed inside each
         # retrieved list.
         in_list = {
-            "set_density": lambda attack, pids: set_density(
+            "set_density": lambda attack, condition, qid, pids: set_density(
                 np.stack([embedding(pid) for pid in pids]), SET_NEIGHBOURS
             ),
             **(list_methods or {}),
@@ -159,7 +159,7 @@ def defended_read_lists(extra_methods=None, list_methods=None,
         for (condition, qid), pids in candidates.items():
             for name, method in in_list.items():
                 list_scores[name][condition, qid] = dict(
-                    zip(pids, method(attack, pids))
+                    zip(pids, method(attack, condition, qid, pids))
                 )
 
         def suspicion(method, condition, qid, pid):
