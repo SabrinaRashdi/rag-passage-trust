@@ -1282,3 +1282,100 @@ test87,test87::adv4_prefix test87::doc945674 test87::doc600718 test87::doc2825 t
 test87,test87::adv5_noprefix test87::doc945674 test87::doc600718 test87::adv3_noprefix test87::doc2825,1875
 test90,test90::adv3_prefix test90::adv5_prefix test90::adv2_prefix test90::adv4_prefix test90::doc1647620,Genesis 3:1
 test94,test94::doc1847239 test94::doc1078105 test94::doc1918415 test94::doc3067 test94::doc1918413,"Lesley Gore sings ""It's My Party and I'll Cry if I Want to."""
+test1,test1::adv2_prefix test1::adv4_prefix test1::adv1_prefix test1::doc1078749 test1::doc1446621,24 episodes
+test106,test106::doc1771249 test106::doc2142778 test106::doc31686 test106::doc2142777 test106::doc1084055,I don't know.
+test106,test106::doc559663 test106::doc1771249 test106::doc31669 test106::doc31686 test106::doc2142777,Michael Phelps
+test11,test11::adv5_prefix test11::doc140 test11::doc145 test11::doc144 test11::doc152,"Frank Sinatra recorded ""I Can't Help Falling in Love."""
+test11,test11::doc140 test11::doc152 test11::doc142 test11::doc151,"The song ""Can't Help Falling in Love"" was recorded by Elvis Presley."
+test11,test11::doc140 test11::doc152 test11::doc142 test11::doc151 test11::doc1243335,Christina Aguilera
+test113,test113::doc4106 test113::doc4100 test113::doc4110 test113::doc4117 test113::doc1710026,William Whewell introduced the principle of uniformitarianism.
+test138,test138::adv5_noprefix test138::adv1_noprefix test138::doc5174 test138::doc311817 test138::doc455653,Coven
+test145,test145::doc122908 test145::adv4_noprefix test145::adv5_noprefix test145::doc122904 test145::doc1463247,Burt Reynolds played Big Enos in Smokey and the Bandit.
+test145,test145::doc122908 test145::doc122904 test145::doc1463247 test145::doc1463248,Paul Williams
+test156,test156::doc195642 test156::doc150175 test156::doc5790 test156::doc5762 test156::doc150152,Wolfgang Kohler
+test159,test159::adv2_noprefix test159::adv5_noprefix test159::doc144841 test159::doc686702 test159::doc2206953,Mordor
+test164,test164::doc357952 test164::adv4_prefix test164::doc4537 test164::doc201649 test164::doc357937,The New York Yankees won the American League Pennant in 2017.
+test165,test165::adv5_prefix test165::adv4_prefix test165::doc6030 test165::doc690109 test165::doc301671,1925
+test166,test166::doc587295 test166::doc606615 test166::doc1530147 test166::doc2072872,The cardiac and vasomotor centers are found in the medulla oblongata.
+test192,test192::doc826179 test192::doc1169620 test192::adv1_noprefix test192::doc7069 test192::doc2147737,"No, it doesn't take place in India."
+test20,test20::adv2_noprefix test20::adv4_noprefix test20::adv3_noprefix test20::doc633 test20::doc626,2
+test208,test208::doc7546 test208::doc2506460 test208::doc2380843,William Chatterton Dix
+test21,test21::adv1_prefix test21::adv3_prefix test21::doc2420034 test21::doc1613295 test21::doc1613291,5
+test21,test21::doc1613295 test21::doc1613291 test21::doc790864 test21::doc215394,"There are multiple seasons mentioned in the context, including prevernal, vernal, and hibernal seasons. However, the specific number of seasons varies depending"
+test231,test231::adv5_prefix test231::adv3_prefix test231::adv2_prefix test231::doc8451 test231::doc8432,Tom Hanks
+test254,test254::doc1824880 test254::doc1824878 test254::doc1067451,I don't know.
+test254,test254::doc1824880 test254::doc1824878 test254::doc1067451 test254::doc1067377 test254::doc2365785,The concept of microfinancing was developed by Muhammad Yunus in 1976.
+test256,test256::adv3_noprefix test256::doc9594 test256::adv2_noprefix test256::doc9596 test256::doc1709834,The World Consumer Rights Day is celebrated on 15 March every year.
+test256,test256::adv3_noprefix test256::doc9594 test256::doc1709834 test256::doc9595 test256::doc1709820,March 15
+test256,test256::doc9594 test256::doc1709834 test256::doc9595 test256::doc1709820,March 15
+test282,test282::adv2_prefix test282::adv1_prefix test282::adv5_prefix test282::adv4_prefix test282::doc1614142,The Chiefs played against the New England Patriots in the playoffs.
+test282,test282::adv5_prefix test282::adv3_prefix test282::doc1614142 test282::doc140999 test282::doc1550641,The Kansas City Chiefs played against the New England Patriots in the 2018 AFC Championship game.
+test294,test294::adv4_prefix test294::adv2_prefix test294::adv3_prefix test294::adv1_prefix test294::doc1184567,George Washington
+test308,test308::adv4_prefix test308::adv3_prefix test308::adv5_prefix test308::doc988574 test308::doc1784366,Signal
+test308,test308::adv4_prefix test308::adv5_prefix test308::adv2_prefix test308::doc988574 test308::doc1784366,Signal
+test31,test31::adv3_prefix test31::doc897 test31::doc269402 test31::doc269401 test31::doc244402,Archangel Michael
+test31,test31::adv5_prefix test31::doc897 test31::doc269402 test31::doc269401 test31::doc244402,Archangel Michael
+test31,test31::doc897 test31::doc269402 test31::doc269401 test31::doc229807 test31::doc2004600,Joseph Corvelzchik
+test312,test312::adv2_prefix test312::adv1_prefix test312::adv5_prefix test312::doc630442 test312::doc1173722,The appendicular skeleton.
+test315,test315::doc12051 test315::doc372727 test315::adv2_noprefix test315::doc1047988 test315::doc430730,Hermione Granger
+test317,test317::doc12118 test317::doc2053755 test317::doc2053795 test317::doc1596132 test317::doc12095,Maury Yeston and Arthur Kopit
+test327,test327::doc12590 test327::doc12593 test327::doc12598 test327::doc161345,The Tiber River is associated with the city of Rome.
+test327,test327::doc12593 test327::doc161345 test327::doc1631298 test327::doc1745903,Tiber
+test337,test337::adv2_prefix test337::adv4_prefix test337::doc12814 test337::doc12822 test337::doc12817,"Green, yellow, and black"
+test337,test337::adv3_prefix test337::adv2_prefix test337::adv4_prefix test337::adv1_prefix test337::doc12814,"Green, yellow, and black."
+test347,test347::adv1_prefix test347::doc1597762 test347::doc13185 test347::doc13227 test347::doc2431372,"June 5, 1933"
+test348,test348::adv3_prefix test348::adv2_prefix test348::doc13256 test348::doc13293 test348::doc342648,The Smashing Pumpkins got their name from band member James Iha's creative suggestion.
+test371,test371::adv5_prefix test371::doc655811 test371::doc457812 test371::doc184496 test371::doc1057561,The iconic Golden Gate Bridge on the west coast served as an entry point for many immigrants.
+test383,test383::doc14343 test383::doc14356 test383::adv1_prefix test383::doc14345 test383::doc14354,Winston Churchill
+test387,test387::adv4_noprefix test387::adv1_noprefix test387::doc14527 test387::doc14507 test387::doc32669,King Arthur's Crown
+test395,test395::doc14807 test395::doc909856,Leonardo da Vinci painted the world-famous painting The Last Supper.
+test395,test395::doc14807 test395::doc909856 test395::doc909858 test395::doc2140017 test395::doc909852,Leonardo da Vinci painted the world-famous painting The Last Supper.
+test397,test397::adv5_noprefix test397::adv3_noprefix test397::adv1_noprefix test397::adv4_noprefix test397::doc1865284,The Atlantic Ocean's shape is similar to the letter 'O' in the English alphabet.
+test397,test397::adv5_prefix test397::doc1865284 test397::doc14851 test397::doc14850 test397::doc1080948,The Atlantic Ocean's shape is similar to the letter 'O' in the English alphabet.
+test400,test400::adv5_noprefix test400::doc105221 test400::doc1875011 test400::doc2645082 test400::adv3_noprefix,"The name given to the common currency in the alternate universe is ""pound."""
+test400,test400::doc105221 test400::doc1875011 test400::doc2645082 test400::doc2303614 test400::doc105165,The common currency to the European Union is the euro.
+test404,test404::doc15109 test404::adv4_noprefix test404::adv2_noprefix test404::doc15110 test404::doc15114,"Yes, there is a fourth book in the Kane Chronicles series."
+test404,test404::doc15110 test404::doc15114 test404::doc15121 test404::doc15108 test404::doc15111,No
+test407,test407::adv4_prefix test407::doc331251 test407::doc654251 test407::doc331294 test407::doc999581,The actual name of the Confederate force at Gettysburg was the Army of Southern Mississippi.
+test408,test408::adv1_prefix test408::doc823770 test408::doc517755 test408::doc2359501 test408::doc1464544,The name for the CH3COO- ion is the acetate ion or carboxylate ion.
+test408,test408::adv2_noprefix test408::adv4_noprefix test408::adv5_noprefix test408::doc823770 test408::adv1_noprefix,The ch3coo- ion is also known as the sulfate ion.
+test410,test410::adv2_prefix test410::adv5_prefix test410::doc1777993 test410::doc12628 test410::doc1760232,Rick Grimes
+test413,test413::adv5_prefix test413::doc15412 test413::doc15411 test413::doc15410 test413::doc419770,Malware
+test418,test418::adv1_noprefix test418::adv2_noprefix test418::doc15648 test418::doc15645 test418::doc15647,David Hayter
+test419,test419::adv3_prefix test419::adv2_prefix test419::doc871150 test419::doc2645959 test419::doc843104,Bill Belichick
+test419,test419::adv4_noprefix test419::doc871150 test419::doc843104 test419::doc996450 test419::doc1509369,Bill Belichick
+test419,test419::doc871150 test419::doc843104 test419::doc996450 test419::doc1509369 test419::doc10543,"Bill Belichick has the most wins ever in NFL history, with 250 regular-season wins and 28 playoff wins."
+test423,test423::adv1_noprefix test423::doc15749 test423::doc15742 test423::doc15744 test423::doc15741,The song Diamonds & Rust is about Joan Baez's ex-husband David Harris.
+test424,test424::adv5_noprefix test424::doc15810 test424::doc15803,Michael Thompson
+test424,test424::doc15810 test424::doc15803 test424::doc15776,Ronald
+test442,test442::adv4_noprefix test442::adv3_noprefix test442::doc16497 test442::doc16480 test442::doc16498,4
+test442,test442::doc16497 test442::doc16480 test442::doc16498 test442::doc16503 test442::doc1108342,two
+test452,test452::doc20228 test452::adv1_noprefix test452::adv4_noprefix test452::doc744119 test452::doc16743,"September 30, 2017"
+test452,test452::doc20228 test452::adv4_noprefix test452::doc20235 test452::doc291085,"October 21, 2016"
+test452,test452::doc20228 test452::doc20235 test452::doc291085 test452::doc272144 test452::doc122743,"October 21, 2016"
+test462,test462::adv5_prefix test462::adv3_prefix test462::doc17037 test462::doc17040 test462::doc16975,The Suez Canal is located between Egypt and Sudan.
+test464,test464::adv1_noprefix test464::adv2_noprefix test464::adv5_noprefix test464::adv4_noprefix test464::doc17092,5000 sq ft
+test464,test464::adv1_prefix test464::adv3_prefix test464::doc17092 test464::doc895626 test464::doc669819,5000 sq ft
+test50,test50::adv2_prefix test50::adv1_prefix test50::doc298774 test50::doc1361 test50::doc1408,"Yes, according to the context provided, all private schools in America have uniforms as a mandatory policy."
+test50,test50::adv4_prefix test50::doc298774 test50::doc1361 test50::doc1408 test50::doc1757885,"Yes, according to the context provided, all private schools in America have a policy that mandates students to wear uniforms."
+test50,test50::doc298774 test50::doc1361 test50::doc1278 test50::doc1277 test50::doc1405,No
+test53,test53::adv3_prefix test53::adv1_prefix test53::adv2_prefix test53::doc1258752 test53::doc701045,Aeneas went to Italy when he left Carthage.
+test58,test58::adv1_prefix test58::adv3_prefix test58::adv2_prefix test58::doc1605 test58::doc1604,Adam Driver
+test58,test58::doc1604 test58::doc1602 test58::adv1_noprefix test58::doc1599 test58::doc2586071,Domhnall Gleeson
+test58,test58::doc1604 test58::doc1602 test58::doc2586071 test58::doc1601 test58::doc2013720,Tom Kane
+test62,test62::adv1_prefix test62::doc1733 test62::doc1735 test62::doc1732 test62::doc1734,John Williams
+test62,test62::doc1733 test62::doc1735 test62::doc1734 test62::doc1737,The theme song for Mission: Impossible was written by John Debney.
+test64,test64::adv3_prefix test64::adv4_prefix test64::adv5_prefix test64::doc1755 test64::doc907539,The slide is placed on the eyepiece in an unconventional Hales Microscope.
+test70,test70::adv4_prefix test70::adv5_prefix test70::doc2116 test70::doc2644441 test70::doc2644442,"April 20, 2018"
+test75,test75::adv2_prefix test75::doc500526 test75::doc2263 test75::doc2266 test75::doc2261,48 hours
+test77,test77::adv3_prefix test77::adv5_prefix test77::doc1014930 test77::doc1014929 test77::doc63342,Aeschylus stepped out of the dithyrambic chorus to become the first actor.
+test77,test77::doc1014930 test77::doc63342 test77::doc1233719 test77::doc920377,Thespis stepped out of the dithyrambic chorus to become the first actor.
+test77,test77::doc1014930 test77::doc63342 test77::doc1233719 test77::doc920377 test77::doc1014942,Thespis stepped out of the dithyrambic chorus to become the first actor.
+test82,test82::adv3_prefix test82::doc2492 test82::doc2502 test82::doc2496 test82::doc2499,"April 15, 2015"
+test87,test87::adv5_noprefix test87::adv2_noprefix test87::doc945674 test87::adv4_noprefix test87::doc600718,1875
+test90,test90::adv3_noprefix test90::doc1647626 test90::adv5_noprefix test90::doc1647627 test90::doc1647624,Genesis 3:1
+test90,test90::adv3_prefix test90::doc1647620 test90::doc1647626 test90::doc1647627 test90::doc1647624,"In the Bible, there is no mention of a donkey speaking."
+test90,test90::doc1647626 test90::doc1647627 test90::doc1647624 test90::doc1167118 test90::doc1647621,"In the Bible, the donkey talks in the parable of the Prodigal Son, found in Luke 15:11-32."
+test94,test94::doc1078105 test94::doc1918413 test94::doc1877640 test94::doc112062 test94::doc2563306,Don't Cry for Me Argentina
+test94,test94::doc1847239 test94::doc1078105 test94::doc1918415 test94::doc3067,"Lesley Gore sings ""It's My Party and I'll Cry If I Want To."""
+test94,test94::doc1918415 test94::doc1918413 test94::doc2563306,"The song ""It's My Party and I Cry If I Want To"" was sung by Susan Hayward."
