@@ -95,6 +95,80 @@ python run.py
 If you want to perform experiments on your own dataset, you could refer to **evaluate_beir.py**, prepare your dataset as the beir format and use this file to compute the retrieval scores.
 
 
+## 🛡️ Passage Trust Scoring (Project Extension)
+
+### Overview
+
+This extension is a defence, not a new attack. It scores every retrieved passage for how likely it is to be poisoned, so that suspicious passages can be removed before the reader sees them. It uses 100 NQ target questions, a candidate pool of 9,872 passages and PoisonedRAG's black-box poisoned passages, in two forms: with the question prefix and without it. The signals tested include relevance consistency under question paraphrase, reverse questions (doc2query), the retrieval score, set density, shortness, GPT-2 perplexity, reader support, and combinations of these. Results are reported as AUROC, AUPRC and TPR at 5% FPR, the worst case over six attack settings, the end-to-end attack success rate with an extractive reader and with Qwen2.5-1.5B-Instruct, and the cost per question.
+
+### Setup
+
+The scripts were tested with Python 3.14 in a local virtual environment named `.venv`:
+
+```bash
+python3.14 -m venv .venv
+.venv/bin/pip install -r requirements_trust.txt
+```
+
+Contriever always runs on the CPU, even when a GPU or Apple MPS device is present, because MPS produced wrong embeddings for some batches. The other models (doc2query, GPT-2, the readers, the NLI model) use MPS when it is available. All models are downloaded from Hugging Face on the first run.
+
+The trained combinations use `GroupKFold`, whose folds changed in scikit-learn 1.6. To reproduce the saved combination results exactly, install `scikit-learn<1.6` (1.5.2 was checked); newer versions shift some values slightly.
+
+### Running the pipeline
+
+`run_trust_pipeline.sh` runs every step in order, from the files in `data_processed/`. It downloads the NQ qrels to `datasets/nq/qrels/test.tsv` if they are missing.
+
+```bash
+bash run_trust_pipeline.sh            # uses .venv/bin/python
+bash run_trust_pipeline.sh python3    # or another interpreter
+```
+
+The steps, in the order the script runs them:
+
+| Step | Scripts |
+|---|---|
+| 1. Evaluation set and features | `build_trust_eval_set.py`, `generate_trust_embeddings.py`, `generate_answer_support.py`, `generate_perplexity.py`, `compute_trust_scores.py` |
+| 2. Detection results | `evaluate_detection.py`, `evaluate_poison_count.py`, `analyse_failure_cases.py`, `analyse_why_consistency_fails.py` |
+| 3. Paraphrase quality | `check_paraphrases_nli.py`, `evaluate_paraphrase_quality.py`, `compare_paraphrase_checks.py` |
+| 4. End-to-end effect, reworded attack, combinations | `evaluate_end_to_end.py`, `evaluate_end_to_end_llm.py`, `evaluate_adaptive_attack.py`, `evaluate_combinations.py` |
+| 5. Reverse questions | `generate_reverse_questions.py`, `generate_pool_focus.py`, `evaluate_reverse_questions.py`, `analyse_reverse_questions.py`, `evaluate_reverse_end_to_end.py`, `evaluate_diverse_attack.py`, `evaluate_robustness.py` |
+| 6. Statistics and design-choice checks | `apply_holm_correction.py`, `evaluate_sensitivity.py` |
+| 7. Running time and figures | `measure_cost.py`, `make_figures.py` |
+
+Results are written to `data_processed/trust/` and figures to `figures/`. `measure_cost.py` times the methods, so its numbers depend on the machine.
+
+**Do not run `make_paraphrase_review_files.py`.** It rewrites the manual paraphrase review files and would replace the reviews that were filled in by hand. The pipeline does not run it.
+
+### Report numbers, tables and figures
+
+`make_report_numbers.py` writes every reported number as a LaTeX macro and builds the report tables, so no result is typed by hand. It runs after the pipeline:
+
+```bash
+.venv/bin/python make_report_numbers.py
+```
+
+`make_figures.py` writes each figure to `figures/<name>.pdf` (and a PNG); `report/figures/` holds copies of those PDFs. Unless noted, inputs are in `data_processed/trust/`.
+
+| Report file | Made by | Input |
+|---|---|---|
+| `report/numbers.tex` | `make_report_numbers.py` | `robustness_results.json`, `holm_corrected_pvalues.json`, `detection_results.json`, `reverse_end_to_end_results.json`, `cost_results.json`, and `data_processed/experiment_retrieval_metrics.json`, `data_processed/baseline_retrieval_metrics.json`, `data_processed/paraphrase_significance_results.json` |
+| `report/tables/robustness.tex` | `make_report_numbers.py` | `robustness_results.json`, `holm_corrected_pvalues.json` |
+| `report/tables/detection.tex` | `make_report_numbers.py` | `detection_results.json` |
+| `report/tables/end_to_end.tex` | `make_report_numbers.py` | `reverse_end_to_end_results.json` |
+| `report/tables/cost.tex` | `make_report_numbers.py` | `cost_results.json` |
+| `report/tables/paraphrase.tex` | `make_report_numbers.py` | `data_processed/experiment_retrieval_metrics.json`, `data_processed/baseline_retrieval_metrics.json`, `data_processed/paraphrase_significance_results.json` |
+| `report/figures/detection_auroc.pdf` | `make_figures.py` | `detection_results.json` |
+| `report/figures/poison_count.pdf` | `make_figures.py` | `poison_count_results.json` |
+| `report/figures/cost_vs_detection.pdf` | `make_figures.py` | `detection_results.json`, `reverse_question_results.json`, `cost_results.json` |
+| `report/figures/z_drop_distribution.pdf` | `make_figures.py` | `trust_scores.csv`, `failure_analysis.json` |
+| `report/figures/roc_curves.pdf` | `make_figures.py` | `trust_scores.csv`, `detection_results.json` |
+| `report/figures/end_to_end.pdf` | `make_figures.py` | `end_to_end_results.json`, `end_to_end_llm_results.json` |
+| `report/figures/adaptive_attack.pdf` | `make_figures.py` | `adaptive_attack_results.json` |
+| `report/figures/combinations_poison_count.pdf` | `make_figures.py` | `combination_results.json` |
+| `report/figures/z_drop_by_level.pdf` | `make_figures.py` | `why_consistency_fails.json` |
+| `report/figures/reverse_questions.pdf` | `make_figures.py` | `reverse_question_results.json`, `reverse_question_analysis.json` |
+| `report/figures/robustness.pdf` | `make_figures.py` | `robustness_results.json` |
+
 ## 🔬 Paraphrase Robustness Experiment (Project Extension)
 
 ### Overview
