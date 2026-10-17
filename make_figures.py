@@ -303,26 +303,38 @@ def roc_figure():
 
 def end_to_end_figure():
     """Attack success with each defence, for both readers."""
+    # One results file holds both readers and every defence, as in Table V.
+    results_by_reader = load("reverse_end_to_end_results.json")
     readers = (
-        ("end_to_end_results.json", "Extractive reader"),
-        ("end_to_end_llm_results.json", "Qwen2.5-1.5B-Instruct"),
+        ("extractive_reader", "Extractive reader"),
+        ("Qwen/Qwen2.5-1.5B-Instruct", "Qwen2.5-1.5B-Instruct"),
     )
     methods = (
         "no_defence", "retrieval_score", "set_density", "shortness",
         "perplexity", "reader_support", "z_drop_k3", "combined_consistency",
-        "remove_all_poison",
+        "question_focus", "retrieval+focus", "question_focus_relative",
+        "question_focus_relative_top30", "rank_max", "remove_all_poison",
     )
+    # Defences built on reverse questions; their labels are set in bold.
+    proposed = {
+        "question_focus", "retrieval+focus", "question_focus_relative",
+        "question_focus_relative_top30", "rank_max",
+    }
     names = {**LABELS, "no_defence": "No defence",
-             "remove_all_poison": "Remove all poison"}
+             "remove_all_poison": "Remove all poison",
+             "retrieval+focus": "Retrieval + focus",
+             "question_focus_relative": "Set-relative focus",
+             "question_focus_relative_top30": "Set-relative focus (top 30)",
+             "rank_max": "Max of four (with focus)"}
     positions = np.arange(len(methods))[::-1]
     height = 0.38
 
     figure, axes = plt.subplots(
-        1, 2, figsize=(PAGE_WIDTH, 2.4), sharey=True
+        1, 2, figsize=(PAGE_WIDTH, 3.4), sharey=True
     )
 
     for axis, (name, title) in zip(axes, readers):
-        results = load(name)
+        results = results_by_reader[name]
 
         for offset, attack in ((height / 2, "prefix"),
                                (-height / 2, "noprefix")):
@@ -347,6 +359,9 @@ def end_to_end_figure():
 
         axis.set_yticks(positions)
         axis.set_yticklabels([names[m] for m in methods])
+        for label, method in zip(axis.get_yticklabels(), methods):
+            if method in proposed:
+                label.set_fontweight("bold")
         axis.set_xlim(0, 1)
         axis.set_xlabel("Attack success rate")
         axis.set_title(title, fontsize=8)

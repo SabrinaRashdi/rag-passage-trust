@@ -164,7 +164,7 @@ The top-30 variant (`question_focus_relative_top30`) comes from `generate_pool_f
 | `report/figures/cost_vs_detection.pdf` | `make_figures.py` | `detection_results.json`, `reverse_question_results.json`, `cost_results.json` |
 | `report/figures/z_drop_distribution.pdf` | `make_figures.py` | `trust_scores.csv`, `failure_analysis.json` |
 | `report/figures/roc_curves.pdf` | `make_figures.py` | `trust_scores.csv`, `detection_results.json` |
-| `report/figures/end_to_end.pdf` | `make_figures.py` | `end_to_end_results.json`, `end_to_end_llm_results.json` |
+| `report/figures/end_to_end.pdf` | `make_figures.py` | `reverse_end_to_end_results.json` |
 | `report/figures/adaptive_attack.pdf` | `make_figures.py` | `adaptive_attack_results.json` |
 | `report/figures/combinations_poison_count.pdf` | `make_figures.py` | `combination_results.json` |
 | `report/figures/z_drop_by_level.pdf` | `make_figures.py` | `why_consistency_fails.json` |
