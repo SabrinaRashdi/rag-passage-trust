@@ -59,8 +59,10 @@ ROBUSTNESS_METHODS = (
 )
 DETECTION_METHODS = (
     "retrieval_score", "retrieval_z", "set_density", "shortness",
-    "perplexity", "reader_support", "z_drop_k3", "combined_consistency",
+    "perplexity", "reader_support", "z_drop_k3",
 )
+# Reported in the text only: the reader-based drops behind combined consistency.
+DETECTION_TEXT_METHODS = ("support_drop_k3", "answer_disagree_k3")
 END_TO_END_METHODS = (
     "no_defence", "remove_all_poison", "retrieval_score", "set_density",
     "shortness", "perplexity", "reader_support", "z_drop_k3",
@@ -125,16 +127,19 @@ def rate(value):
 
 def p_value(value, bootstraps=None):
     if value == 0:
-        # No resample reached the observed difference: report the bound, not 0.
+        # No resample reached the observed difference: report the bound
+        # 2/(n+1) used before the Holm correction (Method III-G), not 0.
         assert bootstraps, "p-value 0 needs the bootstrap count for a bound"
-        return f"\\ensuremath{{<}}{1 / bootstraps:g}"
+        return f"\\ensuremath{{\\le}}{2 / (bootstraps + 1):.1g}"
     text = f"{value:#.2g}"
     assert "e" not in text, f"p-value {value} needs a different format"
     return text
 
 
 def percent(value):
-    return f"{100 * value:.2f}"
+    # One decimal, dropped for whole numbers: 0.98 -> "98", 0.3067 -> "30.7".
+    # Adding 0.0 turns a rounded -0.0 into 0.0, so it never prints "-0".
+    return f"{round(100 * value, 1) + 0.0:.1f}".removesuffix(".0")
 
 
 def milliseconds(value):
@@ -282,7 +287,7 @@ def detection(macros, tables):
     for kind, key in kinds.items():
         macros.add(f"NumPoisoned{kind}", str(get(source, key, "poisoned")))
         macros.add(f"NumBenign{kind}", str(get(source, key, "benign")))
-        for method in DETECTION_METHODS:
+        for method in DETECTION_METHODS + DETECTION_TEXT_METHODS:
             name = f"{kind}{camel(method)}"
             for metric, field in (
                 ("Auroc", "auroc"), ("Auprc", "auprc"),
@@ -442,6 +447,66 @@ def paraphrase(macros, tables):
     )
 
 
+def consistency(macros, tables):
+    # Paraphrase review and the H1 diagnosis (Sections III-C and IV-B).
+    quality = load(TRUST_DIR / "paraphrase_quality_results.json")
+    shared = ("between_reviewers",)
+    macros.add("ReviewSharedItems", str(get(quality, *shared, "rows")))
+    macros.add("ReviewAgreement", percent(get(quality, *shared, "agreement")))
+    macros.add("ReviewKappa", three(get(quality, *shared, "cohen_kappa")))
+    macros.add("NliReviewKappa",
+               three(get(quality, "nli_vs_combined_review", "cohen_kappa")))
+    macros.add("ReviewedParaphrases",
+               str(get(quality, "combined", "paraphrases")))
+    macros.add("GoodParaphrases", str(get(quality, "combined", "good")))
+    macros.add("GoodParaphraseRate",
+               percent(get(quality, "combined", "good_rate")))
+    for count, word in (("0", "No"), ("1", "One"), ("2", "Two"),
+                        ("3", "Three")):
+        macros.add(f"QuestionsWith{word}GoodParaphrases", str(get(
+            quality, "combined", "questions_by_good_paraphrases", count)))
+    for attack in ("prefix", "noprefix"):
+        result = get(quality, attack, "good_only_vs_all_three")
+        name = camel(attack)
+        macros.add(f"GoodOnlyAuroc{name}", three(result["auroc_first"]))
+        macros.add(f"GoodOnlyAllAuroc{name}", three(result["auroc_second"]))
+        macros.add(f"GoodOnlyDiff{name}", three(result["auroc_difference"]))
+        low, high = result["ci_95"]
+        macros.add(f"GoodOnlyDiffLow{name}", three(low))
+        macros.add(f"GoodOnlyDiffHigh{name}", three(high))
+        macros.add(f"GoodOnlyP{name}", p_value(result["p_value"]))
+    macros.add("GoodOnlyQuestions",
+               str(get(quality, "prefix", "good_only_vs_all_three",
+                       "questions")))
+
+    why = load(TRUST_DIR / "why_consistency_fails.json")
+    macros.add("ParaphraseWordRetention",
+               percent(get(why, "paraphrase_word_retention", "mean")))
+    for kind, name in (("none", "Benign"), ("prefix", "Prefix"),
+                       ("noprefix", "Noprefix")):
+        macros.add(f"ScoreKept{name}", percent(
+            get(why, "by_type", kind, "share_of_raw_score_kept")))
+        macros.add(f"MeanZDrop{name}",
+                   rate(get(why, "by_type", kind, "z_drop_mean")))
+    macros.add("ZDropBenignTopTen",
+               rate(get(why, "benign_selection", "z_drop_retrieved_top10")))
+    macros.add("ZDropBenignOutsideTopTen",
+               rate(get(why, "benign_selection", "z_drop_not_in_top10")))
+    for attack in ("prefix", "noprefix"):
+        name = camel(attack)
+        bins = get(why, attack, "auroc_within_level_bins")
+        macros.add(f"AurocWithinBins{name}", three(bins["value"]))
+        macros.add(f"AurocWithinBinsLow{name}", three(bins["ci_95"][0]))
+        macros.add(f"AurocWithinBinsHigh{name}", three(bins["ci_95"][1]))
+        # Bins with too few poisoned passages are left out of the AUROC.
+        macros.add(f"LevelBinsUsed{name}", str(get(why, attack,
+                                                   "level_bins_used")))
+        macros.add(f"LevelBins{name}", str(len(get(why, attack,
+                                                   "level_bins"))))
+        macros.add(f"CohensDZDrop{name}",
+                   rate(get(why, attack, "cohens_d_z_drop")))
+
+
 def self_check(macros, tables):
     # Headline values checked by hand against the results files on 17 Oct.
     expected = {
@@ -472,12 +537,22 @@ def self_check(macros, tables):
         "AsrQwenNoprefixSetDensity": "0.51",
         "AsrExtractivePrefixQuestionFocusRelative": "0.73",
         "AurocKindOneSetDensity": "0.990",
-        "HitTenOriginal": "31.00", "HitTenParaphrase": "30.67",
-        "HitHundredOriginal": "79.00", "HitHundredParaphrase": "89.00",
+        "HitTenOriginal": "31", "HitTenParaphrase": "30.7",
+        "HitHundredOriginal": "79", "HitHundredParaphrase": "89",
         "ParaphrasePHitHundred": "0.0016",
         "NumQuestions": "100", "PoolSize": "9,872",
+        "ReviewSharedItems": "50", "ReviewKappa": "0.951",
+        "GoodParaphrases": "225", "GoodParaphraseRate": "75",
+        "QuestionsWithNoGoodParaphrases": "17", "GoodOnlyQuestions": "83",
+        "GoodOnlyAurocPrefix": "0.621", "GoodOnlyPPrefix": "0.37",
+        "ParaphraseWordRetention": "74.1", "ZDropBenignTopTen": "1.86",
+        "ZDropBenignOutsideTopTen": "0.44", "AurocWithinBinsPrefix": "0.377",
+        "CohensDZDropPrefix": "0.39", "CohensDZDropNoprefix": "-0.42",
         # A bootstrap p of 0 is reported as a bound, never as 0.
-        "WorstPRankMaxVsSetDensity": "\\ensuremath{<}0.0001",
+        "WorstPRankMaxVsSetDensity": "\\ensuremath{\\le}0.0002",
+        # The reader-based drops of Signal 0 point the wrong way.
+        "DetectAurocPrefixSupportDropKThree": "0.142",
+        "DetectAurocNoprefixAnswerDisagreeKThree": "0.281",
         "WorstHolmPRankMaxVsRankMaxNoFocus": "1.0",
     }
     if f"WorstAuroc{camel(OPTIONAL_METHOD)}" in macros.values:
@@ -512,6 +587,9 @@ def self_check(macros, tables):
         f"{m['DetectAuprcPrefixSetDensity']} & {m['DetectTprPrefixSetDensity']}"
         f" & {m['DetectAurocNoprefixSetDensity']}"
     ) in tables["detection"]
+    # Table III's combined consistency is trained per kind; only the Kind 1
+    # model of Table IV matches the method, so it stays out of Table III.
+    assert "Combined consistency" not in tables["detection"]
     try:
         get({"path": "test.json", "data": {"a": {}}}, "a", "b")
     except SystemExit as error:
@@ -524,7 +602,8 @@ def self_check(macros, tables):
 def main():
     macros = Macros()
     tables = {}
-    for build in (robustness, detection, end_to_end, cost, paraphrase):
+    for build in (robustness, detection, end_to_end, cost, paraphrase,
+                  consistency):
         build(macros, tables)
     self_check(macros, tables)
 
