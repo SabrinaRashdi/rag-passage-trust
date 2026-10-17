@@ -1,48 +1,229 @@
-# PoisonedRAG
+# Passage Trust Scoring against PoisonedRAG
 
-Official repo of [USENIX Security 2025](https://www.usenix.org/conference/usenixsecurity25) paper: [PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models](https://arxiv.org/abs/2402.07867).
+This repository extends [PoisonedRAG](https://arxiv.org/abs/2402.07867) (Zou et al., USENIX Security 2025), a knowledge-corruption attack on retrieval-augmented generation (RAG), with two studies on the Natural Questions (NQ) setting:
 
-The first knowledge database corruption attack against Retrievals-Augmented Generation (RAG) system.
+- **[Passage Trust Scoring](#passage-trust-scoring)**: a defence that scores each retrieved passage for how likely it is to be poisoned, so that suspicious passages can be removed before the reader sees them.
+- **[Paraphrase Robustness](#paraphrase-robustness)**: a study of whether rewording a question changes what the retriever finds.
 
-## 🚀 News
-🎉 Jun 20, 2024: **PoisonedRAG gets accepted to [USENIX Security 2025](https://www.usenix.org/conference/usenixsecurity25)!**
+The attack code is from the [PoisonedRAG authors](#acknowledgement). Its original usage is described in [Original PoisonedRAG usage](#original-poisonedrag-usage).
 
-🔥 Apr 20, 2024: **If you have any question or need other code or data, feel free to open an issue or email us!**
+## Contents
+
+- [Key results](#key-results)
+- [Repository structure](#repository-structure)
+- [Installation](#installation)
+- [Passage Trust Scoring](#passage-trust-scoring)
+- [Paraphrase Robustness](#paraphrase-robustness)
+- [Original PoisonedRAG usage](#original-poisonedrag-usage)
+- [Acknowledgement](#acknowledgement)
+- [Citation](#citation)
+- [License](#license)
+
+## Key results
+
+**Passage Trust Scoring.** Detection is measured as the worst-case AUROC over six attack settings (see [Evaluation](#evaluation)).
+
+| Method | Worst-case AUROC | Mean AUROC |
+|---|---:|---:|
+| Relevance consistency under paraphrase (`z_drop`) | 0.389 | 0.518 |
+| Set density | 0.389 | 0.761 |
+| GPT-2 perplexity | 0.680 | 0.718 |
+| Reverse-question focus | 0.703 | 0.840 |
+| Reverse-question focus, set-relative | 0.774 | 0.902 |
+| Rank-max combination of baselines | 0.870 | 0.947 |
+| Rank-max combination with focus | 0.871 | 0.952 |
+| Rank-max combination with set-relative focus | 0.874 | 0.954 |
+
+- Relevance consistency under paraphrase does not detect poisoned passages; in the worst case it ranks them below chance.
+- The reverse-question signal is the strongest single signal in the worst case, but adds little on top of the rank-max combination of baselines.
+- Signals with high average scores can fail under adaptive attacks: set density has a mean AUROC of 0.761 but falls to 0.389 in the worst case.
+- With Qwen2.5-1.5B-Instruct as the reader, the attack succeeds on 96% of questions without a defence (prefix form). Filtering by set density lowers this to 8%, and filtering by retrieval score to 20%.
+
+**Paraphrase Robustness.** Rewording a question does not change top-10 retrieval significantly (Hit@10 difference −0.003, p = 1.00). Paraphrases find a relevant passage within the top 100 more often (+10 percentage points, p = 0.0016).
+
+## Repository structure
+
+```
+.
+├── *.py                     experiment scripts (described below)
+├── run_trust_pipeline.sh    runs the full trust-scoring pipeline
+├── requirements_trust.txt   Python dependencies for the extensions
+├── data_processed/          paraphrase inputs, embeddings and results
+│   └── trust/               trust-scoring features and results
+├── figures/                 result figures (PDF and PNG)
+├── src/                     retriever, attack and model code from PoisonedRAG
+├── model_configs/           LLM configurations for the original attack
+└── results/                 original PoisonedRAG retrieval and attack outputs
+```
+
+## Installation
+
+The extensions were tested with Python 3.14 on an Apple M2 (MPS); a CPU also works.
+
+```bash
+python3.14 -m venv .venv
+.venv/bin/pip install -r requirements_trust.txt
+.venv/bin/pip install sentence-transformers   # only for validate_paraphrases.py
+```
+
+All models are downloaded from Hugging Face on first use: `facebook/contriever`, `BeIR/query-gen-msmarco-t5-base-v1` (doc2query), GPT-2, `FacebookAI/roberta-large-mnli`, `deepset/roberta-base-squad2` and `Qwen/Qwen2.5-1.5B-Instruct`.
+
+## Passage Trust Scoring
+
+### Method
+
+The defence scores each passage in the candidate pool without knowing the attack text. It uses 100 NQ target questions, a pool of 9,872 passages and PoisonedRAG's black-box poisoned passages, in two forms: with the question prefix and without it. The signals are:
+
+| Signal | Idea |
+|---|---|
+| Relevance consistency (`z_drop`) | A poisoned passage should lose relevance when the question is paraphrased |
+| Reverse-question focus | doc2query generates the questions a passage answers; a poisoned passage should answer only the target question |
+| Retrieval score, set density, shortness | Properties of the retrieved set and the passage |
+| GPT-2 perplexity | Fluency of the passage text |
+| Reader support | Support score of an extractive reader for an answer in the passage |
+| Rank-max combination | Each signal is scored as the fraction of clean passages it exceeds, and the largest is taken |
+
+### Evaluation
+
+- **Detection:** AUROC, AUPRC and TPR at 5% FPR, with 10,000 bootstrap resamples over questions, paired bootstrap tests and Holm correction.
+- **Robustness:** the worst case over six settings: the two poisoned-passage forms, each with five and with one poisoned passage; a reworded attack, in which the attacker rewords the question prefix; and a diverse attack aimed at the reverse-question signal.
+- **End-to-end effect:** attack success rate and accuracy with an extractive reader (`deepset/roberta-base-squad2`) and with Qwen2.5-1.5B-Instruct (retrieve 10, read 5).
+- **Cost:** running time per question.
+
+### Running the pipeline
+
+`run_trust_pipeline.sh` runs every step in order from the files in `data_processed/`, and downloads the NQ qrels to `datasets/nq/qrels/test.tsv` if they are missing.
+
+```bash
+bash run_trust_pipeline.sh            # uses .venv/bin/python
+bash run_trust_pipeline.sh python3    # or another interpreter
+```
+
+| Step | Scripts |
+|---|---|
+| 1. Evaluation set and features | `build_trust_eval_set.py`, `generate_trust_embeddings.py`, `generate_answer_support.py`, `generate_perplexity.py`, `compute_trust_scores.py` |
+| 2. Detection | `evaluate_detection.py`, `evaluate_poison_count.py`, `analyse_failure_cases.py`, `analyse_why_consistency_fails.py` |
+| 3. Paraphrase quality | `check_paraphrases_nli.py`, `evaluate_paraphrase_quality.py`, `compare_paraphrase_checks.py` |
+| 4. End-to-end effect, reworded attack, combinations | `evaluate_end_to_end.py`, `evaluate_end_to_end_llm.py`, `evaluate_adaptive_attack.py`, `evaluate_combinations.py` |
+| 5. Reverse questions | `generate_reverse_questions.py`, `generate_pool_focus.py`, `evaluate_reverse_questions.py`, `analyse_reverse_questions.py`, `evaluate_reverse_end_to_end.py`, `evaluate_diverse_attack.py`, `evaluate_robustness.py` |
+| 6. Statistics and design-choice checks | `apply_holm_correction.py`, `evaluate_sensitivity.py` |
+| 7. Running time and figures | `measure_cost.py`, `make_figures.py` |
+
+Results are written to `data_processed/trust/` and figures to `figures/`.
+
+> **Warning:** do not run `make_paraphrase_review_files.py`. It overwrites the manual paraphrase reviews. The pipeline does not call it.
+
+### Reproducibility notes
+
+- Contriever always runs on the CPU, because Apple MPS produced wrong embeddings for some batches. The other models use MPS when it is available.
+- The trained combinations use `GroupKFold`, whose folds changed in scikit-learn 1.6. To reproduce the saved combination results exactly, install `scikit-learn<1.6` (1.5.2 was checked); newer versions shift some values slightly.
+- `measure_cost.py` reports wall-clock time, so its results depend on the machine.
+
+### Limitations
+
+- One dataset (NQ), one retriever (Contriever) and a small LLM reader.
+- Only the black-box attack is evaluated; the white-box HotFlip attack is not.
+
+## Paraphrase Robustness
+
+### Method
+
+Each of the 100 NQ target questions has three paraphrases (400 queries in total). Contriever retrieval for the original questions is compared with retrieval for their paraphrases over the same 9,872-passage candidate pool, to answer three questions:
+
+1. Do paraphrased queries find relevant passages more or less often than the original questions?
+2. How consistent is retrieval across different wordings of the same question?
+3. Are the differences statistically significant?
+
+**Paraphrase validation.** Each paraphrase was compared with its original question by cosine similarity using `sentence-transformers/all-MiniLM-L6-v2`. Paraphrases flagged in a first pass (threshold 0.80) were corrected. In the corrected set used for the experiment, 280 of 300 paraphrases pass the 0.75 threshold; the 20 flagged paraphrases come from 14 questions. A flag marks a paraphrase for closer reading, not as wrong.
+
+**Retrieval settings.**
+
+| Parameter | Value |
+|---|---|
+| Retrieval model | `facebook/contriever` |
+| Maximum sequence length | 512 tokens |
+| Embedding dimension | 768 |
+| Retrieval depth | Top 100 |
+| Similarity | Dot product |
+
+With these settings, the original-query results match the baseline in `data_processed/baseline_retrieval_metrics.json` on all seven metrics.
+
+**Metrics.** Relevance comes from the NQ qrels.
+
+- **Hit@k** (k = 1, 5, 10, 100): share of queries with at least one relevant passage in the top k.
+- **Recall@k** (k = 10, 100): mean share of a query's relevant passages found in the top k.
+- **MRR@10**: mean reciprocal rank of the first relevant passage in the top 10.
+
+### Running the experiment
+
+| Step | Script |
+|---|---|
+| 1. Generate paraphrases | `generate_reworded_questions.py` |
+| 2. Score paraphrase similarity | `validate_paraphrases.py` |
+| 3. Rebuild the candidate pool from the NQ corpus | `reconstruct_candidate_passages.py` |
+| 4. Encode passages and queries | `generate_passage_embeddings.py`, `generate_query_embeddings.py` |
+| 5. Retrieve for all 400 queries | `run_paraphrase_retrieval.py` |
+| 6. Compute retrieval metrics | `evaluate_experiment_retrieval.py` |
+| 7. Paired differences and significance tests | `evaluate_paraphrase_robustness.py`, `evaluate_paraphrase_significance.py` |
+
+Step 3 needs the NQ corpus at `datasets/nq/corpus.jsonl` (see [Dataset](#dataset)). `validate_paraphrases.py` reads the generated paraphrases; the corrected set is in `data_processed/nq_reworded_questions_corrected.json` and its validation in `data_processed/corrected_paraphrase_validation.csv`.
+
+### Results
+
+| Metric | Original queries (100) | Paraphrased queries (300) |
+|---|---:|---:|
+| Hit@1 | 0.0600 | 0.0567 |
+| Hit@5 | 0.1800 | 0.1900 |
+| Hit@10 | 0.3100 | 0.3067 |
+| Hit@100 | 0.7900 | 0.8900 |
+| Recall@10 | 0.2783 | 0.2833 |
+| Recall@100 | 0.7667 | 0.8700 |
+| MRR@10 | 0.1142 | 0.1188 |
+
+For the paired comparison, each original question is matched with the mean score of its three paraphrases (difference = paraphrase mean − original). Significance uses a paired permutation test and a 95% bootstrap confidence interval.
+
+| Metric | Improved | Worsened | Unchanged | Mean difference | p-value | 95% CI | Significant (p < 0.05) |
+|---|---:|---:|---:|---:|---:|---|---|
+| Hit@10 | 17 | 16 | 67 | −0.0033 | 1.0000 | [−0.0900, 0.0833] | No |
+| Hit@100 | 15 | 2 | 83 | +0.1000 | 0.0016 | [0.0400, 0.1633] | Yes |
+| MRR@10 | 24 | 22 | 54 | +0.0047 | 0.8110 | [−0.0311, 0.0425] | No |
+
+Rewording mainly changes where relevant passages rank, rather than making retrieval better or worse overall. Because some paraphrases may not keep the exact meaning of the question, the Hit@100 gain should not be read as a general benefit of paraphrasing.
+
+### Limitations
+
+- 100 questions and 300 paraphrases limit statistical power.
+- Embedding similarity does not guarantee that a paraphrase keeps the meaning, and not every paraphrase was checked by hand.
+- Only retrieval is measured, not answer quality.
+- Retrieval runs over the 9,872-passage candidate pool, not the full NQ corpus.
+- The configuration that produced the baseline metrics was not independently confirmed.
+
+## Original PoisonedRAG usage
 
 ![Illustration of PoisonedRAG](PoisonedRAG.png "Illustration of PoisonedRAG")
 
-## 🔍 Quick Usage
-
-### 📃 Setup environment
+### Setup
 
 ```bash
 conda create -n PoisonedRAG python=3.10
-```
-```bash
 conda activate PoisonedRAG
-```
-```bash
 pip install beir openai google-generativeai
 pip install torch==1.13.0+cu117 torchvision==0.14.0+cu117 torchaudio==0.13.0 --extra-index-url https://download.pytorch.org/whl/cu117
 pip install --upgrade charset-normalizer
 pip3 install "fschat[model_worker,webui]"
 ```
 
-### 💽 Dataset (optional, suggested)
+### Dataset
 
-When running our code, the datasets will be automatically downloaded and saved in `datasets`. You could also run this line to manually download datasets.
+Datasets are downloaded to `datasets/` on first use. To download them in advance:
 
 ```bash
 python prepare_dataset.py
 ```
 
-### 🔑 Set API key
+### API keys
 
-If you want to use PaLM 2, GPT-3.5, GPT-4 or LLaMA-2, please enter your api key in **model_configs** folder.
-
-For LLaMA-2, the api key is your **HuggingFace Access Tokens**. You could visit [LLaMA-2's HuggingFace Page](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf) first if you don't have the access token.
-
-Here is an example:
+To use PaLM 2, GPT-3.5, GPT-4 or LLaMA-2, add the API key to the matching file in `model_configs/`. For LLaMA-2 the key is a Hugging Face access token (request access on the [LLaMA-2 model page](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf)).
 
 ```json
 "api_key_info":{
@@ -53,11 +234,9 @@ Here is an example:
 },
 ```
 
-### 📝 Reproduce our results
- 
-There are some hyperparameters in **run.py** such as LLMs and datasets:
+### Reproducing the paper's results
 
-**Note:** Currently we provide default setting for main results in our [paper](https://arxiv.org/abs/2402.07867). We will update and complete other settings later.
+`run.py` sets the LLM, dataset and attack settings; the defaults reproduce the paper's main results.
 
 ```python
 test_params = {
@@ -85,292 +264,20 @@ test_params = {
 }
 ```
 
-Execute **run.py** to reproduce experiments.
-
 ```bash
 python run.py
 ```
 
-### 🐱 Your own dataset
-If you want to perform experiments on your own dataset, you could refer to **evaluate_beir.py**, prepare your dataset as the beir format and use this file to compute the retrieval scores.
-
-
-## 🔬 Paraphrase Robustness Experiment (Project Extension)
-
-### Overview
-
-This project extends the original PoisonedRAG repository by investigating the robustness of retrieval performance under query paraphrasing.
-
-The experiment examines whether semantically equivalent reformulations of a question produce consistent retrieval results. We compare retrieval performance between original questions and their paraphrased versions.
-
-### Research Objectives
-
-The experiment aims to investigate:
-
-1. Whether paraphrased queries improve or reduce retrieval performance compared with original questions.
-2. How consistently a retrieval system performs across different formulations of the same question.
-3. Whether observed retrieval performance differences are statistically significant.
-
-### Dataset and Query Preparation
-
-The experiment uses 100 original questions from the Natural Questions (NQ) dataset.
-
-Three paraphrased versions were prepared for each original question.
-
-| Component | Count |
-|---|---:|
-| Original questions | 100 |
-| Paraphrases per question | 3 |
-| Total paraphrases | 300 |
-| Total experiment queries | 400 |
-
-Paraphrase similarity was evaluated using the `sentence-transformers/all-MiniLM-L6-v2` model.
-
-Cosine similarity was calculated between each original question and its paraphrased versions to identify potentially inconsistent reformulations.
-
-Paraphrases with low similarity scores were flagged for review. Corrections were subsequently made to address identified semantic inconsistencies.
-
-The corrected paraphrase dataset was used in the final experiment.
-
-
-### Paraphrase Validation
-
-Semantic similarity was assessed using `sentence-transformers/all-MiniLM-L6-v2`. Cosine similarity was calculated between each original question and its paraphrased versions to identify potentially inconsistent reformulations.
-
-#### Initial Validation
-
-The initial validation used a similarity threshold of **0.80**.
-
-| Validation Result | Count |
-|---|---:|
-| Total paraphrases | 300 |
-| Automatic passes (≥ 0.80) | 212 |
-| Flagged for review (< 0.80) | 88 |
-
-#### Corrected Paraphrase Validation
-
-Following corrections to the paraphrases, the corrected validation dataset was assessed using a similarity threshold of **0.75**.
-
-| Validation Result | Count |
-|---|---:|
-| Total paraphrases | 300 |
-| Automatic passes (≥ 0.75) | 280 |
-| Flagged for review (< 0.75) | 20 |
-
-The 20 flagged paraphrases correspond to 14 original questions.
-
-Of these:
-
-- 11 flagged paraphrases belong to the eight question IDs listed in the final review summary.
-- 9 flagged paraphrases belong to six additional question IDs not included in the documented review list.
-
-#### Final Validation Summary
-
-The final operational similarity threshold was set to **0.75**.
-
-An earlier summary reported 289 automatic passes and 11 manually accepted paraphrases. However, these figures are inconsistent with the corrected validation CSV and have been superseded by the verified counts of 280 automatic passes and 20 flagged paraphrases.
-
-A `REVIEW` status indicates that the paraphrase requires further semantic inspection rather than automatically indicating an incorrect paraphrase.
-
-Although the existing summary identifies eight question IDs associated with manual review, independent evidence confirming acceptance of all flagged paraphrases is unavailable. Therefore, the remaining flagged cases are not represented as automatically or manually validated.
-
-A complete manual semantic audit of all 300 paraphrases was not performed.
-
-#### Reproducibility Notes
-
-- The initial validation results are stored in `data_processed/paraphrase_validation.csv`.
-- The corrected validation results are stored in `data_processed/corrected_paraphrase_validation.csv`.
-- The updated summary is stored in `data_processed/final_paraphrase_summary.json`.
-- The original summary is preserved in `data_processed/final_paraphrase_summary_original.json`.
-- The validation script, `validate_paraphrases.py`, uses a configurable similarity threshold of 0.75, but reads the original generated paraphrases rather than the corrected dataset.
-- The corrected paraphrases were used for the retrieval robustness experiment.
-
-These distinctions ensure that the original validation, corrected validation, and documented review stages are not incorrectly treated as identical.
-
-
-
-### Embedding Generation and Validation
-
-Query and passage embeddings were generated using the `facebook/contriever` model.
-
-The final embedding configuration was:
-
-| Parameter | Value |
-|---|---|
-| Retrieval model | `facebook/contriever` |
-| Maximum sequence length | 512 tokens |
-| Batch size | 8 |
-| Embedding dimension | 768 |
-| Candidate passages | 9,872 |
-| Original questions | 100 |
-| Paraphrased questions | 300 |
-| Total experiment queries | 400 |
-| Retrieval depth | Top 100 |
-| Similarity scoring | Dot product |
-
-Both passage and query embeddings were regenerated using `MAX_LENGTH = 512`.
-
-The previous experiment used a maximum sequence length of 128 tokens. Increasing this limit to 512 improved original-query Hit@10 from 25% to 31%, matching the historical baseline result.
-
-The original-query retrieval metrics also matched the historical baseline across all seven reported metrics, within rounding. This supports the hypothesis that passage truncation contributed to the earlier discrepancy, although the historical baseline configuration has not been independently verified.
-
-The final embedding validation confirmed:
-
-| Validation Check | Result |
-|---|---|
-| Total experiment queries | 400 |
-| Query embedding shape | (400, 768) |
-| Passage embedding shape | (9872, 768) |
-| Query IDs match embedding IDs | True |
-| Query ID ordering matches | True |
-| Duplicate query IDs | 0 |
-| NaN values | None |
-| Infinite values | None |
-
-All 300 paraphrases in the experiment query file matched the corrected paraphrase dataset.
-
-These checks establish structural consistency between the query dataset, candidate passages, and embedding metadata.
-
-### Retrieval Evaluation
-
-Retrieval performance was evaluated using the Natural Questions relevance judgments (`datasets/nq/qrels/test.tsv`).
-
-The evaluation used the same restricted candidate pool of 9,872 passages for both original and paraphrased queries.
-
-The following metrics were calculated:
-
-- **Hit@1:** Proportion of queries retrieving at least one relevant passage in the top 1 result.
-- **Hit@5:** Proportion of queries retrieving at least one relevant passage in the top 5 results.
-- **Hit@10:** Proportion of queries retrieving at least one relevant passage in the top 10 results.
-- **Hit@100:** Proportion of queries retrieving at least one relevant passage in the top 100 results.
-- **Recall@10:** Mean proportion of relevant passages retrieved within the top 10 results.
-- **Recall@100:** Mean proportion of relevant passages retrieved within the top 100 results.
-- **MRR@10:** Mean Reciprocal Rank of the first relevant passage within the top 10 results.
-
-#### Retrieval Performance
-
-| Metric | Original Queries (100) | Paraphrased Queries (300) |
-|---|---:|---:|
-| Hit@1 | 0.0600 | 0.0567 |
-| Hit@5 | 0.1800 | 0.1900 |
-| Hit@10 | 0.3100 | 0.3067 |
-| Hit@100 | 0.7900 | 0.8900 |
-| Recall@10 | 0.2783 | 0.2833 |
-| Recall@100 | 0.7667 | 0.8700 |
-| MRR@10 | 0.1142 | 0.1188 |
-
-The original questions achieved a Hit@10 of 31.00%, compared with 30.67% for paraphrased questions.
-
-Paraphrased questions achieved higher Hit@100 and Recall@100, although improvements were not consistent across all retrieval metrics.
-
-### Experimental Results
-
-The experiment compared retrieval performance for 100 original questions against the mean performance of their three paraphrases.
-
-For each original question, the paired difference was calculated as:
-
-`Mean Difference = Mean Paraphrase Score - Original Question Score`
-
-| Metric | Improved | Worsened | Unchanged | Mean Difference |
-|---|---:|---:|---:|---:|
-| Hit@10 | 17 | 16 | 67 | -0.0033 |
-| Hit@100 | 15 | 2 | 83 | +0.1000 |
-| MRR@10 | 24 | 22 | 54 | +0.0047 |
-
-Hit@10 showed a small negative average difference, indicating that paraphrasing did not improve top-10 retrieval performance overall.
-
-Hit@100 showed a positive average difference of 0.1000, corresponding to an improvement of 10 percentage points.
-
-Most questions showed unchanged retrieval performance, particularly for Hit@100.
-
-### Statistical Significance Testing
-
-Paired statistical significance testing was conducted across the 100 original questions.
-
-Each original question was paired with the mean retrieval performance of its three paraphrases.
-
-The analysis used:
-
-- Paired permutation testing.
-- Bootstrap confidence intervals.
-- A significance threshold of 0.05.
-
-| Metric | Mean Difference | Permutation p-value | 95% Bootstrap CI | Significant (p < 0.05) |
-|---|---:|---:|---|---|
-| Hit@10 | -0.0033 | 1.0000 | [-0.0900, 0.0833] | No |
-| Hit@100 | +0.1000 | 0.0016 | [0.0400, 0.1633] | Yes |
-| MRR@10 | +0.0047 | 0.8110 | [-0.0311, 0.0425] | No |
-
-The Hit@10 and MRR@10 differences were not statistically significant at the 0.05 level.
-
-However, the Hit@100 improvement was statistically significant (p = 0.0016), suggesting that paraphrased queries retrieved relevant passages within the top 100 more frequently in this experiment.
-
-This result should not be interpreted as evidence that paraphrasing consistently improves retrieval quality, particularly because some paraphrases may not fully preserve the meaning of the original questions.
-
-### Limitations
-
-The experiment has several limitations:
-
-1. **Dataset size:** Only 100 original questions and 300 paraphrases were evaluated, limiting statistical power and generalisability.
-2. **Semantic similarity:** Embedding-based similarity scores do not guarantee semantic equivalence between original questions and paraphrases.
-3. **Manual validation:** A complete manual semantic audit of all 300 paraphrases was not performed as part of the original validation process. Subsequent manual review identified cases requiring further correction.
-4. **Retrieval-only evaluation:** The experiment evaluates passage retrieval rather than final generated answer quality.
-5. **Restricted candidate pool:** Retrieval was evaluated over 9,872 candidate passages rather than the complete Natural Questions corpus.
-6. **Historical baseline provenance:** Although the 512-token results reproduce the historical baseline metrics, the original baseline retrieval configuration has not been independently verified.
-7. **Model and dataset dependence:** Results may vary across retrieval models, datasets, and embedding configurations.
-
-### Reproducibility
-
-The following scripts support the paraphrase robustness experiment.
-
-| Script | Description |
-|---|---|
-| `generate_reworded_questions.py` | Generate paraphrased questions |
-| `validate_paraphrases.py` | Evaluate paraphrase semantic similarity |
-| `reconstruct_candidate_passages.py` | Reconstruct the 9,872 candidate passages from their IDs and the NQ corpus |
-| `generate_passage_embeddings.py` | Generate passage embeddings using Contriever |
-| `generate_query_embeddings.py` | Generate query embeddings using Contriever |
-| `run_paraphrase_retrieval.py` | Execute paraphrase retrieval experiments |
-| `evaluate_experiment_retrieval.py` | Calculate Hit@K, Recall@K, and MRR@10 |
-| `evaluate_paraphrase_robustness.py` | Calculate paired retrieval performance differences |
-| `evaluate_paraphrase_significance.py` | Perform statistical significance testing |
-
-Experimental datasets, embedding metadata, validation reports, and evaluation results are stored in `data_processed/`.
-
-The final retrieval experiment uses a maximum sequence length of 512 tokens for both passage and query embeddings.
-
-### Conclusion
-
-This experiment demonstrates that retrieval performance can vary across different formulations of the same question.
-
-Using 512-token Contriever embeddings, original questions achieved a Hit@10 of 31.00%, while paraphrased questions achieved 30.67%. The difference was not statistically significant.
-
-Paraphrased questions achieved a higher Hit@100 of 89.00%, compared with 79.00% for original questions. This improvement was statistically significant (p = 0.0016).
-
-MRR@10 differences were also not statistically significant.
-
-These findings indicate that paraphrasing can affect retrieval rankings and the depth at which relevant passages are found. However, improvements are metric-dependent, and semantic inconsistencies in paraphrases remain a potential confounding factor.
-
-The experiment highlights the importance of evaluating retrieval robustness across multiple query formulations rather than relying exclusively on original question wording.
-
-This extension focuses on query paraphrase robustness and should be distinguished from the original PoisonedRAG knowledge corruption attack evaluation.
-
----
-
-
+To use another dataset, convert it to the BEIR format and compute retrieval scores with `evaluate_beir.py`.
 
 ## Acknowledgement
 
-* Our code used the implementation of [corpus-poisoning](https://github.com/princeton-nlp/corpus-poisoning).
-* The model part of our code is from [Open-Prompt-Injection](https://github.com/liu00222/Open-Prompt-Injection).
-* Our code used [beir](https://github.com/beir-cellar/beir) benchmark.
-* Our code used [contriever](https://github.com/facebookresearch/contriever) for retrieval augmented generation (RAG).
-
-
+- The attack code is from [PoisonedRAG](https://github.com/sleeepeer/PoisonedRAG) by Zou, Geng, Wang and Jia.
+- PoisonedRAG builds on [corpus-poisoning](https://github.com/princeton-nlp/corpus-poisoning), takes its model wrappers from [Open-Prompt-Injection](https://github.com/liu00222/Open-Prompt-Injection), and uses the [BEIR](https://github.com/beir-cellar/beir) benchmark and [Contriever](https://github.com/facebookresearch/contriever) for retrieval.
 
 ## Citation
 
-If you use this code, please cite the following [paper](https://arxiv.org/abs/2402.07867):
+If you use this code, please cite the PoisonedRAG [paper](https://arxiv.org/abs/2402.07867):
 
 ```bib
 @inproceedings{zou2025poisonedrag,
@@ -382,3 +289,6 @@ If you use this code, please cite the following [paper](https://arxiv.org/abs/24
 }
 ```
 
+## License
+
+Released under the MIT License; see [LICENSE](LICENSE).
