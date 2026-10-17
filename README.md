@@ -149,6 +149,8 @@ Results are written to `data_processed/trust/` and figures to `figures/`. `measu
 
 `make_figures.py` writes each figure to `figures/<name>.pdf` (and a PNG); `report/figures/` holds copies of those PDFs. Unless noted, inputs are in `data_processed/trust/`.
 
+The top-30 variant (`question_focus_relative_top30`) comes from `generate_pool_focus.py`, which writes `pool_reverse_questions.csv` and `pool_question_focus.csv`. `evaluate_robustness.py` and `evaluate_reverse_end_to_end.py` add its rows to `robustness_results.json` and `reverse_end_to_end_results.json`, so it reaches `report/numbers.tex` and `report/tables/` through those files.
+
 | Report file | Made by | Input |
 |---|---|---|
 | `report/numbers.tex` | `make_report_numbers.py` | `robustness_results.json`, `holm_corrected_pvalues.json`, `detection_results.json`, `reverse_end_to_end_results.json`, `cost_results.json`, and `data_processed/experiment_retrieval_metrics.json`, `data_processed/baseline_retrieval_metrics.json`, `data_processed/paraphrase_significance_results.json` |
