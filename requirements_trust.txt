@@ -1,0 +1,14 @@
+# Packages for the trust-scoring experiments (run_trust_pipeline.sh).
+# Tested with Python 3.14 on an Apple M2 (MPS); a CPU also works.
+huggingface_hub==2.2.0
+matplotlib==3.10.8
+numpy==2.4.4
+protobuf==7.36.2
+safetensors==0.8.0
+scikit-learn==1.8.0
+scipy==1.17.1
+sentencepiece==0.2.2
+tokenizers==0.23.3
+torch==2.11.0
+tqdm==4.67.3
+transformers==5.19.0

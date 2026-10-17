@@ -1,0 +1,589 @@
+{
+  "alpha": 0.05,
+  "smallest_p": {
+    "detection": 0.001998001998001998,
+    "combinations": 0.001998001998001998,
+    "paraphrase_quality": 0.001998001998001998,
+    "reverse_questions": 0.001998001998001998,
+    "robustness": 0.00019998000199980003
+  },
+  "families": {
+    "detection": [
+      {
+        "test": "prefix/all_benign/comparisons/z_drop_k3 - retrieval_score",
+        "difference": -0.35441843317972355,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03196803196803197,
+        "significant": true
+      },
+      {
+        "test": "prefix/all_benign/comparisons/combined_consistency - retrieval_score",
+        "difference": -0.09610691244239633,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03196803196803197,
+        "significant": true
+      },
+      {
+        "test": "prefix/all_benign/comparisons/combined_with_retrieval - retrieval_score",
+        "difference": 0.008038709677419265,
+        "p_value": 0.034,
+        "p_holm": 0.136,
+        "significant": false
+      },
+      {
+        "test": "prefix/all_benign/comparisons/combined_consistency - z_drop_k3",
+        "difference": 0.2583115207373272,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03196803196803197,
+        "significant": true
+      },
+      {
+        "test": "prefix/gold_only/comparisons/z_drop_k3 - retrieval_score",
+        "difference": -0.2870169491525424,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03196803196803197,
+        "significant": true
+      },
+      {
+        "test": "prefix/gold_only/comparisons/combined_consistency - retrieval_score",
+        "difference": -0.14710169491525416,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03196803196803197,
+        "significant": true
+      },
+      {
+        "test": "prefix/gold_only/comparisons/combined_with_retrieval - retrieval_score",
+        "difference": 0.0003389830508474523,
+        "p_value": 0.92,
+        "p_holm": 1.0,
+        "significant": false
+      },
+      {
+        "test": "prefix/gold_only/comparisons/combined_consistency - z_drop_k3",
+        "difference": 0.13991525423728823,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03196803196803197,
+        "significant": true
+      },
+      {
+        "test": "noprefix/all_benign/comparisons/z_drop_k3 - retrieval_score",
+        "difference": -0.1826995391705069,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03196803196803197,
+        "significant": true
+      },
+      {
+        "test": "noprefix/all_benign/comparisons/combined_consistency - retrieval_score",
+        "difference": 0.18435115207373276,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03196803196803197,
+        "significant": true
+      },
+      {
+        "test": "noprefix/all_benign/comparisons/combined_with_retrieval - retrieval_score",
+        "difference": 0.18545714285714288,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03196803196803197,
+        "significant": true
+      },
+      {
+        "test": "noprefix/all_benign/comparisons/combined_consistency - z_drop_k3",
+        "difference": 0.36705069124423967,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03196803196803197,
+        "significant": true
+      },
+      {
+        "test": "noprefix/gold_only/comparisons/z_drop_k3 - retrieval_score",
+        "difference": -0.2446779661016949,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03196803196803197,
+        "significant": true
+      },
+      {
+        "test": "noprefix/gold_only/comparisons/combined_consistency - retrieval_score",
+        "difference": -0.05747457627118646,
+        "p_value": 0.13,
+        "p_holm": 0.39,
+        "significant": false
+      },
+      {
+        "test": "noprefix/gold_only/comparisons/combined_with_retrieval - retrieval_score",
+        "difference": 0.010050847457627077,
+        "p_value": 0.712,
+        "p_holm": 1.0,
+        "significant": false
+      },
+      {
+        "test": "noprefix/gold_only/comparisons/combined_consistency - z_drop_k3",
+        "difference": 0.18720338983050844,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03196803196803197,
+        "significant": true
+      }
+    ],
+    "combinations": [
+      {
+        "test": "main/prefix/comparisons/ours+all_three - all_three_without_ours",
+        "difference": 0.003080184331797242,
+        "p_value": 0.004,
+        "p_holm": 0.024,
+        "significant": true
+      },
+      {
+        "test": "main/prefix/comparisons/ours+set_density - set_density",
+        "difference": 0.007270046082949233,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.017982017982017984,
+        "significant": true
+      },
+      {
+        "test": "main/prefix/comparisons/ours+retrieval - retrieval_score",
+        "difference": 0.008038709677419265,
+        "p_value": 0.038,
+        "p_holm": 0.152,
+        "significant": false
+      },
+      {
+        "test": "main/noprefix/comparisons/ours+all_three - all_three_without_ours",
+        "difference": 0.0021400921658986105,
+        "p_value": 0.098,
+        "p_holm": 0.28200000000000003,
+        "significant": false
+      },
+      {
+        "test": "main/noprefix/comparisons/ours+set_density - set_density",
+        "difference": 0.008110599078340996,
+        "p_value": 0.014,
+        "p_holm": 0.07,
+        "significant": false
+      },
+      {
+        "test": "main/noprefix/comparisons/ours+retrieval - retrieval_score",
+        "difference": 0.18545714285714288,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.017982017982017984,
+        "significant": true
+      },
+      {
+        "test": "reworded_trained_on_kind1/comparisons/ours+all_three - all_three_without_ours",
+        "difference": -0.004278341013824849,
+        "p_value": 0.094,
+        "p_holm": 0.28200000000000003,
+        "significant": false
+      },
+      {
+        "test": "reworded_trained_on_kind1/comparisons/ours+set_density - set_density",
+        "difference": -0.02177695852534567,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.017982017982017984,
+        "significant": true
+      },
+      {
+        "test": "reworded_trained_on_kind1/comparisons/ours+retrieval - retrieval_score",
+        "difference": -0.013225806451612976,
+        "p_value": 0.096,
+        "p_holm": 0.28200000000000003,
+        "significant": false
+      }
+    ],
+    "paraphrase_quality": [
+      {
+        "test": "prefix/good_only_vs_all_three",
+        "difference": 0.002569217266416679,
+        "p_value": 0.366,
+        "p_holm": 1.0,
+        "significant": false
+      },
+      {
+        "test": "prefix/good_vs_bad_same_questions",
+        "difference": 0.032884399551066146,
+        "p_value": 0.442,
+        "p_holm": 1.0,
+        "significant": false
+      },
+      {
+        "test": "noprefix/good_only_vs_all_three",
+        "difference": -0.0023404877789303113,
+        "p_value": 0.416,
+        "p_holm": 1.0,
+        "significant": false
+      },
+      {
+        "test": "noprefix/good_vs_bad_same_questions",
+        "difference": -0.033389450056116654,
+        "p_value": 0.354,
+        "p_holm": 1.0,
+        "significant": false
+      }
+    ],
+    "reverse_questions": [
+      {
+        "test": "prefix/comparisons/question_focus - z_drop",
+        "difference": 0.3040018433179723,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03596403596403597,
+        "significant": true
+      },
+      {
+        "test": "prefix/comparisons/question_focus - retrieval_score",
+        "difference": -0.05041658986175124,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03596403596403597,
+        "significant": true
+      },
+      {
+        "test": "prefix/comparisons/question_sameness - retrieval_score",
+        "difference": -0.15229861751152074,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03596403596403597,
+        "significant": true
+      },
+      {
+        "test": "prefix/comparisons/retrieval+both - retrieval_score",
+        "difference": 0.01230230414746536,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03596403596403597,
+        "significant": true
+      },
+      {
+        "test": "prefix/comparisons/set_density+both - set_density",
+        "difference": 0.0036110599078340577,
+        "p_value": 0.026,
+        "p_holm": 0.182,
+        "significant": false
+      },
+      {
+        "test": "prefix/comparisons/three_baselines+both - three_baselines",
+        "difference": 0.0008442396313363965,
+        "p_value": 0.106,
+        "p_holm": 0.636,
+        "significant": false
+      },
+      {
+        "test": "noprefix/comparisons/question_focus - z_drop",
+        "difference": 0.31505437788018437,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03596403596403597,
+        "significant": true
+      },
+      {
+        "test": "noprefix/comparisons/question_focus - retrieval_score",
+        "difference": 0.13235483870967746,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03596403596403597,
+        "significant": true
+      },
+      {
+        "test": "noprefix/comparisons/question_sameness - retrieval_score",
+        "difference": 0.015123502304147496,
+        "p_value": 0.622,
+        "p_holm": 1.0,
+        "significant": false
+      },
+      {
+        "test": "noprefix/comparisons/retrieval+both - retrieval_score",
+        "difference": 0.1397170506912443,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03596403596403597,
+        "significant": true
+      },
+      {
+        "test": "noprefix/comparisons/set_density+both - set_density",
+        "difference": -1.8433179723720272e-06,
+        "p_value": 0.952,
+        "p_holm": 1.0,
+        "significant": false
+      },
+      {
+        "test": "noprefix/comparisons/three_baselines+both - three_baselines",
+        "difference": 0.00023225806451609987,
+        "p_value": 0.756,
+        "p_holm": 1.0,
+        "significant": false
+      },
+      {
+        "test": "reworded/comparisons/question_focus - z_drop",
+        "difference": 0.4309695852534562,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03596403596403597,
+        "significant": true
+      },
+      {
+        "test": "reworded/comparisons/question_focus - retrieval_score",
+        "difference": -0.06151152073732724,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03596403596403597,
+        "significant": true
+      },
+      {
+        "test": "reworded/comparisons/question_sameness - retrieval_score",
+        "difference": -0.17697327188940093,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03596403596403597,
+        "significant": true
+      },
+      {
+        "test": "reworded/comparisons/retrieval+both - retrieval_score",
+        "difference": 0.02656405529953909,
+        "p_value": 0.001998001998001998,
+        "p_holm": 0.03596403596403597,
+        "significant": true
+      },
+      {
+        "test": "reworded/comparisons/set_density+both - set_density",
+        "difference": 0.0019907834101382527,
+        "p_value": 0.188,
+        "p_holm": 0.94,
+        "significant": false
+      },
+      {
+        "test": "reworded/comparisons/three_baselines+both - three_baselines",
+        "difference": -0.00023041474654383887,
+        "p_value": 0.656,
+        "p_holm": 1.0,
+        "significant": false
+      }
+    ],
+    "robustness": [
+      {
+        "test": "comparisons/rank_mean - retrieval_score (worst AUROC)",
+        "difference": 0.15257534562211983,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "comparisons/rank_mean - set_density (worst AUROC)",
+        "difference": 0.3332023041474655,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "comparisons/rank_mean - shortness (worst AUROC)",
+        "difference": 0.09653502304147465,
+        "p_value": 0.0002,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "comparisons/rank_mean - perplexity (worst AUROC)",
+        "difference": 0.04224193548387101,
+        "p_value": 0.0738,
+        "p_holm": 0.6642,
+        "significant": false
+      },
+      {
+        "test": "comparisons/rank_mean - reader_support (worst AUROC)",
+        "difference": 0.19511382488479267,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "comparisons/rank_mean - question_focus (worst AUROC)",
+        "difference": 0.01979953917050692,
+        "p_value": 0.2264,
+        "p_holm": 1.0,
+        "significant": false
+      },
+      {
+        "test": "comparisons/rank_mean - rank_mean_no_focus (worst AUROC)",
+        "difference": 0.035648847926267435,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "comparisons/rank_max - retrieval_score (worst AUROC)",
+        "difference": 0.3009467741935484,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "comparisons/rank_max - set_density (worst AUROC)",
+        "difference": 0.4815737327188941,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "comparisons/rank_max - shortness (worst AUROC)",
+        "difference": 0.24490645161290325,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "comparisons/rank_max - perplexity (worst AUROC)",
+        "difference": 0.1906133640552996,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "comparisons/rank_max - reader_support (worst AUROC)",
+        "difference": 0.3434852534562213,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "comparisons/rank_max - question_focus (worst AUROC)",
+        "difference": 0.16817096774193552,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "comparisons/rank_max - rank_max_no_focus (worst AUROC)",
+        "difference": 0.0007488479262675041,
+        "p_value": 0.9312,
+        "p_holm": 1.0,
+        "significant": false
+      },
+      {
+        "test": "comparisons/question_focus_relative - retrieval_score (worst AUROC)",
+        "difference": 0.2035762672811059,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "comparisons/question_focus_relative - set_density (worst AUROC)",
+        "difference": 0.38420322580645155,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "comparisons/question_focus_relative - shortness (worst AUROC)",
+        "difference": 0.14753594470046072,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "comparisons/question_focus_relative - perplexity (worst AUROC)",
+        "difference": 0.09324285714285707,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "comparisons/question_focus_relative - reader_support (worst AUROC)",
+        "difference": 0.24611474654377874,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "comparisons/question_focus_relative - question_focus (worst AUROC)",
+        "difference": 0.07080046082949298,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "comparisons/rank_max_relative - rank_max (worst AUROC)",
+        "difference": 0.0028396313364055237,
+        "p_value": 0.6102,
+        "p_holm": 1.0,
+        "significant": false
+      },
+      {
+        "test": "comparisons/rank_mean_relative - rank_mean (worst AUROC)",
+        "difference": 0.037923041474654307,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "setting_comparisons/kind1/question_focus_relative - question_focus",
+        "difference": 0.05350967741935486,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "setting_comparisons/kind1/rank_max_relative - rank_max",
+        "difference": 0.0009539170506912553,
+        "p_value": 0.529,
+        "p_holm": 1.0,
+        "significant": false
+      },
+      {
+        "test": "setting_comparisons/kind2/question_focus_relative - question_focus",
+        "difference": 0.0805972350230415,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "setting_comparisons/kind2/rank_max_relative - rank_max",
+        "difference": 0.0011382488479263486,
+        "p_value": 0.633,
+        "p_holm": 1.0,
+        "significant": false
+      },
+      {
+        "test": "setting_comparisons/kind1_one_poisoned/question_focus_relative - question_focus",
+        "difference": 0.04388248847926257,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "setting_comparisons/kind1_one_poisoned/rank_max_relative - rank_max",
+        "difference": 0.005169124423963001,
+        "p_value": 0.2992,
+        "p_holm": 1.0,
+        "significant": false
+      },
+      {
+        "test": "setting_comparisons/kind2_one_poisoned/question_focus_relative - question_focus",
+        "difference": 0.07080046082949298,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "setting_comparisons/kind2_one_poisoned/rank_max_relative - rank_max",
+        "difference": 0.0028396313364055237,
+        "p_value": 0.6102,
+        "p_holm": 1.0,
+        "significant": false
+      },
+      {
+        "test": "setting_comparisons/reworded/question_focus_relative - question_focus",
+        "difference": 0.07007373271889406,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "setting_comparisons/reworded/rank_max_relative - rank_max",
+        "difference": 0.0030267281105991195,
+        "p_value": 0.0762,
+        "p_holm": 0.6642,
+        "significant": false
+      },
+      {
+        "test": "setting_comparisons/diverse/question_focus_relative - question_focus",
+        "difference": 0.05694930875576032,
+        "p_value": 0.00019998000199980003,
+        "p_holm": 0.006799320067993201,
+        "significant": true
+      },
+      {
+        "test": "setting_comparisons/diverse/rank_max_relative - rank_max",
+        "difference": -0.004002764976958506,
+        "p_value": 0.063,
+        "p_holm": 0.63,
+        "significant": false
+      }
+    ]
+  }
+}

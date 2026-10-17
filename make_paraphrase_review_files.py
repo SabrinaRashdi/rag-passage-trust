@@ -79,6 +79,13 @@ def main():
 
         output_path = DATA_DIR / f"paraphrase_manual_review_{reviewer}.csv"
 
+        # Never replace a review that has already been filled in.
+        if output_path.exists():
+            with output_path.open(encoding="utf-8-sig") as f:
+                if any(row["same_meaning"].strip()
+                       for row in csv.DictReader(f)):
+                    raise SystemExit(f"{output_path} is already filled in")
+
         with output_path.open("w", newline="", encoding="utf-8") as f:
             writer = csv.DictWriter(f, fieldnames=FIELDS)
             writer.writeheader()

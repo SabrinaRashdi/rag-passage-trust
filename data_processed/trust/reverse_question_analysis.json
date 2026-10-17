@@ -1,0 +1,185 @@
+{
+  "negatives": {
+    "prefix": {
+      "all_benign": {
+        "question_focus": 0.9260294930875576,
+        "question_sameness": 0.824147465437788,
+        "retrieval_score": 0.9764460829493088,
+        "set_density": 0.9896663594470047
+      },
+      "gold_only": {
+        "question_focus": 0.8925254237288136,
+        "question_sameness": 0.8024067796610169,
+        "retrieval_score": 0.9893559322033898,
+        "set_density": 0.9962203389830508
+      }
+    },
+    "noprefix": {
+      "all_benign": {
+        "question_focus": 0.703705069124424,
+        "question_sameness": 0.586473732718894,
+        "retrieval_score": 0.5713502304147465,
+        "set_density": 0.9503963133640553
+      },
+      "gold_only": {
+        "question_focus": 0.630864406779661,
+        "question_sameness": 0.5454237288135593,
+        "retrieval_score": 0.7296440677966102,
+        "set_density": 0.9656949152542373
+      }
+    }
+  },
+  "questions_per_passage": {
+    "1": {
+      "prefix": {
+        "question_focus": 0.8830709677419355,
+        "question_sameness": null
+      },
+      "noprefix": {
+        "question_focus": 0.6758497695852534,
+        "question_sameness": null
+      }
+    },
+    "2": {
+      "prefix": {
+        "question_focus": 0.9114811059907834,
+        "question_sameness": 0.7462341013824885
+      },
+      "noprefix": {
+        "question_focus": 0.6917225806451613,
+        "question_sameness": 0.5644193548387096
+      }
+    },
+    "3": {
+      "prefix": {
+        "question_focus": 0.9216331797235023,
+        "question_sameness": 0.7927391705069124
+      },
+      "noprefix": {
+        "question_focus": 0.7049806451612903,
+        "question_sameness": 0.5789345622119816
+      }
+    },
+    "4": {
+      "prefix": {
+        "question_focus": 0.9248645161290323,
+        "question_sameness": 0.8147465437788018
+      },
+      "noprefix": {
+        "question_focus": 0.7058046082949309,
+        "question_sameness": 0.5898930875576037
+      }
+    },
+    "5": {
+      "prefix": {
+        "question_focus": 0.9260294930875576,
+        "question_sameness": 0.824147465437788
+      },
+      "noprefix": {
+        "question_focus": 0.703705069124424,
+        "question_sameness": 0.586473732718894
+      }
+    }
+  },
+  "copied_question": {
+    "question_focus": {
+      "benign_mean": 0.6202291772936895,
+      "with_prefix_mean": 0.8626333063840866,
+      "without_prefix_mean": 0.718024457514286,
+      "share_higher_with_prefix": 0.94
+    },
+    "question_sameness": {
+      "benign_mean": 0.6938412061759404,
+      "with_prefix_mean": 0.8428820239305497,
+      "without_prefix_mean": 0.732408662557602,
+      "share_higher_with_prefix": 0.808
+    },
+    "exact_copy_share": {
+      "none": 0.0027649769585253456,
+      "prefix": 0.384,
+      "noprefix": 0.05
+    }
+  },
+  "poison_count": {
+    "prefix": {
+      "1": {
+        "question_focus": 0.9240433179723503,
+        "set_density": 0.45484700460829497,
+        "set_density+focus": 0.931958064516129,
+        "retrieval+focus": 0.988489861751152
+      },
+      "2": {
+        "question_focus": 0.9276195852534561,
+        "set_density": 0.7621188940092167,
+        "set_density+focus": 0.9296389400921659,
+        "retrieval+focus": 0.9896308755760369
+      },
+      "3": {
+        "question_focus": 0.9263095238095238,
+        "set_density": 0.9370747311827955,
+        "set_density+focus": 0.9677393241167435,
+        "retrieval+focus": 0.988773886328725
+      },
+      "4": {
+        "question_focus": 0.926202534562212,
+        "set_density": 0.985184331797235,
+        "set_density+focus": 0.9907911290322581,
+        "retrieval+focus": 0.9889627880184332
+      },
+      "5": {
+        "question_focus": 0.9260294930875576,
+        "set_density": 0.9896663594470045,
+        "set_density+focus": 0.9932626728110601,
+        "retrieval+focus": 0.989015668202765
+      }
+    },
+    "noprefix": {
+      "1": {
+        "question_focus": 0.7068041474654378,
+        "set_density": 0.3857225806451613,
+        "set_density+focus": 0.7656207373271889,
+        "retrieval+focus": 0.7034797235023043
+      },
+      "2": {
+        "question_focus": 0.7030963133640552,
+        "set_density": 0.6341372119815668,
+        "set_density+focus": 0.7025887096774193,
+        "retrieval+focus": 0.7015232718894009
+      },
+      "3": {
+        "question_focus": 0.7038731182795699,
+        "set_density": 0.8358172811059909,
+        "set_density+focus": 0.8366291858678956,
+        "retrieval+focus": 0.7033854070660521
+      },
+      "4": {
+        "question_focus": 0.7030501152073733,
+        "set_density": 0.9318582949308757,
+        "set_density+focus": 0.9301816820276498,
+        "retrieval+focus": 0.7013171658986176
+      },
+      "5": {
+        "question_focus": 0.7037050691244241,
+        "set_density": 0.9503963133640554,
+        "set_density+focus": 0.9489861751152077,
+        "retrieval+focus": 0.7029069124423962
+      }
+    }
+  },
+  "threshold": {
+    "question_focus": {
+      "threshold": 0.8165280938148498,
+      "gold_flagged": 12,
+      "gold_total": 118,
+      "tpr_prefix": 0.748,
+      "tpr_noprefix": 0.258
+    },
+    "question_sameness": {
+      "threshold": 0.8877807855606078,
+      "gold_flagged": 8,
+      "gold_total": 118,
+      "tpr_prefix": 0.412,
+      "tpr_noprefix": 0.1
+    }
+  }
+}

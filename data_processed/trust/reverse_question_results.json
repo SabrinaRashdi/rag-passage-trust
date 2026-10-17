@@ -1,0 +1,587 @@
+{
+  "prefix": {
+    "passages": 1585,
+    "poisoned": 500,
+    "methods": {
+      "retrieval_score": {
+        "auroc": 0.9764460829493088,
+        "auroc_ci_95": [
+          0.9631270533378061,
+          0.9880625819103467
+        ],
+        "tpr_at_5pct_fpr": 0.88
+      },
+      "set_density": {
+        "auroc": 0.9896663594470047,
+        "auroc_ci_95": [
+          0.9809630021792363,
+          0.9959038919733234
+        ],
+        "tpr_at_5pct_fpr": 0.968
+      },
+      "shortness": {
+        "auroc": 0.8286009216589861,
+        "auroc_ci_95": [
+          0.79132133640553,
+          0.8641497449679294
+        ],
+        "tpr_at_5pct_fpr": 0.0
+      },
+      "reader_support": {
+        "auroc": 0.5840571428571428,
+        "auroc_ci_95": [
+          0.5315429170124341,
+          0.6337688769525406
+        ],
+        "tpr_at_5pct_fpr": 0.056
+      },
+      "z_drop": {
+        "auroc": 0.6220276497695852,
+        "auroc_ci_95": [
+          0.5746645292325918,
+          0.6695744368085537
+        ],
+        "tpr_at_5pct_fpr": 0.15
+      },
+      "question_focus": {
+        "auroc": 0.9260294930875576,
+        "auroc_ci_95": [
+          0.9014716573700564,
+          0.9494413226573429
+        ],
+        "tpr_at_5pct_fpr": 0.748
+      },
+      "question_sameness": {
+        "auroc": 0.824147465437788,
+        "auroc_ci_95": [
+          0.7867066225327844,
+          0.8568692739967029
+        ],
+        "tpr_at_5pct_fpr": 0.412
+      },
+      "retrieval+focus": {
+        "auroc": 0.989015668202765,
+        "auroc_ci_95": [
+          0.9812093074280214,
+          0.9952624614626461
+        ],
+        "tpr_at_5pct_fpr": 0.954
+      },
+      "retrieval+sameness": {
+        "auroc": 0.9809456221198156,
+        "auroc_ci_95": [
+          0.9691287569060774,
+          0.9909029824022918
+        ],
+        "tpr_at_5pct_fpr": 0.922
+      },
+      "retrieval+both": {
+        "auroc": 0.9887483870967742,
+        "auroc_ci_95": [
+          0.980723697431961,
+          0.9952037518277339
+        ],
+        "tpr_at_5pct_fpr": 0.958
+      },
+      "set_density+both": {
+        "auroc": 0.9932774193548387,
+        "auroc_ci_95": [
+          0.9869053709987179,
+          0.9977235954133263
+        ],
+        "tpr_at_5pct_fpr": 0.982
+      },
+      "three_baselines": {
+        "auroc": 0.9948921658986175,
+        "auroc_ci_95": [
+          0.987209187087062,
+          0.99939628377163
+        ],
+        "tpr_at_5pct_fpr": 0.986
+      },
+      "three_baselines+both": {
+        "auroc": 0.9957364055299539,
+        "auroc_ci_95": [
+          0.9886061904978933,
+          0.9996195939102575
+        ],
+        "tpr_at_5pct_fpr": 0.992
+      }
+    },
+    "controls": {
+      "question_focus": {
+        "same_retrieval_score": {
+          "auroc": 0.9004612566461949,
+          "bins_used": 4
+        },
+        "same_length": {
+          "auroc": 0.8897304292087206,
+          "bins_used": 3
+        }
+      },
+      "question_sameness": {
+        "same_retrieval_score": {
+          "auroc": 0.7828435835871036,
+          "bins_used": 4
+        },
+        "same_length": {
+          "auroc": 0.7929667237265275,
+          "bins_used": 3
+        }
+      }
+    },
+    "mean": {
+      "question_focus": {
+        "benign": 0.6202291772936895,
+        "poisoned": 0.8626333063840866
+      },
+      "question_sameness": {
+        "benign": 0.6938412061759404,
+        "poisoned": 0.8428820239305497
+      }
+    },
+    "comparisons": {
+      "question_focus - z_drop": {
+        "auroc_difference": 0.3040018433179723,
+        "ci_95": [
+          0.2506204800597731,
+          0.3611831051438793
+        ],
+        "p_value": 0.0
+      },
+      "question_focus - retrieval_score": {
+        "auroc_difference": -0.05041658986175124,
+        "ci_95": [
+          -0.07821582783572796,
+          -0.02421297358584432
+        ],
+        "p_value": 0.0
+      },
+      "question_sameness - retrieval_score": {
+        "auroc_difference": -0.15229861751152074,
+        "ci_95": [
+          -0.18909282940917702,
+          -0.11671889765871056
+        ],
+        "p_value": 0.0
+      },
+      "retrieval+both - retrieval_score": {
+        "auroc_difference": 0.01230230414746536,
+        "ci_95": [
+          0.004361544900057743,
+          0.0217180184331798
+        ],
+        "p_value": 0.0
+      },
+      "set_density+both - set_density": {
+        "auroc_difference": 0.0036110599078340577,
+        "ci_95": [
+          0.00042249826389343384,
+          0.007566099610863124
+        ],
+        "p_value": 0.026
+      },
+      "three_baselines+both - three_baselines": {
+        "auroc_difference": 0.0008442396313363965,
+        "ci_95": [
+          -0.00015254687392687316,
+          0.002020306422843679
+        ],
+        "p_value": 0.106
+      }
+    }
+  },
+  "noprefix": {
+    "passages": 1585,
+    "poisoned": 500,
+    "methods": {
+      "retrieval_score": {
+        "auroc": 0.5713502304147465,
+        "auroc_ci_95": [
+          0.5217381586148103,
+          0.6245248408353609
+        ],
+        "tpr_at_5pct_fpr": 0.192
+      },
+      "set_density": {
+        "auroc": 0.9503963133640553,
+        "auroc_ci_95": [
+          0.9277266836219656,
+          0.9688762576103501
+        ],
+        "tpr_at_5pct_fpr": 0.72
+      },
+      "shortness": {
+        "auroc": 0.8751705069124424,
+        "auroc_ci_95": [
+          0.8468888546287929,
+          0.9022927441502708
+        ],
+        "tpr_at_5pct_fpr": 0.0
+      },
+      "reader_support": {
+        "auroc": 0.9207778801843318,
+        "auroc_ci_95": [
+          0.8999367333668024,
+          0.9422301993240477
+        ],
+        "tpr_at_5pct_fpr": 0.624
+      },
+      "z_drop": {
+        "auroc": 0.3886506912442396,
+        "auroc_ci_95": [
+          0.34929391705069124,
+          0.43187669603959644
+        ],
+        "tpr_at_5pct_fpr": 0.02
+      },
+      "question_focus": {
+        "auroc": 0.703705069124424,
+        "auroc_ci_95": [
+          0.6665358484252546,
+          0.7414498423341743
+        ],
+        "tpr_at_5pct_fpr": 0.258
+      },
+      "question_sameness": {
+        "auroc": 0.586473732718894,
+        "auroc_ci_95": [
+          0.550972429029712,
+          0.6215516952092356
+        ],
+        "tpr_at_5pct_fpr": 0.1
+      },
+      "retrieval+focus": {
+        "auroc": 0.7029069124423963,
+        "auroc_ci_95": [
+          0.6634629373848988,
+          0.7422390748698819
+        ],
+        "tpr_at_5pct_fpr": 0.238
+      },
+      "retrieval+sameness": {
+        "auroc": 0.6066470046082949,
+        "auroc_ci_95": [
+          0.5624442750471479,
+          0.6537065187648736
+        ],
+        "tpr_at_5pct_fpr": 0.192
+      },
+      "retrieval+both": {
+        "auroc": 0.7110672811059908,
+        "auroc_ci_95": [
+          0.6714758328771021,
+          0.7520894020705414
+        ],
+        "tpr_at_5pct_fpr": 0.266
+      },
+      "set_density+both": {
+        "auroc": 0.9503944700460829,
+        "auroc_ci_95": [
+          0.928308476377204,
+          0.9681985973135347
+        ],
+        "tpr_at_5pct_fpr": 0.682
+      },
+      "three_baselines": {
+        "auroc": 0.9807041474654378,
+        "auroc_ci_95": [
+          0.9712694613028787,
+          0.9881864763103304
+        ],
+        "tpr_at_5pct_fpr": 0.888
+      },
+      "three_baselines+both": {
+        "auroc": 0.9809364055299539,
+        "auroc_ci_95": [
+          0.9720136782737645,
+          0.9882587279480037
+        ],
+        "tpr_at_5pct_fpr": 0.898
+      }
+    },
+    "controls": {
+      "question_focus": {
+        "same_retrieval_score": {
+          "auroc": 0.7045057717074711,
+          "bins_used": 10
+        },
+        "same_length": {
+          "auroc": 0.6574041990081662,
+          "bins_used": 4
+        }
+      },
+      "question_sameness": {
+        "same_retrieval_score": {
+          "auroc": 0.577277018012762,
+          "bins_used": 10
+        },
+        "same_length": {
+          "auroc": 0.5163319665970145,
+          "bins_used": 4
+        }
+      }
+    },
+    "mean": {
+      "question_focus": {
+        "benign": 0.6202291772936895,
+        "poisoned": 0.718024457514286
+      },
+      "question_sameness": {
+        "benign": 0.6938412061759404,
+        "poisoned": 0.732408662557602
+      }
+    },
+    "comparisons": {
+      "question_focus - z_drop": {
+        "auroc_difference": 0.31505437788018437,
+        "ci_95": [
+          0.2622587851248526,
+          0.3701138617557791
+        ],
+        "p_value": 0.0
+      },
+      "question_focus - retrieval_score": {
+        "auroc_difference": 0.13235483870967746,
+        "ci_95": [
+          0.0806663844870726,
+          0.18151704986149575
+        ],
+        "p_value": 0.0
+      },
+      "question_sameness - retrieval_score": {
+        "auroc_difference": 0.015123502304147496,
+        "ci_95": [
+          -0.04035486111111105,
+          0.07006671700348101
+        ],
+        "p_value": 0.622
+      },
+      "retrieval+both - retrieval_score": {
+        "auroc_difference": 0.1397170506912443,
+        "ci_95": [
+          0.09232462552358026,
+          0.1890806111991449
+        ],
+        "p_value": 0.0
+      },
+      "set_density+both - set_density": {
+        "auroc_difference": -1.8433179723720272e-06,
+        "ci_95": [
+          -0.002625681964915372,
+          0.0026607334607918805
+        ],
+        "p_value": 0.952
+      },
+      "three_baselines+both - three_baselines": {
+        "auroc_difference": 0.00023225806451609987,
+        "ci_95": [
+          -0.001251907011407699,
+          0.0017145166890776547
+        ],
+        "p_value": 0.756
+      }
+    }
+  },
+  "reworded": {
+    "passages": 1585,
+    "poisoned": 500,
+    "methods": {
+      "retrieval_score": {
+        "auroc": 0.9210801843317973,
+        "auroc_ci_95": [
+          0.8921155264164933,
+          0.947541812980393
+        ],
+        "tpr_at_5pct_fpr": 0.7
+      },
+      "set_density": {
+        "auroc": 0.9818451612903226,
+        "auroc_ci_95": [
+          0.9692114591544797,
+          0.9911563240800353
+        ],
+        "tpr_at_5pct_fpr": 0.934
+      },
+      "shortness": {
+        "auroc": 0.8195078341013825,
+        "auroc_ci_95": [
+          0.7817088576870148,
+          0.8543989679251075
+        ],
+        "tpr_at_5pct_fpr": 0.0
+      },
+      "reader_support": {
+        "auroc": 0.8389308755760368,
+        "auroc_ci_95": [
+          0.806905048923679,
+          0.8681480977681049
+        ],
+        "tpr_at_5pct_fpr": 0.408
+      },
+      "z_drop": {
+        "auroc": 0.42859907834101385,
+        "auroc_ci_95": [
+          0.3819670165584882,
+          0.4718306116438804
+        ],
+        "tpr_at_5pct_fpr": 0.066
+      },
+      "question_focus": {
+        "auroc": 0.85956866359447,
+        "auroc_ci_95": [
+          0.8276174576361062,
+          0.8916962895114667
+        ],
+        "tpr_at_5pct_fpr": 0.524
+      },
+      "question_sameness": {
+        "auroc": 0.7441069124423964,
+        "auroc_ci_95": [
+          0.70962243293247,
+          0.7791328439540682
+        ],
+        "tpr_at_5pct_fpr": 0.206
+      },
+      "retrieval+focus": {
+        "auroc": 0.9482543778801843,
+        "auroc_ci_95": [
+          0.9243769978535298,
+          0.9702885683163045
+        ],
+        "tpr_at_5pct_fpr": 0.818
+      },
+      "retrieval+sameness": {
+        "auroc": 0.9323041474654378,
+        "auroc_ci_95": [
+          0.9059853474345905,
+          0.9576860816860018
+        ],
+        "tpr_at_5pct_fpr": 0.748
+      },
+      "retrieval+both": {
+        "auroc": 0.9476442396313364,
+        "auroc_ci_95": [
+          0.9240275421033463,
+          0.969930693043402
+        ],
+        "tpr_at_5pct_fpr": 0.812
+      },
+      "set_density+both": {
+        "auroc": 0.9838359447004609,
+        "auroc_ci_95": [
+          0.9718630891818494,
+          0.9929775157814227
+        ],
+        "tpr_at_5pct_fpr": 0.928
+      },
+      "three_baselines": {
+        "auroc": 0.992726267281106,
+        "auroc_ci_95": [
+          0.9871000813917434,
+          0.996885942070094
+        ],
+        "tpr_at_5pct_fpr": 0.968
+      },
+      "three_baselines+both": {
+        "auroc": 0.9924958525345622,
+        "auroc_ci_95": [
+          0.9863890638663533,
+          0.9969625631250474
+        ],
+        "tpr_at_5pct_fpr": 0.97
+      }
+    },
+    "controls": {
+      "question_focus": {
+        "same_retrieval_score": {
+          "auroc": 0.816557963475708,
+          "bins_used": 6
+        },
+        "same_length": {
+          "auroc": 0.8084591717850396,
+          "bins_used": 3
+        }
+      },
+      "question_sameness": {
+        "same_retrieval_score": {
+          "auroc": 0.7062219203397696,
+          "bins_used": 6
+        },
+        "same_length": {
+          "auroc": 0.6902477445557612,
+          "bins_used": 3
+        }
+      }
+    },
+    "mean": {
+      "question_focus": {
+        "benign": 0.6202291772936895,
+        "poisoned": 0.8003253971338272
+      },
+      "question_sameness": {
+        "benign": 0.6938412061759404,
+        "poisoned": 0.8001075896620751
+      }
+    },
+    "comparisons": {
+      "question_focus - z_drop": {
+        "auroc_difference": 0.4309695852534562,
+        "ci_95": [
+          0.3705362661706735,
+          0.49581884562915357
+        ],
+        "p_value": 0.0
+      },
+      "question_focus - retrieval_score": {
+        "auroc_difference": -0.06151152073732724,
+        "ci_95": [
+          -0.10103743420852347,
+          -0.025109216297322268
+        ],
+        "p_value": 0.0
+      },
+      "question_sameness - retrieval_score": {
+        "auroc_difference": -0.17697327188940093,
+        "ci_95": [
+          -0.2212687611693439,
+          -0.13454429590696743
+        ],
+        "p_value": 0.0
+      },
+      "retrieval+both - retrieval_score": {
+        "auroc_difference": 0.02656405529953909,
+        "ci_95": [
+          0.012561752155352716,
+          0.03977210980191257
+        ],
+        "p_value": 0.0
+      },
+      "set_density+both - set_density": {
+        "auroc_difference": 0.0019907834101382527,
+        "ci_95": [
+          -0.0007976784530851654,
+          0.005163662649703374
+        ],
+        "p_value": 0.188
+      },
+      "three_baselines+both - three_baselines": {
+        "auroc_difference": -0.00023041474654383887,
+        "ci_95": [
+          -0.0011288973405141178,
+          0.0005023579371057823
+        ],
+        "p_value": 0.656
+      }
+    }
+  },
+  "setup": {
+    "signals_fixed_before_results": [
+      "question_focus",
+      "question_sameness"
+    ],
+    "questions_per_passage": 5,
+    "level_bins": 10,
+    "min_per_group": 10
+  }
+}

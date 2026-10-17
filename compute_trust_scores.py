@@ -17,6 +17,10 @@ ANSWER_SUPPORT_PATH = TRUST_DIR / "answer_support.csv"
 PERPLEXITY_PATH = TRUST_DIR / "perplexity.csv"
 DATASET_PATH = DATA_DIR / "nq_passage_dataset.json"
 OUTPUT_PATH = TRUST_DIR / "trust_scores.csv"
+# PoisonedRAG top-100 lists for the original questions; the pool is the
+# union of these lists plus the gold passages.
+RETRIEVED_PATH = Path("results/beir_results/nq-contriever.json")
+RETRIEVED_PER_QUESTION = 100
 
 VARIANTS = ("original", "para1", "para2", "para3")
 ATTACKS = ("prefix", "noprefix")
@@ -34,6 +38,35 @@ def load_embeddings(name):
 
     assert len(ids) == len(embeddings)
     return embeddings, {pid: i for i, pid in enumerate(ids)}
+
+
+def reference_masks(pool_index, passages):
+    """
+    For each question, the pool passages used as the reference for its
+    z-scores and ranks: the pool without the question's own top-100 list
+    and gold passages. These passages are in the pool only because they
+    rank high for the original wording, so keeping them would give the
+    original wording an easier reference than its paraphrases.
+    """
+    with RETRIEVED_PATH.open(encoding="utf-8") as f:
+        retrieved = json.load(f)
+
+    own = {}
+
+    for p in passages:
+        if p["label"] == 0:
+            own.setdefault(p["query_id"], set()).add(p["doc_id"])
+
+    masks = {}
+
+    for qid, doc_ids in own.items():
+        ranked = sorted(retrieved[qid], key=retrieved[qid].get, reverse=True)
+        doc_ids = doc_ids | set(ranked[:RETRIEVED_PER_QUESTION])
+        mask = np.ones(len(pool_index), dtype=bool)
+        mask[[pool_index[d] for d in doc_ids]] = False
+        masks[qid] = mask
+
+    return masks
 
 
 def main():
@@ -60,24 +93,24 @@ def main():
     for passage in passages:
         by_query.setdefault(passage["query_id"], []).append(passage)
 
+    references = reference_masks(pool_index, passages)
     rows = []
 
     for qid, group in by_query.items():
-        # Dot-product scores of every query variant against the clean pool.
+        # Dot-product scores of every query variant against the reference
+        # passages (the evaluated passages themselves are not in it).
         variants = np.stack([
             query_emb[query_index[f"{qid}_{v}"]] for v in VARIANTS
         ])
-        clean_scores = variants @ pool_emb.T
+        clean_scores = variants @ pool_emb[references[qid]].T
 
         group_rows, group_embeddings = [], []
 
         for passage in group:
             if passage["label"] == 1:
                 embedding = adv_emb[adv_index[passage["passage_id"]]]
-                own_index = None
             else:
-                own_index = pool_index[passage["doc_id"]]
-                embedding = pool_emb[own_index]
+                embedding = pool_emb[pool_index[passage["doc_id"]]]
 
             scores = variants @ embedding
 
@@ -93,9 +126,7 @@ def main():
             for v, name in enumerate(VARIANTS):
                 row[f"score_{name}"] = float(scores[v])
                 row[f"z_{name}"] = z_score(scores[v], clean_scores[v])
-                row[f"rank_{name}"] = pool_rank(
-                    scores[v], clean_scores[v].copy(), own_index
-                )
+                row[f"rank_{name}"] = pool_rank(scores[v], clean_scores[v])
 
             # Answer support: does the passage give an answer, and is it
             # the same answer for every wording of the question?

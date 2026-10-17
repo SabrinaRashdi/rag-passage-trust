@@ -1,9 +1,9 @@
 {
   "prefix": {
     "1": {
-      "retrieval_z": {
-        "auroc_mean": 0.9817502304147465,
-        "auroc_std": 0.0043155277372875925
+      "retrieval_score": {
+        "auroc_mean": 0.9768801843317971,
+        "auroc_std": 0.002603683373432982
       },
       "perplexity": {
         "auroc_mean": 0.7695751152073733,
@@ -18,12 +18,12 @@
         "auroc_std": 0.010297296831134816
       },
       "z_drop_k3": {
-        "auroc_mean": 0.8214391705069124,
-        "auroc_std": 0.012435165085923855
+        "auroc_mean": 0.6194686635944702,
+        "auroc_std": 0.011274726093841708
       },
       "combined_consistency": {
-        "auroc_mean": 0.936735944700461,
-        "auroc_std": 0.0072771127561139124
+        "auroc_mean": 0.8809797235023042,
+        "auroc_std": 0.009925610502470785
       },
       "set_density": {
         "auroc_mean": 0.45484700460829497,
@@ -31,9 +31,9 @@
       }
     },
     "2": {
-      "retrieval_z": {
-        "auroc_mean": 0.9819582949308755,
-        "auroc_std": 0.0024591562490843158
+      "retrieval_score": {
+        "auroc_mean": 0.9765940092165899,
+        "auroc_std": 0.0014616919491035757
       },
       "perplexity": {
         "auroc_mean": 0.7681638248847926,
@@ -48,12 +48,12 @@
         "auroc_std": 0.004973252220201032
       },
       "z_drop_k3": {
-        "auroc_mean": 0.8213983870967742,
-        "auroc_std": 0.010842592574947657
+        "auroc_mean": 0.6215341013824884,
+        "auroc_std": 0.0069828206657998135
       },
       "combined_consistency": {
-        "auroc_mean": 0.9380103686635943,
-        "auroc_std": 0.0038778178568473405
+        "auroc_mean": 0.8800202764976959,
+        "auroc_std": 0.005575202435946889
       },
       "set_density": {
         "auroc_mean": 0.7621188940092167,
@@ -61,9 +61,9 @@
       }
     },
     "3": {
-      "retrieval_z": {
-        "auroc_mean": 0.9820299539170507,
-        "auroc_std": 0.0018708272114080168
+      "retrieval_score": {
+        "auroc_mean": 0.9764239631336405,
+        "auroc_std": 0.0009774559399938492
       },
       "perplexity": {
         "auroc_mean": 0.7668517665130568,
@@ -78,12 +78,12 @@
         "auroc_std": 0.003176454143426723
       },
       "z_drop_k3": {
-        "auroc_mean": 0.8231457757296466,
-        "auroc_std": 0.004365310056324023
+        "auroc_mean": 0.62325821812596,
+        "auroc_std": 0.0034296928274997313
       },
       "combined_consistency": {
-        "auroc_mean": 0.937715668202765,
-        "auroc_std": 0.0023793591567509396
+        "auroc_mean": 0.8784447004608296,
+        "auroc_std": 0.0032148960214300496
       },
       "set_density": {
         "auroc_mean": 0.9370747311827955,
@@ -91,9 +91,9 @@
       }
     },
     "4": {
-      "retrieval_z": {
-        "auroc_mean": 0.9811601382488477,
-        "auroc_std": 0.0006670411403055376
+      "retrieval_score": {
+        "auroc_mean": 0.9763770737327189,
+        "auroc_std": 0.0006194559262160702
       },
       "perplexity": {
         "auroc_mean": 0.7679188940092165,
@@ -108,12 +108,12 @@
         "auroc_std": 0.003374208014182214
       },
       "z_drop_k3": {
-        "auroc_mean": 0.8216914746543779,
-        "auroc_std": 0.0034363926527210447
+        "auroc_mean": 0.6216350230414747,
+        "auroc_std": 0.0023862164764763445
       },
       "combined_consistency": {
-        "auroc_mean": 0.938150806451613,
-        "auroc_std": 0.0016446591539966873
+        "auroc_mean": 0.8798710829493086,
+        "auroc_std": 0.0022008835547101336
       },
       "set_density": {
         "auroc_mean": 0.985184331797235,
@@ -121,9 +121,9 @@
       }
     },
     "5": {
-      "retrieval_z": {
-        "auroc_mean": 0.9812294930875576,
-        "auroc_std": 0.0
+      "retrieval_score": {
+        "auroc_mean": 0.9764460829493087,
+        "auroc_std": 1.1102230246251565e-16
       },
       "perplexity": {
         "auroc_mean": 0.7671520737327189,
@@ -138,12 +138,12 @@
         "auroc_std": 0.0
       },
       "z_drop_k3": {
-        "auroc_mean": 0.8216903225806451,
-        "auroc_std": 0.0
+        "auroc_mean": 0.6220276497695851,
+        "auroc_std": 1.1102230246251565e-16
       },
       "combined_consistency": {
-        "auroc_mean": 0.9390967741935483,
-        "auroc_std": 1.1102230246251565e-16
+        "auroc_mean": 0.8803391705069125,
+        "auroc_std": 0.0
       },
       "set_density": {
         "auroc_mean": 0.9896663594470045,
@@ -153,9 +153,9 @@
   },
   "noprefix": {
     "1": {
-      "retrieval_z": {
-        "auroc_mean": 0.5871101382488478,
-        "auroc_std": 0.029059909072772453
+      "retrieval_score": {
+        "auroc_mean": 0.5729027649769585,
+        "auroc_std": 0.019438022632544762
       },
       "perplexity": {
         "auroc_mean": 0.7053640552995393,
@@ -170,12 +170,12 @@
         "auroc_std": 0.004609087742862138
       },
       "z_drop_k3": {
-        "auroc_mean": 0.396936866359447,
-        "auroc_std": 0.019296211904922558
+        "auroc_mean": 0.38546405529953914,
+        "auroc_std": 0.014714438921614755
       },
       "combined_consistency": {
-        "auroc_mean": 0.7415511520737327,
-        "auroc_std": 0.016115441304807094
+        "auroc_mean": 0.7549543778801844,
+        "auroc_std": 0.013227469660511075
       },
       "set_density": {
         "auroc_mean": 0.3857225806451613,
@@ -183,9 +183,9 @@
       }
     },
     "2": {
-      "retrieval_z": {
-        "auroc_mean": 0.5830592165898618,
-        "auroc_std": 0.015103267544196662
+      "retrieval_score": {
+        "auroc_mean": 0.5714214285714286,
+        "auroc_std": 0.01057240766069747
       },
       "perplexity": {
         "auroc_mean": 0.7019711981566821,
@@ -200,12 +200,12 @@
         "auroc_std": 0.004898484116256673
       },
       "z_drop_k3": {
-        "auroc_mean": 0.39990529953917053,
-        "auroc_std": 0.010050267749177198
+        "auroc_mean": 0.38905737327188944,
+        "auroc_std": 0.007433374491407233
       },
       "combined_consistency": {
-        "auroc_mean": 0.7457465437788018,
-        "auroc_std": 0.007828343506169426
+        "auroc_mean": 0.7580423963133641,
+        "auroc_std": 0.0077854962239815055
       },
       "set_density": {
         "auroc_mean": 0.6341372119815668,
@@ -213,9 +213,9 @@
       }
     },
     "3": {
-      "retrieval_z": {
-        "auroc_mean": 0.5838482334869431,
-        "auroc_std": 0.010695292831258495
+      "retrieval_score": {
+        "auroc_mean": 0.5723991551459294,
+        "auroc_std": 0.007867631991101067
       },
       "perplexity": {
         "auroc_mean": 0.6995726574500768,
@@ -230,12 +230,12 @@
         "auroc_std": 0.002688643447804197
       },
       "z_drop_k3": {
-        "auroc_mean": 0.3995941628264209,
-        "auroc_std": 0.00802961270791278
+        "auroc_mean": 0.38800414746543777,
+        "auroc_std": 0.005264547653644529
       },
       "combined_consistency": {
-        "auroc_mean": 0.744284639016897,
-        "auroc_std": 0.007015179001694998
+        "auroc_mean": 0.7560807987711214,
+        "auroc_std": 0.006331774584799289
       },
       "set_density": {
         "auroc_mean": 0.8358172811059909,
@@ -243,9 +243,9 @@
       }
     },
     "4": {
-      "retrieval_z": {
-        "auroc_mean": 0.579433064516129,
-        "auroc_std": 0.006329187152583119
+      "retrieval_score": {
+        "auroc_mean": 0.5687181451612904,
+        "auroc_std": 0.0037856563007436245
       },
       "perplexity": {
         "auroc_mean": 0.7029353686635946,
@@ -260,12 +260,12 @@
         "auroc_std": 0.0010596984114884709
       },
       "z_drop_k3": {
-        "auroc_mean": 0.39817811059907837,
-        "auroc_std": 0.003706010875166294
+        "auroc_mean": 0.38763467741935476,
+        "auroc_std": 0.002905523145162447
       },
       "combined_consistency": {
-        "auroc_mean": 0.7440823732718893,
-        "auroc_std": 0.003502353858715238
+        "auroc_mean": 0.7555570276497695,
+        "auroc_std": 0.0033314912661231853
       },
       "set_density": {
         "auroc_mean": 0.9318582949308757,
@@ -273,8 +273,8 @@
       }
     },
     "5": {
-      "retrieval_z": {
-        "auroc_mean": 0.5830543778801844,
+      "retrieval_score": {
+        "auroc_mean": 0.5713502304147464,
         "auroc_std": 1.1102230246251565e-16
       },
       "perplexity": {
@@ -290,12 +290,12 @@
         "auroc_std": 0.0
       },
       "z_drop_k3": {
-        "auroc_mean": 0.4001087557603686,
+        "auroc_mean": 0.3886506912442397,
         "auroc_std": 5.551115123125783e-17
       },
       "combined_consistency": {
-        "auroc_mean": 0.7437548387096773,
-        "auroc_std": 1.1102230246251565e-16
+        "auroc_mean": 0.7557013824884791,
+        "auroc_std": 2.220446049250313e-16
       },
       "set_density": {
         "auroc_mean": 0.9503963133640554,
