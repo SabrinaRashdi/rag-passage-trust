@@ -165,3 +165,6 @@ logs
 data_processed/trust/pool_embeddings.npy
 data_processed/trust/reverse_question_embeddings.npy
 logs/
+slides/
+report/
+.claude/
